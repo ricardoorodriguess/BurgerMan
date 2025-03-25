@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Added client">
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="teste tt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742912152551</updated>
       <workItem from="1742912153708" duration="4000" />
-      <workItem from="1742912371110" duration="315000" />
+      <workItem from="1742912371110" duration="438000" />
     </task>
     <task id="LOCAL-00001" summary="Added client">
       <option name="closed" value="true" />
@@ -81,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742912427454</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="teste tt">
+      <option name="closed" value="true" />
+      <created>1742912704501</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742912704501</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added client" />
+    <MESSAGE value="teste tt" />
+    <option name="LAST_COMMIT_MESSAGE" value="teste tt" />
   </component>
 </project>
