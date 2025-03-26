@@ -1,6 +1,8 @@
 /**
- * ESCREVER
+ *
  * This class represent a simple circle
+ * It provides methods to manipulate and retrieve these transformation properties.
+ * including position, layer, rotation, and scaling.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -14,11 +16,11 @@ public class Transform implements ITransform
     private double scale;
 
     /**
-     * CONSTRUTOR
-     * @param position
-     * @param layer
-     * @param angle
-     * @param scale
+     * Constructs a Transform object with the specified initial properties.
+     * @param position The initial position of the transformation as a Point.
+     * @param layer The initial layer (z-index) of the transformation.
+     * @param angle The initial rotation angle in degrees.
+     * @param scale The initial scaling factor relative to the original size.
      */
     public Transform(Point position, int layer, double angle, double scale)
     {
@@ -31,6 +33,12 @@ public class Transform implements ITransform
         this.scale = scale;
     }
 
+    /**
+     * Method that moves the transformation by adding a
+     * delta to the current position and layer.
+     * @param dPos The change in position (delta x and y) to apply.
+     * @param dlayer The change in layer (z-index) to apply.
+     */
     @Override
     public void move(Point dPos, int dlayer)
     {
@@ -38,6 +46,11 @@ public class Transform implements ITransform
         this.layer += dlayer; //aplicar o dlayer a layer
     }
 
+    /**
+     * Rotates the transformation by the specified delta angle (in degrees).
+     * The resulting angle is kept within the 0-360 degree range.
+     * @param dTheta The change in rotation angle (in degrees) to apply.
+     */
     @Override
     public void rotate(double dTheta)
     {
@@ -45,24 +58,49 @@ public class Transform implements ITransform
         if (this.angle < 0) this.angle += 360;
     }
 
+    /**
+     * Modifies the scale by adding the specified delta scaling factor.
+     * @param dScale The change in scaling factor to apply.
+     */
     @Override
     public void scale(double dScale)
     {
         this.scale += dScale;
     }
 
+    /**
+     * Returns the current position of the transformation.
+     * @return The current position as a Point.
+     */
     @Override
     public Point position() { return position; }
 
+    /**
+     * Returns the current layer of the transformation.
+     * @return The current layer.
+     */
     @Override
     public int layer() { return this.layer; }
 
+    /**
+     * Returns the current rotation angle in degrees.
+     * @return The current angle in degrees, normalized to 0-360.
+     */
     @Override
     public double angle() { return this.angle; }
 
+    /**
+     * Returns the current scaling factor.
+     * @return The current scale relative to the original size.
+     */
     @Override
-    public double scale() {return this.scale;}
+    public double scale() { return this.scale; }
 
+    /**
+     * Returns a string representation of the transformation in the format:
+     * "position layer angle scale".
+     * @return A string containing the position, layer, angle, and scale.
+     */
     @Override
     public String toString()
     {
