@@ -6,17 +6,15 @@
  * @author Tiago Tome
  * @version March 26, 2025
  */
-public class Circle extends Collider{
-    private int radius;
-
+public class Circle extends Collider {
+    private double radius;
 
     //TODO
     /**
      * Construtor of the class
      *
      */
-    public Circle() {
-
+    public Circle(double radius) {
         this.radius = radius;
     }
 
@@ -24,7 +22,7 @@ public class Circle extends Collider{
     /**
      * Simple method to check if collide with another collider
      * @return boolean depending on the situation
-     *         true if it happen
+     *         true if it happens
      *         false otherwise
      */
     @Override

@@ -28,7 +28,7 @@ public class Polygon extends Collider{
      * @param points (should be 3 or more)
      *
      */
-    private static void ceck(ArrayList<Point> points) {
+    private static void check(ArrayList<Point> points) {
         if (points.size() < 3) {
             System.out.println("MERDA");
             //TALVEZ ADICIONAR THROW PARA ESTE ERRO ?
