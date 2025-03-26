@@ -16,7 +16,7 @@ public class Transform implements ITransform
     {
         this.centroid = centroid;
         this.layer = layer;
-        this.angle = angle;
+        if (angle >= 0 || angle <= 360) this.angle = angle; //mudar patra rad caso se trabalhe em rad para evitar fazer conversoes
         this.scale = scale;
     }
 

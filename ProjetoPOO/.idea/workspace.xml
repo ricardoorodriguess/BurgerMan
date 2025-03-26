@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="ADDED toString in point and ADDED GameObject class with some doc.">
-      <change afterPath="$PROJECT_DIR$/src/Transform.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="ADDED constructor to GameObject and ADDED Transform class with NO doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transform.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742912152551</updated>
       <workItem from="1742912153708" duration="4000" />
-      <workItem from="1742996720875" duration="6864000" />
+      <workItem from="1742996720875" duration="7138000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED Point CLASS">
       <option name="closed" value="true" />
@@ -121,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743008672449</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ADDED constructor to GameObject and ADDED Transform class with NO doc">
+      <option name="closed" value="true" />
+      <created>1743009314417</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743009314417</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +149,7 @@
     <MESSAGE value="ADDED Point CLASS" />
     <MESSAGE value="ADDED Point class methods with doc" />
     <MESSAGE value="ADDED toString in point and ADDED GameObject class with some doc." />
-    <option name="LAST_COMMIT_MESSAGE" value="ADDED toString in point and ADDED GameObject class with some doc." />
+    <MESSAGE value="ADDED constructor to GameObject and ADDED Transform class with NO doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADDED constructor to GameObject and ADDED Transform class with NO doc" />
   </component>
 </project>
