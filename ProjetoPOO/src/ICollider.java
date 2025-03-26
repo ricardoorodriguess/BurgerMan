@@ -1,6 +1,5 @@
 import java.awt.*;
 
-// TODO
 /**
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
@@ -13,5 +12,4 @@ public interface ICollider {
      * @return the centroid of the collider.
      */
     Point centroid();
-// …
 }

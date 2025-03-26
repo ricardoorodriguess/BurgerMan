@@ -13,16 +13,17 @@ public interface IGameObject {
      * @return the name of the GameObject.
      */
     String name();
+
     /**
      * Returns the Transform of the GameObject.
      * @return the Transform of the GameObject.
      */
     ITransform transform();
+
     /**
      * Returns the Collider of the GameObject.
      * <p>The centroid will always lie at {@code this.transform().position()}.
      * @return the Collider of the GameObject.
      */
     ICollider collider();
-    // …
 }

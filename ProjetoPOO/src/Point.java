@@ -43,4 +43,13 @@ public class Point
     {
         return sqrt(pow(this.x - point.x, 2) + pow(this.y - point.y, 2));
     }
+
+    /**
+     * Response method to put the information of a point on a string with this format: (x,y)
+     * @return string that contains all info about a point
+     */
+    @Override
+    public String toString() {
+        return  "(" + x + "," + y + ")";
+    }
 }
