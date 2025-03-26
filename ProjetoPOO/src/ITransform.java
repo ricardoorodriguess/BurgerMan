@@ -1,6 +1,5 @@
 import java.awt.*;
 
-// TODO
 /**
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas

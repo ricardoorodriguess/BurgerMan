@@ -1,3 +1,11 @@
+/**
+ * ESCREVER
+ * This class represent a simple circle
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version March 26, 2025
+ */
 public class Transform implements ITransform
 {
     private Point position;
@@ -16,7 +24,10 @@ public class Transform implements ITransform
     {
         this.position = position;
         this.layer = layer;
-        if (angle >= 0 || angle <= 360) this.angle = angle; //mudar para rad caso se trabalhe em rad para evitar fazer conversoes
+
+        //pensar aqui se o ângulo é dado em sentido anti-horaio ou nao, se for, temos que somar 360 ate nao seja menor que 0
+        //e assim temos que mudar o if
+        if (angle >= 0 || angle <= 360) this.angle = angle; //stored in degrees, because method angle of interface return angle in degrees
         this.scale = scale;
     }
 
@@ -30,13 +41,14 @@ public class Transform implements ITransform
     @Override
     public void rotate(double dTheta)
     {
-
+        this.angle = (this.angle + dTheta) % 360;
+        if (this.angle < 0) this.angle += 360;
     }
 
     @Override
     public void scale(double dScale)
     {
-
+        this.scale += dScale;
     }
 
     @Override
@@ -50,4 +62,10 @@ public class Transform implements ITransform
 
     @Override
     public double scale() {return this.scale;}
+
+    @Override
+    public String toString()
+    {
+        return this.position.toString() + " " + this.layer + " " + this.angle + " " + this.scale;
+    }
 }

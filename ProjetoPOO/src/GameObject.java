@@ -14,7 +14,7 @@ public class GameObject implements IGameObject
     private ICollider collider;
 
     /**
-     * CONSTRUTOR
+     * Constructor to class GameObject, create an instance of GameObject (see description of class).
      * @param name
      * @param transform
      * @param collider
@@ -31,9 +31,7 @@ public class GameObject implements IGameObject
      * @return String with the name of the GameObject
      */
     @Override
-    public String name() {
-        return "";
-    }
+    public String name() { return name; }
 
     /**
      * Response method to obtain the transform associate with this GameObject
@@ -41,16 +39,12 @@ public class GameObject implements IGameObject
      * @return an instance of ITransform that represents this GameObject´s transform.
      */
     @Override
-    public ITransform transform() {
-        return null;
-    }
+    public ITransform transform() { return transform; }
 
     /**
      * Obtain the collider associate with this GameObject.
      * @return an instance of ICollider that represents this GameObject´s collider.
      */
     @Override
-    public ICollider collider() {
-        return null;
-    }
+    public ICollider collider() { return collider; }
 }
