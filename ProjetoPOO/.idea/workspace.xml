@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="ADDED constructor to GameObject and ADDED Transform class with NO doc">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="ADDED &quot;check&quot; to angle in Transform class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transform.java" afterDir="false" />
     </list>
@@ -94,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742912152551</updated>
       <workItem from="1742912153708" duration="4000" />
-      <workItem from="1742996720875" duration="7138000" />
+      <workItem from="1742996720875" duration="8248000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED Point CLASS">
       <option name="closed" value="true" />
@@ -128,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743009314417</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ADDED &quot;check&quot; to angle in Transform class">
+      <option name="closed" value="true" />
+      <created>1743009852056</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743009852056</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +158,7 @@
     <MESSAGE value="ADDED Point class methods with doc" />
     <MESSAGE value="ADDED toString in point and ADDED GameObject class with some doc." />
     <MESSAGE value="ADDED constructor to GameObject and ADDED Transform class with NO doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADDED constructor to GameObject and ADDED Transform class with NO doc" />
+    <MESSAGE value="ADDED &quot;check&quot; to angle in Transform class" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADDED &quot;check&quot; to angle in Transform class" />
   </component>
 </project>
