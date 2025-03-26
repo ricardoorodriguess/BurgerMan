@@ -1,29 +1,30 @@
 public class Transform implements ITransform
 {
-    private Point centroid;
+    private Point position;
     private int layer;
     private double angle;
     private double scale;
 
     /**
      * CONSTRUTOR
-     * @param centroid
+     * @param position
      * @param layer
      * @param angle
      * @param scale
      */
-    public Transform(Point centroid, int layer, double angle, double scale)
+    public Transform(Point position, int layer, double angle, double scale)
     {
-        this.centroid = centroid;
+        this.position = position;
         this.layer = layer;
-        if (angle >= 0 || angle <= 360) this.angle = angle; //mudar patra rad caso se trabalhe em rad para evitar fazer conversoes
+        if (angle >= 0 || angle <= 360) this.angle = angle; //mudar para rad caso se trabalhe em rad para evitar fazer conversoes
         this.scale = scale;
     }
 
     @Override
     public void move(Point dPos, int dlayer)
     {
-
+        this.position.move(dPos); //mover ponto consoante dPos
+        this.layer += dlayer; //aplicar o dlayer a layer
     }
 
     @Override
@@ -39,7 +40,7 @@ public class Transform implements ITransform
     }
 
     @Override
-    public Point position() { return centroid; }
+    public Point position() { return position; }
 
     @Override
     public int layer() { return this.layer; }
