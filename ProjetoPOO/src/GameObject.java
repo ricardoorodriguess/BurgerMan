@@ -14,6 +14,19 @@ public class GameObject implements IGameObject
     private ICollider collider;
 
     /**
+     * CONSTRUTOR
+     * @param name
+     * @param transform
+     * @param collider
+     */
+    public GameObject(String name, ITransform transform, ICollider collider)
+    {
+        this.name = name;
+        this.transform = transform;
+        this.collider = collider;
+    }
+
+    /**
      * Returns the name of the GameObject.
      * @return String with the name of the GameObject
      */
