@@ -1,6 +1,5 @@
 /**
- *
- * This class represent a simple circle
+ * This class represent the transform of a GameObject
  * It provides methods to manipulate and retrieve these transformation properties.
  * including position, layer, rotation, and scaling.
  * @author Ricardo Rodrigues

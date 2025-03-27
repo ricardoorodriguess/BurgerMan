@@ -1,7 +1,7 @@
 import static java.lang.Math.*;
 
 /**
- * This class represents a Point in 2D.
+ * This class represents a simple Point in 2D.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome

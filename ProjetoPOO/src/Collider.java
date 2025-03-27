@@ -1,6 +1,5 @@
-// TODO
-
 /**
+ * WRITE
  * This class represent the collider
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas

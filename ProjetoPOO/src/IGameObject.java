@@ -1,4 +1,3 @@
-// TODO
 /**
  * The {@code IGameObject} interface stores information about
  * an object's position, layer, angle and scale.
