@@ -49,7 +49,7 @@ public class Polygon extends Collider{
         double dy = b.getY() - a.getY();
         for (Point p : points) {
             if ((p.getX() - a.getX()) * dy == (p.getY() - a.getY()) * dx)
-                throw new IllegalArgumentException("Poligono:vi\n");;
+                throw new IllegalArgumentException("Poligono:vi\n");
         }
     }
 
