@@ -87,6 +87,6 @@ public class Circle extends Collider
     @Override
     public String toString()
     {
-        return center.toString() + radius;
+        return center.toString() + " " + radius;
     }
 }
