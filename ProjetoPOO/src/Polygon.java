@@ -22,14 +22,11 @@ public class Polygon extends Collider{
      * @param points
      */
     public Polygon(ArrayList<Point> points) {
-        this.points = new ArrayList<>(points);
+        this.points = points;
         this.segments = new ArrayList<>();
         // Criar segmentos conectando os pontos
-        for (int i = 0; i < points.size(); i++) {
-            Point current = points.get(i);
-            Point next = points.get((i + 1) % points.size());
-            segments.add(new LineSegment(current, next));
-        }
+        for (int i = 0; i < points.size(); i++)
+            segments.add(new LineSegment(points.get(i), points.get((i + 1) % points.size())));
         check(this.points);
     }
 
