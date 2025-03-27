@@ -1,4 +1,7 @@
 // TODO
+
+import java.awt.Point;
+
 /**
  * This class represent a simple circle
  * @author Ricardo Rodrigues
@@ -6,19 +9,21 @@
  * @author Tiago Tome
  * @version March 26, 2025
  */
-public class Circle extends Collider {
+public class Circle extends Collider
+{
+    private Point center;
     private double radius;
 
-    //TODO
     /**
      * Construtor of the class
      *
      */
-    public Circle(double radius) {
+    public Circle(Point center ,double radius)
+    {
+        this.center = center;
         this.radius = radius;
     }
 
-    //TODO
     /**
      * Simple method to check if collide with another collider
      * @return boolean depending on the situation

@@ -63,10 +63,7 @@ public class Transform implements ITransform
      * @param dScale The change in scaling factor to apply.
      */
     @Override
-    public void scale(double dScale)
-    {
-        this.scale += dScale;
-    }
+    public void scale(double dScale) { this.scale += dScale;}
 
     /**
      * Returns the current position of the transformation.
