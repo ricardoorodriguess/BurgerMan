@@ -37,6 +37,7 @@ public class Polygon extends Collider{
     /**
      * Checker to determine if the given polygon is valid
      * @param points (should be 3 or more and not collinear)
+     * @throws IllegalArgumentException if any violation is detected
      *
      */
     private static void check(ArrayList<Point> points) {
