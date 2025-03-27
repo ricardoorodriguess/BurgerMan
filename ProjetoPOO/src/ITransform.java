@@ -1,5 +1,6 @@
 /**
- * WRITE
+ * The {@code ITransform} interface stores information about
+ * an object's position, movement, rotation, layer, angle an so for.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome

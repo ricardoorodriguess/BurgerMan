@@ -14,7 +14,6 @@ public class Polygon extends Collider {
     private ArrayList<LineSegment> segments;
     private Point centroid;
 
-    //TODO REVIEW
     /**
      * Construtor of the class
      * @param points
@@ -28,7 +27,8 @@ public class Polygon extends Collider {
         for (int i = 0; i < points.size(); i++)
             segments.add(new LineSegment(points.get(i), points.get((i + 1) % points.size())));
         if (size == 3) {
-            if (new Line(points.getFirst(), points.get(1)).contains(points.getLast())) throw new IllegalArgumentException();
+            if (new Line(points.getFirst(), points.get(1)).contains(points.getLast()))
+                    throw new IllegalArgumentException();
         } else {
             for (int i = 0; i < points.size(); i++)
                 if (new Line(points.get(i), points.get((i + 1) % size)).contains(points.get((i + 2) % size)))
@@ -116,7 +116,6 @@ public class Polygon extends Collider {
         return false;
     }
 
-    //TODO REVIEW
     /**
      * Method to move a certain point
      * @param point
@@ -128,7 +127,6 @@ public class Polygon extends Collider {
         centroid.move(point);
     }
 
-    //TODO REVIEW
     /**
      * Method to calculate the centroid
      * @return centroid point
@@ -138,7 +136,6 @@ public class Polygon extends Collider {
         return centroid;
     }
 
-    //TODO REVIEW
     /**
      * Method to rotate a certain angle
      * @param angle
@@ -161,7 +158,6 @@ public class Polygon extends Collider {
         }
     }
 
-    //TODO REVIEW
     /**
      * Method to scale the polygon
      * @param scale
@@ -178,7 +174,6 @@ public class Polygon extends Collider {
         }
     }
 
-    //TODO REVIEW
     /**
      * Method to scale the polygon
      * @return string

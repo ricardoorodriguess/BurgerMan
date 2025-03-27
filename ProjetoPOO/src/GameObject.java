@@ -1,11 +1,11 @@
 /**
- * This class represents GameObjects in 2D. It implements the IGameObject and encapsulates the object´s name, its transform (layer,
- * position, angle, scale) and its collider.
+ * This class represents GameObjects in 2D.
+ * <p>It implements the IGameObject and encapsulates the object´s name,
+ * its transform (layer,position, angle, scale) and its collider.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version March 26, 2025
- * @inv //TODO ?
+ * @version March 27, 2025
  */
 public class GameObject implements IGameObject
 {

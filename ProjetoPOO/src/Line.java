@@ -1,6 +1,20 @@
+/**
+ * This class represents a simple Line in 2D.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version March 26, 2025
+ */
+
 public class Line {
     protected Point a, b;
 
+    /**
+     * Constructor that check if the given line is valid
+     * @param a
+     * @param b
+     * @throws IllegalArgumentException if the 2 points are equal
+     */
     public Line(Point a, Point b)
     {
         if (a.equals(b)) throw new IllegalArgumentException();
@@ -8,21 +22,41 @@ public class Line {
         this.b = b;
     }
 
+    /**
+     * Constructor but receveis a point and a line
+     * @param a
+     * @param l
+     * @throws IllegalArgumentException if the 2 points are equal
+     */
     public Line(Point a, Line l)
     {
         this(a, l.closest(a, false));
     }
 
+    /**
+     * Getter from the 1st point
+     * @return 1st point from the line
+     */
     public Point getA()
     {
         return a;
     }
 
+    /**
+     * Getter from the lasy«t point
+     * @return last point from the line
+     */
     public Point getB()
     {
         return b;
     }
 
+    /**
+     * Method to check if the point is in the given line
+     * @param point
+     * @return true if in fact is the given line
+     *         false otherwise
+     */
     public boolean contains(Point point) {
         return (point.getX() - a.getX()) * (b.getY() - a.getY()) == (point.getY() - a.getY()) * (b.getX() - a.getX());
     }

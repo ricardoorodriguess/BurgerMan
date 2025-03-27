@@ -7,7 +7,8 @@ public class Client
     {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
-        ITransform transform = new Transform(new Point(sc.nextDouble(), sc.nextDouble()), sc.nextInt(), sc.nextDouble(), sc.nextDouble());
+        ITransform transform = new Transform(new Point(sc.nextDouble(), sc.nextDouble()),
+                sc.nextInt(), sc.nextDouble(), sc.nextDouble());
         sc.nextLine(); //consumir a quebra de linha
 
         String colliderLine = sc.nextLine();

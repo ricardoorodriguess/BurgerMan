@@ -17,10 +17,10 @@ public class Circle extends Collider
      * type and radius of double type.
      * @param center the center of the circle;
      * @param radius the radius of the circle.
-     * @throws IllegalArgumentException if the provided radius is negative.
+     * @throws IllegalArgumentException if the provided radius is negative or null.
      */
     public Circle(Point center, double radius) {
-        if (radius < 0) throw new IllegalArgumentException("Circulo:vi\n");
+        if (radius <= 0) throw new IllegalArgumentException("Circulo:vi\n");
         this.center = center;
         this.radius = radius;
     }
@@ -34,7 +34,7 @@ public class Circle extends Collider
     }
 
     /**
-     * Simple method to check if collide with another collider
+     * Simple method to check if collides with another collider
      * @return boolean depending on the situation
      *         true if it happens
      *         false otherwise
@@ -52,7 +52,7 @@ public class Circle extends Collider
     }
 
     /**
-     * Method to move the cirlce
+     * Method to move the circle
      * @param point
      */
     @Override
@@ -75,7 +75,9 @@ public class Circle extends Collider
      * @param angle
      */
     @Override
-    public void rotate(double angle) {}
+    public void rotate(double angle) {
+        //Não necessita
+    }
 
     /**
      * Method to scale the circle

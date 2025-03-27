@@ -1,6 +1,6 @@
-// TODO
 /**
- *
+ * The {@code ICollider} interface stores information about
+ * an object's colision.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
