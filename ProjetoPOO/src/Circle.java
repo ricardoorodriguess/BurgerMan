@@ -1,5 +1,7 @@
 /**
- * This class represent a simple circle
+ * Implementation of a Circle object.
+ * <p>The circle can move, scale and rotate, despite not changing
+ * with this last operation.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -7,26 +9,25 @@
  */
 public class Circle extends Collider
 {
-    private Point center;
+    private final Point center;
     private double radius;
 
     /**
-     * Construtor of the class
-     * @param center
-     * @param radius
-     * @throws IllegalArgumentException if any violation is detected
-     *
+     * Constructs a circle object from a center variable of {@code Point}
+     * type and radius of double type.
+     * @param center the center of the circle;
+     * @param radius the radius of the circle.
+     * @throws IllegalArgumentException if the provided radius is negative.
      */
-    public Circle(Point center ,double radius)
-    {
+    public Circle(Point center, double radius) {
         if (radius < 0) throw new IllegalArgumentException("Circulo:vi\n");
         this.center = center;
         this.radius = radius;
     }
 
     /**
-     * Method that returns the radius
-     * @return radius
+     * Getter for the radius.
+     * @return the radius of the circle.
      */
     public double getRadius() {
         return radius;
@@ -39,8 +40,7 @@ public class Circle extends Collider
      *         false otherwise
      */
     @Override
-    boolean collides(Collider collider)
-    {
+    boolean collides(Collider collider) {
         if (collider instanceof Circle c) return radius + c.radius <= center.dist(c.center);
         if (collider instanceof Polygon p)
         {
@@ -56,14 +56,18 @@ public class Circle extends Collider
      * @param point
      */
     @Override
-    public void move(Point point) { center.move(point); }
+    public void move(Point point) {
+        center.move(point);
+    }
 
     /**
      * Method to get the centroid
      * @return centroid (the center of the circle)
      */
     @Override
-    public Point centroid() { return this.center; }
+    public Point centroid() {
+        return this.center;
+    }
 
 
     /**
@@ -71,14 +75,17 @@ public class Circle extends Collider
      * @param angle
      */
     @Override
-    public void rotate(double angle) { return; /*nada é feito*/ }
+    public void rotate(double angle) {}
 
     /**
      * Method to scale the circle
      * @param scale
      */
     @Override
-    public void scale(double scale) { this.radius *= scale; }
+    public void scale(double scale) {
+        if (scale <= 0) throw new IllegalArgumentException();
+        this.radius *= scale;
+    }
 
     /**
      * Method toString of the circle

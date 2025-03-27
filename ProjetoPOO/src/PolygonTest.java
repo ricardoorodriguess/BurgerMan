@@ -93,8 +93,8 @@ public class PolygonTest {
 
         polygon.move(delta);
 
-        assertEquals(2.0, polygon.getPoints().get(0).getX(), 1e-9);
-        assertEquals(3.0, polygon.getPoints().get(0).getY(), 1e-9);
+        assertEquals(2.0, polygon.getPoints().getFirst().getX(), 1e-9);
+        assertEquals(3.0, polygon.getPoints().getFirst().getY(), 1e-9);
     }
 
     @Test
@@ -110,14 +110,11 @@ public class PolygonTest {
     @Test
     void rotate_RotatesPointsCorrectly() {
         Polygon polygon = createSamplePolygon();
-        Point originalCentroid = polygon.centroid();
-
-        polygon.rotate(90); // Rotate 90 degrees
-
+        polygon.rotate(90); // Rotate 90 degrees counter-clockwise
         // Check if points were rotated around centroid
-        Point p0 = polygon.getPoints().get(0);
-        assertEquals(2.0, p0.getX(), 0.1); // Approximate due to floating point
-        assertEquals(-2.0, p0.getY(), 0.1);
+        Point p0 = polygon.getPoints().getFirst();
+        assertEquals(3.0, p0.getX(), 0.1); // Approximate due to floating point
+        assertEquals(-1.0, p0.getY(), 0.1);
     }
 
     @Test
@@ -127,9 +124,9 @@ public class PolygonTest {
 
         polygon.scale(2); // Double size
 
-        Point p0 = polygon.getPoints().get(0);
+        Point p0 = polygon.getPoints().getFirst();
         assertEquals(-2.0, p0.getX(), 1e-9); // (0-2)*2 + 2 = -2
-        assertEquals(-2.0, p0.getY(), 1e-9); // (0-1)*2 + 1 = -1
+        assertEquals(-1.0, p0.getY(), 1e-9); // (0-1)*2 + 1 = -1
     }
 
     @Test

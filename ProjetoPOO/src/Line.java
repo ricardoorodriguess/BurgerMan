@@ -23,6 +23,10 @@ public class Line {
         return b;
     }
 
+    public boolean contains(Point point) {
+        return (point.getX() - a.getX()) * (b.getY() - a.getY()) == (point.getY() - a.getY()) * (b.getX() - a.getX());
+    }
+
     protected double closestRatio(Point point, boolean interior)
     {
         double dx = b.getX() - a.getX(), dy = b.getY() - a.getY();

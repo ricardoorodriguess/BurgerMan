@@ -8,10 +8,11 @@ import java.util.ArrayList;
  * @version March 27, 2025
  */
 
-public class Polygon extends Collider{
+public class Polygon extends Collider {
 
     private ArrayList<Point> points;
     private ArrayList<LineSegment> segments;
+    private Point centroid;
 
     //TODO REVIEW
     /**
@@ -19,38 +20,34 @@ public class Polygon extends Collider{
      * @param points
      */
     public Polygon(ArrayList<Point> points) {
+        int size = points.size();
+        if (size < 3) throw new IllegalArgumentException();
         this.points = points;
         this.segments = new ArrayList<>();
         // Criar segmentos conectando os pontos
         for (int i = 0; i < points.size(); i++)
             segments.add(new LineSegment(points.get(i), points.get((i + 1) % points.size())));
-        check(this.points);
-    }
-
-    //TODO REVIEW
-    /**
-     * Checker to determine if the given polygon is valid
-     * @param points (should be 3 or more and not collinear)
-     * @throws IllegalArgumentException if any violation is detected
-     *
-     */
-    private static void check(ArrayList<Point> points) {
-        if (points.size() < 3)          throw new IllegalArgumentException("Poligono:vi\n");
-        //verificar se são colineares
-        Point a = points.get(0);
-        Point b = points.get(1);
-        Point c = points.get(2);
-        double area = (a.getX() * (b.getY() - c.getY())
-                + b.getX() * (c.getY() - a.getY())
-                + c.getX() * (a.getY() - b.getY()));
-        if (area == 0) throw new IllegalArgumentException("Poligono:vi\n");
-        // Verificar se todos os pontos estão na mesma linha
-        double dx = b.getX() - a.getX();
-        double dy = b.getY() - a.getY();
-        for (Point p : points) {
-            if ((p.getX() - a.getX()) * dy == (p.getY() - a.getY()) * dx)
-                throw new IllegalArgumentException("Poligono:vi\n");
+        if (size == 3) {
+            if (new Line(points.getFirst(), points.get(1)).contains(points.getLast())) throw new IllegalArgumentException();
+        } else {
+            for (int i = 0; i < points.size(); i++)
+                if (new Line(points.get(i), points.get((i + 1) % size)).contains(points.get((i + 2) % size)))
+                    throw new IllegalArgumentException();
         }
+        double area = 0, cx = 0, cy = 0;
+        int n = points.size();
+        for (int i = 0; i < n; i++) {
+            Point p1 = points.get(i);
+            Point p2 = points.get((i + 1) % n);
+            double cross = p1.getX() * p2.getY() - p2.getX() * p1.getY();
+            area += cross;
+            cx += (p1.getX() + p2.getX()) * cross;
+            cy += (p1.getY() + p2.getY()) * cross;
+        }
+        area /= 2;
+        cx /= (6 * area);
+        cy /= (6 * area);
+        centroid = new Point(cx, cy);
     }
 
     /**
@@ -104,6 +101,17 @@ public class Polygon extends Collider{
         if (collider instanceof Polygon polygon)
         {
             for (Point p : points) if (polygon.contains(p)) return true;
+            for (LineSegment s : segments) {
+                boolean b = false;
+                for (LineSegment ss : polygon.segments) {
+                    System.out.println(s + " / " + ss);
+                    if (s.intersects(ss)) {
+                        b = true;
+                        break;
+                    }
+                }
+                if (b) return true;
+            }
         }
         return false;
     }
@@ -117,6 +125,7 @@ public class Polygon extends Collider{
     public void move(Point point)
     {
         for (Point p : points)  p.move(point);
+        centroid.move(point);
     }
 
     //TODO REVIEW
@@ -126,20 +135,7 @@ public class Polygon extends Collider{
      */
     @Override
     public Point centroid() {
-        double area = 0, cx = 0, cy = 0;
-        int n = points.size();
-        for (int i = 0; i < n; i++) {
-            Point p1 = points.get(i);
-            Point p2 = points.get((i + 1) % n);
-            double cross = p1.getX() * p2.getY() - p2.getX() * p1.getY();
-            area += cross;
-            cx += (p1.getX() + p2.getX()) * cross;
-            cy += (p1.getY() + p2.getY()) * cross;
-        }
-        area /= 2;
-        cx /= (6 * area);
-        cy /= (6 * area);
-        return new Point(cx, cy);
+        return centroid;
     }
 
     //TODO REVIEW
@@ -172,14 +168,13 @@ public class Polygon extends Collider{
      */
     @Override
     public void scale(double scale) {
-        Point centroid = centroid();
+        if (scale <= 0) throw new IllegalArgumentException();
         double cx = centroid.getX();
         double cy = centroid.getY();
-
         for (Point p : points) {
-            double newX = cx + (p.getX() - cx) * scale;
-            double newY = cy + (p.getY() - cy) * scale;
-            p.move(new Point(newX - p.getX(), newY - p.getY()));
+            double dx = (p.getX() - cx) * (scale - 1);
+            double dy = (p.getY() - cy) * (scale - 1);
+            p.move(new Point(dx, dy));
         }
     }
 
