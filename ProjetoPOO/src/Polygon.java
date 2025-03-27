@@ -96,7 +96,6 @@ public class Polygon extends Collider{
         return true;
     }
 
-    //TODO REVIEW (ALGORITMO GERADO PELO DEEPSEEK E NÃO ESTOU MESMO A PERCEBER O COLLIDES)
     /**
      * Simple method to check if collide with another collider
      * @return boolean depending on the situation
@@ -104,11 +103,13 @@ public class Polygon extends Collider{
      *         false otherwise
      */
     @Override
-    boolean collides(Collider collider) {
+    boolean collides(Collider collider)
+    {
         if (collider instanceof Circle) return collider.collides(this);
-        if (collider instanceof Polygon p)
-            for (Point po : points)
-                if (p.contains(po)) return true;
+        if (collider instanceof Polygon polygon)
+        {
+            for (Point p : points) if (polygon.contains(p)) return true;
+        }
         return false;
     }
 
@@ -118,7 +119,8 @@ public class Polygon extends Collider{
      * @param point
      */
     @Override
-    public void move(Point point) {
+    public void move(Point point)
+    {
         for (Point p : points)  p.move(point);
     }
 
