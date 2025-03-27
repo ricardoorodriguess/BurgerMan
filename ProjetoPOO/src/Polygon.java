@@ -13,12 +13,14 @@ import java.util.ArrayList;
 public class Polygon extends Collider{
 
     private ArrayList<Point> points;
+    private ArrayList<LineSegment> segments;
     /**
      * Construtor of the class
      *
      */
     public Polygon() {
         this.points = new ArrayList<>();
+        this.segments = new ArrayList<>();
         //check(points);
     }
 
@@ -36,6 +38,28 @@ public class Polygon extends Collider{
 
     }
 
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
+    public ArrayList<LineSegment> getSegments() {
+        return segments;
+    }
+
+    public boolean contains(Point point) {
+        Line line;
+        for (LineSegment seg : segments) {
+            line = new Line(point, seg);
+            boolean b = false;
+            for (LineSegment other : segments) if (line.intersects(other)) {
+                b = true;
+                break;
+            }
+            if (!b) return false;
+        }
+        return true;
+    }
+
     /**
      * Simple method to check if collide with another collider
      * @return boolean depending on the situation
@@ -44,6 +68,8 @@ public class Polygon extends Collider{
      */
     @Override
     boolean collides(Collider collider) {
+        if (collider instanceof Circle) return collider.collides(this);
+        // TODO
         return false;
     }
 

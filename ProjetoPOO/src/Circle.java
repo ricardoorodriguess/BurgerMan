@@ -1,5 +1,7 @@
 // TODO
 
+import java.util.ArrayList;
+
 /**
  * This class represent a simple circle
  * @author Ricardo Rodrigues
@@ -22,6 +24,10 @@ public class Circle extends Collider
         this.radius = radius;
     }
 
+    public double getRadius() {
+        return radius;
+    }
+
     /**
      * Simple method to check if collide with another collider
      * @return boolean depending on the situation
@@ -30,6 +36,12 @@ public class Circle extends Collider
      */
     @Override
     boolean collides(Collider collider) {
+        if (collider instanceof Circle c) return radius + c.radius <= center.dist(c.center);
+        if (collider instanceof Polygon p) {
+            for (Point po : p.getPoints()) if (po.dist(center) <= radius) return true;
+            for (LineSegment seg : p.getSegments()) if (seg.intersects(this)) return true;
+            return p.contains(center);
+        }
         return false;
     }
 

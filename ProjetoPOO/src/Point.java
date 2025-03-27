@@ -12,6 +12,11 @@ public class Point
     private double x;
     private double y;
 
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
     /**
      * Returns the abscissa of the Point.
      * @return x -> abscissa of a Point
@@ -51,5 +56,10 @@ public class Point
     @Override
     public String toString() {
         return  "(" + x + "," + y + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Point p && x == p.x && y == p.y;
     }
 }
