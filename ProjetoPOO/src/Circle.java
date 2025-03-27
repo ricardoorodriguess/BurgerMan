@@ -54,7 +54,7 @@ public class Circle extends Collider
     public Point centroid() { return this.center; }
 
     @Override
-    public void rotate(double angle) { /*nada é feito, precisamos ter isto?*/ }
+    public void rotate(double angle) { return; /*nada é feito*/ }
 
     @Override
     public void scale(double scale) { this.radius *= scale; }

@@ -92,4 +92,10 @@ public class Polygon extends Collider{
     public void scale(double scale) {
 
     }
+
+    @Override
+    public String toString()
+    {
+        return "";
+    }
 }

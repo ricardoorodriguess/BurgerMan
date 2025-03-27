@@ -21,4 +21,6 @@ abstract class Collider implements ICollider
     abstract boolean collides(Collider collider);
 
     public abstract void move(Point point);
+
+    public abstract String toString();
 }
