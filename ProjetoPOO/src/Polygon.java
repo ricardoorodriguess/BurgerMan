@@ -105,53 +105,11 @@ public class Polygon extends Collider{
      */
     @Override
     boolean collides(Collider collider) {
-        if (collider instanceof Circle)     return collider.collides(this);
-        if (collider instanceof Polygon)    return satCollision(this, (Polygon) collider);
+        if (collider instanceof Circle) return collider.collides(this);
+        if (collider instanceof Polygon p)
+            for (Point po : points)
+                if (p.contains(po)) return true;
         return false;
-    }
-
-    private boolean satCollision(Polygon a, Polygon b) {
-        List<Point> axes = new ArrayList<>();
-        axes.addAll(getAxes(a));
-        axes.addAll(getAxes(b));
-
-        for (Point axis : axes) {
-            Projection projA = project(a, axis);
-            Projection projB = project(b, axis);
-            if (!projA.overlaps(projB)) return false;
-        }
-        return true;
-    }
-
-    private List<Point> getAxes(Polygon poly) {
-        List<Point> axes = new ArrayList<>();
-        for (LineSegment seg : poly.getSegments()) {
-            Point edge = new Point(seg.getB().getX() - seg.getA().getX(), seg.getB().getY() - seg.getA().getY());
-            Point normal = new Point(-edge.getY(), edge.getX());
-            axes.add(normalize(normal));
-        }
-        return axes;
-    }
-
-    private Point normalize(Point p) {
-        double length = Math.sqrt(p.getX() * p.getX() + p.getY() * p.getY());
-        return (length == 0) ? new Point(0, 0) : new Point(p.getX() / length, p.getY() / length);
-    }
-
-    private Projection project(Polygon poly, Point axis) {
-        double min = Double.MAX_VALUE, max = -Double.MAX_VALUE;
-        for (Point p : poly.getPoints()) {
-            double dot = p.getX() * axis.getX() + p.getY() * axis.getY();
-            min = Math.min(min, dot);
-            max = Math.max(max, dot);
-        }
-        return new Projection(min, max);
-    }
-
-    private static class Projection {
-        double min, max;
-        Projection(double min, double max) { this.min = min; this.max = max; }
-        boolean overlaps(Projection o) { return this.max >= o.min && o.max >= this.min; }
     }
 
     //TODO REVIEW
