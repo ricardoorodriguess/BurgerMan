@@ -58,8 +58,14 @@ public class Point
         return  "(" + x + "," + y + ")";
     }
 
+    /**
+     * Response method to see if one Point its equal to this.
+     * @param obj
+     * @return a boolean, if its equal return true, otherwise return false.
+     */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj)
+    {
         return obj instanceof Point p && x == p.x && y == p.y;
     }
 }

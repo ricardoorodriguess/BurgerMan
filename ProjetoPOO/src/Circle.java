@@ -35,9 +35,11 @@ public class Circle extends Collider
      *         false otherwise
      */
     @Override
-    boolean collides(Collider collider) {
+    boolean collides(Collider collider)
+    {
         if (collider instanceof Circle c) return radius + c.radius <= center.dist(c.center);
-        if (collider instanceof Polygon p) {
+        if (collider instanceof Polygon p)
+        {
             for (Point po : p.getPoints()) if (po.dist(center) <= radius) return true;
             for (LineSegment seg : p.getSegments()) if (seg.intersects(this)) return true;
             return p.contains(center);
@@ -56,4 +58,10 @@ public class Circle extends Collider
 
     @Override
     public void scale(double scale) { this.radius *= scale; }
+
+    @Override
+    public String toString()
+    {
+        return center.toString() + radius;
+    }
 }

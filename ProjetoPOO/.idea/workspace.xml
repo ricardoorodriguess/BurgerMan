@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LineSegment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ITransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ITransform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LineSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LineSegment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polygon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
