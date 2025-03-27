@@ -1,7 +1,5 @@
 // TODO
 
-import java.awt.Point;
-
 /**
  * This class represent a simple circle
  * @author Ricardo Rodrigues
@@ -33,5 +31,25 @@ public class Circle extends Collider
     @Override
     boolean collides(Collider collider) {
         return false;
+    }
+
+    @Override
+    public void move(Point point) {
+
+    }
+
+    @Override
+    public Point centroid() {
+        return null;
+    }
+
+    @Override
+    public void rotate(double angle) {
+
+    }
+
+    @Override
+    public void scale(double scale) {
+
     }
 }

@@ -46,4 +46,24 @@ public class Polygon extends Collider{
     boolean collides(Collider collider) {
         return false;
     }
+
+    @Override
+    public void move(Point point) {
+
+    }
+
+    @Override
+    public Point centroid() {
+        return null;
+    }
+
+    @Override
+    public void rotate(double angle) {
+
+    }
+
+    @Override
+    public void scale(double scale) {
+
+    }
 }

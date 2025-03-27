@@ -1,5 +1,3 @@
-import java.awt.*;
-
 /**
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas

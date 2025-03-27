@@ -1,7 +1,5 @@
 // TODO
 
-import java.awt.Point;
-
 /**
  * This class represent the collider
  * @author Ricardo Rodrigues
@@ -22,5 +20,5 @@ abstract class Collider implements ICollider
      */
     abstract boolean collides(Collider collider);
 
-    abstract void move(Point point);
+    public abstract void move(Point point);
 }
