@@ -43,7 +43,7 @@ public class Client
 
         GameObject gameObject = new GameObject(name, transform, collider);
 
-        System.out.println(gameObject);
+        System.out.println(gameObject.name());
         System.out.println(transform);
         System.out.println(collider);
     }

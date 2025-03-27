@@ -1,7 +1,4 @@
-// TODO REVIEW
-
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This class represent a polygon witch contains 3 or more points
