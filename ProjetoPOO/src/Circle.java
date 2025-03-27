@@ -34,22 +34,14 @@ public class Circle extends Collider
     }
 
     @Override
-    public void move(Point point) {
-
-    }
+    public void move(Point point) { center.move(point); }
 
     @Override
-    public Point centroid() {
-        return null;
-    }
+    public Point centroid() { return this.center; }
 
     @Override
-    public void rotate(double angle) {
-
-    }
+    public void rotate(double angle) { /*nada é feito, precisamos ter isto?*/ }
 
     @Override
-    public void scale(double scale) {
-
-    }
+    public void scale(double scale) { this.radius *= scale; }
 }
