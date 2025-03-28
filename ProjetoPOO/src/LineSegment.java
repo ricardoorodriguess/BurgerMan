@@ -1,12 +1,35 @@
+/**
+ * Implementation of a line segment.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version March 28, 2025
+ */
 public class LineSegment extends Line {
+    /**
+     * Constructs a line segment from two points.
+     * @param a the first point;
+     * @param b the second point.
+     * @throws IllegalArgumentException if the 2 points are equal.
+     */
     public LineSegment(Point a, Point b) {
         super(a, b);
     }
 
+    /**
+     * Returns the length of the segment.
+     * @return the length of the segment.
+     */
     public double length() {
         return a.dist(b);
     }
 
+    /**
+     * {@inheritDoc}
+     * @param point the provided point;
+     * @param interior if true, the ratio is clamped within 0 and 1.
+     * @return {@inheritDoc}
+     */
     @Override
     protected double closestRatio(Point point, boolean interior) {
         double k = super.closestRatio(point, interior);
@@ -16,6 +39,11 @@ public class LineSegment extends Line {
         return k;
     }
 
+    /**
+     * {@inheritDoc}
+     * @param segment the segment to check intersection for.
+     * @return {@inheritDoc}
+     */
     @Override
     public boolean intersects(LineSegment segment) {
         if (!super.intersects(segment)) return false;
