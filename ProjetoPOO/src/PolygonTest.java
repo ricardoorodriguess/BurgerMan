@@ -39,8 +39,8 @@ public class PolygonTest {
 
         assertEquals(expected.size(), polygon.getPoints().size());
         for (int i = 0; i < expected.size(); i++) {
-            assertEquals(expected.get(i).getX(), polygon.getPoints().get(i).getX(), 1e-9);
-            assertEquals(expected.get(i).getY(), polygon.getPoints().get(i).getY(), 1e-9);
+            assertEquals(expected.get(i).getX(), polygon.getPoints().get(i).getX());
+            assertEquals(expected.get(i).getY(), polygon.getPoints().get(i).getY());
         }
     }
 
@@ -51,8 +51,8 @@ public class PolygonTest {
 
         assertEquals(3, segments.size());
         // Verify first segment
-        assertEquals(0.0, segments.get(0).getA().getX(), 1e-9);
-        assertEquals(4.0, segments.get(0).getB().getX(), 1e-9);
+        assertEquals(0.0, segments.get(0).getA().getX());
+        assertEquals(4.0, segments.get(0).getB().getX());
     }
 
     @Test
@@ -93,8 +93,8 @@ public class PolygonTest {
 
         polygon.move(delta);
 
-        assertEquals(2.0, polygon.getPoints().getFirst().getX(), 1e-9);
-        assertEquals(3.0, polygon.getPoints().getFirst().getY(), 1e-9);
+        assertEquals(2.0, polygon.getPoints().getFirst().getX());
+        assertEquals(3.0, polygon.getPoints().getFirst().getY());
     }
 
     @Test
@@ -103,8 +103,8 @@ public class PolygonTest {
         Point centroid = polygon.centroid();
 
         // Expected centroid for sample triangle
-        assertEquals(2.0, centroid.getX(), 1e-9);
-        assertEquals(1.0, centroid.getY(), 1e-9);
+        assertEquals(2.0, centroid.getX());
+        assertEquals(1.0, centroid.getY());
     }
 
     @Test
@@ -113,8 +113,8 @@ public class PolygonTest {
         polygon.rotate(90); // Rotate 90 degrees counter-clockwise
         // Check if points were rotated around centroid
         Point p0 = polygon.getPoints().getFirst();
-        assertEquals(3.0, p0.getX(), 0.1); // Approximate due to floating point
-        assertEquals(-1.0, p0.getY(), 0.1);
+        assertEquals(3.0, p0.getX()); // Approximate due to floating point
+        assertEquals(-1.0, p0.getY());
     }
 
     @Test
@@ -125,8 +125,8 @@ public class PolygonTest {
         polygon.scale(2); // Double size
 
         Point p0 = polygon.getPoints().getFirst();
-        assertEquals(-2.0, p0.getX(), 1e-9); // (0-2)*2 + 2 = -2
-        assertEquals(-1.0, p0.getY(), 1e-9); // (0-1)*2 + 1 = -1
+        assertEquals(-2.0, p0.getX()); // (0-2)*2 + 2 = -2
+        assertEquals(-1.0, p0.getY()); // (0-1)*2 + 1 = -1
 
         assertEquals(centroid.getX(), polygon.centroid().getX());
         assertEquals(centroid.getY(), polygon.centroid().getY());

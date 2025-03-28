@@ -40,6 +40,11 @@ public class Client
         }
 
         GameObject gameObject = new GameObject(name, transform, collider);
+        Point delta = new Point(transform.position().getX() - collider.centroid().getX(), transform.position().getY() - collider.centroid().getY());
+
+        collider.move(delta);
+        collider.rotate(transform.angle());
+        collider.scale(transform.scale());
 
         System.out.println(gameObject.name());
         System.out.println(transform);

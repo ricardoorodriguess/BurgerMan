@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="fixed polygon-polygon collision">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColliderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColliderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PolygonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +33,12 @@
     &quot;assignee&quot;: &quot;TiagoTome1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ricardoorodriguess/Lab05-Projeto.git",
-    "accountId": "c35d2412-1480-4f0f-bf5b-e9629f629775"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
+    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -50,18 +53,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Client.executor": "Run",
+    "Application.main.executor": "Run",
     "JUnit.CircleTest.centroid.executor": "Run",
     "JUnit.CircleTest.collides.executor": "Run",
     "JUnit.CircleTest.executor": "Run",
     "JUnit.CircleTest.scale.executor": "Run",
     "JUnit.CircleTest.testToString.executor": "Run",
     "JUnit.ColliderTest.executor": "Run",
+    "JUnit.ColliderTest.move.executor": "Run",
     "JUnit.GameObjectTest.executor": "Run",
     "JUnit.LineTest.executor": "Run",
     "JUnit.PointTest.executor": "Run",
+    "JUnit.PolygonTest.centroid_CalculatesCorrectCenter.executor": "Run",
     "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
     "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
+    "JUnit.PolygonTest.move_TranslatesAllPoints.executor": "Run",
+    "JUnit.PolygonTest.scale_ScalesPointsCorrectly.executor": "Run",
     "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
     "JUnit.TransformTest.executor": "Run",
     "JUnit.TransformTest.layer.executor": "Run",
@@ -95,30 +103,48 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PolygonTest.scale_ScalesPointsCorrectly">
-    <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ColliderTest">
+    <configuration name="main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="ProjetoPOO" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColliderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CircleTest" />
+      <option name="MAIN_CLASS_NAME" value="ColliderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LineTest" />
+      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PolygonTest.centroid_CalculatesCorrectCenter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PointTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
+      <option name="METHOD_NAME" value="centroid_CalculatesCorrectCenter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolygonTest.move_TranslatesAllPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
+      <option name="METHOD_NAME" value="move_TranslatesAllPoints" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,22 +159,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransformTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TransformTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="JUnit.ColliderTest" />
+      <item itemvalue="JUnit.PolygonTest" />
+      <item itemvalue="JUnit.PolygonTest.centroid_CalculatesCorrectCenter" />
+      <item itemvalue="JUnit.PolygonTest.move_TranslatesAllPoints" />
+      <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ColliderTest" />
+        <item itemvalue="JUnit.PolygonTest" />
         <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
-        <item itemvalue="JUnit.LineTest" />
-        <item itemvalue="JUnit.TransformTest" />
-        <item itemvalue="JUnit.PointTest" />
-        <item itemvalue="JUnit.CircleTest" />
+        <item itemvalue="JUnit.PolygonTest.centroid_CalculatesCorrectCenter" />
+        <item itemvalue="JUnit.PolygonTest.move_TranslatesAllPoints" />
       </list>
     </recent_temporary>
   </component>
@@ -227,15 +252,7 @@
       <option name="project" value="LOCAL" />
       <updated>1743176959771</updated>
     </task>
-    <task id="LOCAL-00009" summary="fixed polygon-polygon collision">
-      <option name="closed" value="true" />
-      <created>1743178597458</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1743178597458</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

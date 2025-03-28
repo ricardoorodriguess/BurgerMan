@@ -1,0 +1,196 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b1738391-2c07-4536-9877-ac91f9e728bc\" name=\"Changes\" comment=\"fixed polygon-polygon collision\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/LineTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Line.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Line.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_AUTO_UPDATE\" value=\"true\" />\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;TiagoTome1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/ricardoorodriguess/Lab05-Projeto.git\",\r\n    \"accountId\": \"c35d2412-1480-4f0f-bf5b-e9629f629775\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2uoPqydXI35WbTBSEwSdx8lk4ZA\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Client.executor\": \"Run\",\r\n    \"JUnit.CircleTest.centroid.executor\": \"Run\",\r\n    \"JUnit.CircleTest.collides.executor\": \"Run\",\r\n    \"JUnit.CircleTest.executor\": \"Run\",\r\n    \"JUnit.CircleTest.scale.executor\": \"Run\",\r\n    \"JUnit.CircleTest.testToString.executor\": \"Run\",\r\n    \"JUnit.ColliderTest.executor\": \"Run\",\r\n    \"JUnit.GameObjectTest.executor\": \"Run\",\r\n    \"JUnit.LineTest.executor\": \"Run\",\r\n    \"JUnit.PointTest.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.toString_FormatsCorrectly.executor\": \"Run\",\r\n    \"JUnit.TransformTest.executor\": \"Run\",\r\n    \"JUnit.TransformTest.layer.executor\": \"Run\",\r\n    \"JUnit.TransformTest.move.executor\": \"Run\",\r\n    \"JUnit.TransformTest.position.executor\": \"Run\",\r\n    \"JUnit.TransformTest.rotate.executor\": \"Run\",\r\n    \"JUnit.TransformTest.scale.executor\": \"Run\",\r\n    \"JUnit.TransformTest.testScale.executor\": \"Run\",\r\n    \"JUnit.TransformTest.testToString.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"create.test.in.the.same.root\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"preferences.keymap\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.LineTest\">\r\n    <configuration name=\"CircleTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CircleTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"GameObjectTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"GameObjectTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LineTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"LineTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PointTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"PointTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TransformTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TransformTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.LineTest\" />\r\n        <item itemvalue=\"JUnit.TransformTest\" />\r\n        <item itemvalue=\"JUnit.PointTest\" />\r\n        <item itemvalue=\"JUnit.CircleTest\" />\r\n        <item itemvalue=\"JUnit.GameObjectTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b1738391-2c07-4536-9877-ac91f9e728bc\" name=\"Changes\" comment=\"\" />\r\n      <created>1742912152551</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1742912152551</updated>\r\n      <workItem from=\"1742912153708\" duration=\"4000\" />\r\n      <workItem from=\"1742996720875\" duration=\"532000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"implementation of circle toString method, doc for equals at Point\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743088867485</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743088867485</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added toString to abstract class and polygon too\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743089251312</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743089251312</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Implementation of client class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743099169877</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743099169877</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"delete DEEPSEEK commet\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743100253908</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743100253908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743100918138</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743100918138</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743172084510</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743172084510</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743172156479</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743172156479</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fixed polygon-polygon collision\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743176959771</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743176959771</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"implementation of circle toString method, doc for equals at Point\" />\r\n    <MESSAGE value=\"Added toString to abstract class and polygon too\" />\r\n    <MESSAGE value=\"Implementation of client class\" />\r\n    <MESSAGE value=\"delete DEEPSEEK commet\" />\r\n    <MESSAGE value=\"add a space in toString at circle\" />\r\n    <MESSAGE value=\"fixed polygon-polygon collision\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fixed polygon-polygon collision\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 083cb133a5476b3f7134a0196b891a450f927885)
++++ b/.idea/workspace.xml	(date 1743179061486)
+@@ -5,9 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="fixed polygon-polygon collision">
+-      <change afterPath="$PROJECT_DIR$/src/LineTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -32,12 +30,12 @@
+     &quot;assignee&quot;: &quot;TiagoTome1&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/ricardoorodriguess/Lab05-Projeto.git",
+-    "accountId": "c35d2412-1480-4f0f-bf5b-e9629f629775"
+-  }
+-}]]></component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
++    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
++  }
++}</component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 5
+ }</component>
+@@ -49,46 +47,46 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.Client.executor": "Run",
+-    "JUnit.CircleTest.centroid.executor": "Run",
+-    "JUnit.CircleTest.collides.executor": "Run",
+-    "JUnit.CircleTest.executor": "Run",
+-    "JUnit.CircleTest.scale.executor": "Run",
+-    "JUnit.CircleTest.testToString.executor": "Run",
+-    "JUnit.ColliderTest.executor": "Run",
+-    "JUnit.GameObjectTest.executor": "Run",
+-    "JUnit.LineTest.executor": "Run",
+-    "JUnit.PointTest.executor": "Run",
+-    "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
+-    "JUnit.PolygonTest.executor": "Run",
+-    "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
+-    "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
+-    "JUnit.TransformTest.executor": "Run",
+-    "JUnit.TransformTest.layer.executor": "Run",
+-    "JUnit.TransformTest.move.executor": "Run",
+-    "JUnit.TransformTest.position.executor": "Run",
+-    "JUnit.TransformTest.rotate.executor": "Run",
+-    "JUnit.TransformTest.scale.executor": "Run",
+-    "JUnit.TransformTest.testScale.executor": "Run",
+-    "JUnit.TransformTest.testToString.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+-    "create.test.in.the.same.root": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "preferences.keymap",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.CircleTest.centroid.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.CircleTest.collides.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.CircleTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.CircleTest.scale.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.CircleTest.testToString.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.ColliderTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.GameObjectTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.LineTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.PolygonTest.toString_FormatsCorrectly.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.layer.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.move.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.position.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.rotate.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.scale.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.testScale.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.TransformTest.testToString.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
++    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CreateTestDialog.Recents.Supers">
+       <recent name="" />
+@@ -97,38 +95,36 @@
+       <recent name="" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.LineTest">
+-    <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="JUnit.PolygonTest">
++    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Client" />
+       <module name="ProjetoPOO" />
+-      <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="CircleTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="GameObjectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="LineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="GameObjectTest" />
++      <option name="MAIN_CLASS_NAME" value="LineTest" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="LineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="LineTest" />
++      <option name="MAIN_CLASS_NAME" value="PointTest" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <option name="PACKAGE_NAME" value="" />
+-      <option name="MAIN_CLASS_NAME" value="PointTest" />
++      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -143,13 +139,20 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <list>
++      <item itemvalue="Application.Client" />
++      <item itemvalue="JUnit.LineTest" />
++      <item itemvalue="JUnit.PolygonTest" />
++      <item itemvalue="JUnit.TransformTest" />
++      <item itemvalue="JUnit.PointTest" />
++    </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.PolygonTest" />
+         <item itemvalue="JUnit.LineTest" />
++        <item itemvalue="Application.Client" />
+         <item itemvalue="JUnit.TransformTest" />
+         <item itemvalue="JUnit.PointTest" />
+-        <item itemvalue="JUnit.CircleTest" />
+-        <item itemvalue="JUnit.GameObjectTest" />
+       </list>
+     </recent_temporary>
+   </component>

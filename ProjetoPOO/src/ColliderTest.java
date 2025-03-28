@@ -14,9 +14,10 @@ class ColliderTest {
 
     private Polygon createSamplePolygon2() {
         ArrayList<Point> points = new ArrayList<>();
-        points.add(new Point(0, 0));
-        points.add(new Point(4, 0));
-        points.add(new Point(2, 3));
+        points.add(new Point(2, 2));
+        points.add(new Point(2, 6));
+        points.add(new Point(4, 6));
+        points.add(new Point(4, 2));
         return new Polygon(points);
     }
 
@@ -55,11 +56,19 @@ class ColliderTest {
 
 
     @Test
-    void move() {
-        Polygon p1 = createSamplePolygon();
-        Circle c2 = createSampleCircle2();
-        //assertEquals(c2, p1.move(c2));
-
+    void moveTest()
+    {
+        Polygon p = createSamplePolygon2();
+        Point point = new Point(1, 1);
+        p.move(point);
+        assertEquals(3, p.getPoints().get(0).getX());
+        assertEquals(3, p.getPoints().get(0).getY());
+        assertEquals(3, p.getPoints().get(1).getX());
+        assertEquals(7, p.getPoints().get(1).getY());
+        assertEquals(5, p.getPoints().get(2).getX());
+        assertEquals(7, p.getPoints().get(2).getY());
+        assertEquals(5, p.getPoints().get(3).getX());
+        assertEquals(3, p.getPoints().get(3).getY());
     }
 
     @Test
