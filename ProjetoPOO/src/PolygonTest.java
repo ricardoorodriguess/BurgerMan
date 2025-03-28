@@ -120,13 +120,16 @@ public class PolygonTest {
     @Test
     void scale_ScalesPointsCorrectly() {
         Polygon polygon = createSamplePolygon();
-        Point centroid = polygon.centroid();
+        Point centroid = new Point(polygon.centroid().getX(), polygon.centroid().getY());
 
         polygon.scale(2); // Double size
 
         Point p0 = polygon.getPoints().getFirst();
         assertEquals(-2.0, p0.getX(), 1e-9); // (0-2)*2 + 2 = -2
         assertEquals(-1.0, p0.getY(), 1e-9); // (0-1)*2 + 1 = -1
+
+        assertEquals(centroid.getX(), polygon.centroid().getX());
+        assertEquals(centroid.getY(), polygon.centroid().getY());
     }
 
     @Test

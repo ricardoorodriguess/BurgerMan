@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="fixed polygon-polygon collision">
-      <change afterPath="$PROJECT_DIR$/src/LineTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,20 +95,11 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LineTest">
+  <component name="RunManager" selected="JUnit.PolygonTest.scale_ScalesPointsCorrectly">
     <configuration name="CircleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CircleTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameObjectTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GameObjectTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,6 +123,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PolygonTest.scale_ScalesPointsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
+      <option name="METHOD_NAME" value="scale_ScalesPointsCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TransformTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
@@ -145,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
         <item itemvalue="JUnit.LineTest" />
         <item itemvalue="JUnit.TransformTest" />
         <item itemvalue="JUnit.PointTest" />
         <item itemvalue="JUnit.CircleTest" />
-        <item itemvalue="JUnit.GameObjectTest" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743176959771</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed polygon-polygon collision">
+      <option name="closed" value="true" />
+      <created>1743178597458</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743178597458</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
