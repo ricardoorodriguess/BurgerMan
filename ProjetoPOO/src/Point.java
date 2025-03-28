@@ -1,4 +1,5 @@
 import java.util.Locale;
+import java.util.Objects;
 
 import static java.lang.Math.*;
 
@@ -69,5 +70,14 @@ public class Point
     public boolean equals(Object obj)
     {
         return obj instanceof Point p && x == p.x && y == p.y;
+    }
+
+    /**
+     * This method is necessary to pass in mooshak.
+     * @return hashcode of a Point based on its coordinates(x,y).
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
     }
 }
