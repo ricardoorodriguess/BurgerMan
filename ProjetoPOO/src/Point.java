@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 import static java.lang.Math.*;
 
 /**
@@ -55,7 +57,7 @@ public class Point
      */
     @Override
     public String toString() {
-        return  "(" + (int)x + "," + (int)y + ")";
+        return  "(" + String.format(Locale.US,"%.2f", x) + "," + String.format(Locale.US,"%.2f", y) + ")";
     }
 
     /**

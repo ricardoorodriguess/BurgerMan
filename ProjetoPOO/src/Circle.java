@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /**
  * Implementation of a Circle object.
  * <p>The circle can move, scale and rotate, despite not changing
@@ -41,7 +43,7 @@ public class Circle extends Collider
      */
     @Override
     boolean collides(Collider collider) {
-        if (collider instanceof Circle c) return radius + c.radius <= center.dist(c.center);
+        if (collider instanceof Circle c) return center.dist(c.center) <= radius + c.radius;
         if (collider instanceof Polygon p)
         {
             for (Point po : p.getPoints()) if (po.dist(center) <= radius) return true;
@@ -96,6 +98,6 @@ public class Circle extends Collider
     @Override
     public String toString()
     {
-        return center.toString() + " " + radius;
+        return center.toString() + " " + String.format(Locale.US,"%.2f", radius);
     }
 }

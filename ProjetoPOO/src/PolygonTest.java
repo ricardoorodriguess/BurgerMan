@@ -132,7 +132,7 @@ public class PolygonTest {
     @Test
     void toString_FormatsCorrectly() {
         Polygon polygon = createSamplePolygon();
-        String expected = "(0,0) (4,0) (2,3)";
+        String expected = "(0.00,0.00) (4.00,0.00) (2.00,3.00)";
         assertEquals(expected, polygon.toString());
     }
 }

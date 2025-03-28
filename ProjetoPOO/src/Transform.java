@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /**
  * This class represent the transform of a GameObject
  * It provides methods to manipulate and retrieve these transformation properties.
@@ -100,6 +102,6 @@ public class Transform implements ITransform
     @Override
     public String toString()
     {
-        return this.position.toString() + " " + this.layer + " " + this.angle + " " + this.scale;
+        return this.position.toString() + " " + this.layer + " " + String.format(Locale.US, "%.2f", this.angle) + " " + String.format(Locale.US, "%.2f", this.scale);
     }
 }
