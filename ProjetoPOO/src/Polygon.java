@@ -18,25 +18,33 @@ public class Polygon extends Collider {
      * Construtor of the class
      * @param points
      */
-    public Polygon(ArrayList<Point> points) {
+    public Polygon(ArrayList<Point> points)
+    {
         int size = points.size();
         if (size < 3) throw new IllegalArgumentException();
         this.points = points;
         this.segments = new ArrayList<>();
+
         // Criar segmentos conectando os pontos
-        for (int i = 0; i < points.size(); i++)
+        for (int i = 0; i < points.size(); i++) {
             segments.add(new LineSegment(points.get(i), points.get((i + 1) % points.size())));
-        if (size == 3) {
-            if (new Line(points.getFirst(), points.get(1)).contains(points.getLast()))
-                    throw new IllegalArgumentException();
-        } else {
-            for (int i = 0; i < points.size(); i++)
-                if (new Line(points.get(i), points.get((i + 1) % size)).contains(points.get((i + 2) % size)))
-                    throw new IllegalArgumentException();
         }
+        if (size == 3)
+        {
+            if (new Line(points.getFirst(), points.get(1)).contains(points.getLast())) throw new IllegalArgumentException();
+        }
+        else
+        {
+            for (int i = 0; i < points.size(); i++)
+            {
+                if (new Line(points.get(i), points.get((i + 1) % size)).contains(points.get((i + 2) % size))) throw new IllegalArgumentException();
+            }
+        }
+
         double area = 0, cx = 0, cy = 0;
         int n = points.size();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             Point p1 = points.get(i);
             Point p2 = points.get((i + 1) % n);
             double cross = p1.getX() * p2.getY() - p2.getX() * p1.getY();
@@ -44,6 +52,7 @@ public class Polygon extends Collider {
             cx += (p1.getX() + p2.getX()) * cross;
             cy += (p1.getY() + p2.getY()) * cross;
         }
+
         area /= 2;
         cx /= (6 * area);
         cy /= (6 * area);

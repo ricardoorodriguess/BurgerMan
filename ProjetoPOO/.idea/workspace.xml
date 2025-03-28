@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="added tests to GameObject and Point">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="correction of testMove method in PointTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polygon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,7 @@
     "JUnit.PointTest.executor": "Run",
     "JUnit.PointTest.getX.executor": "Run",
     "JUnit.PointTest.getY.executor": "Run",
+    "JUnit.PointTest.moveTest.executor": "Run",
     "JUnit.PointTest.testEqualsTest.executor": "Run",
     "JUnit.PointTest.testInvalidEquals.executor": "Run",
     "JUnit.PointTest.testToString.executor": "Run",
@@ -179,7 +180,7 @@
       <updated>1742912152551</updated>
       <workItem from="1742912153708" duration="4000" />
       <workItem from="1742996720875" duration="532000" />
-      <workItem from="1743169313146" duration="1787000" />
+      <workItem from="1743169313146" duration="1957000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -237,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743171017518</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="correction of testMove method in PointTest">
+      <option name="closed" value="true" />
+      <created>1743171143693</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743171143693</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +271,7 @@
     <MESSAGE value="add a space in toString at circle" />
     <MESSAGE value="Correction in double toString numbers from no decimal places to 2 decimal places (Point, Transform, Polygon, Circle). Test to cricle and Transform done." />
     <MESSAGE value="added tests to GameObject and Point" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests to GameObject and Point" />
+    <MESSAGE value="correction of testMove method in PointTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction of testMove method in PointTest" />
   </component>
 </project>
