@@ -42,26 +42,29 @@ public class Client {
             if (line.isEmpty()) break;
             String[] parts = line.split(" ");
 
-            if (parts[0].equals("move")) {
-                double dx = Double.parseDouble(parts[1]);
-                double dy = Double.parseDouble(parts[2]);
-                Point delta2 = new Point(dx, dy);
-                int dlayer = Integer.parseInt(parts[3]);
-                transform.move(delta2, dlayer);
-                collider.move(delta2);
-            } else if (parts[0].equals("rotate")) {
-                double angle = Double.parseDouble(parts[1]);
-                transform.rotate(angle);
-                collider.rotate(angle);
-            } else if (parts[0].equals("scale")) {
-                double dScale = Double.parseDouble(parts[1]);
-                double previousScale = transform.scale();
-                transform.scale(dScale);
-                double newScale = transform.scale();
-                double scaleFactor = newScale / previousScale;
-                collider.scale(scaleFactor);
-            } else {
-                throw new IllegalArgumentException("INVALID TRANSFORMATION COMMAND\n");
+            switch (parts[0]) {
+                case "move" -> {
+                    double dx = Double.parseDouble(parts[1]);
+                    double dy = Double.parseDouble(parts[2]);
+                    Point delta2 = new Point(dx, dy);
+                    int dlayer = Integer.parseInt(parts[3]);
+                    transform.move(delta2, dlayer);
+                    collider.move(delta2);
+                }
+                case "rotate" -> {
+                    double angle = Double.parseDouble(parts[1]);
+                    transform.rotate(angle);
+                    collider.rotate(angle);
+                }
+                case "scale" -> {
+                    double dScale = Double.parseDouble(parts[1]);
+                    double previousScale = transform.scale();
+                    transform.scale(dScale);
+                    double newScale = transform.scale();
+                    double scaleFactor = newScale / previousScale;
+                    collider.scale(scaleFactor);
+                }
+                default -> throw new IllegalArgumentException("INVALID TRANSFORMATION COMMAND\n");
             }
         }
 
