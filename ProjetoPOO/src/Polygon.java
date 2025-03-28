@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import static java.lang.Math.*;
 
 /**
  * This class represent a polygon witch contains 3 or more points
@@ -157,9 +158,9 @@ public class Polygon extends Collider {
         Point centroid = centroid();
         double cx = centroid.getX();
         double cy = centroid.getY();
-        double radians = Math.toRadians(angle);
-        double cos = Math.cos(radians);
-        double sin = Math.sin(radians);
+        double radians = toRadians(angle);
+        double cos = cos(radians);
+        double sin = sin(radians);
 
         for (Point p : points) {
             double xOffset = p.getX() - cx;
