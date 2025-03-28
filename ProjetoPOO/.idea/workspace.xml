@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="correction of main and moveTest of ColliderTest">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="fixed polygon-polygon collision">
+      <change afterPath="$PROJECT_DIR$/src/LineSegmentTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +34,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
-    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
+    &quot;accountId&quot;: &quot;e53f360c-dda9-4864-915c-3f101b87f155&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -51,23 +51,25 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Client.executor": "Run",
-    "Application.main.executor": "Run",
     "JUnit.CircleTest.centroid.executor": "Run",
     "JUnit.CircleTest.collides.executor": "Run",
     "JUnit.CircleTest.executor": "Run",
     "JUnit.CircleTest.scale.executor": "Run",
     "JUnit.CircleTest.testToString.executor": "Run",
     "JUnit.ColliderTest.executor": "Run",
-    "JUnit.ColliderTest.move.executor": "Run",
     "JUnit.GameObjectTest.executor": "Run",
+    "JUnit.LineSegmentTest.closestRatio.executor": "Run",
+    "JUnit.LineSegmentTest.contains.executor": "Run",
+    "JUnit.LineSegmentTest.executor": "Run",
+    "JUnit.LineSegmentTest.intersects.executor": "Run",
+    "JUnit.LineSegmentTest.length.executor": "Run",
+    "JUnit.LineSegmentTest.testInvalidLine.executor": "Run",
+    "JUnit.LineSegmentTest.testInvalidLineSegment.executor": "Run",
     "JUnit.LineTest.executor": "Run",
     "JUnit.PointTest.executor": "Run",
-    "JUnit.PolygonTest.centroid_CalculatesCorrectCenter.executor": "Run",
     "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
     "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
-    "JUnit.PolygonTest.move_TranslatesAllPoints.executor": "Run",
-    "JUnit.PolygonTest.scale_ScalesPointsCorrectly.executor": "Run",
     "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
     "JUnit.TransformTest.executor": "Run",
     "JUnit.TransformTest.layer.executor": "Run",
@@ -101,79 +103,73 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ColliderTest">
-    <configuration name="main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Client" />
-      <module name="ProjetoPOO" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ColliderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LineSegmentTest">
+    <configuration name="LineSegmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ColliderTest" />
+      <option name="MAIN_CLASS_NAME" value="LineSegmentTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LineSegmentTest.closestRatio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PolygonTest.centroid_CalculatesCorrectCenter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
-      <option name="METHOD_NAME" value="centroid_CalculatesCorrectCenter" />
+      <option name="MAIN_CLASS_NAME" value="LineSegmentTest" />
+      <option name="METHOD_NAME" value="closestRatio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolygonTest.move_TranslatesAllPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LineSegmentTest.contains" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
-      <option name="METHOD_NAME" value="move_TranslatesAllPoints" />
+      <option name="MAIN_CLASS_NAME" value="LineSegmentTest" />
+      <option name="METHOD_NAME" value="contains" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolygonTest.scale_ScalesPointsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LineSegmentTest.length" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
-      <option name="METHOD_NAME" value="scale_ScalesPointsCorrectly" />
+      <option name="MAIN_CLASS_NAME" value="LineSegmentTest" />
+      <option name="METHOD_NAME" value="length" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.main" />
-      <item itemvalue="JUnit.ColliderTest" />
-      <item itemvalue="JUnit.PolygonTest" />
-      <item itemvalue="JUnit.PolygonTest.centroid_CalculatesCorrectCenter" />
-      <item itemvalue="JUnit.PolygonTest.move_TranslatesAllPoints" />
-      <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
-    </list>
+    <configuration name="LineSegmentTest.testInvalidLineSegment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LineSegmentTest" />
+      <option name="METHOD_NAME" value="testInvalidLineSegment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ColliderTest" />
-        <item itemvalue="JUnit.PolygonTest" />
-        <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
-        <item itemvalue="JUnit.PolygonTest.centroid_CalculatesCorrectCenter" />
-        <item itemvalue="JUnit.PolygonTest.move_TranslatesAllPoints" />
+        <item itemvalue="JUnit.LineSegmentTest" />
+        <item itemvalue="JUnit.LineSegmentTest.closestRatio" />
+        <item itemvalue="JUnit.LineSegmentTest.contains" />
+        <item itemvalue="JUnit.LineSegmentTest.testInvalidLineSegment" />
+        <item itemvalue="JUnit.LineSegmentTest.length" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -185,6 +181,8 @@
       <updated>1742912152551</updated>
       <workItem from="1742912153708" duration="4000" />
       <workItem from="1742996720875" duration="532000" />
+      <workItem from="1743179059049" duration="42000" />
+      <workItem from="1743179105904" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -250,15 +248,7 @@
       <option name="project" value="LOCAL" />
       <updated>1743176959771</updated>
     </task>
-    <task id="LOCAL-00009" summary="correction of main and moveTest of ColliderTest">
-      <option name="closed" value="true" />
-      <created>1743183759844</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1743183759844</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +272,6 @@
     <MESSAGE value="delete DEEPSEEK commet" />
     <MESSAGE value="add a space in toString at circle" />
     <MESSAGE value="fixed polygon-polygon collision" />
-    <MESSAGE value="correction of main and moveTest of ColliderTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction of main and moveTest of ColliderTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed polygon-polygon collision" />
   </component>
 </project>
