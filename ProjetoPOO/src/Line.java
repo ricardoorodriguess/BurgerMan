@@ -98,7 +98,7 @@ public class Line {
     public Point closest(Point point, boolean interior)
     {
         double dx = b.getX() - a.getX(), dy = b.getY() - a.getY(), k = closestRatio(point, interior);
-        return new Point(a.getX() + k * dx, b.getY() + k * dy);
+        return new Point(a.getX() + k * dx, a.getY() + k * dy);
     }
 
     /**
