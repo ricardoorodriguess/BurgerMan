@@ -20,7 +20,9 @@ class PointTest {
     void moveTest() {
         Point point = new Point(0, 0);
         Point point2 = new Point(1, 0);
-        //assertEquals(point2, point.move(point2));
+        point.move(point2);
+        assertEquals(1, point.getX());
+        assertEquals(0, point.getY());
     }
 
     @Test
