@@ -39,6 +39,13 @@ public class LineSegment extends Line {
         return k;
     }
 
+    @Override
+    public boolean contains(Point point) {
+        return super.contains(point)
+                && a.getX() <= point.getX() && point.getX() <= b.getX()
+                && a.getY() <= point.getY() && point.getY() <= b.getY();
+    }
+
     /**
      * {@inheritDoc}
      * @param segment the segment to check intersection for.

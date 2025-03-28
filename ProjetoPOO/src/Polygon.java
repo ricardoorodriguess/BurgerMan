@@ -15,8 +15,10 @@ public class Polygon extends Collider {
     private Point centroid;
 
     /**
-     * Construtor of the class
-     * @param points
+     * Constructs a polygon from a list of points
+     * @param points the list of vertices of the polygon
+     * @throws IllegalArgumentException if the provided point amount is less than 3,
+     * or if three consecutive points are collinear
      */
     public Polygon(ArrayList<Point> points)
     {
@@ -86,6 +88,7 @@ public class Polygon extends Collider {
     public boolean contains(Point point) {
         Line line;
         for (LineSegment seg : segments) {
+            if (seg.contains(point)) return true;
             line = new Line(point, seg);
             boolean b = false;
             for (LineSegment other : segments) if (line.intersects(other)) {
