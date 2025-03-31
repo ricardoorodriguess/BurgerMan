@@ -80,4 +80,6 @@ public class Point
     public int hashCode() {
         return Objects.hash(getX(), getY());
     }
+
+    //ROTATE AQUI
 }

@@ -199,4 +199,7 @@ public class Polygon extends Collider {
         }
         return sb.toString().trim();
     }
+
+    //CRIAR METODO PARA CENTROID
+    //VER ALTERAÇÃO PARA O INSTANCEOFF (DICA DO PROF HELDER)
 }

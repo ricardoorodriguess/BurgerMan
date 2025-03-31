@@ -31,4 +31,6 @@ abstract class Collider implements ICollider
      *         depending on the invoker
      */
     public abstract String toString();
+
+    //MUDAR NOME
 }
