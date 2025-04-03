@@ -68,6 +68,10 @@ public class Client {
             }
         }
 
+        gameObject.moveTo(gameObject.transform().position(), gameObject.transform().layer());
+        gameObject.collider().rotate(gameObject.transform().angle());
+        gameObject.collider().scale(gameObject.transform().scale());
+
         System.out.println(gameObject.name());
         System.out.println(transform);
         System.out.println(collider);

@@ -47,4 +47,15 @@ public class GameObject implements IGameObject
      */
     @Override
     public ICollider collider() { return collider; }
+
+    public void move(Point point, int layer) {
+        transform.move(point, layer);
+        collider.move(point);
+    }
+
+    public void moveTo(Point point, int layer) {
+        Point delta = new Point(point.getX() - transform.position().getX(), point.getY() - transform.position().getY());
+        System.out.println(delta);
+        move(delta, layer);
+    }
 }
