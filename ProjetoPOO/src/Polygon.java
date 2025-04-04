@@ -47,6 +47,10 @@ public class Polygon extends Collider {
         centroid = centroidCalculate();
     }
 
+    /**
+     * This method calculate de centroid of a polygon
+     * @return Point that is the centroid
+     */
     private Point centroidCalculate()
     {
         double area = 0, cx = 0, cy = 0;
