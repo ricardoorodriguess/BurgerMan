@@ -44,6 +44,11 @@ public class Polygon extends Collider {
             }
         }
 
+        centroid = centroidCalculate();
+    }
+
+    private Point centroidCalculate()
+    {
         double area = 0, cx = 0, cy = 0;
         int n = points.size();
         for (int i = 0; i < n; i++)
@@ -59,7 +64,7 @@ public class Polygon extends Collider {
         area /= 2;
         cx /= (6 * area);
         cy /= (6 * area);
-        centroid = new Point(cx, cy);
+        return new Point(cx, cy);
     }
 
     /**
@@ -200,6 +205,5 @@ public class Polygon extends Collider {
         return sb.toString().trim();
     }
 
-    //CRIAR METODO PARA CENTROID
     //VER ALTERAÇÃO PARA O INSTANCEOFF (DICA DO PROF HELDER)
 }
