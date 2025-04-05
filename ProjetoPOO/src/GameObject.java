@@ -53,9 +53,24 @@ public class GameObject implements IGameObject
         collider.move(point);
     }
 
+    public void rotate(double dTheta) {
+        transform.rotate(dTheta);
+        collider.rotate(dTheta);
+    }
+
+    public void scale(double dScale) {
+        transform.scale(dScale);
+        collider.scale(dScale);
+    }
+
     public void moveTo(Point point, int layer) {
         Point delta = new Point(point.getX() - transform.position().getX(), point.getY() - transform.position().getY());
         System.out.println(delta);
         move(delta, layer);
+    }
+
+    @Override
+    public String toString() {
+        return "<" + name + " | " + transform + " | " + collider + ">";
     }
 }

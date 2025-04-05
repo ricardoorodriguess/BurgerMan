@@ -125,7 +125,6 @@ public class Polygon extends Collider {
             for (LineSegment s : segments) {
                 boolean b = false;
                 for (LineSegment ss : polygon.segments) {
-                    System.out.println(s + " / " + ss);
                     if (s.intersects(ss)) {
                         b = true;
                         break;
@@ -144,7 +143,7 @@ public class Polygon extends Collider {
     @Override
     public void move(Point point)
     {
-        for (Point p : points)  p.move(point);
+        for (Point p : points) p.move(point);
         centroid.move(point);
     }
 
