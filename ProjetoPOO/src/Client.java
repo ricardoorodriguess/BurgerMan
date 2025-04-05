@@ -53,7 +53,7 @@ public class Client {
 
             GameObject gameObject = new GameObject(name, transform, collider);
             Point delta = new Point(transform.position().getX() - collider.centroid().getX(),
-                    transform.position().getY() - collider.centroid().getY());
+                    transform.position().getY() - collider.centroid().getY()); //SEQ DÁ PARA USAR O MOVETO
             collider.move(delta);
             collider.rotate(transform.angle());
             collider.scale(transform.scale());
