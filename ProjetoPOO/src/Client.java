@@ -10,7 +10,6 @@ public class Client {
 
         int f = Integer.parseInt(sc.nextLine());
         int n = Integer.parseInt(sc.nextLine());
-        sc.nextLine(); //consume newline
 
         for (int i = 0; i < n; i++)
         {
@@ -70,6 +69,70 @@ public class Client {
             engine.add(gameObject);
         }
 
-        ArrayList<GameObject> gameObjects =  engine.getLoadedObjects();
+        ArrayList<GameObject> gameObjects = engine.getLoadedObjects();
+
+        for (int frame = 0; frame < f; frame++)
+        {
+            for (int i = 0; i < gameObjects.size(); i++)
+            {
+                GameObject go = gameObjects.get(i);
+                int base = i * 5;
+                double dx = velocities.get(base);
+                double dy = velocities.get(base + 1);
+                int dlayer = velocities.get(base + 2).intValue();
+                double dAngle = velocities.get(base + 3);
+                double dScale = velocities.get(base + 4);
+
+                // Aplicar movimento
+                Point deltaMove = new Point(dx, dy);
+                go.move(deltaMove, dlayer);
+                go.collider().move(deltaMove);
+
+                // Aplicar rotação
+                go.transform().rotate(dAngle);
+                go.collider().rotate(dAngle);
+
+                // Aplicar escala (considerar fator multiplicativo)
+                double oldScale = go.transform().scale();
+                go.transform().scale(dScale);
+                double newScale = go.transform().scale();
+                double scaleFactor = newScale / oldScale;
+                go.collider().scale(scaleFactor);
+            }
+        }
+
+        // Detetar colisões
+        List<List<String>> collisions = new ArrayList<>();
+        for (int i = 0; i < gameObjects.size(); i++)
+        {
+            collisions.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < gameObjects.size(); i++)
+        {
+            GameObject go1 = gameObjects.get(i);
+            for (int j = i + 1; j < gameObjects.size(); j++)
+            {
+                GameObject go2 = gameObjects.get(j);
+                if (go1.transform().layer() == go2.transform().layer() && ((Collider)go1.collider()).collides((Collider)go2.collider()))
+                {
+                    collisions.get(i).add(go2.name());
+                    collisions.get(j).add(go1.name());
+                }
+            }
+        }
+
+        // Gerar saída
+        for (int i = 0; i < gameObjects.size(); i++)
+        {
+            List<String> collidedNames = collisions.get(i);
+            if (collidedNames.isEmpty()) continue;
+
+            System.out.print(gameObjects.get(i).name());
+            for (String name : collidedNames) {
+                System.out.print(" " + name);
+            }
+            System.out.println();
+        }
     }
 }
