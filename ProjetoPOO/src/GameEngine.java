@@ -32,4 +32,10 @@ public class GameEngine {
     public void destroy(GameObject gameObject) {
         loadedObjects.remove(gameObject);
     }
+
+    /**
+     * Response method to give the ArrayList of gameObjects.
+     * @return the List of gameObjets in engine
+     */
+    public ArrayList<GameObject> getLoadedObjects() {return loadedObjects;}
 }

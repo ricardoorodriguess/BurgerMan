@@ -74,7 +74,6 @@ public class Polygon extends Collider {
     /**
      * Getter points
      * @return points
-     *
      */
     public ArrayList<Point> getPoints() {
         return points;
@@ -209,5 +208,5 @@ public class Polygon extends Collider {
         return sb.toString().trim();
     }
 
-    //VER ALTERAÇÃO PARA O INSTANCEOFF (DICA DO PROF HELDER)
+    //VER ALTERAÇÃO PARA O INSTANCEOFF (DICA DO PROF HELDER) -> usar double dispatch
 }
