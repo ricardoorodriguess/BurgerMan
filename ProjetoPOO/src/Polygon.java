@@ -9,7 +9,7 @@ import static java.lang.Math.*;
  * @version March 27, 2025
  */
 
-public class Polygon extends Collider {
+public class Polygon extends Colisor {
 
     private ArrayList<Point> points;
     private ArrayList<LineSegment> segments;
@@ -116,22 +116,23 @@ public class Polygon extends Collider {
      *         false otherwise
      */
     @Override
-    boolean collides(Collider collider)
-    {
-        if (collider instanceof Circle) return collider.collides(this);
-        if (collider instanceof Polygon polygon)
-        {
-            for (Point p : points) if (polygon.contains(p)) return true;
-            for (LineSegment s : segments) {
-                boolean b = false;
-                for (LineSegment ss : polygon.segments) {
-                    System.out.println(s + " / " + ss);
-                    if (s.intersects(ss)) {
-                        b = true;
-                        break;
-                    }
-                }
-                if (b) return true;
+    boolean collides(Collider collider) {
+        return collider.collidesWithPolygon(this);
+    }
+
+    @Override
+    boolean collidesWithCircle(Circle circle) {
+        return circle.collidesWithPolygon(this);
+    }
+
+    @Override
+    boolean collidesWithPolygon(Polygon polygon) {
+        for (Point p : this.points) {
+            if (polygon.contains(p)) return true;
+        }
+        for (LineSegment s : this.segments) {
+            for (LineSegment ss : polygon.segments) {
+                if (s.intersects(ss)) return true;
             }
         }
         return false;

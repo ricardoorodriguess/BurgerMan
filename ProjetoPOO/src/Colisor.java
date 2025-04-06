@@ -32,5 +32,13 @@ abstract class Collider implements ICollider
      */
     public abstract String toString();
 
+    // Método genérico para colisão (será sobrescrito pelas subclasses)
+    abstract boolean collides(Collider collider);
+
+    // Métodos para Double Dispatch
+    abstract boolean collidesWithCircle(Circle circle);
+    abstract boolean collidesWithPolygon(Polygon polygon);
+
+
     //MUDAR NOME
 }

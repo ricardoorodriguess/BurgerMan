@@ -9,7 +9,7 @@ import java.util.Locale;
  * @author Tiago Tome
  * @version March 27, 2025
  */
-public class Circle extends Collider
+public class Circle extends Colisor
 {
     private final Point center;
     private double radius;
@@ -41,17 +41,27 @@ public class Circle extends Collider
      *         true if it happens
      *         false otherwise
      */
-    @Override
+        @Override
     boolean collides(Collider collider) {
-        if (collider instanceof Circle c) return center.dist(c.center) <= radius + c.radius;
-        if (collider instanceof Polygon p)
-        {
-            for (Point po : p.getPoints()) if (po.dist(center) <= radius) return true;
-            for (LineSegment seg : p.getSegments()) if (seg.intersects(this)) return true;
-            return p.contains(center);
-        }
-        return false;
+        return collider.collidesWithCircle(this);
     }
+
+    @Override
+    boolean collidesWithCircle(Circle circle) {
+        return this.center.dist(circle.center) <= this.radius + circle.radius;
+    }
+
+    @Override
+    boolean collidesWithPolygon(Polygon polygon) {
+        for (Point p : polygon.getPoints()) {
+            if (p.dist(this.center) <= this.radius) return true;
+        }
+        for (LineSegment seg : polygon.getSegments()) {
+            if (seg.intersects(this)) return true;
+        }
+        return polygon.contains(this.center);
+    }
+
 
     /**
      * Method to move the circle
