@@ -145,7 +145,7 @@ public class Polygon extends Colisor {
     @Override
     public void move(Point point)
     {
-        for (Point p : points)  p.move(point);
+        for (Point p : points) p.move(point);
         centroid.move(point);
     }
 

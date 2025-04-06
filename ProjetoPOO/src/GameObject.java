@@ -48,14 +48,51 @@ public class GameObject implements IGameObject
     @Override
     public ICollider collider() { return collider; }
 
+    /**
+     * Move the gameObject and the collider
+     * @param point to move
+     * @param layer to move
+     */
     public void move(Point point, int layer) {
         transform.move(point, layer);
         collider.move(point);
     }
 
+    /**
+     * Rotate the gameObject and the collider
+     * @param dTheta to rotate
+     */
+    public void rotate(double dTheta) {
+        transform.rotate(dTheta);
+        collider.rotate(dTheta);
+    }
+
+    /**
+     * Scale the gameObject and the collider
+     * @param dScale to scale
+     */
+    public void scale(double dScale) {
+        transform.scale(dScale);
+        collider.scale(dScale);
+    }
+
+    /**
+     * Move the gameObject to a specific point
+     * @param point to calculate the diference between the atual position to this point
+     * @param layer to move
+     */
     public void moveTo(Point point, int layer) {
         Point delta = new Point(point.getX() - transform.position().getX(), point.getY() - transform.position().getY());
         System.out.println(delta);
         move(delta, layer);
+    }
+
+    /**
+     * Give the GameObject info in a string
+     * @return String with info of a GameObject
+     */
+    @Override
+    public String toString() {
+        return "<" + name + " | " + transform + " | " + collider + ">";
     }
 }

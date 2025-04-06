@@ -14,7 +14,7 @@ public class GameEngine {
      * Construtor of GameEngine
      */
     public GameEngine() {
-        this.loadedObjects = new ArrayList<GameObject>();
+        this.loadedObjects = new ArrayList<>();
     }
 
     /**

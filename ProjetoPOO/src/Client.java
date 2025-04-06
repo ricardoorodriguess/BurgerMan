@@ -11,8 +11,7 @@ public class Client {
         int f = Integer.parseInt(sc.nextLine());
         int n = Integer.parseInt(sc.nextLine());
 
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             String name = sc.nextLine();
             ITransform transform = new Transform(new Point(sc.nextDouble(), sc.nextDouble()),
                     sc.nextInt(), sc.nextDouble(), sc.nextDouble());
@@ -20,29 +19,22 @@ public class Client {
 
             String colliderLine = sc.nextLine();
             String[] colliderParts = colliderLine.split(" ");
-            ArrayList<Double> values = new ArrayList<Double>();
+            ArrayList<Double> values = new ArrayList<>();
 
-            for (String value : colliderParts)
-            {
+            for (String value : colliderParts) {
                 values.add(Double.parseDouble(value));
             }
 
             ICollider collider;
-            if (values.size() == 3)
-            {
+            if (values.size() == 3) {
                 collider = new Circle(new Point(values.get(0), values.get(1)), values.get(2));
-            }
-            else if (values.size() >= 6 && values.size() % 2 == 0)
-            {
+            } else if (values.size() >= 6 && values.size() % 2 == 0) {
                 ArrayList<Point> points = new ArrayList<>();
-                for (int j = 0; j < values.size(); j += 2)
-                {
+                for (int j = 0; j < values.size(); j += 2) {
                     points.add(new Point(values.get(j), values.get(j + 1)));
                 }
                 collider = new Polygon(points);
-            }
-            else
-            {
+            } else {
                 throw new IllegalArgumentException("INVALID COLLIDER ARGUMENTS\n");
             }
 
@@ -55,13 +47,13 @@ public class Client {
             double dScale = Double.parseDouble(velocityParts[4]);
             velocities.add(dx);
             velocities.add(dy);
-            velocities.add((double)dLayer);
+            velocities.add((double) dLayer);
             velocities.add(dAngle);
             velocities.add(dScale);
 
             GameObject gameObject = new GameObject(name, transform, collider);
             Point delta = new Point(transform.position().getX() - collider.centroid().getX(),
-                    transform.position().getY() - collider.centroid().getY());
+                    transform.position().getY() - collider.centroid().getY()); //SEQ DÁ PARA USAR O MOVETO
             collider.move(delta);
             collider.rotate(transform.angle());
             collider.scale(transform.scale());
@@ -70,11 +62,10 @@ public class Client {
         }
 
         ArrayList<GameObject> gameObjects = engine.getLoadedObjects();
+        //System.out.println(gameObjects);
 
-        for (int frame = 0; frame < f; frame++)
-        {
-            for (int i = 0; i < gameObjects.size(); i++)
-            {
+        for (int frame = 0; frame < f; frame++) {
+            for (int i = 0; i < gameObjects.size(); i++) {
                 GameObject go = gameObjects.get(i);
                 int base = i * 5;
                 double dx = velocities.get(base);
@@ -86,11 +77,11 @@ public class Client {
                 // Aplicar movimento
                 Point deltaMove = new Point(dx, dy);
                 go.move(deltaMove, dlayer);
-                go.collider().move(deltaMove);
+                //go.collider().move(deltaMove);
 
                 // Aplicar rotação
-                go.transform().rotate(dAngle);
-                go.collider().rotate(dAngle);
+                go.rotate(dAngle);
+                //go.collider().rotate(dAngle);
 
                 // Aplicar escala (considerar fator multiplicativo)
                 double oldScale = go.transform().scale();
@@ -99,23 +90,20 @@ public class Client {
                 double scaleFactor = newScale / oldScale;
                 go.collider().scale(scaleFactor);
             }
+            //System.out.println(gameObjects);
         }
 
         // Detetar colisões
         List<List<String>> collisions = new ArrayList<>();
-        for (int i = 0; i < gameObjects.size(); i++)
-        {
+        for (int i = 0; i < gameObjects.size(); i++) {
             collisions.add(new ArrayList<>());
         }
 
-        for (int i = 0; i < gameObjects.size(); i++)
-        {
+        for (int i = 0; i < gameObjects.size(); i++) {
             GameObject go1 = gameObjects.get(i);
-            for (int j = i + 1; j < gameObjects.size(); j++)
-            {
+            for (int j = i + 1; j < gameObjects.size(); j++) {
                 GameObject go2 = gameObjects.get(j);
-                if (go1.transform().layer() == go2.transform().layer() && ((Collider)go1.collider()).collides((Collider)go2.collider()))
-                {
+                if (go1.transform().layer() == go2.transform().layer() && ((Collider) go1.collider()).collides((Collider) go2.collider())) {
                     collisions.get(i).add(go2.name());
                     collisions.get(j).add(go1.name());
                 }
@@ -123,8 +111,7 @@ public class Client {
         }
 
         // Gerar saída
-        for (int i = 0; i < gameObjects.size(); i++)
-        {
+        for (int i = 0; i < gameObjects.size(); i++) {
             List<String> collidedNames = collisions.get(i);
             if (collidedNames.isEmpty()) continue;
 
