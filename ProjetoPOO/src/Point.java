@@ -81,5 +81,26 @@ public class Point
         return Objects.hash(getX(), getY());
     }
 
-    //ROTATE AQUI
+    /**
+     * Rotates the point around a specified center by a given angle in degrees.
+     * @param angleDegrees The rotation angle in degrees.
+     * @param center The center point around which to rotate.
+     */
+    public void rotate(double angleDegrees, Point center) {
+        double radians = toRadians(angleDegrees);
+        double cos = cos(radians);
+        double sin = sin(radians);
+
+        // Translacao o ponto para a origem relativa ao centro
+        double translatedX = this.x - center.getX();
+        double translatedY = this.y - center.getY();
+
+        // Aplica a rotacao
+        double rotatedX = translatedX * cos - translatedY * sin;
+        double rotatedY = translatedX * sin + translatedY * cos;
+
+        // Translacao de volta para a posicao original
+        this.x = center.getX() + rotatedX;
+        this.y = center.getY() + rotatedY;
+    }
 }

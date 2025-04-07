@@ -116,8 +116,8 @@ public class Polygon extends Colisor {
      *         false otherwise
      */
     @Override
-    boolean collides(Collider collider) {
-        return collider.collidesWithPolygon(this);
+    boolean collides(Colisor colisor) {
+        return colisor.collidesWithPolygon(this);
     }
 
     @Override
@@ -165,18 +165,8 @@ public class Polygon extends Colisor {
     @Override
     public void rotate(double angle) {
         Point centroid = centroid();
-        double cx = centroid.getX();
-        double cy = centroid.getY();
-        double radians = toRadians(angle);
-        double cos = cos(radians);
-        double sin = sin(radians);
-
         for (Point p : points) {
-            double xOffset = p.getX() - cx;
-            double yOffset = p.getY() - cy;
-            double newX = cx + (xOffset * cos - yOffset * sin);
-            double newY = cy + (xOffset * sin + yOffset * cos);
-            p.move(new Point(newX - p.getX(), newY - p.getY()));
+            p.rotate(angle, centroid);
         }
     }
 
@@ -209,5 +199,4 @@ public class Polygon extends Colisor {
         return sb.toString().trim();
     }
 
-    //VER ALTERAÇÃO PARA O INSTANCEOFF (DICA DO PROF HELDER) -> usar double dispatch
 }

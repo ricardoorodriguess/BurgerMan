@@ -7,7 +7,7 @@
  * @author Tiago Tome
  * @version March 26, 2025
  */
-abstract class Collider implements ICollider
+abstract class Colisor implements ICollider
 {
     protected Point centroid; //center of a collider
 
@@ -17,7 +17,12 @@ abstract class Collider implements ICollider
      *         true if it happens
      *         false otherwise
      */
-    abstract boolean collides(Collider collider);
+    // Método genérico para colisão (será sobrescrito pelas subclasses)
+    abstract boolean collides(Colisor colisor);
+
+    // Métodos para Double Dispatch
+    abstract boolean collidesWithCircle(Circle circle);
+    abstract boolean collidesWithPolygon(Polygon polygon);
 
     /**
      * Method to move the given object
@@ -32,13 +37,4 @@ abstract class Collider implements ICollider
      */
     public abstract String toString();
 
-    // Método genérico para colisão (será sobrescrito pelas subclasses)
-    abstract boolean collides(Collider collider);
-
-    // Métodos para Double Dispatch
-    abstract boolean collidesWithCircle(Circle circle);
-    abstract boolean collidesWithPolygon(Polygon polygon);
-
-
-    //MUDAR NOME
 }
