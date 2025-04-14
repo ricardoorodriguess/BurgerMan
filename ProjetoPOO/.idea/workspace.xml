@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Client with read input (do parte of identify collisions between GameObjects in diference layers). Added getLoadObjects to GameEngine.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2025_11_40_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2025_11_40__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2025_21_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2025_21_19__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoPOO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoPOO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Colisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Colisor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameObjectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameObjectTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polygon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,51 +49,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CircleTest.centroid.executor": "Run",
-    "JUnit.CircleTest.collides.executor": "Run",
-    "JUnit.CircleTest.executor": "Run",
-    "JUnit.CircleTest.scale.executor": "Run",
-    "JUnit.CircleTest.testToString.executor": "Run",
-    "JUnit.ColliderTest.executor": "Run",
-    "JUnit.GameObjectTest.executor": "Run",
-    "JUnit.LineTest.executor": "Run",
-    "JUnit.PointTest.executor": "Run",
-    "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
-    "JUnit.PolygonTest.executor": "Run",
-    "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
-    "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
-    "JUnit.TransformTest.executor": "Run",
-    "JUnit.TransformTest.layer.executor": "Run",
-    "JUnit.TransformTest.move.executor": "Run",
-    "JUnit.TransformTest.position.executor": "Run",
-    "JUnit.TransformTest.rotate.executor": "Run",
-    "JUnit.TransformTest.scale.executor": "Run",
-    "JUnit.TransformTest.testScale.executor": "Run",
-    "JUnit.TransformTest.testToString.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircleTest.centroid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircleTest.collides.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircleTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircleTest.scale.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircleTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ColliderTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameObjectTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LineTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PolygonTest.toString_FormatsCorrectly.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.layer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.move.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.position.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.rotate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.scale.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.testScale.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TransformTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -109,8 +97,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="ProjetoPOO" />
       <method v="2">
@@ -121,7 +109,6 @@
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LineTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,16 +118,6 @@
       <module name="ProjetoPOO" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PointTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit">
-      <module name="ProjetoPOO" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PolygonTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,19 +142,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.PolygonTest" />
-      <item itemvalue="JUnit.LineTest" />
-      <item itemvalue="JUnit.PointTest" />
-      <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
-      <item itemvalue="JUnit.TransformTest" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.LineTest" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
+        <item itemvalue="JUnit.LineTest" />
         <item itemvalue="JUnit.TransformTest" />
         <item itemvalue="JUnit.PointTest" />
       </list>
@@ -202,7 +171,6 @@
       <workItem from="1742912153708" duration="4000" />
       <workItem from="1742996720875" duration="532000" />
       <workItem from="1743791356424" duration="18596000" />
-      <workItem from="1744048144169" duration="1987000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
