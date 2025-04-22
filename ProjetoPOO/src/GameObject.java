@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.Nullable;
+
 /**
  * This class represents GameObjects in 2D.
  * <p>It implements the IGameObject and encapsulates the object´s name,
@@ -9,9 +11,9 @@
  */
 public class GameObject implements IGameObject
 {
-    private String name;
-    private ITransform transform;
-    private ICollider collider;
+    private final String name;
+    private final ITransform transform;
+    private final @Nullable ICollider collider;
 
     /**
      * Constructor to class GameObject, create an instance of GameObject (see description of class).
@@ -19,7 +21,7 @@ public class GameObject implements IGameObject
      * @param transform
      * @param collider
      */
-    public GameObject(String name, ITransform transform, ICollider collider)
+    public GameObject(String name, ITransform transform, @Nullable ICollider collider)
     {
         this.name = name;
         this.transform = transform;
@@ -46,7 +48,7 @@ public class GameObject implements IGameObject
      * @return an instance of ICollider that represents this GameObject´s collider.
      */
     @Override
-    public ICollider collider() { return collider; }
+    public @Nullable ICollider collider() { return collider; }
 
     /**
      * Move the gameObject and the collider
@@ -55,7 +57,8 @@ public class GameObject implements IGameObject
      */
     public void move(Point point, int layer) {
         transform.move(point, layer);
-        collider.move(point);
+        if (collider != null)
+            collider.move(point);
     }
 
     /**
@@ -64,7 +67,8 @@ public class GameObject implements IGameObject
      */
     public void rotate(double dTheta) {
         transform.rotate(dTheta);
-        collider.rotate(dTheta);
+        if (collider != null)
+            collider.rotate(dTheta);
     }
 
     /**
@@ -73,7 +77,8 @@ public class GameObject implements IGameObject
      */
     public void scale(double dScale) {
         transform.scale(dScale);
-        collider.scale(dScale);
+        if (collider != null)
+            collider.scale(dScale);
     }
 
     /**

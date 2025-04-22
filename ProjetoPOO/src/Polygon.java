@@ -117,7 +117,7 @@ public class Polygon extends Colisor {
      */
     @Override
     boolean collides(Colisor colisor) {
-        return colisor.collidesWithPolygon(this);
+        return colisor != null && colisor.collidesWithPolygon(this);
     }
 
     @Override

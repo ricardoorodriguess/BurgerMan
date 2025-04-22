@@ -62,7 +62,7 @@ public class Client {
         }
 
         ArrayList<GameObject> gameObjects = engine.getLoadedObjects();
-        //System.out.println(gameObjects);
+        System.out.println(gameObjects);
 
         for (int frame = 0; frame < f; frame++) {
             for (int i = 0; i < gameObjects.size(); i++) {
@@ -88,9 +88,11 @@ public class Client {
                 go.transform().scale(dScale);
                 double newScale = go.transform().scale();
                 double scaleFactor = newScale / oldScale;
-                go.collider().scale(scaleFactor);
+                ICollider collider = go.collider();
+                if (collider != null)
+                    collider.scale(scaleFactor);
             }
-            //System.out.println(gameObjects);
+            System.out.println(gameObjects);
         }
 
         // Detetar colisões
@@ -103,7 +105,10 @@ public class Client {
             GameObject go1 = gameObjects.get(i);
             for (int j = i + 1; j < gameObjects.size(); j++) {
                 GameObject go2 = gameObjects.get(j);
-                if (go1.transform().layer() == go2.transform().layer() && ((Colisor) go1.collider()).collides((Colisor) go2.collider())) {
+                Colisor collider = (Colisor) go1.collider();
+                if (go1.transform().layer() == go2.transform().layer()
+                        && collider != null
+                        && collider.collides((Colisor) go2.collider())) {
                     collisions.get(i).add(go2.name());
                     collisions.get(j).add(go1.name());
                 }

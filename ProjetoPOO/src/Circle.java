@@ -43,7 +43,7 @@ public class Circle extends Colisor
      */
         @Override
     boolean collides(Colisor colisor) {
-        return colisor.collidesWithCircle(this);
+        return colisor != null && colisor.collidesWithCircle(this);
     }
 
     @Override

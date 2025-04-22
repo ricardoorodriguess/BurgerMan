@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.Nullable;
+
 /**
  * The {@code IGameObject} interface stores information about
  * an object's position, layer, angle and scale.
@@ -24,5 +26,5 @@ public interface IGameObject {
      * <p>The centroid will always lie at {@code this.transform().position()}.
      * @return the Collider of the GameObject.
      */
-    ICollider collider();
+    @Nullable ICollider collider();
 }
