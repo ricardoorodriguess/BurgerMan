@@ -1,0 +1,5 @@
+Concluir o burger
+Concluir o garbage
+Fazer o caixote (garbage mas diff)
+Fazer os power-ups
+Fazer o mapa
