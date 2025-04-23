@@ -62,7 +62,7 @@ public class Client {
         }
 
         ArrayList<GameObject> gameObjects = engine.getLoadedObjects();
-        System.out.println(gameObjects);
+        //System.out.println(gameObjects);
 
         for (int frame = 0; frame < f; frame++) {
             for (int i = 0; i < gameObjects.size(); i++) {
@@ -92,7 +92,7 @@ public class Client {
                 if (collider != null)
                     collider.scale(scaleFactor);
             }
-            System.out.println(gameObjects);
+            //System.out.println(gameObjects);
         }
 
         // Detetar colisões
