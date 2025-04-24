@@ -9,7 +9,9 @@ public class Collectible extends GameObject {
     }
 
     public void collect(GameObject go) {
-        if (go.isPlayer())
+        if (go.isPlayer()) {
             Client.ENGINE.alertScoreboard(sc -> sc.increment(10));
+            Client.ENGINE.destroy(this);
+        }
     }
 }
