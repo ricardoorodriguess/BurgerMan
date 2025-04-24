@@ -27,6 +27,7 @@ public abstract class Colisor implements ICollider
     // Métodos para Double Dispatch
     abstract boolean collidesWithCircle(Circle circle);
     abstract boolean collidesWithPolygon(Polygon polygon);
+    public abstract boolean contains(Point point);
 
     /**
      * Method to move the given object

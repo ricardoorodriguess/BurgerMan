@@ -17,7 +17,7 @@ public class GameObject implements IGameObject
     private final String name;
     private final ITransform transform;
     private final @Nullable ICollider collider;
-    private final boolean isPlayer, isEnemy, isScoreboard;
+    private final boolean isPlayer, isEnemy, isSolid, isScoreboard;
 
     /**
      * Constructor to class game.GameObject, create an instance of game.GameObject (see description of class).
@@ -25,18 +25,20 @@ public class GameObject implements IGameObject
      * @param transform
      * @param collider
      */
-    public GameObject(String name, ITransform transform, @Nullable ICollider collider, boolean isPlayer, boolean isEnemy, boolean isScoreboard)
+    public GameObject(String name, ITransform transform, @Nullable ICollider collider,
+                      boolean isPlayer, boolean isEnemy, boolean isSolid, boolean isScoreboard)
     {
         this.name = name;
         this.transform = transform;
         this.collider = collider;
         this.isPlayer = isPlayer;
         this.isEnemy = isEnemy;
+        this.isSolid = isSolid;
         this.isScoreboard = isScoreboard;
     }
 
     public GameObject(String name, ITransform transform, @Nullable ICollider collider) {
-        this(name, transform, collider, false, false, false);
+        this(name, transform, collider, false, false, false, false);
     }
 
     /**
@@ -118,6 +120,10 @@ public class GameObject implements IGameObject
 
     public boolean isEnemy() {
         return isEnemy;
+    }
+
+    public boolean isSolid() {
+        return isSolid;
     }
 
     public boolean isScoreboard() {

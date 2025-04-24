@@ -96,6 +96,7 @@ public class Polygon extends Colisor {
      * @return true if contains
      *         false otherwise
      */
+    @Override
     public boolean contains(Point point) {
         Line line;
         for (LineSegment seg : segments) {

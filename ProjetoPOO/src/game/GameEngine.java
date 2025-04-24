@@ -1,5 +1,8 @@
 package game;
 
+import collisions.Colisor;
+import collisions.Point;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -62,6 +65,10 @@ public class GameEngine {
         withFirst(GameObject::isScoreboard, go -> consumer.accept((Scoreboard) go));
     }
 
+    public void alertPlayer(Consumer<Player> consumer) {
+        withFirst(GameObject::isPlayer, go -> consumer.accept((Player) go));
+    }
+
     public void withRandom(Predicate<GameObject> predicate, Consumer<GameObject> consumer) {
         List<GameObject> matched = loadedObjects
                 .stream()
@@ -69,5 +76,13 @@ public class GameEngine {
                 .toList();
         if (matched.isEmpty()) return;
         consumer.accept(matched.get(Client.RANDOM.nextInt(matched.size())));
+    }
+
+    public boolean placeMeeting(Predicate<GameObject> predicate, Point point) {
+        Colisor colisor;
+        for (GameObject go : loadedObjects)
+            if (predicate.test(go) && (colisor = (Colisor) go.collider()) != null && colisor.contains(point))
+                return true;
+        return false;
     }
 }

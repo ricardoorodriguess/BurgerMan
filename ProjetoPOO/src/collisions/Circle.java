@@ -56,12 +56,17 @@ public class Circle extends Colisor
     @Override
     boolean collidesWithPolygon(Polygon polygon) {
         for (Point p : polygon.getPoints()) {
-            if (p.dist(this.center) <= this.radius) return true;
+            if (contains(p)) return true;
         }
         for (LineSegment seg : polygon.getSegments()) {
             if (seg.intersects(this)) return true;
         }
         return polygon.contains(this.center);
+    }
+
+    @Override
+    public boolean contains(Point point) {
+        return point.dist(center) <= radius;
     }
 
 

@@ -5,7 +5,7 @@ import collisions.Polygon;
 
 public class Enemy extends GameObject {
     public Enemy(Point position) {
-        super("Enemy", new Transform(position, 0, 0, 1), Polygon.simpleSquare(position), false, true, false);
+        super("Enemy", new Transform(position, 0, 0, 1), Polygon.simpleSquare(position), false, true, false, false);
     }
 
     public void kill() {}
