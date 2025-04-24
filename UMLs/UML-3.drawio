@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Página-1" id="TPAtXWxRkIJJQsbXMNPa">
-    <mxGraphModel dx="2330" dy="2041" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2255" dy="1997" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -272,16 +272,6 @@
         <mxCell id="kEA9Ujy-xpp_A-Y0548K-13" value="&lt;div&gt;+ Player(Point position): Player&lt;/div&gt;+ changeSpeed(double vx, double vy): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kEA9Ujy-xpp_A-Y0548K-10">
           <mxGeometry y="68" width="160" height="72" as="geometry" />
         </mxCell>
-        <mxCell id="kEA9Ujy-xpp_A-Y0548K-14" value="" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kEA9Ujy-xpp_A-Y0548K-10" target="iqAs6xTmjVzmR_10nm-_-60">
-          <mxGeometry x="-1" y="3" relative="1" as="geometry">
-            <mxPoint x="660" y="-568" as="sourcePoint" />
-            <mxPoint y="-353" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="310" y="-370" />
-              <mxPoint x="-10" y="-370" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="kEA9Ujy-xpp_A-Y0548K-15" value="Solid" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="390" y="-584" width="160" height="106" as="geometry" />
         </mxCell>
@@ -291,15 +281,6 @@
         <mxCell id="kEA9Ujy-xpp_A-Y0548K-18" value="&lt;div&gt;+ Solid (Point topLeft, double horizontal,&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;double vertical&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;): void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kEA9Ujy-xpp_A-Y0548K-15">
           <mxGeometry y="34" width="160" height="72" as="geometry" />
         </mxCell>
-        <mxCell id="kEA9Ujy-xpp_A-Y0548K-19" value="" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;endFill=0;" edge="1" parent="1" source="kEA9Ujy-xpp_A-Y0548K-15" target="iqAs6xTmjVzmR_10nm-_-60">
-          <mxGeometry x="-1" y="3" relative="1" as="geometry">
-            <mxPoint x="320" y="-428" as="sourcePoint" />
-            <mxPoint y="-368" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="480" y="-378" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="kEA9Ujy-xpp_A-Y0548K-20" value="Enemy" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="500" y="-722" width="160" height="106" as="geometry" />
         </mxCell>
@@ -308,15 +289,6 @@
         </mxCell>
         <mxCell id="kEA9Ujy-xpp_A-Y0548K-23" value="&lt;div&gt;+ Enemy(Point position):&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Enemy&lt;/span&gt;&lt;/div&gt;+ kill(): void&lt;div&gt;+ collideWithPlayer(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="kEA9Ujy-xpp_A-Y0548K-20">
           <mxGeometry y="34" width="160" height="72" as="geometry" />
-        </mxCell>
-        <mxCell id="kEA9Ujy-xpp_A-Y0548K-25" value="" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;endFill=0;" edge="1" parent="1" source="kEA9Ujy-xpp_A-Y0548K-20" target="iqAs6xTmjVzmR_10nm-_-60">
-          <mxGeometry x="-1" y="3" relative="1" as="geometry">
-            <mxPoint x="580" y="-489" as="sourcePoint" />
-            <mxPoint x="90" y="-389" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="580" y="-370" />
-            </Array>
-          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
