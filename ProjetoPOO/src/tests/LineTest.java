@@ -1,3 +1,10 @@
+package tests;
+
+import collisions.Circle;
+import collisions.Line;
+import collisions.Point;
+import collisions.Polygon;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -15,8 +22,8 @@ class LineTest {
 
     @Test
     void testContains() {
-        assertTrue(line.contains(new Point(4, 1)));
-        assertFalse(line.contains(new Point(-2, 5)));
+        Assertions.assertTrue(line.contains(new Point(4, 1)));
+        Assertions.assertFalse(line.contains(new Point(-2, 5)));
     }
 
     @Test
@@ -24,28 +31,28 @@ class LineTest {
         Line other = new Line(new Point(1, 1), line);
         System.out.println(other.getA());
         System.out.println(other.getB());
-        assertTrue(other.contains(new Point(2, 3)));
+        Assertions.assertTrue(other.contains(new Point(2, 3)));
         Line another = new Line(new Point(4, 1), line);
-        assertTrue(another.contains(new Point(5, 3)));
+        Assertions.assertTrue(another.contains(new Point(5, 3)));
     }
 
     @Test
     void testClosest() {
         Point point = line.closest(new Point(2, 4.5));
-        assertEquals(point.getX(), 1);
-        assertEquals(point.getY(), 2.5);
+        Assertions.assertEquals(point.getX(), 1);
+        Assertions.assertEquals(point.getY(), 2.5);
     }
 
     @Test
     void testIntersections() {
-        assertTrue(line.intersects(new Circle(new Point(2, 0), 2)));
-        assertFalse(line.intersects(new Circle(new Point(4, 3), 1)));
-        assertTrue(line.intersects(new Polygon(new ArrayList<>(List.of(
+        Assertions.assertTrue(line.intersects(new Circle(new Point(2, 0), 2)));
+        Assertions.assertFalse(line.intersects(new Circle(new Point(4, 3), 1)));
+        Assertions.assertTrue(line.intersects(new Polygon(new ArrayList<>(List.of(
                 new Point(3, 1.5),
                 new Point(3, 2.5),
                 new Point(4, 1.5)
         )))));
-        assertTrue(line.intersects(new Polygon(new ArrayList<>(List.of(
+        Assertions.assertTrue(line.intersects(new Polygon(new ArrayList<>(List.of(
                 new Point(-2, 5),
                 new Point(-1.5, 3),
                 new Point(-1, 5)

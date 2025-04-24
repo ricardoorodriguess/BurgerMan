@@ -1,3 +1,9 @@
+import collisions.Circle;
+import collisions.Colisor;
+import collisions.Point;
+import collisions.Polygon;
+import game.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

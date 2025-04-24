@@ -1,6 +1,11 @@
+package tests;
+
+import collisions.Circle;
+import collisions.Point;
+import collisions.Polygon;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ColisorTest {
 
@@ -37,21 +42,21 @@ class ColisorTest {
     void collides_polygon_polygon() {
         Polygon p1 = createSamplePolygon();
         Polygon p2 = createSamplePolygon();
-        assertTrue(p1.collides(p2));
+        Assertions.assertTrue(p1.collides(p2));
     }
 
     @Test
     void collides_polygon_circle() {
         Polygon p1 = createSamplePolygon();
         Circle c1 = createSampleCircle();
-        assertTrue(p1.collides(c1));
+        Assertions.assertTrue(p1.collides(c1));
     }
 
     @Test
     void collides_circle_circle() {
         Circle c1 = createSampleCircle();
         Circle c2 = createSampleCircle();
-        assertTrue(c1.collides(c2));
+        Assertions.assertTrue(c1.collides(c2));
     }
 
 
@@ -61,19 +66,19 @@ class ColisorTest {
         Polygon p = createSamplePolygon2();
         Point point = new Point(1, 1);
         p.move(point);
-        assertEquals(3, p.getPoints().get(0).getX());
-        assertEquals(3, p.getPoints().get(0).getY());
-        assertEquals(3, p.getPoints().get(1).getX());
-        assertEquals(7, p.getPoints().get(1).getY());
-        assertEquals(5, p.getPoints().get(2).getX());
-        assertEquals(7, p.getPoints().get(2).getY());
-        assertEquals(5, p.getPoints().get(3).getX());
-        assertEquals(3, p.getPoints().get(3).getY());
+        Assertions.assertEquals(3, p.getPoints().get(0).getX());
+        Assertions.assertEquals(3, p.getPoints().get(0).getY());
+        Assertions.assertEquals(3, p.getPoints().get(1).getX());
+        Assertions.assertEquals(7, p.getPoints().get(1).getY());
+        Assertions.assertEquals(5, p.getPoints().get(2).getX());
+        Assertions.assertEquals(7, p.getPoints().get(2).getY());
+        Assertions.assertEquals(5, p.getPoints().get(3).getX());
+        Assertions.assertEquals(3, p.getPoints().get(3).getY());
     }
 
     @Test
     void testToString() {
         Polygon p1 = createSamplePolygon();
-        assertEquals("(0.00,0.00) (4.00,0.00) (2.00,3.00)", p1.toString());
+        Assertions.assertEquals("(0.00,0.00) (4.00,0.00) (2.00,3.00)", p1.toString());
     }
 }

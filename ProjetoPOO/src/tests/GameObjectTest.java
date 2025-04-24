@@ -1,4 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+package tests;
+
+import collisions.Circle;
+import collisions.Colisor;
+import collisions.Point;
+import collisions.Polygon;
+import game.GameObject;
+import game.Transform;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
@@ -10,26 +18,26 @@ class GameObjectTest {
     @Test
     void name()
     {
-        assertEquals("gameObject1", gameObject.name());
+        Assertions.assertEquals("gameObject1", gameObject.name());
     }
 
     @Test
     void transform()
     {
-        assertEquals(transform, gameObject.transform());
+        Assertions.assertEquals(transform, gameObject.transform());
     }
 
     @Test
     void collider()
     {
-        assertEquals(circle, gameObject.collider());
+        Assertions.assertEquals(circle, gameObject.collider());
 
-        ArrayList<Point> points = new ArrayList<Point>();
+        ArrayList<Point> points = new ArrayList<>();
         points.add(new Point(-1, 0));
         points.add(new Point(5, 0));
         points.add(new Point(2, 4));
         Colisor polygon = new Polygon(points);
         GameObject gameObject2 = new GameObject("gameObject2", transform, polygon);
-        assertEquals(polygon, gameObject2.collider());
+        Assertions.assertEquals(polygon, gameObject2.collider());
     }
 }

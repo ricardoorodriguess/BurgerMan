@@ -1,7 +1,11 @@
+package game;
+
+import collisions.Point;
+
 import java.util.Locale;
 
 /**
- * This class represent the transform of a GameObject
+ * This class represent the transform of a game.GameObject
  * It provides methods to manipulate and retrieve these transformation properties.
  * including position, layer, rotation, and scaling.
  * @author Ricardo Rodrigues
@@ -17,8 +21,8 @@ public class Transform implements ITransform
     private double scale;
 
     /**
-     * Constructs a Transform object with the specified initial properties.
-     * @param position The initial position of the transformation as a Point.
+     * Constructs a game.Transform object with the specified initial properties.
+     * @param position The initial position of the transformation as a collisions.Point.
      * @param layer The initial layer (z-index) of the transformation.
      * @param angle The initial rotation angle in degrees.
      * @param scale The initial scaling factor relative to the original size.
@@ -68,7 +72,7 @@ public class Transform implements ITransform
 
     /**
      * Returns the current position of the transformation.
-     * @return The current position as a Point.
+     * @return The current position as a collisions.Point.
      */
     @Override
     public Point position() { return position; }

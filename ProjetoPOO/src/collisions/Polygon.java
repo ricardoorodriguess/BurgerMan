@@ -1,5 +1,6 @@
+package collisions;
+
 import java.util.ArrayList;
-import static java.lang.Math.*;
 
 /**
  * This class represent a polygon witch contains 3 or more points
@@ -49,7 +50,7 @@ public class Polygon extends Colisor {
 
     /**
      * This method calculate de centroid of a polygon
-     * @return Point that is the centroid
+     * @return collisions.Point that is the centroid
      */
     private Point centroidCalculate()
     {
@@ -116,7 +117,7 @@ public class Polygon extends Colisor {
      *         false otherwise
      */
     @Override
-    boolean collides(Colisor colisor) {
+    public boolean collides(Colisor colisor) {
         return colisor != null && colisor.collidesWithPolygon(this);
     }
 

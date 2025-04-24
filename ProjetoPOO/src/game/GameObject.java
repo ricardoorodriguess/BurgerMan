@@ -1,8 +1,11 @@
+package game;
+
+import collisions.Point;
 import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents GameObjects in 2D.
- * <p>It implements the IGameObject and encapsulates the object´s name,
+ * <p>It implements the game.IGameObject and encapsulates the object´s name,
  * its transform (layer,position, angle, scale) and its collider.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
@@ -16,7 +19,7 @@ public class GameObject implements IGameObject
     private final @Nullable ICollider collider;
 
     /**
-     * Constructor to class GameObject, create an instance of GameObject (see description of class).
+     * Constructor to class game.GameObject, create an instance of game.GameObject (see description of class).
      * @param name
      * @param transform
      * @param collider
@@ -29,23 +32,23 @@ public class GameObject implements IGameObject
     }
 
     /**
-     * Returns the name of the GameObject.
-     * @return String with the name of the GameObject
+     * Returns the name of the game.GameObject.
+     * @return String with the name of the game.GameObject
      */
     @Override
     public String name() { return name; }
 
     /**
-     * Response method to obtain the transform associate with this GameObject
+     * Response method to obtain the transform associate with this game.GameObject
      * The transform contains all the transformation info, including: position, layer, rotation angle, and scale factor.
-     * @return an instance of ITransform that represents this GameObject´s transform.
+     * @return an instance of game.ITransform that represents this game.GameObject´s transform.
      */
     @Override
     public ITransform transform() { return transform; }
 
     /**
-     * Obtain the collider associate with this GameObject.
-     * @return an instance of ICollider that represents this GameObject´s collider.
+     * Obtain the collider associate with this game.GameObject.
+     * @return an instance of game.ICollider that represents this game.GameObject´s collider.
      */
     @Override
     public @Nullable ICollider collider() { return collider; }
@@ -93,8 +96,8 @@ public class GameObject implements IGameObject
     }
 
     /**
-     * Give the GameObject info in a string
-     * @return String with info of a GameObject
+     * Give the game.GameObject info in a string
+     * @return String with info of a game.GameObject
      */
     @Override
     public String toString() {

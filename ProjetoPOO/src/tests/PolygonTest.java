@@ -1,4 +1,12 @@
+package tests;
+
 import static org.junit.jupiter.api.Assertions.*;
+
+import collisions.Circle;
+import collisions.LineSegment;
+import collisions.Point;
+import collisions.Polygon;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
@@ -37,10 +45,10 @@ public class PolygonTest {
         expected.add(new Point(4, 0));
         expected.add(new Point(2, 3));
 
-        assertEquals(expected.size(), polygon.getPoints().size());
+        Assertions.assertEquals(expected.size(), polygon.getPoints().size());
         for (int i = 0; i < expected.size(); i++) {
-            assertEquals(expected.get(i).getX(), polygon.getPoints().get(i).getX());
-            assertEquals(expected.get(i).getY(), polygon.getPoints().get(i).getY());
+            Assertions.assertEquals(expected.get(i).getX(), polygon.getPoints().get(i).getX());
+            Assertions.assertEquals(expected.get(i).getY(), polygon.getPoints().get(i).getY());
         }
     }
 
@@ -51,19 +59,19 @@ public class PolygonTest {
 
         assertEquals(3, segments.size());
         // Verify first segment
-        assertEquals(0.0, segments.get(0).getA().getX());
-        assertEquals(4.0, segments.get(0).getB().getX());
+        Assertions.assertEquals(0.0, segments.get(0).getA().getX());
+        Assertions.assertEquals(4.0, segments.get(0).getB().getX());
     }
 
     @Test
     void contains_DetectsPointCorrectly() {
         Polygon polygon = createSamplePolygon();
 
-        // Point inside
-        assertTrue(polygon.contains(new Point(2, 1)));
+        // collisions.Point inside
+        Assertions.assertTrue(polygon.contains(new Point(2, 1)));
 
-        // Point outside
-        assertFalse(polygon.contains(new Point(5, 5)));
+        // collisions.Point outside
+        Assertions.assertFalse(polygon.contains(new Point(5, 5)));
     }
 
     @Test
@@ -72,18 +80,18 @@ public class PolygonTest {
         Circle circleInside = new Circle(new Point(2, 1), 0.5);
         Circle circleOutside = new Circle(new Point(10, 10), 1);
 
-        // Circle collision
-        assertTrue(polygon.collides(circleInside));
-        assertFalse(polygon.collides(circleOutside));
+        // collisions.Circle collision
+        Assertions.assertTrue(polygon.collides(circleInside));
+        Assertions.assertFalse(polygon.collides(circleOutside));
 
-        // Polygon collision
+        // collisions.Polygon collision
         ArrayList<Point> otherPoints = new ArrayList<>();
         otherPoints.add(new Point(3, 1));
         otherPoints.add(new Point(5, 1));
         otherPoints.add(new Point(4, 2));
         Polygon overlappingPolygon = new Polygon(otherPoints);
 
-        assertTrue(polygon.collides(overlappingPolygon));
+        Assertions.assertTrue(polygon.collides(overlappingPolygon));
     }
 
     @Test
@@ -93,8 +101,8 @@ public class PolygonTest {
 
         polygon.move(delta);
 
-        assertEquals(2.0, polygon.getPoints().getFirst().getX());
-        assertEquals(3.0, polygon.getPoints().getFirst().getY());
+        Assertions.assertEquals(2.0, polygon.getPoints().getFirst().getX());
+        Assertions.assertEquals(3.0, polygon.getPoints().getFirst().getY());
     }
 
     @Test
@@ -103,8 +111,8 @@ public class PolygonTest {
         Point centroid = polygon.centroid();
 
         // Expected centroid for sample triangle
-        assertEquals(2.0, centroid.getX());
-        assertEquals(1.0, centroid.getY());
+        Assertions.assertEquals(2.0, centroid.getX());
+        Assertions.assertEquals(1.0, centroid.getY());
     }
 
     @Test
@@ -113,8 +121,8 @@ public class PolygonTest {
         polygon.rotate(90); // Rotate 90 degrees counter-clockwise
         // Check if points were rotated around centroid
         Point p0 = polygon.getPoints().getFirst();
-        assertEquals(3.0, p0.getX()); // Approximate due to floating point
-        assertEquals(-1.0, p0.getY());
+        Assertions.assertEquals(3.0, p0.getX()); // Approximate due to floating point
+        Assertions.assertEquals(-1.0, p0.getY());
     }
 
     @Test
@@ -125,17 +133,17 @@ public class PolygonTest {
         polygon.scale(2); // Double size
 
         Point p0 = polygon.getPoints().getFirst();
-        assertEquals(-2.0, p0.getX()); // (0-2)*2 + 2 = -2
-        assertEquals(-1.0, p0.getY()); // (0-1)*2 + 1 = -1
+        Assertions.assertEquals(-2.0, p0.getX()); // (0-2)*2 + 2 = -2
+        Assertions.assertEquals(-1.0, p0.getY()); // (0-1)*2 + 1 = -1
 
-        assertEquals(centroid.getX(), polygon.centroid().getX());
-        assertEquals(centroid.getY(), polygon.centroid().getY());
+        Assertions.assertEquals(centroid.getX(), polygon.centroid().getX());
+        Assertions.assertEquals(centroid.getY(), polygon.centroid().getY());
     }
 
     @Test
     void toString_FormatsCorrectly() {
         Polygon polygon = createSamplePolygon();
         String expected = "(0.00,0.00) (4.00,0.00) (2.00,3.00)";
-        assertEquals(expected, polygon.toString());
+        Assertions.assertEquals(expected, polygon.toString());
     }
 }

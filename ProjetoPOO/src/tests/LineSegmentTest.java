@@ -1,3 +1,9 @@
+package tests;
+
+import collisions.Line;
+import collisions.LineSegment;
+import collisions.Point;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,25 +20,25 @@ class LineSegmentTest {
 
     @Test
     void length() {
-        assertEquals(2*(Math.sqrt(2)), lineSegment.length());
+        Assertions.assertEquals(2*(Math.sqrt(2)), lineSegment.length());
     }
 
     @Test
     void closestRatio() {
         Point point = new Point(1, 1);
-        assertEquals(0.5, lineSegment.closestRatio(point, true));
+        Assertions.assertEquals(0.5, lineSegment.closestRatio(point, true));
     }
 
     @Test
     void contains() {
         Point point = lineSegment.closest(new Point(2, 4.5));
-        assertEquals(point.getX(), 2);
-        assertEquals(point.getY(), 2);
+        Assertions.assertEquals(point.getX(), 2);
+        Assertions.assertEquals(point.getY(), 2);
 
     }
 
     @Test
     void intersects() {
-        assertTrue(lineSegment.intersects(lineSegment2));
+        Assertions.assertTrue(lineSegment.intersects(lineSegment2));
     }
 }

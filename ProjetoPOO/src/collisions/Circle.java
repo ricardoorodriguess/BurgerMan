@@ -1,7 +1,9 @@
+package collisions;
+
 import java.util.Locale;
 
 /**
- * Implementation of a Circle object.
+ * Implementation of a collisions.Circle object.
  * <p>The circle can move, scale and rotate, despite not changing
  * with this last operation.
  * @author Ricardo Rodrigues
@@ -15,7 +17,7 @@ public class Circle extends Colisor
     private double radius;
 
     /**
-     * Constructs a circle object from a center variable of {@code Point}
+     * Constructs a circle object from a center variable of {@code collisions.Point}
      * type and radius of double type.
      * @param center the center of the circle;
      * @param radius the radius of the circle.
@@ -42,7 +44,7 @@ public class Circle extends Colisor
      *         false otherwise
      */
         @Override
-    boolean collides(Colisor colisor) {
+    public boolean collides(Colisor colisor) {
         return colisor != null && colisor.collidesWithCircle(this);
     }
 

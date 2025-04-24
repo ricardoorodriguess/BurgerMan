@@ -1,5 +1,9 @@
+package game;
+
+import collisions.Point;
+
 /**
- * The {@code ICollider} interface stores information about
+ * The {@code game.ICollider} interface stores information about
  * an object's colision.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas

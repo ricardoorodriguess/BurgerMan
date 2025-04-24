@@ -1,10 +1,12 @@
+package collisions;
+
 import java.util.Locale;
 import java.util.Objects;
 
 import static java.lang.Math.*;
 
 /**
- * This class represents a simple Point in 2D.
+ * This class represents a simple collisions.Point in 2D.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -21,19 +23,19 @@ public class Point
     }
 
     /**
-     * Returns the abscissa of the Point.
-     * @return x -> abscissa of a Point
+     * Returns the abscissa of the collisions.Point.
+     * @return x -> abscissa of a collisions.Point
      */
     public double getX() { return this.x; }
 
     /**
-     * Returns the ordinate of the Point.
-     * @return y -> ordinate of a Point
+     * Returns the ordinate of the collisions.Point.
+     * @return y -> ordinate of a collisions.Point
      */
     public double getY() { return this.y; }
 
     /**
-     * Response method to do a translation in one Point.
+     * Response method to do a translation in one collisions.Point.
      * @param point, coordinates x and y to add to this.point
      */
     public void move(Point point)
@@ -62,7 +64,7 @@ public class Point
     }
 
     /**
-     * Response method to see if one Point its equal to this.
+     * Response method to see if one collisions.Point its equal to this.
      * @param obj
      * @return a boolean, if its equal return true, otherwise return false.
      */
@@ -74,7 +76,7 @@ public class Point
 
     /**
      * This method is necessary to pass in mooshak.
-     * @return hashcode of a Point based on its coordinates(x,y).
+     * @return hashcode of a collisions.Point based on its coordinates(x,y).
      */
     @Override
     public int hashCode() {

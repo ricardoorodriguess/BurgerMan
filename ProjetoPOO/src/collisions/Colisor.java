@@ -1,3 +1,7 @@
+package collisions;
+
+import game.ICollider;
+
 /**
  * This class represent the collider
  * <p>The collider is necessary to determine if the
@@ -7,7 +11,7 @@
  * @author Tiago Tome
  * @version March 26, 2025
  */
-abstract class Colisor implements ICollider
+public abstract class Colisor implements ICollider
 {
     protected Point centroid; //center of a collider
 
@@ -18,7 +22,7 @@ abstract class Colisor implements ICollider
      *         false otherwise
      */
     // Método genérico para colisão (será sobrescrito pelas subclasses)
-    abstract boolean collides(Colisor colisor);
+    public abstract boolean collides(Colisor colisor);
 
     // Métodos para Double Dispatch
     abstract boolean collidesWithCircle(Circle circle);

@@ -1,3 +1,5 @@
+package game;
+
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,7 @@ public class GameEngine {
     private final ArrayList<GameObject> loadedObjects;
 
     /**
-     * Construtor of GameEngine
+     * Construtor of game.GameEngine
      */
     public GameEngine() {
         this.loadedObjects = new ArrayList<>();
