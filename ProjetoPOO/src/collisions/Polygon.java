@@ -1,6 +1,7 @@
 package collisions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class represent a polygon witch contains 3 or more points
@@ -200,4 +201,21 @@ public class Polygon extends Colisor {
         return sb.toString().trim();
     }
 
+    public static Polygon simpleSquare(Point center) {
+        return new Polygon(new ArrayList<>(List.of(
+                new Point(center.getX() - 1, center.getY() - 1),
+                new Point(center.getX() - 1, center.getY() + 1),
+                new Point(center.getX() + 1, center.getY() + 1),
+                new Point(center.getX() + 1, center.getY() - 1)
+        )));
+    }
+
+    public static Polygon simpleRectangle(Point topLeft, double horizontal, double vertical) {
+        return new Polygon(new ArrayList<>(List.of(
+                new Point(topLeft.getX(), topLeft.getY()),
+                new Point(topLeft.getX() + horizontal, topLeft.getY()),
+                new Point(topLeft.getX() + horizontal, topLeft.getY() + vertical),
+                new Point(topLeft.getX(), topLeft.getY() + vertical)
+        )));
+    }
 }
