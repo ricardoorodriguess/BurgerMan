@@ -40,4 +40,32 @@ class GameObjectTest {
         GameObject gameObject2 = new GameObject("gameObject2", transform, polygon);
         Assertions.assertEquals(polygon, gameObject2.collider());
     }
+
+    @Test
+    void isPlayer(){
+        Assertions.assertFalse(gameObject.isPlayer());
+        GameObject gameObjectToTestIsMethods = new GameObject("gameObjectToTestIsMethods", transform, circle, true, false, false, false);
+        Assertions.assertTrue(gameObjectToTestIsMethods.isPlayer());
+    }
+
+    @Test
+    void isEnemy(){
+        Assertions.assertFalse(gameObject.isEnemy());
+        GameObject gameObjectToTestIsMethods = new GameObject("gameObjectToTestIsMethods", transform, circle, false, true, false, false);
+        Assertions.assertTrue(gameObjectToTestIsMethods.isEnemy());
+    }
+
+    @Test
+    void isSolid(){
+        Assertions.assertFalse(gameObject.isSolid());
+        GameObject gameObjectToTestIsMethods = new GameObject("gameObjectToTestIsMethods", transform, circle, false, false, true, false);
+        Assertions.assertTrue(gameObjectToTestIsMethods.isSolid());
+    }
+
+    @Test
+    void isScoreboard(){
+        Assertions.assertFalse(gameObject.isScoreboard());
+        GameObject gameObjectToTestIsMethods = new GameObject("gameObjectToTestIsMethods", transform, circle, false, false, false, true);
+        Assertions.assertTrue(gameObjectToTestIsMethods.isScoreboard());
+    }
 }

@@ -7,4 +7,10 @@ public class Solid extends GameObject {
     public Solid(Point topLeft, double horizontal, double vertical) {
         super("Solid", new Transform(topLeft, 0, 0, 1), Polygon.simpleRectangle(topLeft, horizontal, vertical), false, false, true, false);
     }
+
+    @Override
+    public String toString()
+    {
+        return this.name() + ": <TRANSFORM: " + this.transform() + "> <COLLIDER: " + this.collider() + ">";
+    }
 }
