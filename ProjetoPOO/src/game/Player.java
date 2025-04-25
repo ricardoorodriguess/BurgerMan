@@ -7,7 +7,7 @@ public class Player extends GameObject {
     private double vx, vy;
 
     public Player(Point position) {
-        super("Player", new Transform(position, 0, 0, 1), new Circle(position, 1), true, false, false, false);
+        super("Player", Transform.simpleTransform(position), new Circle(position, 1), true, false, false, false);
         vx = 0;
         vy = 0;
     }

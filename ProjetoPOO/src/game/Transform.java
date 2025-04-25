@@ -105,4 +105,8 @@ public class Transform implements ITransform
     {
         return this.position.toString() + " " + this.layer + " " + String.format(Locale.US, "%.2f", this.angle) + " " + String.format(Locale.US, "%.2f", this.scale);
     }
+
+    public static Transform simpleTransform(Point position) {
+        return new Transform(position, 0, 0, 1);
+    }
 }
