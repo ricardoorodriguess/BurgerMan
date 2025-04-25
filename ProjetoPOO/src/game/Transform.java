@@ -31,9 +31,6 @@ public class Transform implements ITransform
     {
         this.position = position;
         this.layer = layer;
-
-        //pensar aqui se o ângulo é dado em sentido anti-horaio ou nao, se for, temos que somar 360 ate nao seja menor que 0
-        //e assim temos que mudar o if
         if (angle >= 0 || angle <= 360) this.angle = angle; //stored in degrees, because method angle of interface return angle in degrees
         this.scale = scale;
     }

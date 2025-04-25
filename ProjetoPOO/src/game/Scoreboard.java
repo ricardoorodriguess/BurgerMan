@@ -6,7 +6,7 @@ public class Scoreboard extends GameObject {
     private int lives, score;
 
     public Scoreboard() {
-        super("Position", new Transform(new Point(0, 0), 1, 0, 1), null, false, false, false, true);
+        super("Scoreboard", new Transform(new Point(0, 0), 1, 0, 1), null, false, false, false, true);
         lives = 3;
         score = 0;
     }
@@ -16,6 +16,10 @@ public class Scoreboard extends GameObject {
     }
 
     public void onDeath() {
-        lives--;
+        if (lives != 0) lives--;
     }
+
+    public int getScore() {return this.score;}
+
+    public int getLives() {return this.lives;}
 }

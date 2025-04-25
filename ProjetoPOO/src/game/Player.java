@@ -16,4 +16,17 @@ public class Player extends GameObject {
         this.vx = vx;
         this.vy = vy;
     }
+
+    public double getVx() {
+        return vx;
+    }
+
+    public double getVy() {
+        return vy;
+    }
+
+    @Override
+    public String toString() {
+        return this.name() + " vx=" + vx + ", vy=" + vy;
+    }
 }
