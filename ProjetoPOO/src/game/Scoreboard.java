@@ -16,7 +16,7 @@ public class Scoreboard extends GameObject {
     }
 
     public void onDeath() {
-        if (lives != 0) lives--;
+        if (lives > 0) lives--;
     }
 
     public int getScore() {return this.score;}

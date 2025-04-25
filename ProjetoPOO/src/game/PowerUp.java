@@ -12,9 +12,11 @@ public class PowerUp extends Collectible {
 
     @Override
     public void collect(GameObject go) {
-        if (type == PowerUpType.PICKLE && go.isEnemy()) {
-            Client.PLAYER_SPEED = 0.8;
-            Client.PLAYER_SPEED_BUFFER = 60;
+        if (type == PowerUpType.PICKLE && (go.isEnemy() || go.isPlayer())) {
+            if (go.isEnemy()) {
+                Client.PLAYER_SPEED = 0.8;
+                Client.PLAYER_SPEED_BUFFER = 60;
+            }
             Client.ENGINE.destroy(this);
         } else if (go.isPlayer()) {
             switch (type) {
