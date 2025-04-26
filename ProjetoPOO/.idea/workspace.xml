@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="added @Nullable to colliders">
+      <change afterPath="$PROJECT_DIR$/src/game/Behaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/IBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/PowerUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PowerUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Scoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Collectible.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/IGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/IGameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/PowerUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/PowerUpType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Scoreboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Solid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/GameObjectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameObjectTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/PlayerTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ScoreboardTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/SolidTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +35,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -104,7 +120,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ScoreboardTests">
+  <component name="RunManager" selected="JUnit.GameObjectTest">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Client" />
       <module name="ProjetoPOO" />
@@ -163,9 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ScoreboardTests" />
-        <item itemvalue="Application.Client" />
         <item itemvalue="JUnit.GameObjectTest" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="JUnit.ScoreboardTests" />
         <item itemvalue="JUnit.PolygonTest.scale_ScalesPointsCorrectly" />
         <item itemvalue="JUnit.LineTest" />
       </list>

@@ -3,9 +3,11 @@ package game;
 import collisions.Point;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 /**
  * This class represents GameObjects in 2D.
- * <p>It implements the game.IGameObject and encapsulates the object´s name,
+ * <p>It implements the IGameObject and encapsulates the object´s name,
  * its transform (layer,position, angle, scale) and its collider.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
@@ -17,48 +19,41 @@ public class GameObject implements IGameObject
     private final String name;
     private final ITransform transform;
     private final @Nullable ICollider collider;
-    private final boolean isPlayer, isEnemy, isSolid, isScoreboard;
+    private final IBehaviour behaviour;
 
     /**
-     * Constructor to class game.GameObject, create an instance of game.GameObject (see description of class).
+     * Constructor to class GameObject, create an instance of GameObject (see description of class).
      * @param name
      * @param transform
      * @param collider
      */
-    public GameObject(String name, ITransform transform, @Nullable ICollider collider,
-                      boolean isPlayer, boolean isEnemy, boolean isSolid, boolean isScoreboard)
+    public GameObject(String name, ITransform transform, @Nullable ICollider collider, IBehaviour behaviour)
     {
         this.name = name;
         this.transform = transform;
         this.collider = collider;
-        this.isPlayer = isPlayer;
-        this.isEnemy = isEnemy;
-        this.isSolid = isSolid;
-        this.isScoreboard = isScoreboard;
-    }
-
-    public GameObject(String name, ITransform transform, @Nullable ICollider collider) {
-        this(name, transform, collider, false, false, false, false);
+        this.behaviour = behaviour;
+        if (this.behaviour != null) this.behaviour.gameObject(this); //se nao for null assosia este objeto ao behaviour
     }
 
     /**
-     * Returns the name of the game.GameObject.
-     * @return String with the name of the game.GameObject
+     * Returns the name of the GameObject.
+     * @return String with the name of the GameObject
      */
     @Override
     public String name() { return name; }
 
     /**
-     * Response method to obtain the transform associate with this game.GameObject
+     * Response method to obtain the transform associate with this GameObject
      * The transform contains all the transformation info, including: position, layer, rotation angle, and scale factor.
-     * @return an instance of game.ITransform that represents this game.GameObject´s transform.
+     * @return an instance of ITransform that represents this GameObject´s transform.
      */
     @Override
     public ITransform transform() { return transform; }
 
     /**
-     * Obtain the collider associate with this game.GameObject.
-     * @return an instance of game.ICollider that represents this game.GameObject´s collider.
+     * Obtain the collider associate with this GameObject.
+     * @return an instance of ICollider that represents this GameObject´s collider.
      */
     @Override
     public @Nullable ICollider collider() { return collider; }
@@ -106,27 +101,104 @@ public class GameObject implements IGameObject
     }
 
     /**
-     * Give the game.GameObject info in a string
-     * @return String with info of a game.GameObject
+     * Give the GameObject info in a string
+     * @return String with info of a GameObject
      */
     @Override
     public String toString() {
         return "<" + name + " | " + transform + " | " + collider + ">";
     }
 
-    public boolean isPlayer() {
-        return isPlayer;
+
+    @Override
+    public IBehaviour behaviour() {
+        return behaviour;
     }
 
-    public boolean isEnemy() {
-        return isEnemy;
+    @Override
+    public void addEnabled(IGameObject gameObject) {
+
     }
 
-    public boolean isSolid() {
-        return isSolid;
+    @Override
+    public void addDisabled(IGameObject gameObject) {
+
     }
 
-    public boolean isScoreboard() {
-        return isScoreboard;
+    @Override
+    public void enable(IGameObject gameObject) {
+
+    }
+
+    @Override
+    public void disable(IGameObject gameObject) {
+
+    }
+
+    @Override
+    public boolean isEnabled(IGameObject gameObject) {
+        return false;
+    }
+
+    @Override
+    public boolean isDisabled(IGameObject gameObject) {
+        return false;
+    }
+
+    @Override
+    public List<IGameObject> getEnabled() {
+        return List.of();
+    }
+
+    @Override
+    public List<IGameObject> getDisabled() {
+        return List.of();
+    }
+
+    /**
+     * Destroy IGameObject gameObject whether it is enabled or disabled
+     * pre: gameObject != null
+     * pos: gameObject.onDestroy()
+     *
+     * @param gameObject
+     */
+    @Override
+    public void destroy(IGameObject gameObject) {
+
+    }
+
+    /**
+     * Destroy all IGameObjects
+     * pos: calls onDesttoy for each IGameObject
+     */
+    @Override
+    public void destroyAll() {
+
+    }
+
+    /**
+     * Manipula a transform
+     * Generates a new frame:
+     * Get user input from Ul
+     * update all the enabled GameObjects
+     * check collisions and send info to GameObjects
+     * update Ul
+     * pos: Ul.input() &&
+     * calls Behaviour.onUpdate() for all enabled objects && Behaviour.checkCollisions() &&
+     * Ul.draw()
+     */
+    @Override
+    public void run() {
+
+    }
+
+    /**
+     * Check collisions for all the enabled objects
+     * pos: calls Behaviour.onCollision(goI) for all enabled GameObjects passing in the list of all the objects that
+     * collided with each IGameObject
+     */
+    @Override
+    public void checkCollisions() {
+
     }
 }
