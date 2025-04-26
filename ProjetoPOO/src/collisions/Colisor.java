@@ -21,13 +21,17 @@ public abstract class Colisor implements ICollider
      *         true if it happens
      *         false otherwise
      */
-    // Método genérico para colisão (será sobrescrito pelas subclasses)
-    public abstract boolean collides(Colisor colisor);
 
     // Métodos para Double Dispatch
-    abstract boolean collidesWithCircle(Circle circle);
-    abstract boolean collidesWithPolygon(Polygon polygon);
+    public abstract boolean isColliding(ICollider other);
+    public abstract boolean isColliding(Circle circle);
+    public abstract boolean isColliding(Polygon polygon);
     public abstract boolean contains(Point point);
+
+    /**
+     * Metodo par dar update
+     */
+    public abstract void onUpdated();
 
     /**
      * Method to move the given object

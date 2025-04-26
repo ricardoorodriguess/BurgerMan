@@ -32,16 +32,16 @@ class CircleTest {
     void collides()
     {
         Circle c1 = new Circle(new Point(0, 0), 5);
-        Assertions.assertTrue(c1.collides(new Circle(new Point(4, 0), 3))); //Here, two circles intersect.
-        Assertions.assertTrue(c1.collides(new Circle(new Point(6, 0), 1))); //Here, two circles intersect too.
-        Assertions.assertFalse(c1.collides(new Circle(new Point(7, 0), 1))); //Here, this two circles not intersect.
+        assertTrue(c1.isColliding(new Circle(new Point(4, 0), 3))); //Here, two circles intersect.
+        assertTrue(c1.isColliding(new Circle(new Point(6, 0), 1))); //Here, two circles intersect too.
+        assertFalse(c1.isColliding(new Circle(new Point(7, 0), 1))); //Here, this two circles not intersect.
 
         ArrayList<Point> points = new ArrayList<>();
         points.add(new Point(-1, 0));
         points.add(new Point(5, 0));
         points.add(new Point(2, 4));
         Polygon p1 = new Polygon(points);
-        Assertions.assertTrue(c1.collides(p1)); //the circle and polygon must intersect.
+        assertTrue(c1.isColliding(p1)); //the circle and polygon must intersect.
 
         ArrayList<Point> points1 = new ArrayList<>();
         points1.add(new Point(-3.00, -2));
@@ -50,11 +50,11 @@ class CircleTest {
         points1.add(new Point(-3.00, 2.00));
         Polygon p2 = new Polygon(points1);
         p2 = new Polygon(points1);
-        Assertions.assertTrue(c1.collides(p2)); //the circle and this polygon must intersect too.
+        assertTrue(c1.isColliding(p2)); //the circle and this polygon must intersect too.
 
         Circle c2 = new Circle(new Point(10.0, 10.0), 2.00);
-        Assertions.assertFalse(c2.collides(p1)); //here´s no intersection.
-        Assertions.assertFalse(c2.collides(p2)); //here´s no intersection too.
+        assertFalse(c2.isColliding(p1)); //here´s no intersection.
+        assertFalse(c2.isColliding(p2)); //here´s no intersection too.
     }
 
     @Test

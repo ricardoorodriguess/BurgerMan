@@ -1,5 +1,7 @@
 package collisions;
 
+import gameEngine.ICollider;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -113,23 +115,32 @@ public class Polygon extends Colisor {
     }
 
     /**
+     * Metodo par dar update
+     */
+    @Override
+    public void onUpdated() {
+
+    }
+
+    /**
      * Simple method to check if collide with another collider
+     * @param other ICollider
      * @return boolean depending on the situation
      *         true if it happens
      *         false otherwise
      */
     @Override
-    public boolean collides(Colisor colisor) {
-        return colisor != null && colisor.collidesWithPolygon(this);
+    public boolean isColliding(ICollider other) {
+        return other != null && other.isColliding(this);
     }
 
     @Override
-    boolean collidesWithCircle(Circle circle) {
-        return circle.collidesWithPolygon(this);
+    public boolean isColliding(Circle circle) {
+        return circle.isColliding(this);
     }
 
     @Override
-    boolean collidesWithPolygon(Polygon polygon) {
+    public boolean isColliding(Polygon polygon) {
         for (Point p : this.points) {
             if (polygon.contains(p)) return true;
         }

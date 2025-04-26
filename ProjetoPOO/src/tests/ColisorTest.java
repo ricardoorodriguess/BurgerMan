@@ -42,21 +42,21 @@ class ColisorTest {
     void collides_polygon_polygon() {
         Polygon p1 = createSamplePolygon();
         Polygon p2 = createSamplePolygon();
-        Assertions.assertTrue(p1.collides(p2));
+        Assertions.assertTrue(p1.isColliding(p2));
     }
 
     @Test
     void collides_polygon_circle() {
         Polygon p1 = createSamplePolygon();
         Circle c1 = createSampleCircle();
-        Assertions.assertTrue(p1.collides(c1));
+        Assertions.assertTrue(p1.isColliding(c1));
     }
 
     @Test
     void collides_circle_circle() {
         Circle c1 = createSampleCircle();
         Circle c2 = createSampleCircle();
-        Assertions.assertTrue(c1.collides(c2));
+        Assertions.assertTrue(c1.isColliding(c2));
     }
 
 
