@@ -1,19 +1,14 @@
 package gameEngine.behaviour;
 
-import gameEngine.Client;
-import gameEngine.object.Enemy;
+import gameEngine.object.Collectible;
 import gameEngine.object.IGameObject;
 
 import java.awt.event.InputEvent;
 import java.util.List;
 
-public class EnemyBehavior extends Behaviour {
-    /**
-     * Construtor que associa um GameObject a este comportamento.
-     * @param enemy GameObject que será controlado por este comportamento.
-     */
-    public EnemyBehavior(Enemy enemy) {
-        super(enemy);
+public class CollectibleBehaviour extends Behaviour {
+    public CollectibleBehaviour(Collectible collectible) {
+        super(collectible);
     }
 
     @Override
@@ -43,6 +38,6 @@ public class EnemyBehavior extends Behaviour {
 
     @Override
     public void onDestroy() {
-        Client.ENGINE.destroy(igameObject);
+
     }
 }
