@@ -39,6 +39,11 @@ public interface ICollider
     void scale(double scale);
 
     /**
+     * Metodo par dar update
+     */
+    void onUpdated();
+
+    /**
      * Verifica se colide com um ICOllider
      * @param other ICollider
      * @return boolean true se está a colidir

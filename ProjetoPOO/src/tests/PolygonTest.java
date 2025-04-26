@@ -81,8 +81,8 @@ public class PolygonTest {
         Circle circleOutside = new Circle(new Point(10, 10), 1);
 
         // collisions.Circle collision
-        Assertions.assertTrue(polygon.collides(circleInside));
-        Assertions.assertFalse(polygon.collides(circleOutside));
+        assertTrue(polygon.isColliding(circleInside));
+        assertFalse(polygon.isColliding(circleOutside));
 
         // collisions.Polygon collision
         ArrayList<Point> otherPoints = new ArrayList<>();
@@ -91,7 +91,7 @@ public class PolygonTest {
         otherPoints.add(new Point(4, 2));
         Polygon overlappingPolygon = new Polygon(otherPoints);
 
-        Assertions.assertTrue(polygon.collides(overlappingPolygon));
+        assertTrue(polygon.isColliding(overlappingPolygon));
     }
 
     @Test

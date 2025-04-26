@@ -1,5 +1,7 @@
 package collisions;
 
+import gameEngine.ICollider;
+
 import java.util.Locale;
 
 /**
@@ -39,22 +41,23 @@ public class Circle extends Colisor
 
     /**
      * Simple method to check if collides with another collider
+     * @param other ICollider
      * @return boolean depending on the situation
      *         true if it happens
      *         false otherwise
      */
         @Override
-    public boolean collides(Colisor colisor) {
-        return colisor != null && colisor.collidesWithCircle(this);
+        public boolean isColliding(ICollider other) {
+            return other != null && other.isColliding(this);
     }
 
     @Override
-    boolean collidesWithCircle(Circle circle) {
+    public boolean isColliding(Circle circle) {
         return this.center.dist(circle.center) <= this.radius + circle.radius;
     }
 
     @Override
-    boolean collidesWithPolygon(Polygon polygon) {
+    public boolean isColliding(Polygon polygon) {
         for (Point p : polygon.getPoints()) {
             if (contains(p)) return true;
         }
@@ -67,6 +70,14 @@ public class Circle extends Colisor
     @Override
     public boolean contains(Point point) {
         return point.dist(center) <= radius;
+    }
+
+    /**
+     * Metodo par dar update
+     */
+    @Override
+    public void onUpdated() {
+
     }
 
 
