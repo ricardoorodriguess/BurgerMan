@@ -58,6 +58,11 @@ public class GameObject implements IGameObject
     @Override
     public @Nullable ICollider collider() { return collider; }
 
+    @Override
+    public IBehaviour behaviour() {
+        return behaviour;
+    }
+
     /**
      * Move the gameObject and the collider
      * @param point to move
@@ -107,98 +112,5 @@ public class GameObject implements IGameObject
     @Override
     public String toString() {
         return "<" + name + " | " + transform + " | " + collider + ">";
-    }
-
-
-    @Override
-    public IBehaviour behaviour() {
-        return behaviour;
-    }
-
-    @Override
-    public void addEnabled(IGameObject gameObject) {
-
-    }
-
-    @Override
-    public void addDisabled(IGameObject gameObject) {
-
-    }
-
-    @Override
-    public void enable(IGameObject gameObject) {
-
-    }
-
-    @Override
-    public void disable(IGameObject gameObject) {
-
-    }
-
-    @Override
-    public boolean isEnabled(IGameObject gameObject) {
-        return false;
-    }
-
-    @Override
-    public boolean isDisabled(IGameObject gameObject) {
-        return false;
-    }
-
-    @Override
-    public List<IGameObject> getEnabled() {
-        return List.of();
-    }
-
-    @Override
-    public List<IGameObject> getDisabled() {
-        return List.of();
-    }
-
-    /**
-     * Destroy IGameObject gameObject whether it is enabled or disabled
-     * pre: gameObject != null
-     * pos: gameObject.onDestroy()
-     *
-     * @param gameObject
-     */
-    @Override
-    public void destroy(IGameObject gameObject) {
-
-    }
-
-    /**
-     * Destroy all IGameObjects
-     * pos: calls onDesttoy for each IGameObject
-     */
-    @Override
-    public void destroyAll() {
-
-    }
-
-    /**
-     * Manipula a transform
-     * Generates a new frame:
-     * Get user input from Ul
-     * update all the enabled GameObjects
-     * check collisions and send info to GameObjects
-     * update Ul
-     * pos: Ul.input() &&
-     * calls Behaviour.onUpdate() for all enabled objects && Behaviour.checkCollisions() &&
-     * Ul.draw()
-     */
-    @Override
-    public void run() {
-
-    }
-
-    /**
-     * Check collisions for all the enabled objects
-     * pos: calls Behaviour.onCollision(goI) for all enabled GameObjects passing in the list of all the objects that
-     * collided with each IGameObject
-     */
-    @Override
-    public void checkCollisions() {
-
     }
 }
