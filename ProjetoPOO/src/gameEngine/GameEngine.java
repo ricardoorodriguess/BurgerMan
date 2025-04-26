@@ -17,6 +17,7 @@ import java.util.function.Predicate;
  */
 public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
+    private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;
 
     /**
      * Construtor of GameEngine
@@ -173,5 +174,30 @@ public class GameEngine implements IGameEngine {
     @Override
     public void checkCollisions() {
 
+    }
+
+    public void incrementScore(int points) {
+        TOTAL_SCORE += points;
+    }
+
+    public void updateLives(int lives) {
+        TOTAL_LIVES = lives;
+    }
+
+    public int getScore() {
+        return TOTAL_SCORE;
+    }
+
+    public int getLives() {
+        return TOTAL_LIVES;
+    }
+
+    public void resetScore()
+    {
+        TOTAL_SCORE = 0;
+    }
+
+    public void resetLives(){
+        TOTAL_LIVES = 0;
     }
 }

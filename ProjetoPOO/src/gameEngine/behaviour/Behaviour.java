@@ -1,18 +1,6 @@
 package gameEngine.behaviour;
 
-import collisions.Point;
-import com.sun.nio.sctp.NotificationHandler;
-import gameEngine.Client;
-import gameEngine.GameState;
-import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
-
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.Iterator;
-import java.awt.Event;
-import java.util.List;
 
 //classe que implemneta os metodos de controlo de cada GameObject: andar, os inimigos patrulharem, atacarem,etc...
 public abstract class Behaviour implements IBehaviour {

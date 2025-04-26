@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Abstract Behaviour">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/Behaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/Behaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745691090829</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Abstract Behaviour">
+      <option name="closed" value="true" />
+      <created>1745692219912</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745692219913</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

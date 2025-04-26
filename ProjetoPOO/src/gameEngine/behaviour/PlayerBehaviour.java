@@ -2,8 +2,7 @@ package gameEngine.behaviour;
 
 import collisions.Point;
 import gameEngine.Client;
-import gameEngine.GameState;
-import gameEngine.object.Collectible;
+import gameEngine.GameEngine;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
 
@@ -63,7 +62,7 @@ public class PlayerBehaviour extends Behaviour {
             switch (gameObject.name())
             {
                 case "Point" -> {
-                    GameState.incrementScore(10);
+                    Client.ENGINE.incrementScore(10);
                     gameObjects.remove(gameObject);
                 }
                 case "Tomato" -> {
