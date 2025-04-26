@@ -1,7 +1,7 @@
 package tests;
 
 import collisions.Point;
-import game.Transform;
+import gameEngine.Transform;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

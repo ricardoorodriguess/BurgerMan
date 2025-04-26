@@ -1,4 +1,4 @@
-package game;
+package gameEngine;
 
 import org.jetbrains.annotations.Nullable;
 

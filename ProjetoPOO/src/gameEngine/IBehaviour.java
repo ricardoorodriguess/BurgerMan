@@ -1,4 +1,4 @@
-package game;
+package gameEngine;
 
 import java.awt.event.InputEvent;
 import java.util.List;

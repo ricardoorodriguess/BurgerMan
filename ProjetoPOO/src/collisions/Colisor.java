@@ -1,6 +1,6 @@
 package collisions;
 
-import game.ICollider;
+import gameEngine.ICollider;
 
 /**
  * This class represent the collider

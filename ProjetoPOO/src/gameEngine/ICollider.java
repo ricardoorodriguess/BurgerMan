@@ -1,4 +1,4 @@
-package game;
+package gameEngine;
 
 import collisions.Point;
 
