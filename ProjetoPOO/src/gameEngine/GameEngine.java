@@ -176,6 +176,11 @@ public class GameEngine implements IGameEngine {
 
     }
 
+    public GameObject randomObject(Predicate<GameObject> predicate) {
+        List<GameObject> list = loadedObjects.stream().filter(predicate).toList();
+        return list.get(Client.RANDOM.nextInt(list.size()));
+    }
+
     public void incrementScore(int points) {
         TOTAL_SCORE += points;
     }

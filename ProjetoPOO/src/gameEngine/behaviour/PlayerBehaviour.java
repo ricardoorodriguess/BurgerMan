@@ -3,6 +3,7 @@ package gameEngine.behaviour;
 import collisions.Point;
 import gameEngine.Client;
 import gameEngine.GameEngine;
+import gameEngine.object.Enemy;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
 
@@ -63,21 +64,34 @@ public class PlayerBehaviour extends Behaviour {
             {
                 case "Point" -> {
                     Client.ENGINE.incrementScore(10);
-                    gameObjects.remove(gameObject);
+                    Client.ENGINE.destroy(gameObject);
+                    return;
                 }
                 case "Tomato" -> {
                     invincible = true;
                     invincibilityTime = 60;
-                    gameObjects.remove(gameObject);
+                    Client.ENGINE.destroy(gameObject);
+                    return;
                 }
-                case "Onion" -> {}
+                case "Onion" -> {
+                    Client.ENGINE.destroy(Client.ENGINE.randomObject(o -> o instanceof Enemy));
+                    Client.ENGINE.destroy(gameObject);
+                    return;
+                }
                 case "Cheese" -> {
                     Client.PLAYER_SPEED = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
                     Client.PLAYER_SPEED_BUFFER = 60;
-                    gameObjects.remove(gameObject);
+                    Client.ENGINE.destroy(gameObject);
+                    return;
                 }
-                case "Pickle" -> {}
-                case "Enemy" -> {}
+                case "Pickle" -> {
+                    Client.ENGINE.destroy(gameObject);
+                    return;
+                }
+                case "Enemy" -> {
+                    if (invincible) gameObject.behaviour().onDisabled();
+                    else onDisabled();
+                }
                 default -> {}
             }
         }
