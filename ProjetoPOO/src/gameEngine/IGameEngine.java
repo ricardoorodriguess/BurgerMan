@@ -1,5 +1,7 @@
 package gameEngine;
 
+import gameEngine.object.IGameObject;
+
 import java.util.List;
 
 public interface IGameEngine {

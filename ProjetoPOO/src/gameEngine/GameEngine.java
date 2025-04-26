@@ -1,5 +1,8 @@
 package gameEngine;
 
+import gameEngine.object.GameObject;
+import gameEngine.object.IGameObject;
+
 import java.util.ArrayList;
 import java.util.List;
 

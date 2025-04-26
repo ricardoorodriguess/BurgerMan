@@ -1,8 +1,9 @@
-package gameEngine;
+package gameEngine.object;
 
+import gameEngine.ICollider;
+import gameEngine.ITransform;
+import gameEngine.behaviour.IBehaviour;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 /**
  * The {@code game.IGameObject} interface stores information about

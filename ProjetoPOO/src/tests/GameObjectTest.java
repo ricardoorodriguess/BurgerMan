@@ -4,7 +4,7 @@ import collisions.Circle;
 import collisions.Colisor;
 import collisions.Point;
 import collisions.Polygon;
-import gameEngine.GameObject;
+import gameEngine.object.GameObject;
 import gameEngine.Transform;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,6 @@
-package gameEngine;
+package gameEngine.behaviour;
+
+import gameEngine.object.IGameObject;
 
 import java.awt.event.InputEvent;
 import java.util.List;

@@ -1,9 +1,10 @@
-package gameEngine;
+package gameEngine.object;
 
 import collisions.Point;
+import gameEngine.ICollider;
+import gameEngine.ITransform;
+import gameEngine.behaviour.IBehaviour;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 /**
  * This class represents GameObjects in 2D.
@@ -19,7 +20,7 @@ public class GameObject implements IGameObject
     private final String name;
     private final ITransform transform;
     private final @Nullable ICollider collider;
-    private final IBehaviour behaviour;
+    protected final IBehaviour behaviour;
 
     /**
      * Constructor to class GameObject, create an instance of GameObject (see description of class).
