@@ -34,7 +34,7 @@ public class GameObject implements IGameObject
         this.transform = transform;
         this.collider = collider;
         this.behaviour = behaviour;
-        if (this.behaviour != null) this.behaviour.gameObject(this); //se nao for null assosia este objeto ao behaviour
+        if (this.behaviour != null) this.behaviour.gameObject(this); //se nao for null associa este objeto ao behaviour
     }
 
     /**

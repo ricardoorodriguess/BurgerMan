@@ -46,8 +46,8 @@ public class Circle extends Colisor
      *         true if it happens
      *         false otherwise
      */
-        @Override
-        public boolean isColliding(ICollider other) {
+    @Override
+    public boolean isColliding(ICollider other) {
             return other != null && other.isColliding(this);
     }
 
@@ -79,7 +79,6 @@ public class Circle extends Colisor
     public void onUpdated() {
 
     }
-
 
     /**
      * Method to move the circle

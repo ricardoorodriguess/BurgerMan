@@ -1,0 +1,19 @@
+Index: src/gameEngine/Behaviour.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gameEngine;\r\n\r\nimport java.awt.event.InputEvent;\r\nimport java.util.List;\r\n\r\n//classe que implemneta os metodos de controlo de cada GameObject: andar, os inimigos patrulharem, atacarem,etc...\r\npublic class Behaviour implements IBehaviour {\r\n    private IGameObject igameObject;\r\n\r\n    /**\r\n     * Construtor que associa um GameObject a este comportamento.\r\n     * @param igameObject GameObject que será controlado por este comportamento.\r\n     */\r\n    public Behaviour(IGameObject igameObject) {\r\n        this.igameObject = igameObject;\r\n    }\r\n\r\n    /**\r\n     * Retorna o GameObject associado a este comportamento.\r\n     * @return GameObject vinculado.\r\n     */\r\n    @Override\r\n    public IGameObject gameObject() {\r\n        return this.igameObject;\r\n    }\r\n\r\n\r\n    /**\r\n     * Define um novo GameObject para este comportamento.\r\n     * @param gameObject Novo GameObject a ser controlado.\r\n     */\r\n    @Override\r\n    public void gameObject(IGameObject gameObject) {\r\n        this.igameObject = gameObject;\r\n    }\r\n\r\n    /**\r\n     * Chamado a cada frame para atualizar o estado do GameObject.\r\n     * @param dT Tempo em segundos desde o último frame (delta time).\r\n     * @param ie Eventos de entrada do usuário (ex: teclado).\r\n     */\r\n    @Override\r\n    public void onUpdate(double dT, InputEvent ie) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Chamado quando ocorre uma colisão com outros GameObjects.\r\n     * @param gameObjects Lista de GameObjects colididos.\r\n     */\r\n    @Override\r\n    public void onCollision(List<IGameObject> gameObjects) {\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     * Chamado quando o GameObject é inicializado (antes do primeiro frame).\r\n     */\r\n    @Override\r\n    public void onInit() {\r\n\r\n    }\r\n\r\n    /**\r\n     * Chamado quando o GameObject é habilitado (ex: adicionado ao jogo).\r\n     */\r\n    @Override\r\n    public void onEnabled() {\r\n\r\n    }\r\n\r\n    /**\r\n     * Chamado quando o GameObject é desabilitado (ex: removido temporariamente).\r\n     */\r\n    @Override\r\n    public void onDisabled() {\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     * Chamado quando o GameObject é destruído (remoção permanente).\r\n     */\r\n    @Override\r\n    public void onDestroy() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/gameEngine/Behaviour.java b/src/gameEngine/Behaviour.java
+--- a/src/gameEngine/Behaviour.java	(revision 41b036fd470d8dc76ca3d4b76b123acbd4c12d5d)
++++ b/src/gameEngine/Behaviour.java	(date 1745682782416)
+@@ -6,6 +6,10 @@
+ //classe que implemneta os metodos de controlo de cada GameObject: andar, os inimigos patrulharem, atacarem,etc...
+ public class Behaviour implements IBehaviour {
+     private IGameObject igameObject;
++    private boolean invincible = false;
++    private double invincibilityTime = 0;
++    private int lives = 3;
++    private int score = 0;
+ 
+     /**
+      * Construtor que associa um GameObject a este comportamento.
