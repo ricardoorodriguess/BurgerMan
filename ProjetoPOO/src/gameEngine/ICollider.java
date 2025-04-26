@@ -1,6 +1,8 @@
 package gameEngine;
 
+import collisions.Circle;
 import collisions.Point;
+import collisions.Polygon;
 
 /**
  * The {@code game.ICollider} interface stores information about
@@ -35,4 +37,28 @@ public interface ICollider
      * @param scale
      */
     void scale(double scale);
+
+    /**
+     * Verifica se colide com um ICOllider
+     * @param other ICollider
+     * @return boolean true se está a colidir
+     *                 false cc
+     */
+    boolean isColliding(ICollider other);
+
+    /**
+     * Verifica se colide com um Poligono
+     * @param other Poligono
+     * @return boolean true se está a colidir
+     *                 false cc
+     */
+    boolean isColliding (Polygon other);
+
+    /**
+     * Verifica se colide com um Circulo
+     * @param other Circulo
+     * @return boolean true se está a colidir
+     *                 false cc
+     */
+    boolean isColliding (Circle other);
 }

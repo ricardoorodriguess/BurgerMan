@@ -3,20 +3,54 @@ package gameEngine;
 import java.util.List;
 
 public interface IGameEngine {
+    /**
+     * Adiciona um GameObject à lista de ativos.
+     * @param gameObject GameObject a ser habilitado.
+     */
     void addEnabled(IGameObject gameObject);
 
+    /**
+     * Adiciona um GameObject à lista de inativos.
+     * @param gameObject GameObject a ser desabilitado.
+     */
     void addDisabled(IGameObject gameObject);
 
+    /**
+     * Habilita um GameObject desabilitado.
+     * @param gameObject GameObject a ser reativado.
+     */
     void enable(IGameObject gameObject);
 
+    /**
+     * Desabilita um GameObject ativo.
+     * @param gameObject GameObject a ser desativado.
+     */
     void disable(IGameObject gameObject);
 
+    /**
+     * Verifica se um GameObject está ativo.
+     * @param gameObject GameObject a ser verificado.
+     * @return true se o objeto está habilitado.
+     */
     boolean isEnabled(IGameObject gameObject);
 
+    /**
+     * Verifica se um GameObject está inativo.
+     * @param gameObject GameObject a ser verificado.
+     * @return true se o objeto está desabilitado.
+     */
     boolean isDisabled(IGameObject gameObject);
 
+    /**
+     * Retorna todos os GameObjects ativos.
+     * @return Lista de objetos habilitados.
+     */
     List<IGameObject> getEnabled();
 
+    /**
+     * Retorna todos os GameObjects inativos.
+     * @return Lista de objetos desabilitados.
+     */
     List<IGameObject> getDisabled();
 
     /**

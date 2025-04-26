@@ -25,6 +25,10 @@ public interface IGameObject {
      */
     ITransform transform();
 
+    /**
+     * Returns the game.Behaviour of the game.GameObject.
+     * @return the game.Behaviour of the game.GameObject.
+     */
     IBehaviour behaviour();
 
     /**

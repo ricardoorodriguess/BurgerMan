@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="IBehaviour, Behaviour, GameObject...">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/IGameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/Behaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Behaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/IBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/ICollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/ICollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/IGameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IGameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/IGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IGameObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +23,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -322,15 +324,7 @@
       <option name="project" value="LOCAL" />
       <updated>1745674240745</updated>
     </task>
-    <task id="LOCAL-00018" summary="IBehaviour, Behaviour, GameObject...">
-      <option name="closed" value="true" />
-      <created>1745674794318</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1745674794320</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
