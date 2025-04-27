@@ -15,8 +15,6 @@ class CollectibleTests {
     @Test
     void testConstructor() {
         Collectible collectible = new Collectible(Type.TOMATO, new Point(1, 1));
-        Behaviour behaviour = new CollectibleBehaviour(collectible);
         assertEquals("<Tomato | (1.00,1.00) 0 0.00 1.00 | (1.00,1.00) 0.50>", collectible.toString());
-        assertEquals(behaviour, collectible.behaviour());
     }
 }

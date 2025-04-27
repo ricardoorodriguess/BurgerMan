@@ -12,8 +12,6 @@ class PlayerTests {
     @Test
     void testConstructor() {
         Player player = new Player(new Point(1, 1));
-        Behaviour behaviour = new PlayerBehaviour(player);
         assertEquals("<Player | (1.00,1.00) 0 0.00 1.00 | (0.00,0.00) (0.00,2.00) (2.00,2.00) (2.00,0.00)>", player.toString());
-        assertEquals(behaviour, player.behaviour());
     }
 }

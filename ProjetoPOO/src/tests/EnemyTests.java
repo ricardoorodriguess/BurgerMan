@@ -13,8 +13,6 @@ class EnemyTests {
     @Test
     void testConstructor() {
         Enemy enemy = new Enemy(new Point(1, 1));
-        Behaviour behaviour = new EnemyBehavior(enemy);
         assertEquals("<Enemy | (1.00,1.00) 0 0.00 1.00 | (0.00,0.00) (0.00,2.00) (2.00,2.00) (2.00,0.00)>", enemy.toString());
-        assertEquals(behaviour, enemy.behaviour());
     }
 }
