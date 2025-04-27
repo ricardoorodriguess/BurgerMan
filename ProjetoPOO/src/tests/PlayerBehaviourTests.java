@@ -113,6 +113,12 @@ class PlayerBehaviourTests {
     }
 
     @Test
+    void onDisabled() {
+        pb.onDisabled();
+        assertTrue(Client.ENGINE.isDisabled(pb.gameObject()));
+    }
+
+    @Test
     void onDestroy() {
         pb.onDestroy();
         assertTrue(Client.ENGINE.isDestroyed(pb.gameObject()));
