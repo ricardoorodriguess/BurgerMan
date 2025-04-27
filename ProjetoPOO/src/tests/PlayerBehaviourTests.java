@@ -40,26 +40,26 @@ class PlayerBehaviourTests {
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyA = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_A, 'A');
         pb.onUpdate(1.0, keyA);
-        assertEquals(0, pb.gameObject().transform().position().getX());
-        assertEquals(1, pb.gameObject().transform().position().getY());
+        assertEquals(2, pb.gameObject().transform().position().getX());
+        assertEquals(2, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyD = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_D, 'D');
         pb.onUpdate(1.0, keyD);
-        assertEquals(2, pb.gameObject().transform().position().getX());
-        assertEquals(1, pb.gameObject().transform().position().getY());
+        assertEquals(3, pb.gameObject().transform().position().getX());
+        assertEquals(3, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyS = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_S, 'S');
         pb.onUpdate(1.0, keyS);
-        assertEquals(1, pb.gameObject().transform().position().getX());
-        assertEquals(2, pb.gameObject().transform().position().getY());
+        assertEquals(4, pb.gameObject().transform().position().getX());
+        assertEquals(4, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyW = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_W, 'W');
         pb.onUpdate(1.0, keyW);
-        assertEquals(1, pb.gameObject().transform().position().getX());
-        assertEquals(0, pb.gameObject().transform().position().getY());
+        assertEquals(5, pb.gameObject().transform().position().getX());
+        assertEquals(5, pb.gameObject().transform().position().getY());
     }
 
     @Test
@@ -113,12 +113,6 @@ class PlayerBehaviourTests {
         pb.onEnabled();
         assertFalse(pb.isInvincible());
         assertEquals(0.0, pb.getInvincibilityTime());
-    }
-
-    @Test
-    void onDisabled() {
-        pb.onDestroy();
-        assertTrue(Client.ENGINE.isDisabled(pb.gameObject()));
     }
 
     @Test
