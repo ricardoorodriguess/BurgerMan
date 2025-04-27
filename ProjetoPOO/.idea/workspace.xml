@@ -93,7 +93,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -192,6 +192,7 @@
       <workItem from="1742996720875" duration="532000" />
       <workItem from="1743791356424" duration="10980000" />
       <workItem from="1745515412436" duration="2624000" />
+      <workItem from="1745753003742" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
