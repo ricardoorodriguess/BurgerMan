@@ -205,4 +205,8 @@ public class GameEngine implements IGameEngine {
     public void resetLives(){
         TOTAL_LIVES = 0;
     }
+
+    public boolean isDestroyed(IGameObject iGameObject) {
+        return true; //FAZER
+    }
 }

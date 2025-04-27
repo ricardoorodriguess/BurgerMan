@@ -117,7 +117,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDisabled() {
-        //O QUE É SUPOSTO FAZER AQUI ?
+        //quando o personagem morre
     }
 
     /**
@@ -126,5 +126,21 @@ public class PlayerBehaviour extends Behaviour {
     @Override
     public void onDestroy() {
         Client.ENGINE.destroy(igameObject);
+    }
+
+    public boolean isInvincible() {
+        return invincible;
+    }
+
+    public double getInvincibilityTime() {
+        return invincibilityTime;
+    }
+
+    /**
+     * for tests
+     */
+    public void setInvincible(double time) {
+        invincible = true;
+        invincibilityTime = time;
     }
 }
