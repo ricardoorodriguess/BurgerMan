@@ -93,6 +93,9 @@ class PlayerBehaviourTests {
         if (pb.isInvincible()) {
             assertTrue(Client.ENGINE.isDestroyed(Enemy));
             assertFalse(Client.ENGINE.isDestroyed(p1));
+        } else {
+            assertTrue(Client.ENGINE.isDestroyed(p1));
+            assertFalse(Client.ENGINE.isDisabled(Enemy));
         }
     }
 
