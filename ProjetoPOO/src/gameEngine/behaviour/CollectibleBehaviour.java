@@ -7,37 +7,50 @@ import java.awt.event.InputEvent;
 import java.util.List;
 
 public class CollectibleBehaviour extends Behaviour {
+    /**
+     * Construtor que associa este comportamento a um coletável.
+     * @param collectible Coletável controlado por este comportamento.
+     */
     public CollectibleBehaviour(Collectible collectible) {
         super(collectible);
     }
 
+    /**
+     * Atualiza o estado do coletável a cada frame.
+     * @param dT Tempo desde o último frame (em segundos).
+     * @param ie Evento de entrada do usuário.
+     */
     @Override
-    public void onUpdate(double dT, InputEvent ie) {
+    public void onUpdate(double dT, InputEvent ie) {}
 
-    }
-
+    /**
+     * Lida com colisões entre este coletável e outros objetos.
+     * @param gameObjects Lista de objetos que colidiram com este coletável.
+     */
     @Override
-    public void onCollision(List<IGameObject> gameObjects) {
+    public void onCollision(List<IGameObject> gameObjects) {}
 
-    }
-
+    /**
+     * Executado quando o comportamento é inicializado.
+     */
     @Override
-    public void onInit() {
+    public void onInit() {}
 
-    }
-
+    /**
+     * Executado quando o objeto é ativado.
+     */
     @Override
-    public void onEnabled() {
+    public void onEnabled() {}
 
-    }
-
+    /**
+     * Executado quando o objeto é desativado.
+     */
     @Override
-    public void onDisabled() {
+    public void onDisabled() {}
 
-    }
-
+    /**
+     * Executado quando o objeto é destruído.
+     */
     @Override
-    public void onDestroy() {
-
-    }
+    public void onDestroy() {}
 }

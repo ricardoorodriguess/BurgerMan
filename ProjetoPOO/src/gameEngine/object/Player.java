@@ -7,6 +7,10 @@ import gameEngine.behaviour.PlayerBehaviour;
 import org.jetbrains.annotations.NotNull;
 
 public class Player extends GameObject {
+    /**
+     * Constrói o jogador na posição especificada.
+     * @param position Posição inicial do jogador.
+     */
     public Player(@NotNull Point position) {
         super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position), new PlayerBehaviour(null));
         behaviour.gameObject(this);

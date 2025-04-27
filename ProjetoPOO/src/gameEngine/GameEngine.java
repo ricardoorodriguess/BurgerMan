@@ -178,37 +178,60 @@ public class GameEngine implements IGameEngine {
 
     }
 
+    /**
+     * Retorna um GameObject aleatório que satisfaz um predicado.
+     * @param predicate Condição para filtrar objetos.
+     * @return GameObject aleatório ou null se nenhum for encontrado.
+     */
     public @Nullable GameObject randomObject(Predicate<GameObject> predicate) {
         List<GameObject> list = loadedObjects.stream().filter(predicate).toList();
         if (list.isEmpty()) return null;
         return list.get(Client.RANDOM.nextInt(list.size()));
     }
 
+    /**
+     * Incrementa a pontuação total do jogador.
+     * @param points Pontos a serem adicionados.
+     */
     public void incrementScore(int points) {
         TOTAL_SCORE += points;
     }
 
+    /**
+     * Atualiza o número de vidas do jogador.
+     * @param lives Novo número de vidas.
+     */
     public void updateLives(int lives) {
         TOTAL_LIVES = lives;
     }
 
-    public int getScore() {
-        return TOTAL_SCORE;
-    }
+    /**
+     * Retorna a pontuação atual do jogador.
+     * @return Pontuação total.
+     */
+    public int getScore() { return TOTAL_SCORE; }
 
-    public int getLives() {
-        return TOTAL_LIVES;
-    }
+    /**
+     * Retorna o número de vidas restantes do jogador.
+     * @return Número de vidas.
+     */
+    public int getLives() { return TOTAL_LIVES; }
 
-    public void resetScore()
-    {
-        TOTAL_SCORE = 0;
-    }
+    /**
+     * Reinicia a pontuação do jogador para zero.
+     */
+    public void resetScore() { TOTAL_SCORE = 0; }
 
-    public void resetLives(){
-        TOTAL_LIVES = 0;
-    }
+    /**
+     * Reinicia o número de vidas do jogador para zero.
+     */
+    public void resetLives() { TOTAL_LIVES = 0; }
 
+    /**
+     * Verifica se um GameObject foi destruído.
+     * @param iGameObject Objeto a ser verificado.
+     * @return true se o objeto foi destruído (implementação temporária).
+     */
     public boolean isDestroyed(IGameObject iGameObject) {
         return true; //FAZER
     }
