@@ -2,6 +2,7 @@ package gameEngine;
 
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class GameEngine implements IGameEngine {
      * @param gameObject
      */
     public void destroy(GameObject gameObject) {
+        if (gameObject == null) return;
         loadedObjects.remove(gameObject);
     }
 
@@ -176,8 +178,9 @@ public class GameEngine implements IGameEngine {
 
     }
 
-    public GameObject randomObject(Predicate<GameObject> predicate) {
+    public @Nullable GameObject randomObject(Predicate<GameObject> predicate) {
         List<GameObject> list = loadedObjects.stream().filter(predicate).toList();
+        if (list.isEmpty()) return null;
         return list.get(Client.RANDOM.nextInt(list.size()));
     }
 

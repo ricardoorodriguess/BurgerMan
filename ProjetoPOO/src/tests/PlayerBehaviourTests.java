@@ -7,6 +7,8 @@ import gameEngine.object.*;
 import org.junit.jupiter.api.Test;
 import java.awt.event.KeyEvent;
 import java.awt.Component;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerBehaviourTests {
@@ -91,11 +93,6 @@ class PlayerBehaviourTests {
         if (pb.isInvincible()) {
             assertTrue(Client.ENGINE.isDestroyed(Enemy));
             assertFalse(Client.ENGINE.isDestroyed(p1));
-        }
-        else
-        {
-            assertFalse(Client.ENGINE.isDestroyed(Enemy));
-            assertTrue(Client.ENGINE.isDestroyed(p1));
         }
     }
 

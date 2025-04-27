@@ -2,7 +2,6 @@ package gameEngine.behaviour;
 
 import collisions.Point;
 import gameEngine.Client;
-import gameEngine.GameEngine;
 import gameEngine.object.Enemy;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;

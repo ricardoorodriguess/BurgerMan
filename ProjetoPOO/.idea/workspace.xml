@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Other tests">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Fixed tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +118,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerBehaviourTests.onUpdate">
+  <component name="RunManager" selected="JUnit.PlayerBehaviourTests.onCollision">
     <configuration name="PlayerBehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -197,8 +199,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
         <item itemvalue="JUnit.PlayerBehaviourTests.onCollision" />
+        <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
         <item itemvalue="JUnit.PlayerBehaviourTests" />
         <item itemvalue="JUnit.PlayerBehaviourTests.testConstructor" />
         <item itemvalue="JUnit.TransformTest" />
@@ -378,7 +380,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745771233898</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed tests">
+      <option name="closed" value="true" />
+      <created>1745772064290</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1745772064290</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +419,7 @@
     <MESSAGE value="IBehaviour, Behaviour, GameObject..." />
     <MESSAGE value="Abstract Behaviour" />
     <MESSAGE value="Other tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Other tests" />
+    <MESSAGE value="Fixed tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed tests" />
   </component>
 </project>
