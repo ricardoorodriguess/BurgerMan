@@ -141,7 +141,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void destroy(IGameObject gameObject) {
-
+        destroy((GameObject) gameObject);
     }
 
     /**
@@ -150,7 +150,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void destroyAll() {
-
+        loadedObjects.clear();
     }
     /**
      * Manipula a transform
