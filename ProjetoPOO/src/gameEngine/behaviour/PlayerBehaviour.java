@@ -47,10 +47,6 @@ public class PlayerBehaviour extends Behaviour {
             }
             return;
         }
-
-        if (!"Player".equals(this.igameObject.name())) {
-            //para fazer o movimento dos enemys
-        }
     }
 
     /**

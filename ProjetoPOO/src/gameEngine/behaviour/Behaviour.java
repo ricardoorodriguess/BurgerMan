@@ -7,7 +7,7 @@ public abstract class Behaviour implements IBehaviour {
     IGameObject igameObject;
 
     /**
-     * Construtor que associa um GameObject a este comportamento.
+     * Construtor que associa um GameObject a este Behaviour.
      * @param igameObject GameObject que será controlado por este comportamento.
      */
     public Behaviour(IGameObject igameObject) {
@@ -15,7 +15,7 @@ public abstract class Behaviour implements IBehaviour {
     }
 
     /**
-     * Retorna o GameObject associado a este comportamento.
+     * Retorna o GameObject associado a este Behaviour.
      * @return GameObject vinculado.
      */
     @Override

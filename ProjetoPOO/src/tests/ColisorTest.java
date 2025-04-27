@@ -32,12 +32,6 @@ class ColisorTest {
         return new Circle(centroid, radius);
     }
 
-    private Circle createSampleCircle2() {
-        Point centroid = new Point(1, 1);
-        double radius = 1;
-        return new Circle(centroid, radius);
-    }
-
     @Test
     void collides_polygon_polygon() {
         Polygon p1 = createSamplePolygon();
