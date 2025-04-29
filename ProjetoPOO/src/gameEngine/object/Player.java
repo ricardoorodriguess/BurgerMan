@@ -6,6 +6,13 @@ import gameEngine.Transform;
 import gameEngine.behaviour.PlayerBehaviour;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Responsive class to represent a Player GameObject.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version April 29, 2025
+ */
 public class Player extends GameObject {
     /**
      * Constrói o jogador na posição especificada.

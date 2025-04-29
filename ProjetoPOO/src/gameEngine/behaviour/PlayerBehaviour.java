@@ -10,6 +10,13 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with Player behaviour.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version April 29, 2025
+ */
 public class PlayerBehaviour extends Behaviour {
     private boolean invincible;
     private double invincibilityTime;
@@ -25,7 +32,7 @@ public class PlayerBehaviour extends Behaviour {
     /**
      * Chamado a cada frame para atualizar o estado do GameObject.
      * @param dT Tempo em segundos desde o último frame (delta time).
-     * @param ie Eventos de entrada do usuário (ex: teclado).
+     * @param ie Eventos de entrada do utilizador (ex: teclado).
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
@@ -75,7 +82,7 @@ public class PlayerBehaviour extends Behaviour {
                 }
                 case "Cheese" -> {
                     Client.PLAYER_SPEED = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                    Client.PLAYER_SPEED_BUFFER = 60;
+                    Client.PLAYER_SPEED_TIME = 60;
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -86,6 +93,9 @@ public class PlayerBehaviour extends Behaviour {
                 case "Enemy" -> {
                     if (invincible) gameObject.behaviour().onDisabled();
                     else onDisabled();
+                }
+                case "Solid" -> {
+
                 }
                 default -> {}
             }

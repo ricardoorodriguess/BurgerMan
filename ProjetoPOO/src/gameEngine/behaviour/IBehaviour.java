@@ -5,6 +5,14 @@ import gameEngine.object.IGameObject;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * The {@code gamaEngine.Behaviour} interface stores information about
+ * an object's behaviour.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version March 25, 2025
+ */
 public interface IBehaviour {
     //para acesso ao gameObject que está associado
 

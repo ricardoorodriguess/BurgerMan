@@ -6,6 +6,13 @@ import gameEngine.object.IGameObject;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with Collectible behaviour.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version April 29, 2025
+ */
 public class CollectibleBehaviour extends Behaviour {
     /**
      * Construtor que associa este comportamento a um coletável.

@@ -2,7 +2,13 @@ package gameEngine.behaviour;
 
 import gameEngine.object.IGameObject;
 
-//classe que implemneta os metodos de controlo de cada GameObject: andar, os inimigos patrulharem, atacarem,etc...
+/**
+ * Abstract class responsive do deal with the behaviour of inheritance classes.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version April 29, 2025
+ */
 public abstract class Behaviour implements IBehaviour {
     IGameObject igameObject;
 

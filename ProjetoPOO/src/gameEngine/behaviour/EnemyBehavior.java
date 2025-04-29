@@ -7,6 +7,13 @@ import gameEngine.object.IGameObject;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with Enemy behaviour.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version April 29, 2025
+ */
 public class EnemyBehavior extends Behaviour {
     /**
      * Construtor que associa um GameObject a este comportamento.

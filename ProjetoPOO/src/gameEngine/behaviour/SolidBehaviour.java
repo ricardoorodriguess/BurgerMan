@@ -1,0 +1,71 @@
+package gameEngine.behaviour;
+
+import gameEngine.object.IGameObject;
+import gameEngine.object.Solid;
+
+import java.awt.event.InputEvent;
+import java.util.List;
+
+public class SolidBehaviour extends Behaviour {
+    /**
+     * Construtor que associa um GameObject a este Behaviour.
+     *
+     * @param solid GameObject que será controlado por este comportamento.
+     */
+    public SolidBehaviour(Solid solid) {
+        super(solid);
+    }
+
+    /**
+     * Atualiza o estado do GameObject a cada frame.
+     *
+     * @param dT Tempo desde o último frame em segundos.
+     * @param ie Eventos de entrada do usuário.
+     */
+    @Override
+    public void onUpdate(double dT, InputEvent ie) {
+
+    }
+
+    /**
+     * Trata colisões com outros GameObjects.
+     *
+     * @param gameObjects Lista de objetos colididos.
+     */
+    @Override
+    public void onCollision(List<IGameObject> gameObjects) {
+
+    }
+
+    /**
+     * Inicializa o comportamento (chamado uma vez no início).
+     */
+    @Override
+    public void onInit() {
+
+    }
+
+    /**
+     * Executado quando o GameObject é habilitado.
+     */
+    @Override
+    public void onEnabled() {
+
+    }
+
+    /**
+     * Executado quando o GameObject é desabilitado.
+     */
+    @Override
+    public void onDisabled() {
+
+    }
+
+    /**
+     * Executado quando o GameObject é destruído.
+     */
+    @Override
+    public void onDestroy() {
+
+    }
+}
