@@ -51,7 +51,7 @@ class GameEngineTests {
 
     @Test
     void addEnabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new Player(new Point(1,1));
         engine.addEnabled(obj);
         assertTrue(engine.getEnabled().contains(obj));
         assertEquals(1, engine.getEnabled().size());
@@ -78,7 +78,7 @@ class GameEngineTests {
 
     @Test
     void disable() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new Player(new Point(1,1));
         engine.addEnabled(obj);
         engine.disable(obj);
         assertTrue(engine.isDisabled(obj));
@@ -87,7 +87,7 @@ class GameEngineTests {
 
     @Test
     void isEnabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new Player(new Point(1,1));
         engine.addEnabled(obj);
         assertTrue(engine.isEnabled(obj));
         assertFalse(engine.isDisabled(obj));
@@ -96,7 +96,7 @@ class GameEngineTests {
 
     @Test
     void isDisabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new Player(new Point(1,1));
         engine.addDisabled(obj);
         assertTrue(engine.isDisabled(obj));
         assertFalse(engine.isEnabled(obj));
@@ -105,8 +105,8 @@ class GameEngineTests {
 
     @Test
     void getEnabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
-        IGameObject obj2 = new GameObject("Obj2", Transform.simpleTransform(new Point(1,1)), null, null);
+        IGameObject obj = new Player(new Point(1,1));
+        IGameObject obj2 = new Player(new Point(1,1));
         engine.addEnabled(obj);
         engine.addEnabled(obj2);
         List<IGameObject> enabled = engine.getEnabled();
@@ -154,9 +154,9 @@ class GameEngineTests {
 
     @Test
     void checkCollisions() {
-        GameObject obj1 = new GameObject("A", Transform.simpleTransform(new Point(0,0)), null, null);
-        GameObject obj2 = new GameObject("B", Transform.simpleTransform(new Point(0,0)), null, null);
-        engine.addEnabled(obj1);
+        IGameObject obj = new Player(new Point(1,1));
+        IGameObject obj2 = new Player(new Point(1,1));
+        engine.addEnabled(obj);
         engine.addEnabled(obj2);
         engine.checkCollisions();
         //MUITO ABSTRATO MAS A IDEIA E ALGO DESTE GENERO
@@ -186,6 +186,7 @@ class GameEngineTests {
 
     @Test
     void getScore() {
+        engine.resetScore();
         engine.incrementScore(100);
         assertEquals(100, engine.getScore());
 

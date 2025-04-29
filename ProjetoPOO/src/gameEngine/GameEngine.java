@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
- * This class represent a various gameObjects in an arrayList
+ * This class represents a various gameObjects in an arrayList
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -18,6 +18,8 @@ import java.util.function.Predicate;
  */
 public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
+    private final ArrayList<IGameObject> enableObjects; //ver
+    private final ArrayList<IGameObject> disableObjects; //ver
     private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;
 
     /**
@@ -25,6 +27,8 @@ public class GameEngine implements IGameEngine {
      */
     public GameEngine() {
         this.loadedObjects = new ArrayList<>();
+        this.enableObjects = new ArrayList<>();
+        this.disableObjects = new ArrayList<>();
     }
 
     /**
@@ -58,7 +62,10 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void addEnabled(IGameObject gameObject) {
-
+        if (gameObject != null){
+            enableObjects.add(gameObject);
+            this.checkCollisions();
+        }
     }
 
     /**
@@ -69,7 +76,9 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void addDisabled(IGameObject gameObject) {
-
+        if (gameObject != null){
+            disableObjects.add(gameObject);
+        }
     }
 
     /**
@@ -80,7 +89,10 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void enable(IGameObject gameObject) {
-
+        if (gameObject != null && this.isDisabled(gameObject)){
+            disableObjects.remove(gameObject);
+            enableObjects.add(gameObject);
+        }
     }
 
     /**
@@ -91,7 +103,10 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void disable(IGameObject gameObject) {
-
+        if (gameObject != null && this.isEnabled(gameObject)) {
+            enableObjects.remove(gameObject);
+            disableObjects.add(gameObject);
+        }
     }
 
     /**
@@ -101,6 +116,9 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isEnabled(IGameObject gameObject) {
+        for (IGameObject iGameObject : enableObjects) {
+            if (iGameObject.equals(gameObject)) return true;
+        }
         return false;
     }
 
@@ -111,6 +129,9 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isDisabled(IGameObject gameObject) {
+        for (IGameObject iGameObject : disableObjects) {
+            if (iGameObject.equals(gameObject)) return true;
+        }
         return false;
     }
 
@@ -120,7 +141,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public List<IGameObject> getEnabled() {
-        return List.of();
+        return enableObjects;
     }
 
     /**
@@ -129,7 +150,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public List<IGameObject> getDisabled() {
-        return List.of();
+        return disableObjects;
     }
 
     /**
@@ -141,7 +162,9 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void destroy(IGameObject gameObject) {
-        destroy((GameObject) gameObject);
+        if (gameObject != null) {
+            gameObject.behaviour().onDestroy();
+        }
     }
 
     /**
@@ -175,7 +198,9 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void checkCollisions() {
-
+        for (IGameObject iGameObject : enableObjects) {
+            iGameObject.behaviour().onCollision(enableObjects);
+        }
     }
 
     /**
@@ -225,7 +250,7 @@ public class GameEngine implements IGameEngine {
     /**
      * Reinicia o número de vidas do jogador para zero.
      */
-    public void resetLives() { TOTAL_LIVES = 0; }
+    public void resetLives() { TOTAL_LIVES = 3; }
 
     /**
      * Verifica se um GameObject foi destruído.

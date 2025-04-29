@@ -1,0 +1,330 @@
+Index: src/gameEngine/GameEngine.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gameEngine;\r\n\r\nimport gameEngine.object.GameObject;\r\nimport gameEngine.object.IGameObject;\r\nimport org.jetbrains.annotations.Nullable;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.function.Consumer;\r\nimport java.util.function.Predicate;\r\n\r\n/**\r\n * This class represent a various gameObjects in an arrayList\r\n * @author Ricardo Rodrigues\r\n * @author Rodrigo Linhas\r\n * @author Tiago Tome\r\n * @version March 27, 2025\r\n */\r\npublic class GameEngine implements IGameEngine {\r\n    private final ArrayList<GameObject> loadedObjects;\r\n    private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;\r\n\r\n    /**\r\n     * Construtor of GameEngine\r\n     */\r\n    public GameEngine() {\r\n        this.loadedObjects = new ArrayList<>();\r\n    }\r\n\r\n    /**\r\n     * Method do add gameObjects to arrayList\r\n     * @param gameObject\r\n     */\r\n    public void add(GameObject gameObject) {\r\n        loadedObjects.add(gameObject);\r\n    }\r\n\r\n    /**\r\n     * Method do remove gameObjects from arrayList\r\n     * @param gameObject\r\n     */\r\n    public void destroy(GameObject gameObject) {\r\n        if (gameObject == null) return;\r\n        loadedObjects.remove(gameObject);\r\n    }\r\n\r\n    /**\r\n     * Response method to give the ArrayList of gameObjects.\r\n     * @return the List of gameObjets in engine\r\n     */\r\n    public ArrayList<GameObject> getLoadedObjects() {return loadedObjects;}\r\n\r\n    /**\r\n     * Adiciona um GameObject à lista de objetos habilitados (ativos no jogo).\r\n     * @param gameObject GameObject a ser ativado.\r\n     * @pre gameObject != null\r\n     * @post GameObject é atualizado e verifica colisões.\r\n     */\r\n    @Override\r\n    public void addEnabled(IGameObject gameObject) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Adiciona um GameObject à lista de objetos desabilitados (inativos).\r\n     * @param gameObject GameObject a ser desativado.\r\n     * @pre gameObject != null\r\n     * @post GameObject não é mais atualizado.\r\n     */\r\n    @Override\r\n    public void addDisabled(IGameObject gameObject) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Habilita um GameObject previamente desabilitado.\r\n     * @param gameObject GameObject a ser reativado.\r\n     * @pre gameObject está em disabledObjects\r\n     * @post GameObject é movido para enabledObjects\r\n     */\r\n    @Override\r\n    public void enable(IGameObject gameObject) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Desabilita um GameObject ativo.\r\n     * @param gameObject GameObject a ser desativado.\r\n     * @pre gameObject está em enabledObjects\r\n     * @post GameObject é movido para disabledObjects\r\n     */\r\n    @Override\r\n    public void disable(IGameObject gameObject) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Verifica se um GameObject está ativo.\r\n     * @param gameObject GameObject a ser verificado.\r\n     * @return true se o objeto está em enabledObjects.\r\n     */\r\n    @Override\r\n    public boolean isEnabled(IGameObject gameObject) {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Verifica se um GameObject está inativo.\r\n     * @param gameObject GameObject a ser verificado.\r\n     * @return true se o objeto está em disabledObjects.\r\n     */\r\n    @Override\r\n    public boolean isDisabled(IGameObject gameObject) {\r\n        return false;\r\n    }\r\n\r\n    /**\r\n     * Retorna todos os GameObjects ativos.\r\n     * @return Lista de objetos em enabledObjects.\r\n     */\r\n    @Override\r\n    public List<IGameObject> getEnabled() {\r\n        return List.of();\r\n    }\r\n\r\n    /**\r\n     * Retorna todos os GameObjects inativos.\r\n     * @return Lista de objetos em disabledObjects.\r\n     */\r\n    @Override\r\n    public List<IGameObject> getDisabled() {\r\n        return List.of();\r\n    }\r\n\r\n    /**\r\n     * Destroy IGameObject gameObject whether it is enabled or disabled\r\n     * @pre: gameObject != null\r\n     * @pos: gameObject.onDestroy()\r\n     *\r\n     * @param gameObject\r\n     */\r\n    @Override\r\n    public void destroy(IGameObject gameObject) {\r\n\r\n    }\r\n\r\n    /**\r\n     * Destroy all IGameObjects\r\n     * @pos: calls onDesttoy for each IGameObject\r\n     */\r\n    @Override\r\n    public void destroyAll() {\r\n\r\n    }\r\n    /**\r\n     * Manipula a transform\r\n     * Generates a new frame:\r\n     * Get user input from Ul\r\n     * update all the enabled GameObjects\r\n     * check collisions and send info to GameObjects\r\n     * update Ul\r\n     * @pos: Ul.input() &&\r\n     * calls Behaviour.onUpdate() for all enabled objects && Behaviour.checkCollisions() &&\r\n     * Ul.draw()\r\n     */\r\n    @Override\r\n    public void run() {\r\n\r\n    }\r\n\r\n    /**\r\n     * Check collisions for all the enabled objects\r\n     * @pos: calls Behaviour.onCollision(goI) for all enabled GameObjects passing in the list of all the objects that\r\n     * collided with each IGameObject\r\n     */\r\n    @Override\r\n    public void checkCollisions() {\r\n\r\n    }\r\n\r\n    public @Nullable GameObject randomObject(Predicate<GameObject> predicate) {\r\n        List<GameObject> list = loadedObjects.stream().filter(predicate).toList();\r\n        if (list.isEmpty()) return null;\r\n        return list.get(Client.RANDOM.nextInt(list.size()));\r\n    }\r\n\r\n    public void incrementScore(int points) {\r\n        TOTAL_SCORE += points;\r\n    }\r\n\r\n    public void updateLives(int lives) {\r\n        TOTAL_LIVES = lives;\r\n    }\r\n\r\n    public int getScore() {\r\n        return TOTAL_SCORE;\r\n    }\r\n\r\n    public int getLives() {\r\n        return TOTAL_LIVES;\r\n    }\r\n\r\n    public void resetScore()\r\n    {\r\n        TOTAL_SCORE = 0;\r\n    }\r\n\r\n    public void resetLives(){\r\n        TOTAL_LIVES = 0;\r\n    }\r\n\r\n    public boolean isDestroyed(IGameObject iGameObject) {\r\n        return true; //FAZER\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/gameEngine/GameEngine.java b/src/gameEngine/GameEngine.java
+--- a/src/gameEngine/GameEngine.java	(revision 7227d4efc1245f60ccfff2ddd90a9c957457baa6)
++++ b/src/gameEngine/GameEngine.java	(date 1745875154131)
+@@ -10,7 +10,7 @@
+ import java.util.function.Predicate;
+ 
+ /**
+- * This class represent a various gameObjects in an arrayList
++ * This class represents a various gameObjects in an arrayList
+  * @author Ricardo Rodrigues
+  * @author Rodrigo Linhas
+  * @author Tiago Tome
+@@ -18,6 +18,8 @@
+  */
+ public class GameEngine implements IGameEngine {
+     private final ArrayList<GameObject> loadedObjects;
++    private final ArrayList<IGameObject> disableObjects; //ver
++    private final ArrayList<IGameObject> enableObjects; //ver
+     private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;
+ 
+     /**
+@@ -25,6 +27,8 @@
+      */
+     public GameEngine() {
+         this.loadedObjects = new ArrayList<>();
++        this.disableObjects = new ArrayList<>();
++        this.enableObjects = new ArrayList<>();
+     }
+ 
+     /**
+@@ -58,7 +62,10 @@
+      */
+     @Override
+     public void addEnabled(IGameObject gameObject) {
+-
++        if (gameObject != null) {
++            this.enableObjects.add(gameObject);
++            this.checkCollisions();
++        }
+     }
+ 
+     /**
+@@ -69,7 +76,9 @@
+      */
+     @Override
+     public void addDisabled(IGameObject gameObject) {
+-
++        if (gameObject != null) {
++            this.disableObjects.add(gameObject);
++        }
+     }
+ 
+     /**
+@@ -80,7 +89,10 @@
+      */
+     @Override
+     public void enable(IGameObject gameObject) {
+-
++        if (this.isDisabled(gameObject)){
++            this.disableObjects.remove(gameObject);
++            this.enableObjects.add(gameObject);
++        }
+     }
+ 
+     /**
+@@ -91,7 +103,10 @@
+      */
+     @Override
+     public void disable(IGameObject gameObject) {
+-
++        if (this.isEnabled(gameObject)){
++            this.enableObjects.remove(gameObject);
++            this.disableObjects.add(gameObject);
++        }
+     }
+ 
+     /**
+@@ -101,6 +116,9 @@
+      */
+     @Override
+     public boolean isEnabled(IGameObject gameObject) {
++        for (IGameObject iGameObject : this.enableObjects) {
++            if (iGameObject.equals(gameObject)) return true;
++        }
+         return false;
+     }
+ 
+@@ -111,6 +129,9 @@
+      */
+     @Override
+     public boolean isDisabled(IGameObject gameObject) {
++        for (IGameObject iGameObject : this.disableObjects) {
++            if (iGameObject.equals(gameObject)) return true;
++        }
+         return false;
+     }
+ 
+@@ -120,7 +141,7 @@
+      */
+     @Override
+     public List<IGameObject> getEnabled() {
+-        return List.of();
++        return this.enableObjects;
+     }
+ 
+     /**
+@@ -129,7 +150,7 @@
+      */
+     @Override
+     public List<IGameObject> getDisabled() {
+-        return List.of();
++        return this.disableObjects;
+     }
+ 
+     /**
+@@ -141,7 +162,9 @@
+      */
+     @Override
+     public void destroy(IGameObject gameObject) {
+-
++        if (gameObject != null) {
++            gameObject.behaviour().onDestroy();
++        }
+     }
+ 
+     /**
+@@ -150,7 +173,9 @@
+      */
+     @Override
+     public void destroyAll() {
+-
++        for (GameObject gameObject : this.loadedObjects) {
++            gameObject.behaviour().onDestroy();
++        }
+     }
+     /**
+      * Manipula a transform
+@@ -175,7 +200,9 @@
+      */
+     @Override
+     public void checkCollisions() {
+-
++        for (IGameObject gameObject : this.enableObjects) {
++            gameObject.behaviour().onCollision(enableObjects); //nao tenho a certeza
++        }
+     }
+ 
+     public @Nullable GameObject randomObject(Predicate<GameObject> predicate) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b1738391-2c07-4536-9877-ac91f9e728bc\" name=\"Changes\" comment=\"Fixed tests\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/gameEngine/GameEngine.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/gameEngine/GameEngine.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JUnit5 Test Class\" />\r\n        <option value=\"Enum\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_AUTO_UPDATE\" value=\"true\" />\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;TiagoTome1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,\r\n    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2uoPqydXI35WbTBSEwSdx8lk4ZA\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Client.executor\": \"Run\",\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"JUnit.BehaviourTests.executor\": \"Run\",\r\n    \"JUnit.CircleTest.centroid.executor\": \"Run\",\r\n    \"JUnit.CircleTest.collides.executor\": \"Run\",\r\n    \"JUnit.CircleTest.executor\": \"Run\",\r\n    \"JUnit.CircleTest.scale.executor\": \"Run\",\r\n    \"JUnit.CircleTest.testToString.executor\": \"Run\",\r\n    \"JUnit.ColisorTest.executor\": \"Run\",\r\n    \"JUnit.CollectibleBehaviourTests.executor\": \"Run\",\r\n    \"JUnit.CollectibleTests.executor\": \"Run\",\r\n    \"JUnit.ColliderTest.executor\": \"Run\",\r\n    \"JUnit.EnemyBehaviorTests.executor\": \"Run\",\r\n    \"JUnit.EnemyTests.executor\": \"Run\",\r\n    \"JUnit.GameObjectTest.executor\": \"Run\",\r\n    \"JUnit.LineSegmentTest.executor\": \"Run\",\r\n    \"JUnit.LineTest.executor\": \"Run\",\r\n    \"JUnit.PlayerBehaviourTests.executor\": \"Run\",\r\n    \"JUnit.PlayerBehaviourTests.onCollision.executor\": \"Run\",\r\n    \"JUnit.PlayerBehaviourTests.onDisabled.executor\": \"Run\",\r\n    \"JUnit.PlayerBehaviourTests.onUpdate.executor\": \"Run\",\r\n    \"JUnit.PlayerBehaviourTests.testConstructor.executor\": \"Run\",\r\n    \"JUnit.PlayerTests.executor\": \"Run\",\r\n    \"JUnit.PointTest.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor\": \"Run\",\r\n    \"JUnit.PolygonTest.toString_FormatsCorrectly.executor\": \"Run\",\r\n    \"JUnit.ScoreboardTests.executor\": \"Run\",\r\n    \"JUnit.TransformTest.executor\": \"Run\",\r\n    \"JUnit.TransformTest.layer.executor\": \"Run\",\r\n    \"JUnit.TransformTest.move.executor\": \"Run\",\r\n    \"JUnit.TransformTest.position.executor\": \"Run\",\r\n    \"JUnit.TransformTest.rotate.executor\": \"Run\",\r\n    \"JUnit.TransformTest.scale.executor\": \"Run\",\r\n    \"JUnit.TransformTest.testScale.executor\": \"Run\",\r\n    \"JUnit.TransformTest.testToString.executor\": \"Run\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"create.test.in.the.same.root\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"preferences.keymap\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.PlayerBehaviourTests.onCollision\">\r\n    <configuration name=\"PlayerBehaviourTests\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"tests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tests.PlayerBehaviourTests\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PlayerBehaviourTests.onCollision\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"tests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tests.PlayerBehaviourTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"onCollision\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PlayerBehaviourTests.onUpdate\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"tests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tests.PlayerBehaviourTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"onUpdate\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"PlayerBehaviourTests.testConstructor\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"tests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tests.PlayerBehaviourTests\" />\r\n      <option name=\"METHOD_NAME\" value=\"testConstructor\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TransformTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"ProjetoPOO\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"tests\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tests.TransformTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.PlayerBehaviourTests.onCollision\" />\r\n        <item itemvalue=\"JUnit.PlayerBehaviourTests.onUpdate\" />\r\n        <item itemvalue=\"JUnit.PlayerBehaviourTests\" />\r\n        <item itemvalue=\"JUnit.PlayerBehaviourTests.testConstructor\" />\r\n        <item itemvalue=\"JUnit.TransformTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b1738391-2c07-4536-9877-ac91f9e728bc\" name=\"Changes\" comment=\"\" />\r\n      <created>1742912152551</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1742912152551</updated>\r\n      <workItem from=\"1742912153708\" duration=\"4000\" />\r\n      <workItem from=\"1742996720875\" duration=\"532000\" />\r\n      <workItem from=\"1743791356424\" duration=\"10980000\" />\r\n      <workItem from=\"1745515412436\" duration=\"2624000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"implementation of circle toString method, doc for equals at Point\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743088867485</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743088867485</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added toString to abstract class and polygon too\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743089251312</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743089251312</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Implementation of client class\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743099169877</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743099169877</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"delete DEEPSEEK commet\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743100253908</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743100253908</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743100918138</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743100918138</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743172084510</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743172084510</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"add a space in toString at circle\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743172156479</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743172156479</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"fixed polygon-polygon collision\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743176959771</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743176959771</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"fixed polygon-polygon collision\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743178597458</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743178597458</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Added doc to GameEngine\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743793803900</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743793803900</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"Isolate centroid calcule in a method\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743794622517</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743794622517</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"doc to centroidCalculate method\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1743794713507</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1743794713507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"added @Nullable to colliders\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745505815054</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745505815054</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"added @Nullable to colliders\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745508685682</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745508685682</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"added @Nullable to colliders\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745512367361</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745512367361</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"added @Nullable to colliders\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745591975442</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745591975442</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"IBehaviour, Behaviour, GameObject...\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745674240745</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745674240745</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"Abstract Behaviour\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745691090829</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745691090829</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Abstract Behaviour\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745692219912</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745692219913</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Other tests\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745771233898</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745771233898</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Fixed tests\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1745772064290</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1745772064290</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"22\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"implementation of circle toString method, doc for equals at Point\" />\r\n    <MESSAGE value=\"Added toString to abstract class and polygon too\" />\r\n    <MESSAGE value=\"Implementation of client class\" />\r\n    <MESSAGE value=\"delete DEEPSEEK commet\" />\r\n    <MESSAGE value=\"add a space in toString at circle\" />\r\n    <MESSAGE value=\"fixed polygon-polygon collision\" />\r\n    <MESSAGE value=\"Added doc to GameEngine\" />\r\n    <MESSAGE value=\"Isolate centroid calcule in a method\" />\r\n    <MESSAGE value=\"doc to centroidCalculate method\" />\r\n    <MESSAGE value=\"added @Nullable to colliders\" />\r\n    <MESSAGE value=\"IBehaviour, Behaviour, GameObject...\" />\r\n    <MESSAGE value=\"Abstract Behaviour\" />\r\n    <MESSAGE value=\"Other tests\" />\r\n    <MESSAGE value=\"Fixed tests\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Fixed tests\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7227d4efc1245f60ccfff2ddd90a9c957457baa6)
++++ b/.idea/workspace.xml	(date 1745874142248)
+@@ -4,11 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Fixed tests">
++    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Abstract Behaviour">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -56,27 +54,16 @@
+   "keyToString": {
+     "Application.Client.executor": "Run",
+     "Downloaded.Files.Path.Enabled": "false",
+-    "JUnit.BehaviourTests.executor": "Run",
+     "JUnit.CircleTest.centroid.executor": "Run",
+     "JUnit.CircleTest.collides.executor": "Run",
+     "JUnit.CircleTest.executor": "Run",
+     "JUnit.CircleTest.scale.executor": "Run",
+     "JUnit.CircleTest.testToString.executor": "Run",
+-    "JUnit.ColisorTest.executor": "Run",
+-    "JUnit.CollectibleBehaviourTests.executor": "Run",
+-    "JUnit.CollectibleTests.executor": "Run",
+     "JUnit.ColliderTest.executor": "Run",
+     "JUnit.EnemyBehaviorTests.executor": "Run",
+-    "JUnit.EnemyTests.executor": "Run",
+     "JUnit.GameObjectTest.executor": "Run",
+-    "JUnit.LineSegmentTest.executor": "Run",
+     "JUnit.LineTest.executor": "Run",
+     "JUnit.PlayerBehaviourTests.executor": "Run",
+-    "JUnit.PlayerBehaviourTests.onCollision.executor": "Run",
+-    "JUnit.PlayerBehaviourTests.onDisabled.executor": "Run",
+-    "JUnit.PlayerBehaviourTests.onUpdate.executor": "Run",
+-    "JUnit.PlayerBehaviourTests.testConstructor.executor": "Run",
+-    "JUnit.PlayerTests.executor": "Run",
+     "JUnit.PointTest.executor": "Run",
+     "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
+     "JUnit.PolygonTest.executor": "Run",
+@@ -118,8 +105,8 @@
+       <recent name="" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.PlayerBehaviourTests.onCollision">
+-    <configuration name="PlayerBehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="JUnit.EnemyBehaviorTests">
++    <configuration name="EnemyBehaviorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <extension name="coverage">
+         <pattern>
+@@ -128,13 +115,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="tests" />
+-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
++      <option name="MAIN_CLASS_NAME" value="tests.EnemyBehaviorTests" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PlayerBehaviourTests.onCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PlayerBehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <extension name="coverage">
+         <pattern>
+@@ -144,13 +131,12 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="tests" />
+       <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
+-      <option name="METHOD_NAME" value="onCollision" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PlayerBehaviourTests.onUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <extension name="coverage">
+         <pattern>
+@@ -159,14 +145,13 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="tests" />
+-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
+-      <option name="METHOD_NAME" value="onUpdate" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="tests.PointTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="PlayerBehaviourTests.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="ProjetoPOO" />
+       <extension name="coverage">
+         <pattern>
+@@ -175,9 +160,8 @@
+         </pattern>
+       </extension>
+       <option name="PACKAGE_NAME" value="tests" />
+-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
+-      <option name="METHOD_NAME" value="testConstructor" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="MAIN_CLASS_NAME" value="tests.PolygonTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -199,11 +183,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="JUnit.PlayerBehaviourTests.onCollision" />
+-        <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
++        <item itemvalue="JUnit.EnemyBehaviorTests" />
+         <item itemvalue="JUnit.PlayerBehaviourTests" />
+-        <item itemvalue="JUnit.PlayerBehaviourTests.testConstructor" />
+         <item itemvalue="JUnit.TransformTest" />
++        <item itemvalue="JUnit.PolygonTest" />
++        <item itemvalue="JUnit.PointTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -372,23 +356,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1745692219913</updated>
+     </task>
+-    <task id="LOCAL-00020" summary="Other tests">
+-      <option name="closed" value="true" />
+-      <created>1745771233898</created>
+-      <option name="number" value="00020" />
+-      <option name="presentableId" value="LOCAL-00020" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1745771233898</updated>
+-    </task>
+-    <task id="LOCAL-00021" summary="Fixed tests">
+-      <option name="closed" value="true" />
+-      <created>1745772064290</created>
+-      <option name="number" value="00021" />
+-      <option name="presentableId" value="LOCAL-00021" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1745772064290</updated>
+-    </task>
+-    <option name="localTasksCounter" value="22" />
++    <option name="localTasksCounter" value="20" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -418,8 +386,6 @@
+     <MESSAGE value="added @Nullable to colliders" />
+     <MESSAGE value="IBehaviour, Behaviour, GameObject..." />
+     <MESSAGE value="Abstract Behaviour" />
+-    <MESSAGE value="Other tests" />
+-    <MESSAGE value="Fixed tests" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Fixed tests" />
++    <option name="LAST_COMMIT_MESSAGE" value="Abstract Behaviour" />
+   </component>
+ </project>
+\ No newline at end of file
