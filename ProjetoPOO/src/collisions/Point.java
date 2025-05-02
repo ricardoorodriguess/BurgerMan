@@ -34,6 +34,14 @@ public class Point
      */
     public double getY() { return this.y; }
 
+    public Point add(Point other) {
+        return new Point(x + other.x, y + other.y);
+    }
+
+    public Point scaleOrigin(double factor) {
+        return new Point(x * factor, y * factor);
+    }
+
     /**
      * Response method to do a translation in one collisions.Point.
      * @param point, coordinates x and y to add to this.point

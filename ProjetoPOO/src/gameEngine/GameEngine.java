@@ -1,7 +1,10 @@
 package gameEngine;
 
+import collisions.Colisor;
+import collisions.Point;
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
+import gameEngine.object.Solid;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -259,5 +262,13 @@ public class GameEngine implements IGameEngine {
      */
     public boolean isDestroyed(IGameObject iGameObject) {
         return true; //FAZER
+    }
+
+    @SuppressWarnings("DataFlowIssue")
+    public boolean checkSolidCollisionAt(Point point) {
+        for (GameObject o : loadedObjects)
+            if (o instanceof Solid s && ((Colisor) s.collider()).contains(point))
+                return true;
+        return false;
     }
 }

@@ -3,6 +3,7 @@ package gameEngine.behaviour;
 import collisions.Point;
 import gameEngine.Client;
 import gameEngine.object.Enemy;
+import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
 
@@ -18,8 +19,11 @@ import java.util.List;
  * @version April 29, 2025
  */
 public class PlayerBehaviour extends Behaviour {
+    public static double PLAYER_SPEED = 1, PLAYER_SPEED_TIME = 0;
+
     private boolean invincible;
     private double invincibilityTime;
+    private Point speed;
 
     /**
      * Construtor que associa um GameObject a este comportamento.
@@ -27,13 +31,11 @@ public class PlayerBehaviour extends Behaviour {
      */
     public PlayerBehaviour(Player player) {
         super(player);
+        speed = new Point(0, 0);
     }
 
-    /**
-     * Chamado a cada frame para atualizar o estado do GameObject.
-     * @param dT Tempo em segundos desde o último frame (delta time).
-     * @param ie Eventos de entrada do utilizador (ex: teclado).
-     */
+
+    @SuppressWarnings("DataFlowIssue")
     @Override
     public void onUpdate(double dT, InputEvent ie) {
         if (this.invincible) {
@@ -43,16 +45,20 @@ public class PlayerBehaviour extends Behaviour {
             }
         }
 
+        Point prevSpeed = speed;
         if ("Player".equals(this.igameObject.name()) && ie instanceof KeyEvent k) {
-            Point delta = new Point(0, 0);
             switch (k.getKeyCode()) {
-                case KeyEvent.VK_W -> {}
-                case KeyEvent.VK_S -> {}
-                case KeyEvent.VK_D -> {}
-                case KeyEvent.VK_A -> {}
+                case KeyEvent.VK_W -> speed = new Point(0, -1);
+                case KeyEvent.VK_S -> speed = new Point(0, 1);
+                case KeyEvent.VK_D -> speed = new Point(1, 0);
+                case KeyEvent.VK_A -> speed = new Point(-1, 0);
             }
-            return;
         }
+
+        if (Client.ENGINE.checkSolidCollisionAt(igameObject.collider().centroid().add(speed)))
+            speed = prevSpeed;
+
+        ((GameObject) igameObject).move(speed, 0);
     }
 
     /**
@@ -81,8 +87,8 @@ public class PlayerBehaviour extends Behaviour {
                     return;
                 }
                 case "Cheese" -> {
-                    Client.PLAYER_SPEED = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                    Client.PLAYER_SPEED_TIME = 60;
+                    PLAYER_SPEED = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
+                    PLAYER_SPEED_TIME = 60;
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -95,7 +101,8 @@ public class PlayerBehaviour extends Behaviour {
                     else onDisabled();
                 }
                 case "Solid" -> {
-
+                    ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
+                    speed = new Point(0, 0);
                 }
                 default -> {}
             }
