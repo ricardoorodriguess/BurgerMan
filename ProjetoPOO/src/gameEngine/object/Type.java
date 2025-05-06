@@ -25,4 +25,13 @@ public enum Type {
     public String getName() {
         return name;
     }
+
+    public void getType(String name) {
+        for (Type type : Type.values()) {
+            if (type.getName().equalsIgnoreCase(name)) {
+                return type;
+            }
+        }
+        return null; // Retorna null se o tipo não for encontrado
+    }
 }
