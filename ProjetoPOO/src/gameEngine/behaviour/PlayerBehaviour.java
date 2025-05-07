@@ -19,7 +19,7 @@ import java.util.List;
  * @version April 29, 2025
  */
 public class PlayerBehaviour extends Behaviour {
-    public static double PLAYER_SPEED = 1, PLAYER_SPEED_TIME = 0;
+    private static double playerSpeed = 1, PlayerSpeedTime = 0;
 
     private boolean invincible;
     private double invincibilityTime;
@@ -34,7 +34,11 @@ public class PlayerBehaviour extends Behaviour {
         speed = new Point(0, 0);
     }
 
-
+    /**
+     * Chamado a cada frame para atualizar o estado do GameObject.
+     * @param dT Tempo em segundos desde o último frame (delta time).
+     * @param ie Eventos de entrada do utilizador (ex: teclado).
+     */
     @SuppressWarnings("DataFlowIssue")
     @Override
     public void onUpdate(double dT, InputEvent ie) {
@@ -87,8 +91,8 @@ public class PlayerBehaviour extends Behaviour {
                     return;
                 }
                 case "Cheese" -> {
-                    PLAYER_SPEED = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                    PLAYER_SPEED_TIME = 60;
+                    playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
+                    PlayerSpeedTime = 60;
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -150,6 +154,14 @@ public class PlayerBehaviour extends Behaviour {
 
     public double getInvincibilityTime() {
         return invincibilityTime;
+    }
+
+    public double getPlayerSpeed() {
+        return playerSpeed;
+    }
+
+    public double getPlayerSpeedTime() {
+        return PlayerSpeedTime;
     }
 
     /**
