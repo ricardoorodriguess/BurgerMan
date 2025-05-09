@@ -21,8 +21,8 @@ import java.util.function.Predicate;
  */
 public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
-    private final ArrayList<IGameObject> enableObjects; //ver
-    private final ArrayList<IGameObject> disableObjects; //ver
+    private final ArrayList<IGameObject> enableObjects;
+    private final ArrayList<IGameObject> disableObjects;
     private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;
 
     /**

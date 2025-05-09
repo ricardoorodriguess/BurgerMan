@@ -148,7 +148,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDestroy() {
-        Client.ENGINE.destroy(igameObject);
+        Client.ENGINE.destroy((GameObject)igameObject);
     }
 
     public boolean isInvincible() {
