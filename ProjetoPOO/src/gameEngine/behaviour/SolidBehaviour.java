@@ -1,6 +1,7 @@
 package gameEngine.behaviour;
 
 import collisions.Point;
+import gameEngine.ICollider;
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Solid;
@@ -45,8 +46,10 @@ public class SolidBehaviour extends Behaviour {
     }
 
     private Point calculateCollisionResponse(GameObject gameObject) {
-        Point solidCentroid = igameObject.collider().centroid();
-        Point gameObjectCentroid = gameObject.collider().centroid();
+        ICollider c1 = igameObject.collider(), c2 = gameObject.collider();
+        if (c1 == null || c2 == null) return null;
+        Point solidCentroid = c1.centroid();
+        Point gameObjectCentroid = c2.centroid();
 
         double dx = gameObjectCentroid.getX() - solidCentroid.getX();
         double dy = gameObjectCentroid.getY() - solidCentroid.getY();
