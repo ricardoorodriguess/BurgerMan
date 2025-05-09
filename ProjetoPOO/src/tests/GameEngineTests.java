@@ -23,7 +23,7 @@ class GameEngineTests {
         engine.add(player);
         engine.add(new Enemy(new Point(5, 5)));
         engine.add(new Collectible(Type.POINT, new Point(1, 1)));
-        assertEquals(engine.getLoadedObjects().size(), 3);
+        assertEquals(engine.getLoadedObjects().size(), 5);
     }
 
     @Test
@@ -32,7 +32,8 @@ class GameEngineTests {
         engine.add(collectible = new Collectible(Type.POINT, new Point(0, 0)));
         assertFalse(engine.getLoadedObjects().isEmpty());
         engine.destroy(collectible);
-        assertTrue(engine.getLoadedObjects().isEmpty());
+        System.out.println(engine.getLoadedObjects());
+        assertEquals(engine.getLoadedObjects().size(), 2);
     }
 
     @Test
@@ -46,7 +47,7 @@ class GameEngineTests {
                 list.add(g);
         for (GameObject g : list)
             engine.destroy(g);
-        assertEquals(engine.getLoadedObjects().size(), 1);
+        assertEquals(engine.getLoadedObjects().size(), 3);
     }
 
     @Test
@@ -133,9 +134,9 @@ class GameEngineTests {
     @Test
     void testDestroy() {
         engine.add(player);
-        assertFalse(engine.getLoadedObjects().isEmpty());
+        assertNotEquals(engine.getLoadedObjects().size(), 2);
         engine.destroy(player);
-        assertTrue(engine.getLoadedObjects().isEmpty());
+        assertEquals(engine.getLoadedObjects().size(), 2);
     }
 
     @Test
@@ -165,7 +166,8 @@ class GameEngineTests {
     @Test
     void randomObject() {
         engine.add(player);
-        assertEquals(player, engine.randomObject(_ -> true));
+        List<IGameObject> list = List.of(player, engine.getScoreObject(), engine.getLivesObject());
+        assertTrue(list.contains(engine.randomObject(_ -> true)));
     }
 
     /*

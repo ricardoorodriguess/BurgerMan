@@ -1,14 +1,8 @@
 package tests;
 
-import collisions.Circle;
-import collisions.Colisor;
 import collisions.Point;
-import gameEngine.ITransform;
-import gameEngine.Transform;
-import gameEngine.behaviour.Behaviour;
 import gameEngine.behaviour.IBehaviour;
 import gameEngine.behaviour.PlayerBehaviour;
-import gameEngine.object.GameObject;
 import gameEngine.object.Player;
 import org.junit.jupiter.api.Test;
 

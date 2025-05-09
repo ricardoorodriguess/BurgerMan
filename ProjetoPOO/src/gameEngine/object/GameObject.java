@@ -28,13 +28,14 @@ public class GameObject implements IGameObject
      * @param transform
      * @param collider
      */
-    public GameObject(String name, ITransform transform, @Nullable ICollider collider, IBehaviour behaviour)
+    public GameObject(String name, ITransform transform, @Nullable ICollider collider, @Nullable IBehaviour behaviour)
     {
         this.name = name;
         this.transform = transform;
         this.collider = collider;
         this.behaviour = behaviour;
-        if (this.behaviour != null) this.behaviour.gameObject(this); //se nao for null associa este objeto ao behaviour
+        if (this.behaviour != null)
+            this.behaviour.gameObject(this); //se nao for null associa este objeto ao behaviour
     }
 
     /**

@@ -24,8 +24,8 @@ public class PlayerBehaviour extends Behaviour {
     private boolean invincible;
     private double invincibilityTime;
     private Point speed;
-    ScoreBehaviour score = (ScoreBehaviour) Client.ENGINE.getScoreObject().behaviour();
-    LivesBehaviour lives = (LivesBehaviour) Client.ENGINE.getLivesObject().behaviour();
+    ScoreBehaviour score;
+    LivesBehaviour lives;
 
     /**
      * Construtor que associa um GameObject a este comportamento.
@@ -34,6 +34,13 @@ public class PlayerBehaviour extends Behaviour {
     public PlayerBehaviour(Player player) {
         super(player);
         speed = new Point(0, 0);
+    }
+
+    @Override
+    public void gameObject(IGameObject gameObject) {
+        super.gameObject(gameObject);
+        score = (ScoreBehaviour) Client.ENGINE.getScoreObject().behaviour();
+        lives = (LivesBehaviour) Client.ENGINE.getLivesObject().behaviour();
     }
 
     /**
@@ -131,10 +138,8 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onEnabled() {
-        invincible = false;
-        invincibilityTime = 0;
-        playerSpeed = 1;
-        PlayerSpeedTime = 0;
+        onInit();
+        Client.ENGINE.enable(gameObject());
     }
 
     /**
@@ -142,7 +147,9 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDisabled() {
-        this.lives.decreaseLives();
+        if (lives != null)
+            this.lives.decreaseLives();
+        Client.ENGINE.disable(gameObject());
     }
 
     /**

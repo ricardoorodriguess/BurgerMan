@@ -42,6 +42,7 @@ public class GameEngine implements IGameEngine {
      */
     public void add(GameObject gameObject) {
         loadedObjects.add(gameObject);
+        enableObjects.add(gameObject);
     }
 
     /**
@@ -51,6 +52,7 @@ public class GameEngine implements IGameEngine {
     public void destroy(GameObject gameObject) {
         if (gameObject == null) return;
         loadedObjects.remove(gameObject);
+        (isEnabled(gameObject) ? enableObjects : disableObjects).remove(gameObject);
     }
 
     /**
@@ -121,10 +123,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isEnabled(IGameObject gameObject) {
-        for (IGameObject iGameObject : enableObjects) {
-            if (iGameObject.equals(gameObject)) return true;
-        }
-        return false;
+        return enableObjects.contains(gameObject);
     }
 
     /**
@@ -168,7 +167,9 @@ public class GameEngine implements IGameEngine {
     @Override
     public void destroy(IGameObject gameObject) {
         if (gameObject != null) {
-            gameObject.behaviour().onDestroy();
+            GameObject go = (GameObject) gameObject;
+            loadedObjects.remove(go);
+            (isEnabled(go) ? enableObjects : disableObjects).remove(go);
         }
     }
 
