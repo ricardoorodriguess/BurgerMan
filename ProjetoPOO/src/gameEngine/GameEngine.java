@@ -261,7 +261,10 @@ public class GameEngine implements IGameEngine {
      * @return true se o objeto foi destruído (implementação temporária).
      */
     public boolean isDestroyed(IGameObject iGameObject) {
-        return true; //FAZER
+        for (IGameObject iGo : loadedObjects) {
+            if (iGo.equals(iGameObject)) {return false;}
+        }
+        return true;
     }
 
     @SuppressWarnings("DataFlowIssue")

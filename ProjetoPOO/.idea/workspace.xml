@@ -7,7 +7,8 @@
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Fix some things in PlayerBehaviour">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Type.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746614163451</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix some things in PlayerBehaviour">
+      <option name="closed" value="true" />
+      <created>1746800611557</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1746800611557</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
