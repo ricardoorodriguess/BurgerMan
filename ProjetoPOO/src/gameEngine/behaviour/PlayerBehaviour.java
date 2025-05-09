@@ -19,8 +19,8 @@ import java.util.List;
  * @version April 29, 2025
  */
 public class PlayerBehaviour extends Behaviour {
-    private static double playerSpeed = 1, PlayerSpeedTime = 0;
-
+    private double playerSpeed;
+    private double PlayerSpeedTime;
     private boolean invincible;
     private double invincibilityTime;
     private Point speed;
@@ -113,7 +113,6 @@ public class PlayerBehaviour extends Behaviour {
         }
     }
 
-
     /**
      * Chamado quando o GameObject é inicializado (antes do primeiro frame).
      */
@@ -121,6 +120,8 @@ public class PlayerBehaviour extends Behaviour {
     public void onInit() {
         invincible = false;
         invincibilityTime = 0;
+        playerSpeed = 1;
+        PlayerSpeedTime = 0;
     }
 
     /**
@@ -130,6 +131,8 @@ public class PlayerBehaviour extends Behaviour {
     public void onEnabled() {
         invincible = false;
         invincibilityTime = 0;
+        playerSpeed = 1;
+        PlayerSpeedTime = 0;
     }
 
     /**

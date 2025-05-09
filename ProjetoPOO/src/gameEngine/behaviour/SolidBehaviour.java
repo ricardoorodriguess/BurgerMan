@@ -1,5 +1,7 @@
 package gameEngine.behaviour;
 
+import collisions.Point;
+import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Solid;
 
@@ -34,7 +36,26 @@ public class SolidBehaviour extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
+        for (IGameObject gameObject : gameObjects) {
+            if (gameObject.transform() != null && gameObject.collider() != null) {
+                Point collisionResponse = calculateCollisionResponse((GameObject)gameObject);
+                ((GameObject)gameObject).move(collisionResponse, gameObject.transform().layer());
+            }
+        }
+    }
 
+    private Point calculateCollisionResponse(GameObject gameObject) {
+        Point solidCentroid = igameObject.collider().centroid();
+        Point gameObjectCentroid = gameObject.collider().centroid();
+
+        double dx = gameObjectCentroid.getX() - solidCentroid.getX();
+        double dy = gameObjectCentroid.getY() - solidCentroid.getY();
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+            return new Point(-dx, 0);
+        } else {
+            return new Point(0, -dy);
+        }
     }
 
     /**
