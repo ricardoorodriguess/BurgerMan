@@ -2,6 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
+import gameEngine.behaviour.ScoreBehaviour;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +22,8 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
+    Score score = new Score();
+    Lives lives = new Lives();
 
     /**
      * Construtor of GameEngine
@@ -29,6 +32,8 @@ public class GameEngine implements IGameEngine {
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
+        this.add(score);
+        this.add(lives);
     }
 
     /**
