@@ -3,6 +3,7 @@ package tests;
 import collisions.Point;
 import gameEngine.Client;
 import gameEngine.behaviour.PlayerBehaviour;
+import gameEngine.behaviour.ScoreBehaviour;
 import gameEngine.object.*;
 import org.junit.jupiter.api.Test;
 import java.awt.event.KeyEvent;
@@ -67,9 +68,10 @@ class PlayerBehaviourTests {
     void onCollision() {
         GameObject point = new Collectible(Type.POINT, new Point(2,2));
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(point)));
-        assertEquals(10, Client.ENGINE.getScore());
+        ScoreBehaviour score = (ScoreBehaviour) Client.ENGINE.getScoreObject().behaviour();
+        assertEquals(10, score.getScore());
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(point)));
-        assertEquals(20, Client.ENGINE.getScore());
+        assertEquals(20, score.getScore());
 
         GameObject Tomato = new Collectible(Type.TOMATO, new Point(3,3));
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(Tomato)));

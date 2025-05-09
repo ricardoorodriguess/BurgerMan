@@ -24,6 +24,8 @@ public class PlayerBehaviour extends Behaviour {
     private boolean invincible;
     private double invincibilityTime;
     private Point speed;
+    ScoreBehaviour score = (ScoreBehaviour) Client.ENGINE.getScoreObject().behaviour();
+    LivesBehaviour lives = (LivesBehaviour) Client.ENGINE.getLivesObject().behaviour();
 
     /**
      * Construtor que associa um GameObject a este comportamento.
@@ -75,7 +77,7 @@ public class PlayerBehaviour extends Behaviour {
             switch (gameObject.name())
             {
                 case "Point" -> {
-                    Client.ENGINE.incrementScore(10);
+                    this.score.incrementScore(10);
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -140,7 +142,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDisabled() {
-        //quando o personagem morre
+        this.lives.decreaseLives();
     }
 
     /**

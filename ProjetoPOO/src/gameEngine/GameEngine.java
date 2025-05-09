@@ -2,9 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
-import gameEngine.object.GameObject;
-import gameEngine.object.IGameObject;
-import gameEngine.object.Solid;
+import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -21,9 +19,8 @@ import java.util.function.Predicate;
  */
 public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
-    private final ArrayList<IGameObject> enableObjects; //ver
-    private final ArrayList<IGameObject> disableObjects; //ver
-    private static int TOTAL_SCORE = 0, TOTAL_LIVES = 3;
+    private final ArrayList<IGameObject> enableObjects;
+    private final ArrayList<IGameObject> disableObjects;
 
     /**
      * Construtor of GameEngine
@@ -218,50 +215,15 @@ public class GameEngine implements IGameEngine {
     }
 
     /**
-     * Incrementa a pontuação total do jogador.
-     * @param points Pontos a serem adicionados.
-     */
-    public void incrementScore(int points) {
-        TOTAL_SCORE += points;
-    }
-
-    /**
-     * Atualiza o número de vidas do jogador.
-     * @param lives Novo número de vidas.
-     */
-    public void updateLives(int lives) {
-        TOTAL_LIVES = lives;
-    }
-
-    /**
-     * Retorna a pontuação atual do jogador.
-     * @return Pontuação total.
-     */
-    public int getScore() { return TOTAL_SCORE; }
-
-    /**
-     * Retorna o número de vidas restantes do jogador.
-     * @return Número de vidas.
-     */
-    public int getLives() { return TOTAL_LIVES; }
-
-    /**
-     * Reinicia a pontuação do jogador para zero.
-     */
-    public void resetScore() { TOTAL_SCORE = 0; }
-
-    /**
-     * Reinicia o número de vidas do jogador para zero.
-     */
-    public void resetLives() { TOTAL_LIVES = 3; }
-
-    /**
      * Verifica se um GameObject foi destruído.
      * @param iGameObject Objeto a ser verificado.
      * @return true se o objeto foi destruído (implementação temporária).
      */
     public boolean isDestroyed(IGameObject iGameObject) {
-        return true; //FAZER
+        for (IGameObject iGo : loadedObjects) {
+            if (iGo.equals(iGameObject)) {return false;}
+        }
+        return true;
     }
 
     @SuppressWarnings("DataFlowIssue")
@@ -270,5 +232,19 @@ public class GameEngine implements IGameEngine {
             if (o instanceof Solid s && ((Colisor) s.collider()).contains(point))
                 return true;
         return false;
+    }
+
+    public Score getScoreObject(){
+        return (Score) loadedObjects.stream()
+                .filter(obj -> obj.name().equals("Score"))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    public Lives getLivesObject() {
+        return (Lives) loadedObjects.stream()
+                .filter(obj -> obj.name().equals("Lives"))
+                .findFirst()
+                .orElseThrow();
     }
 }
