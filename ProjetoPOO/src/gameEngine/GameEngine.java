@@ -40,7 +40,6 @@ public class GameEngine implements IGameEngine {
      */
     public void add(GameObject gameObject) {
         loadedObjects.add(gameObject);
-        enableObjects.add(gameObject);
     }
 
     /**
@@ -50,16 +49,13 @@ public class GameEngine implements IGameEngine {
     public void destroy(GameObject gameObject) {
         if (gameObject == null) return;
         loadedObjects.remove(gameObject);
-        (isEnabled(gameObject) ? enableObjects : disableObjects).remove(gameObject);
     }
 
     /**
      * Response method to give the ArrayList of gameObjects.
      * @return the List of gameObjets in engine
      */
-    public ArrayList<GameObject> getLoadedObjects() {
-        return loadedObjects;
-    }
+    public ArrayList<GameObject> getLoadedObjects() {return loadedObjects;}
 
     /**
      * Adiciona um GameObject à lista de objetos habilitados (ativos no jogo).
@@ -69,7 +65,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void addEnabled(IGameObject gameObject) {
-        if (gameObject != null) {
+        if (gameObject != null){
             enableObjects.add(gameObject);
             this.checkCollisions();
         }
@@ -83,7 +79,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void addDisabled(IGameObject gameObject) {
-        if (gameObject != null) {
+        if (gameObject != null){
             disableObjects.add(gameObject);
         }
     }
@@ -123,7 +119,10 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isEnabled(IGameObject gameObject) {
-        return enableObjects.contains(gameObject);
+        for (IGameObject iGameObject : enableObjects) {
+            if (iGameObject.equals(gameObject)) return true;
+        }
+        return false;
     }
 
     /**
@@ -133,7 +132,10 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isDisabled(IGameObject gameObject) {
-        return disableObjects.contains(gameObject);
+        for (IGameObject iGameObject : disableObjects) {
+            if (iGameObject.equals(gameObject)) return true;
+        }
+        return false;
     }
 
     /**
@@ -164,9 +166,7 @@ public class GameEngine implements IGameEngine {
     @Override
     public void destroy(IGameObject gameObject) {
         if (gameObject != null) {
-            GameObject go = (GameObject) gameObject;
-            loadedObjects.remove(go);
-            (isEnabled(go) ? enableObjects : disableObjects).remove(go);
+            gameObject.behaviour().onDestroy();
         }
     }
 
@@ -177,8 +177,6 @@ public class GameEngine implements IGameEngine {
     @Override
     public void destroyAll() {
         loadedObjects.clear();
-        enableObjects.clear();
-        disableObjects.clear();
     }
     /**
      * Manipula a transform
@@ -263,7 +261,7 @@ public class GameEngine implements IGameEngine {
      * @return true se o objeto foi destruído (implementação temporária).
      */
     public boolean isDestroyed(IGameObject iGameObject) {
-        return !loadedObjects.contains((GameObject) iGameObject);
+        return true; //FAZER
     }
 
     @SuppressWarnings("DataFlowIssue")

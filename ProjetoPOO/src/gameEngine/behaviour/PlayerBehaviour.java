@@ -140,7 +140,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDisabled() {
-        Client.ENGINE.disable(gameObject());
+        //quando o personagem morre
     }
 
     /**
@@ -148,7 +148,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onDestroy() {
-        Client.ENGINE.destroy(gameObject());
+        Client.ENGINE.destroy(igameObject);
     }
 
     public boolean isInvincible() {
