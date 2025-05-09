@@ -1,8 +1,6 @@
 package tests;
 
 import collisions.Point;
-import gameEngine.behaviour.Behaviour;
-import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.object.Player;
 import org.junit.jupiter.api.Test;
 

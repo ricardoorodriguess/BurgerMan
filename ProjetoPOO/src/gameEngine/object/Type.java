@@ -26,7 +26,7 @@ public enum Type {
         return name;
     }
 
-    public void getType(String name) {
+    public Type getType(String name) {
         for (Type type : Type.values()) {
             if (type.getName().equalsIgnoreCase(name)) {
                 return type;

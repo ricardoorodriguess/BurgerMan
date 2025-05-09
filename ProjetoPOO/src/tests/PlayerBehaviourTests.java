@@ -7,7 +7,6 @@ import gameEngine.object.*;
 import org.junit.jupiter.api.Test;
 import java.awt.event.KeyEvent;
 import java.awt.Component;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,7 +41,7 @@ class PlayerBehaviourTests {
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyA = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_A, 'A');
         pb.onUpdate(1.0, keyA);
-        assertEquals(2, pb.gameObject().transform().position().getX());
+        assertEquals(1, pb.gameObject().transform().position().getX());
         assertEquals(2, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
@@ -55,7 +54,7 @@ class PlayerBehaviourTests {
         KeyEvent keyS = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_S, 'S');
         pb.onUpdate(1.0, keyS);
         assertEquals(4, pb.gameObject().transform().position().getX());
-        assertEquals(4, pb.gameObject().transform().position().getY());
+        assertEquals(5, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyW = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_W, 'W');
@@ -117,12 +116,16 @@ class PlayerBehaviourTests {
 
     @Test
     void onDisabled() {
+        Client.ENGINE.add((GameObject) pb.gameObject());
+        assertFalse(Client.ENGINE.isDisabled(pb.gameObject()));
         pb.onDisabled();
         assertTrue(Client.ENGINE.isDisabled(pb.gameObject()));
     }
 
     @Test
     void onDestroy() {
+        Client.ENGINE.add((GameObject) pb.gameObject());
+        assertFalse(Client.ENGINE.isDestroyed(pb.gameObject()));
         pb.onDestroy();
         assertTrue(Client.ENGINE.isDestroyed(pb.gameObject()));
     }

@@ -1,6 +1,7 @@
 package gameEngine.behaviour;
 
 import gameEngine.object.Collectible;
+import gameEngine.object.IGameObject;
 import gameEngine.object.Type;
 import gameEngine.Client;
 
