@@ -59,7 +59,9 @@ public class GameEngine implements IGameEngine {
      * Response method to give the ArrayList of gameObjects.
      * @return the List of gameObjets in engine
      */
-    public ArrayList<GameObject> getLoadedObjects() {return loadedObjects;}
+    public ArrayList<GameObject> getLoadedObjects() {
+        return loadedObjects;
+    }
 
     /**
      * Adiciona um GameObject à lista de objetos habilitados (ativos no jogo).
@@ -133,10 +135,7 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public boolean isDisabled(IGameObject gameObject) {
-        for (IGameObject iGameObject : disableObjects) {
-            if (iGameObject.equals(gameObject)) return true;
-        }
-        return false;
+        return disableObjects.contains(gameObject);
     }
 
     /**
