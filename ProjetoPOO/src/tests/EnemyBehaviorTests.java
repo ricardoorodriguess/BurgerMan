@@ -31,6 +31,7 @@ class EnemyBehaviorTests {
         assertTrue(e1.collider().centroid().getX() >= 1);
     }
 
+    // COLLISION
     @Test
     void onCollision() {
         Player player;

@@ -24,7 +24,7 @@ public class CollectibleBehaviour extends Behaviour {
      * Construtor que associa este comportamento a um coletável.
      * @param collectible Coletável controlado por este comportamento.
      */
-    public CollectibleBehaviour(Collectible collectible) {
+    public CollectibleBehaviour(@Nullable Collectible collectible) {
         super(collectible);
     }
 
