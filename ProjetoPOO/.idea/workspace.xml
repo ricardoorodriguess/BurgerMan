@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Tests to ScoreBehaviour.java and LivesBehaviour.java moved do tests package">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/LivesBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LivesBehaviourTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ScoreBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ScoreBehaviourTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/LivesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LivesTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ScoreTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ScoreTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +55,7 @@
   "keyToString": {
     "Application.Client.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.BehaviourTests and 19 more.executor": "Run",
     "JUnit.BehaviourTests and 2 more.executor": "Run",
     "JUnit.BehaviourTests.executor": "Run",
     "JUnit.CircleTest.centroid.executor": "Run",
@@ -85,6 +83,7 @@
     "JUnit.LivesBehaviourTests.getLives.executor": "Run",
     "JUnit.LivesBehaviourTests.onInit.executor": "Run",
     "JUnit.LivesBehaviourTests.testConstructor.executor": "Run",
+    "JUnit.LivesTests.testConstructor.executor": "Run",
     "JUnit.PlayerBehaviourTests.executor": "Run",
     "JUnit.PlayerBehaviourTests.onCollision.executor": "Run",
     "JUnit.PlayerBehaviourTests.onDisabled.executor": "Run",
@@ -102,6 +101,7 @@
     "JUnit.ScoreBehaviourTests.incrementScore.executor": "Run",
     "JUnit.ScoreBehaviourTests.onInit.executor": "Run",
     "JUnit.ScoreBehaviourTests.testConstructor.executor": "Run",
+    "JUnit.ScoreTests.testConstructor.executor": "Run",
     "JUnit.ScoreboardTests.executor": "Run",
     "JUnit.TransformTest.executor": "Run",
     "JUnit.TransformTest.layer.executor": "Run",
@@ -142,8 +142,37 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerBehaviourTests">
-    <configuration name="LivesBehaviourTests.decreaseLives" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BehaviourTests and 19 more">
+    <configuration name="BehaviourTests and 19 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="tests.BehaviourTests" />
+        <pattern testClass="tests.CircleTest" />
+        <pattern testClass="tests.ColisorTest" />
+        <pattern testClass="tests.CollectibleBehaviourTests" />
+        <pattern testClass="tests.CollectibleTests" />
+        <pattern testClass="tests.EnemyBehaviorTests" />
+        <pattern testClass="tests.EnemyTests" />
+        <pattern testClass="tests.GameEngineTests" />
+        <pattern testClass="tests.LineSegmentTest" />
+        <pattern testClass="tests.GameObjectTest" />
+        <pattern testClass="tests.LineTest" />
+        <pattern testClass="tests.LivesBehaviourTests" />
+        <pattern testClass="tests.LivesTests" />
+        <pattern testClass="tests.PlayerBehaviourTests" />
+        <pattern testClass="tests.PlayerTests" />
+        <pattern testClass="tests.PointTest" />
+        <pattern testClass="tests.PolygonTest" />
+        <pattern testClass="tests.ScoreBehaviourTests" />
+        <pattern testClass="tests.ScoreTests" />
+        <pattern testClass="tests.TransformTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LivesTests.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
         <pattern>
@@ -152,8 +181,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LivesBehaviourTests" />
-      <option name="METHOD_NAME" value="decreaseLives" />
+      <option name="MAIN_CLASS_NAME" value="tests.LivesTests" />
+      <option name="METHOD_NAME" value="testConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,22 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerBehaviourTests.onCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
-      <option name="METHOD_NAME" value="onCollision" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlayerBehaviourTests.onUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -206,7 +219,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScoreBehaviourTests.incrementScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ScoreTests.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
         <pattern>
@@ -215,8 +228,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ScoreBehaviourTests" />
-      <option name="METHOD_NAME" value="incrementScore" />
+      <option name="MAIN_CLASS_NAME" value="tests.ScoreTests" />
+      <option name="METHOD_NAME" value="testConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -224,11 +237,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BehaviourTests and 19 more" />
+        <item itemvalue="JUnit.ScoreTests.testConstructor" />
+        <item itemvalue="JUnit.LivesTests.testConstructor" />
         <item itemvalue="JUnit.PlayerBehaviourTests" />
         <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
-        <item itemvalue="JUnit.ScoreBehaviourTests.incrementScore" />
-        <item itemvalue="JUnit.LivesBehaviourTests.decreaseLives" />
-        <item itemvalue="JUnit.PlayerBehaviourTests.onCollision" />
       </list>
     </recent_temporary>
   </component>
@@ -490,7 +503,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746888206213</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified">
+      <option name="closed" value="true" />
+      <created>1746888885351</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1746888885351</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,6 +550,7 @@
     <MESSAGE value="alteration in GameEngine method" />
     <MESSAGE value="Tests to ScoreBehaviour.java and LivesBehaviour.java" />
     <MESSAGE value="Tests to ScoreBehaviour.java and LivesBehaviour.java moved do tests package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests to ScoreBehaviour.java and LivesBehaviour.java moved do tests package" />
+    <MESSAGE value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
   </component>
 </project>
