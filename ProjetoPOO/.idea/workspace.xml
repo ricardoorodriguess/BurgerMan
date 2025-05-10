@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="all GameEngineTests passed">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="alteration in GameEngine method">
+      <change afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviourTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviourTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +19,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -75,6 +78,10 @@
     "JUnit.GameObjectTest.executor": "Run",
     "JUnit.LineSegmentTest.executor": "Run",
     "JUnit.LineTest.executor": "Run",
+    "JUnit.LivesBehaviourTests.decreaseLives.executor": "Run",
+    "JUnit.LivesBehaviourTests.getLives.executor": "Run",
+    "JUnit.LivesBehaviourTests.onInit.executor": "Run",
+    "JUnit.LivesBehaviourTests.testConstructor.executor": "Run",
     "JUnit.PlayerBehaviourTests.executor": "Run",
     "JUnit.PlayerBehaviourTests.onCollision.executor": "Run",
     "JUnit.PlayerBehaviourTests.onDisabled.executor": "Run",
@@ -86,6 +93,11 @@
     "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
     "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
+    "JUnit.ScoreBehaviourTests.executor": "Run",
+    "JUnit.ScoreBehaviourTests.getScore.executor": "Run",
+    "JUnit.ScoreBehaviourTests.incrementScore.executor": "Run",
+    "JUnit.ScoreBehaviourTests.onInit.executor": "Run",
+    "JUnit.ScoreBehaviourTests.testConstructor.executor": "Run",
     "JUnit.ScoreboardTests.executor": "Run",
     "JUnit.TransformTest.executor": "Run",
     "JUnit.TransformTest.layer.executor": "Run",
@@ -119,67 +131,23 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="gameEngine.behaviour" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameEngineTests">
-    <configuration name="BehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ScoreBehaviourTests.incrementScore">
+    <configuration name="LivesBehaviourTests.decreaseLives" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="gameEngine.behaviour.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BehaviourTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EnemyBehaviorTests.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.EnemyBehaviorTests" />
-      <option name="METHOD_NAME" value="testConstructor" />
+      <option name="PACKAGE_NAME" value="gameEngine.behaviour" />
+      <option name="MAIN_CLASS_NAME" value="gameEngine.behaviour.LivesBehaviourTests" />
+      <option name="METHOD_NAME" value="decreaseLives" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameEngineTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameEngineTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerBehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,13 +168,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScoreBehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.behaviour.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gameEngine.behaviour" />
+      <option name="MAIN_CLASS_NAME" value="gameEngine.behaviour.ScoreBehaviourTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScoreBehaviourTests.getScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.behaviour.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gameEngine.behaviour" />
+      <option name="MAIN_CLASS_NAME" value="gameEngine.behaviour.ScoreBehaviourTests" />
+      <option name="METHOD_NAME" value="getScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScoreBehaviourTests.incrementScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.behaviour.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gameEngine.behaviour" />
+      <option name="MAIN_CLASS_NAME" value="gameEngine.behaviour.ScoreBehaviourTests" />
+      <option name="METHOD_NAME" value="incrementScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GameEngineTests" />
-        <item itemvalue="JUnit.EnemyBehaviorTests.testConstructor" />
+        <item itemvalue="JUnit.ScoreBehaviourTests.incrementScore" />
+        <item itemvalue="JUnit.LivesBehaviourTests.decreaseLives" />
         <item itemvalue="JUnit.PlayerBehaviourTests.onCollision" />
-        <item itemvalue="JUnit.PlayerBehaviourTests" />
-        <item itemvalue="JUnit.BehaviourTests" />
+        <item itemvalue="JUnit.ScoreBehaviourTests" />
+        <item itemvalue="JUnit.ScoreBehaviourTests.getScore" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +459,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746882549390</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="alteration in GameEngine method">
+      <option name="closed" value="true" />
+      <created>1746883077823</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1746883077823</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,6 +503,7 @@
     <MESSAGE value="Fix some things in PlayerBehaviour" />
     <MESSAGE value="Score, ScoreBehaviour, Lives, LivesBehaviour added, update GameEngine" />
     <MESSAGE value="all GameEngineTests passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="all GameEngineTests passed" />
+    <MESSAGE value="alteration in GameEngine method" />
+    <option name="LAST_COMMIT_MESSAGE" value="alteration in GameEngine method" />
   </component>
 </project>

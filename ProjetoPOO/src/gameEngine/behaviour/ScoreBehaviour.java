@@ -77,6 +77,7 @@ public class ScoreBehaviour extends Behaviour {
      * @param points Pontos a serem adicionados.
      */
     public void incrementScore(int points) {
+        if (points < 0) throw new IllegalArgumentException();
         totalScore += points;
     }
 

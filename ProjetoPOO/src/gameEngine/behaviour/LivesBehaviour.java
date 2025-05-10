@@ -17,10 +17,11 @@ public class LivesBehaviour extends Behaviour {
      */
     public LivesBehaviour(Lives lives) {
         super(lives);
-
     }
 
-    public int getLives() { return lives; }
+    public int getLives() {
+        return lives;
+    }
 
     /**
      * Atualiza o estado do GameObject a cada frame.
@@ -54,6 +55,9 @@ public class LivesBehaviour extends Behaviour {
     public void decreaseLives() {
         if (lives > 0) {
             lives--;
+        }
+        else{
+            throw new IndexOutOfBoundsException();
         }
     }
 
