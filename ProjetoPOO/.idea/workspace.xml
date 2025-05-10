@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/LivesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LivesTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ScoreTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ScoreTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/CollectibleBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CollectibleBehaviourTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +68,7 @@
     "JUnit.CircleTest.testToString.executor": "Run",
     "JUnit.ColisorTest.executor": "Run",
     "JUnit.CollectibleBehaviourTests.executor": "Run",
+    "JUnit.CollectibleBehaviourTests.onUpdate.executor": "Run",
     "JUnit.CollectibleTests.executor": "Run",
     "JUnit.ColliderTest.executor": "Run",
     "JUnit.EnemyBehaviorTests.executor": "Run",
@@ -142,7 +146,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BehaviourTests and 19 more">
+  <component name="RunManager" selected="JUnit.CollectibleBehaviourTests.onUpdate">
     <configuration name="BehaviourTests and 19 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="TEST_OBJECT" value="pattern" />
@@ -168,6 +172,22 @@
         <pattern testClass="tests.ScoreTests" />
         <pattern testClass="tests.TransformTest" />
       </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollectibleBehaviourTests.onUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CollectibleBehaviourTests" />
+      <option name="METHOD_NAME" value="onUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -203,22 +223,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerBehaviourTests.onUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
-      <option name="METHOD_NAME" value="onUpdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ScoreTests.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -237,11 +241,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CollectibleBehaviourTests.onUpdate" />
         <item itemvalue="JUnit.BehaviourTests and 19 more" />
         <item itemvalue="JUnit.ScoreTests.testConstructor" />
         <item itemvalue="JUnit.LivesTests.testConstructor" />
         <item itemvalue="JUnit.PlayerBehaviourTests" />
-        <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
       </list>
     </recent_temporary>
   </component>

@@ -26,12 +26,17 @@ public enum Type {
         return name;
     }
 
-    public Type getType(String name) {
+    /**
+     * Converte uma string (nome legível) em um tipo enum.
+     * @param name Nome legível do tipo.
+     * @return Valor enum correspondente ou null se não encontrado.
+     */
+    public static Type fromName(String name) {
         for (Type type : Type.values()) {
-            if (type.getName().equalsIgnoreCase(name)) {
+            if (type.name.equalsIgnoreCase(name)) {
                 return type;
             }
         }
-        return null; // Retorna null se o tipo não for encontrado
+        return null;
     }
 }

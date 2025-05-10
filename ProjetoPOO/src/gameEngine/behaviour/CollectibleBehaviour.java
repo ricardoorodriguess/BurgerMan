@@ -1,8 +1,6 @@
 package gameEngine.behaviour;
 
-import gameEngine.object.Collectible;
-import gameEngine.object.IGameObject;
-import gameEngine.object.Type;
+import gameEngine.object.*;
 import gameEngine.Client;
 
 import java.awt.event.InputEvent;
@@ -24,9 +22,10 @@ public class CollectibleBehaviour extends Behaviour {
      * Construtor que associa este comportamento a um coletável.
      * @param collectible Coletável controlado por este comportamento.
      */
+    @SuppressWarnings("DataFlowIssue")
     public CollectibleBehaviour(Collectible collectible) {
         super(collectible);
-        
+        this.collectibleType = collectible.getType();
     }
 
 
@@ -54,11 +53,12 @@ public class CollectibleBehaviour extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
-        /*if(gameObjects.class instanceof Player) {
-            
-        } else {
-            // Lógica para lidar com a colisão com o enemy
-        }*/
+        for (IGameObject obj : gameObjects) {
+            if (obj instanceof Player || obj instanceof Enemy && collectibleType == Type.PICKLE) {
+                collected = true;
+                break;
+            }
+        }
     }
     
     /**
@@ -74,19 +74,13 @@ public class CollectibleBehaviour extends Behaviour {
      * Executado quando o objeto é ativado.
      */
     @Override
-    public void onEnabled() {
-        collected = true;
-        initialized = true;
-    }
+    public void onEnabled() {}
 
     /**
      * Executado quando o objeto é desativado.
      */
     @Override
-    public void onDisabled() {
-        collected = false;
-        initialized = false;
-    }
+    public void onDisabled() {}
 
     /**
      * Executado quando o objeto é destruído.
@@ -95,4 +89,8 @@ public class CollectibleBehaviour extends Behaviour {
     public void onDestroy() {
         Client.ENGINE.destroy(igameObject);
     }
+
+    //para os testes
+    public boolean isCollected() { return collected; }
+    public boolean isInitialized() { return initialized; }
 }

@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * @version April 29, 2025
  */
 public class Collectible extends GameObject {
+    private final Type type;
+
     /**
      * Constrói um objeto coletável no jogo.
      * @param @Notnull type Tipo do coletável (ex: TOMATO, CHEESE).
@@ -21,6 +23,15 @@ public class Collectible extends GameObject {
      */
     public Collectible(@NotNull Type type, @NotNull Point position) {
         super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null));
+        this.type = type;
         behaviour.gameObject(this);
+    }
+
+    /**
+     * Retorna o tipo deste coletável.
+     * @return Tipo enum do coletável.
+     */
+    public Type getType() {
+        return type;
     }
 }
