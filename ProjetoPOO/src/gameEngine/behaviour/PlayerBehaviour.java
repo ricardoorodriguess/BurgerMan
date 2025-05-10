@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class PlayerBehaviour extends Behaviour {
     private double playerSpeed;
-    private double PlayerSpeedTime;
+    private double playerSpeedTime;
     private boolean invincible;
     private double invincibilityTime;
     private Point speed;
@@ -101,7 +101,7 @@ public class PlayerBehaviour extends Behaviour {
                 }
                 case "Cheese" -> {
                     playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                    PlayerSpeedTime = 60;
+                    playerSpeedTime = 60;
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -130,7 +130,7 @@ public class PlayerBehaviour extends Behaviour {
         invincible = false;
         invincibilityTime = 0;
         playerSpeed = 1;
-        PlayerSpeedTime = 0;
+        playerSpeedTime = 0;
     }
 
     /**
@@ -173,7 +173,12 @@ public class PlayerBehaviour extends Behaviour {
     }
 
     public double getPlayerSpeedTime() {
-        return PlayerSpeedTime;
+        return playerSpeedTime;
+    }
+
+    public void slowDown() {
+        playerSpeed = 0.8;
+        playerSpeedTime = 60;
     }
 
     /**

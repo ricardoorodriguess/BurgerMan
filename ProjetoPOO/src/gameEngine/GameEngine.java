@@ -252,4 +252,11 @@ public class GameEngine implements IGameEngine {
                 .findFirst()
                 .orElseThrow();
     }
+
+    public Player getPlayerObject() {
+        return (Player) loadedObjects.stream()
+                .filter(obj -> obj.name().equals("Player"))
+                .findFirst()
+                .orElseThrow();
+    }
 }

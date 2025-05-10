@@ -19,7 +19,7 @@ import java.util.List;
  * @version April 29, 2025
  */
 public class EnemyBehavior extends Behaviour {
-    private Point speed;
+    public Point speed;
     private static final double SPEED = 0.8;
 
     /**
@@ -40,16 +40,18 @@ public class EnemyBehavior extends Behaviour {
     public void onUpdate(double dT, InputEvent ie) {
         ICollider c = igameObject.collider();
         if (c == null) return;
-        Point centroid = c.centroid(),
-                left = new Point(-speed.getY(), speed.getX()),
-                right = new Point(speed.getY(), -speed.getX());
+        Point centroid = c.centroid();
         List<Point> speeds = new ArrayList<>();
-        if (Client.ENGINE.checkSolidCollisionAt(centroid.add(speed)))
-            speeds.add(speed);
-        if (Client.ENGINE.checkSolidCollisionAt(centroid.add(left)))
-            speeds.add(left);
-        if (Client.ENGINE.checkSolidCollisionAt(centroid.add(right)))
-            speeds.add(right);
+        if (speed.getX() != 0 || speed.getY() != 0) {
+            Point left = new Point(-speed.getY(), speed.getX()),
+                    right = new Point(speed.getY(), -speed.getX());
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(speed)))
+                speeds.add(speed);
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(left)))
+                speeds.add(left);
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(right)))
+                speeds.add(right);
+        } else listCardinalDirections(centroid, speeds);
         if (speeds.isEmpty()) speed.scaleOrigin(-1);
         else speed = speeds.get(Client.RANDOM.nextInt(speeds.size()));
         ((GameObject) igameObject).move(speed, 0);
@@ -61,11 +63,11 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
-        for (IGameObject gameObject : gameObjects) {
+        for (IGameObject gameObject : gameObjects)
             if (gameObject.name().equals("Pickle")) {
-                // ...
+                ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
+                break;
             }
-        }
     }
 
     /**
@@ -77,12 +79,16 @@ public class EnemyBehavior extends Behaviour {
         if (c == null) return;
         Point centroid = c.centroid();
         List<Point> speeds = new ArrayList<>();
-        Point[] possible = new Point[]{new Point(1, 0), new Point(0, 1), new Point(-1, 0), new Point(0, -1)};
-        for (Point p : possible)
-            if (Client.ENGINE.checkSolidCollisionAt(centroid.add(p)))
-                speeds.add(p);
+        listCardinalDirections(centroid, speeds);
         if (!speeds.isEmpty())
             speed = speeds.get(Client.RANDOM.nextInt(speeds.size()));
+    }
+
+    private static void listCardinalDirections(Point centroid, List<Point> list) {
+        Point[] possible = new Point[]{new Point(1, 0), new Point(0, 1), new Point(-1, 0), new Point(0, -1)};
+        for (Point p : possible)
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(p)))
+                list.add(p);
     }
 
     /**
