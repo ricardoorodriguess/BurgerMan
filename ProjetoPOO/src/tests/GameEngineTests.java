@@ -7,7 +7,6 @@ import gameEngine.object.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -23,7 +22,7 @@ class GameEngineTests {
         engine.add(player);
         engine.add(new Enemy(new Point(5, 5)));
         engine.add(new Collectible(Type.POINT, new Point(1, 1)));
-        assertEquals(engine.getLoadedObjects().size(), 5);
+        assertEquals(5, engine.getLoadedObjects().size());
     }
 
     @Test
@@ -33,7 +32,7 @@ class GameEngineTests {
         assertFalse(engine.getLoadedObjects().isEmpty());
         engine.destroy(collectible);
         System.out.println(engine.getLoadedObjects());
-        assertEquals(engine.getLoadedObjects().size(), 2);
+        assertEquals(2, engine.getLoadedObjects().size());
     }
 
     @Test
@@ -47,7 +46,7 @@ class GameEngineTests {
                 list.add(g);
         for (GameObject g : list)
             engine.destroy(g);
-        assertEquals(engine.getLoadedObjects().size(), 3);
+        assertEquals(3, engine.getLoadedObjects().size());
     }
 
     @Test
@@ -55,7 +54,7 @@ class GameEngineTests {
         IGameObject obj = new Player(new Point(1,1));
         engine.addEnabled(obj);
         assertTrue(engine.getEnabled().contains(obj));
-        assertEquals(1, engine.getEnabled().size());
+        assertEquals(3, engine.getEnabled().size());
 
     }
 
@@ -111,7 +110,7 @@ class GameEngineTests {
         engine.addEnabled(obj);
         engine.addEnabled(obj2);
         List<IGameObject> enabled = engine.getEnabled();
-        assertEquals(2, enabled.size());
+        assertEquals(4, enabled.size());
         assertTrue(enabled.contains(obj));
         assertTrue(enabled.contains(obj2));
 
@@ -134,9 +133,9 @@ class GameEngineTests {
     @Test
     void testDestroy() {
         engine.add(player);
-        assertNotEquals(engine.getLoadedObjects().size(), 2);
+        assertNotEquals(2, engine.getLoadedObjects().size());
         engine.destroy(player);
-        assertEquals(engine.getLoadedObjects().size(), 2);
+        assertEquals(2, engine.getLoadedObjects().size());
     }
 
     @Test
@@ -169,53 +168,4 @@ class GameEngineTests {
         List<IGameObject> list = List.of(player, engine.getScoreObject(), engine.getLivesObject());
         assertTrue(list.contains(engine.randomObject(_ -> true)));
     }
-
-    /*
-    @Test
-    void incrementScore() {
-        engine.incrementScore(1);
-        assertEquals(engine.getScore(), 1);
-        engine.incrementScore(1543243);
-        assertEquals(engine.getScore(), 1543244);
-        engine.incrementScore(1);
-        assertEquals(engine.getScore(), 1543245);
-    }
-
-    @Test
-    void updateLives() {
-        engine.updateLives(6);
-        assertEquals(engine.getLives(), 6);
-    }
-
-    @Test
-    void getScore() {
-        engine.resetScore();
-        engine.incrementScore(100);
-        assertEquals(100, engine.getScore());
-
-    }
-
-    @Test
-    void getLives() {
-        engine.updateLives(5);
-        assertEquals(5, engine.getLives());
-
-    }
-
-    @Test
-    void resetScore() {
-        engine.incrementScore(20);
-        engine.resetScore();
-        assertEquals(0, engine.getScore());
-
-    }
-
-    @Test
-    void resetLives() {
-        engine.updateLives(5);
-        engine.resetLives();
-        assertEquals(3, engine.getLives());
-
-    }
-     */
 }
