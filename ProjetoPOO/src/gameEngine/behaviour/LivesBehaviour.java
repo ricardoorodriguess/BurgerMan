@@ -57,7 +57,7 @@ public class LivesBehaviour extends Behaviour {
             lives--;
         }
         else{
-            throw new IndexOutOfBoundsException();
+            return;
         }
     }
 

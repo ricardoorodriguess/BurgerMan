@@ -66,6 +66,7 @@ class PlayerBehaviourTests {
 
     @Test
     void onCollision() {
+        pb.gameObject(p1);
         GameObject point = new Collectible(Type.POINT, new Point(2,2));
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(point)));
         ScoreBehaviour score = (ScoreBehaviour) Client.ENGINE.getScoreObject().behaviour();

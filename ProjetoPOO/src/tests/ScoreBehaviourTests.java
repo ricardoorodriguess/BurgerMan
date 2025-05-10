@@ -61,7 +61,12 @@ class ScoreBehaviourTests {
         scoreBehaviour.incrementScore(50);
         scoreBehaviour.incrementScore(100);
         assertEquals(210 ,scoreBehaviour.getScore());
-        assertThrows(IllegalArgumentException.class, () -> scoreBehaviour.incrementScore(-1));
+
+        //nunca vai decrementar pontos pois faz return
+        scoreBehaviour.incrementScore(-1);
+        assertEquals(210 ,scoreBehaviour.getScore());
+        scoreBehaviour.incrementScore(-10);
+        assertEquals(210 ,scoreBehaviour.getScore());
     }
 
     @Test

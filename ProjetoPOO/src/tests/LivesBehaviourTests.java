@@ -37,7 +37,15 @@ class LivesBehaviourTests {
         assertEquals(1, livesBehaviour.getLives());
         livesBehaviour.decreaseLives();
         assertEquals(0, livesBehaviour.getLives());
-        assertThrows(IndexOutOfBoundsException.class, () -> livesBehaviour.decreaseLives());
+
+        //nunca vai decremnetar mais que zero, pois faz return
+        livesBehaviour.decreaseLives();
+        assertEquals(0, livesBehaviour.getLives());
+        livesBehaviour.decreaseLives();
+        assertEquals(0, livesBehaviour.getLives());
+        livesBehaviour.decreaseLives();
+        assertEquals(0, livesBehaviour.getLives());
+
     }
 
     @Test
