@@ -1,5 +1,6 @@
-package gameEngine.behaviour;
+package tests;
 
+import gameEngine.behaviour.ScoreBehaviour;
 import gameEngine.object.Score;
 import org.junit.jupiter.api.Test;
 

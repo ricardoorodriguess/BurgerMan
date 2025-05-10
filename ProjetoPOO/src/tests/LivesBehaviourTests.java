@@ -1,5 +1,6 @@
-package gameEngine.behaviour;
+package tests;
 
+import gameEngine.behaviour.LivesBehaviour;
 import gameEngine.object.Lives;
 import org.junit.jupiter.api.Test;
 
