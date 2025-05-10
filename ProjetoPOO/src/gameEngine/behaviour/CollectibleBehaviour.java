@@ -2,6 +2,8 @@ package gameEngine.behaviour;
 
 import gameEngine.object.*;
 import gameEngine.Client;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
 import java.util.List;
@@ -22,12 +24,15 @@ public class CollectibleBehaviour extends Behaviour {
      * Construtor que associa este comportamento a um coletável.
      * @param collectible Coletável controlado por este comportamento.
      */
-    @SuppressWarnings("DataFlowIssue")
     public CollectibleBehaviour(Collectible collectible) {
         super(collectible);
-        this.collectibleType = collectible.getType();
     }
 
+    @Override
+    public void gameObject(IGameObject gameObject) {
+        super.gameObject(gameObject);
+        this.collectibleType = ((Collectible) gameObject).getType();
+    }
 
     /**
      * Atualiza o estado do coletável a cada frame.
