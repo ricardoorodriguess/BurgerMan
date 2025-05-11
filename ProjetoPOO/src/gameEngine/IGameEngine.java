@@ -4,6 +4,13 @@ import gameEngine.object.IGameObject;
 
 import java.util.List;
 
+/**
+ * The {@code game.IGameEngine} interface stores information about the gameEngine methods
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 11, 2025
+ */
 public interface IGameEngine {
     /**
      * Adiciona um GameObject à lista de ativos.

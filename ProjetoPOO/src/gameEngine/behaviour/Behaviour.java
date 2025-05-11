@@ -7,7 +7,7 @@ import gameEngine.object.IGameObject;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version April 29, 2025
+ * @version May 11, 2025
  */
 public abstract class Behaviour implements IBehaviour {
     IGameObject igameObject;

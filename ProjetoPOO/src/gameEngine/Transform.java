@@ -11,7 +11,7 @@ import java.util.Locale;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version March 26, 2025
+ * @version May 11, 2025
  */
 public class Transform implements ITransform
 {

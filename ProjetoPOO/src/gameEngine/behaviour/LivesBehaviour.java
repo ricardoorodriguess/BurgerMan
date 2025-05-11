@@ -8,6 +8,13 @@ import gameEngine.object.Player;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with Lives board behaviour.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 11, 2025
+ */
 public class LivesBehaviour extends Behaviour {
     private int lives;
 
@@ -19,6 +26,10 @@ public class LivesBehaviour extends Behaviour {
         super(lives);
     }
 
+    /**
+     * Método responsável por obter o numero de vidas atual.
+     * @return um int com o número de vidas atual
+     */
     public int getLives() {
         return lives;
     }
@@ -36,7 +47,6 @@ public class LivesBehaviour extends Behaviour {
 
     /**
      * Trata colisões com outros GameObjects.
-     *
      * @param gameObjects Lista de objetos colididos.
      */
     @Override
@@ -52,6 +62,9 @@ public class LivesBehaviour extends Behaviour {
         lives = 3;
     }
 
+    /**
+     * Método responsável por decrementar o numéro de vidas.
+     */
     public void decreaseLives() {
         if (lives > 0) {
             lives--;

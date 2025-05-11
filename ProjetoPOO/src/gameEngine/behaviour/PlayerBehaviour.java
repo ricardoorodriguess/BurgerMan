@@ -17,7 +17,7 @@ import java.util.List;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version April 29, 2025
+ * @version May 11, 2025
  */
 public class PlayerBehaviour extends Behaviour {
     private double playerSpeed;
@@ -72,7 +72,7 @@ public class PlayerBehaviour extends Behaviour {
         if (Client.ENGINE.checkSolidCollisionAt(igameObject.collider().centroid().add(speed)))
             speed = prevSpeed;
 
-        ((GameObject) igameObject).move(speed, 0);
+        ((GameObject) igameObject).move(speed,0);
     }
 
     /**

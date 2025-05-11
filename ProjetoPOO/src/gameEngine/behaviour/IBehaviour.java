@@ -11,7 +11,7 @@ import java.util.List;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version March 25, 2025
+ * @version May 11, 2025
  */
 public interface IBehaviour {
     //para acesso ao gameObject que está associado

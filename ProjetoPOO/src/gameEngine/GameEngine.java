@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version March 27, 2025
+ * @version May 11, 2025
  */
 public class GameEngine implements IGameEngine, KeyListener {
     private final ArrayList<GameObject> loadedObjects;
@@ -241,6 +241,11 @@ public class GameEngine implements IGameEngine, KeyListener {
         return true;
     }
 
+    /**
+     * Verifica se existe uma colisão com um objeto num determinado ponto
+     * @param point a ser verificado
+     * @return true se existir colisão com algum GameObject e false caso contrário
+     */
     @SuppressWarnings("DataFlowIssue")
     public boolean checkSolidCollisionAt(Point point) {
         for (GameObject o : loadedObjects)
@@ -249,6 +254,10 @@ public class GameEngine implements IGameEngine, KeyListener {
         return false;
     }
 
+    /**
+     * Method responsável por obter o GameObject Score
+     * @return o Score se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     */
     public Score getScoreObject(){
         return (Score) loadedObjects.stream()
                 .filter(obj -> obj.name().equals("Score"))
@@ -256,6 +265,10 @@ public class GameEngine implements IGameEngine, KeyListener {
                 .orElseThrow();
     }
 
+    /**
+     * Method responsável por obter o GameObject Lives
+     * @return o Lives se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     */
     public Lives getLivesObject() {
         return (Lives) loadedObjects.stream()
                 .filter(obj -> obj.name().equals("Lives"))
@@ -263,6 +276,10 @@ public class GameEngine implements IGameEngine, KeyListener {
                 .orElseThrow();
     }
 
+    /**
+     * Method responsável por obter o GameObject Player
+     * @return o Player se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     */
     public Player getPlayerObject() {
         return (Player) loadedObjects.stream()
                 .filter(obj -> obj.name().equals("Player"))
@@ -270,20 +287,36 @@ public class GameEngine implements IGameEngine, KeyListener {
                 .orElseThrow();
     }
 
+    /**
+     * Método responsável por definir o número de frames que o GameEngine irá processar
+     * @param frames
+     */
     public void setFrames(int frames) {
         this.frames = frames;
     }
 
+    /**
+     * Evento disparado quando uma tecla é escrita (pressionada e solta de forma rápida).
+     * @param e the event to be processed
+     */
     @Override
     public void keyTyped(KeyEvent e) {
 
     }
 
+    /**
+     * Evento disparado quando uma tecla é pressionada.
+     * @param e the event to be processed
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         event = e;
     }
 
+    /**
+     * Evento disparado quando uma tecla é solta.
+     * @param e the event to be processed
+     */
     @Override
     public void keyReleased(KeyEvent e) {
 

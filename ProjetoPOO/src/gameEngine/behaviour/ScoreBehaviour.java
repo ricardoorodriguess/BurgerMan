@@ -8,6 +8,13 @@ import gameEngine.object.Score;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with score board behaviours.
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 11, 2025
+ */
 public class ScoreBehaviour extends Behaviour {
     private int totalScore;
 

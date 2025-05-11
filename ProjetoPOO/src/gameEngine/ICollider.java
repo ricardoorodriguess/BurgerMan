@@ -10,7 +10,7 @@ import collisions.Polygon;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version March 25, 2025
+ * @version May 11, 2025
  */
 public interface ICollider
 {

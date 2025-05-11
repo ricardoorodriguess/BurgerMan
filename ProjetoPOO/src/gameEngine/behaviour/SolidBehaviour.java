@@ -9,6 +9,13 @@ import gameEngine.object.Solid;
 import java.awt.event.InputEvent;
 import java.util.List;
 
+/**
+ * Responsive class to deal with Solid behaviour (the walls).
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 11, 2025
+ */
 public class SolidBehaviour extends Behaviour {
     /**
      * Construtor que associa um GameObject a este Behaviour.
@@ -32,7 +39,6 @@ public class SolidBehaviour extends Behaviour {
 
     /**
      * Trata colisões com outros GameObjects.
-     *
      * @param gameObjects Lista de objetos colididos.
      */
     @Override
@@ -45,6 +51,14 @@ public class SolidBehaviour extends Behaviour {
         }
     }
 
+    /**
+     * Este método é auxiliar ao onCollision.
+     * Calcula a resposta à colisão entre este GameObject e o Solid (as paredes).
+     * A resposta é um vetor de deslocamento que indica a direção oposta ao eixo principal da colisão.
+     * @param gameObject
+     * @return um Point que representa o vetor de resposta à colisão, ou null se o gameObject em questão não tiver colisor.
+     * @see chatgpt onde vimos este algoritmo.
+     */
     private Point calculateCollisionResponse(GameObject gameObject) {
         ICollider c1 = igameObject.collider(), c2 = gameObject.collider();
         if (c1 == null || c2 == null) return null;
