@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="EnemyBehaviorTests&#10;CollectibleBehaviour">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/EnemyBehaviorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/EnemyBehaviorTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/PlayerBehaviourTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="GameEngine javadocs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +141,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GameEngineTests.run">
+  <component name="RunManager" selected="JUnit.PlayerBehaviourTests.onUpdate">
     <configuration name="BehaviourTests and 19 more (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="TEST_OBJECT" value="pattern" />
@@ -172,50 +167,6 @@
         <pattern testClass="tests.ScoreTests" />
         <pattern testClass="tests.TransformTest" />
       </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BehaviourTests and 19 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="tests.BehaviourTests" />
-        <pattern testClass="tests.CircleTest" />
-        <pattern testClass="tests.ColisorTest" />
-        <pattern testClass="tests.CollectibleBehaviourTests" />
-        <pattern testClass="tests.CollectibleTests" />
-        <pattern testClass="tests.EnemyBehaviorTests" />
-        <pattern testClass="tests.EnemyTests" />
-        <pattern testClass="tests.GameEngineTests" />
-        <pattern testClass="tests.LineSegmentTest" />
-        <pattern testClass="tests.GameObjectTest" />
-        <pattern testClass="tests.LineTest" />
-        <pattern testClass="tests.LivesBehaviourTests" />
-        <pattern testClass="tests.LivesTests" />
-        <pattern testClass="tests.PlayerBehaviourTests" />
-        <pattern testClass="tests.PlayerTests" />
-        <pattern testClass="tests.PointTest" />
-        <pattern testClass="tests.PolygonTest" />
-        <pattern testClass="tests.ScoreBehaviourTests" />
-        <pattern testClass="tests.ScoreTests" />
-        <pattern testClass="tests.TransformTest" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EnemyBehaviorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.EnemyBehaviorTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,13 +203,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerBehaviourTests.onUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.PlayerBehaviourTests" />
+      <option name="METHOD_NAME" value="onUpdate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in ProjetoPOO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerBehaviourTests.onUpdate" />
+        <item itemvalue="JUnit.EnemyBehaviorTests.onCollision" />
+        <item itemvalue="JUnit.tests in ProjetoPOO" />
         <item itemvalue="JUnit.GameEngineTests.run" />
         <item itemvalue="JUnit.BehaviourTests and 19 more (1)" />
-        <item itemvalue="JUnit.EnemyBehaviorTests" />
-        <item itemvalue="JUnit.EnemyBehaviorTests.onCollision" />
-        <item itemvalue="JUnit.BehaviourTests and 19 more" />
       </list>
     </recent_temporary>
   </component>
@@ -544,7 +525,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746894620841</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="GameEngine javadocs">
+      <option name="closed" value="true" />
+      <created>1746994091325</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1746994091325</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,6 +575,7 @@
     <MESSAGE value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
     <MESSAGE value="EnemyBehavior" />
     <MESSAGE value="EnemyBehaviorTests&#10;CollectibleBehaviour" />
-    <option name="LAST_COMMIT_MESSAGE" value="EnemyBehaviorTests&#10;CollectibleBehaviour" />
+    <MESSAGE value="GameEngine javadocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="GameEngine javadocs" />
   </component>
 </project>

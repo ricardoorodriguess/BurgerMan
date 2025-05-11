@@ -42,25 +42,25 @@ class PlayerBehaviourTests {
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyA = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_A, 'A');
         pb.onUpdate(1.0, keyA);
-        assertEquals(2, pb.gameObject().transform().position().getX());
+        assertEquals(1, pb.gameObject().transform().position().getX());
         assertEquals(2, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyD = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_D, 'D');
         pb.onUpdate(1.0, keyD);
-        assertEquals(4, pb.gameObject().transform().position().getX());
+        assertEquals(3, pb.gameObject().transform().position().getX());
         assertEquals(3, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyS = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_S, 'S');
         pb.onUpdate(1.0, keyS);
-        assertEquals(5, pb.gameObject().transform().position().getX());
+        assertEquals(4, pb.gameObject().transform().position().getX());
         assertEquals(5, pb.gameObject().transform().position().getY());
 
         pb.gameObject().transform().move(new Point(1, 1), 0);
         KeyEvent keyW = new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_W, 'W');
         pb.onUpdate(1.0, keyW);
-        assertEquals(6, pb.gameObject().transform().position().getX());
+        assertEquals(5, pb.gameObject().transform().position().getX());
         assertEquals(5, pb.gameObject().transform().position().getY());
     }
 
