@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="EnemyBehaviorTests&#10;CollectibleBehaviour">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/GameEngineTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameEngineTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoPOO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoPOO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Type.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +125,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -263,6 +263,14 @@
         <item itemvalue="JUnit.BehaviourTests and 19 more" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
