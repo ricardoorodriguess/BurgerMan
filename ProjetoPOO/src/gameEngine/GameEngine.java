@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version May 11, 2025
+ * @version March 27, 2025
  */
 public class GameEngine implements IGameEngine, KeyListener {
     private final ArrayList<GameObject> loadedObjects;
@@ -242,9 +242,10 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Verifica se existe uma colisão com um objeto num determinado ponto
-     * @param point a ser verificado
-     * @return true se existir colisão com algum GameObject e false caso contrário
+     * Verifica se há colisões com objetos do tipo {@link Solid} numa
+     * coordenada específica
+     * @param point a coordenada
+     * @return {@code true} se e só se há colisão com paredes
      */
     @SuppressWarnings("DataFlowIssue")
     public boolean checkSolidCollisionAt(Point point) {
@@ -255,8 +256,8 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Method responsável por obter o GameObject Score
-     * @return o Score se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     * Encontra o primeiro {@link GameObject} do tipo {@link Score}.
+     * @return o primeiro {@link GameObject} do tipo {@link Score}.
      */
     public Score getScoreObject(){
         return (Score) loadedObjects.stream()
@@ -266,8 +267,8 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Method responsável por obter o GameObject Lives
-     * @return o Lives se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     * Encontra o primeiro {@link GameObject} do tipo {@link Lives}.
+     * @return o primeiro {@link GameObject} do tipo {@link Lives}.
      */
     public Lives getLivesObject() {
         return (Lives) loadedObjects.stream()
@@ -277,8 +278,8 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Method responsável por obter o GameObject Player
-     * @return o Player se for encontrado na lista loadObjects e NoSuchElementException caso contrário
+     * Encontra o primeiro {@link GameObject} do tipo {@link Player}.
+     * @return o primeiro {@link GameObject} do tipo {@link Player}.
      */
     public Player getPlayerObject() {
         return (Player) loadedObjects.stream()
@@ -288,15 +289,16 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Método responsável por definir o número de frames que o GameEngine irá processar
-     * @param frames
+     * Modifica a quantidade de frames a serem executados pelo
+     * método {@link #run}.
+     * @param frames a quantidade de frames.
      */
     public void setFrames(int frames) {
         this.frames = frames;
     }
 
     /**
-     * Evento disparado quando uma tecla é escrita (pressionada e solta de forma rápida).
+     * {@inheritDoc}
      * @param e the event to be processed
      */
     @Override
@@ -305,7 +307,7 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Evento disparado quando uma tecla é pressionada.
+     * {@inheritDoc}
      * @param e the event to be processed
      */
     @Override
@@ -314,7 +316,7 @@ public class GameEngine implements IGameEngine, KeyListener {
     }
 
     /**
-     * Evento disparado quando uma tecla é solta.
+     * {@inheritDoc}
      * @param e the event to be processed
      */
     @Override

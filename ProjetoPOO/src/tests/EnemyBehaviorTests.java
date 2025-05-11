@@ -34,8 +34,8 @@ class EnemyBehaviorTests {
     // COLLISION
     @Test
     void onCollision() {
-        Player player;
-        Client.ENGINE.add(player = new Player(new Point(10, 10)));
+        Player player = new Player(new Point(10, 10));
+        Client.ENGINE.add(player);
         eb.onCollision(List.of(new Collectible(Type.PICKLE, new Point(1, 1))));
         assertEquals(((PlayerBehaviour) player.behaviour()).getPlayerSpeed(), 0.8);
     }
