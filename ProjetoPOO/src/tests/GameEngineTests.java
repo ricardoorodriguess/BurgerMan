@@ -1,8 +1,11 @@
 package tests;
 
 import collisions.Point;
+import gameEngine.Client;
 import gameEngine.GameEngine;
+import gameEngine.ICollider;
 import gameEngine.Transform;
+import gameEngine.behaviour.EnemyBehavior;
 import gameEngine.object.*;
 import org.junit.jupiter.api.Test;
 
@@ -149,7 +152,18 @@ class GameEngineTests {
 
     @Test
     void run() {
-        //TODO on a more advanced stage
+        Enemy e1 = new Enemy(new Point(1, 1));
+        EnemyBehavior eb = new EnemyBehavior(e1);
+        eb.gameObject(e1);
+        Client.ENGINE.add(new Solid(new Point(0, 0), 0.5, 2));
+        Client.ENGINE.add(new Solid(new Point(0, 0), 100, 0.5));
+        Client.ENGINE.add(new Solid(new Point(0, 1.5), 100, 0.5));
+        Client.ENGINE.setFrames(10);
+        Client.ENGINE.add(e1);
+        eb.onInit();
+        Client.ENGINE.run();
+        //noinspection DataFlowIssue
+        assertTrue(e1.collider().centroid().getX() >= 12);
     }
 
     @Test

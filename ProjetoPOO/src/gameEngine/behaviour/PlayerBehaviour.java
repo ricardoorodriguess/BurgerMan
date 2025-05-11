@@ -6,6 +6,7 @@ import gameEngine.object.Enemy;
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
@@ -50,7 +51,7 @@ public class PlayerBehaviour extends Behaviour {
      */
     @SuppressWarnings("DataFlowIssue")
     @Override
-    public void onUpdate(double dT, InputEvent ie) {
+    public void onUpdate(double dT, @Nullable InputEvent ie) {
         if (this.invincible) {
             this.invincibilityTime -= dT;
             if (this.invincibilityTime <= 0) {

@@ -2,13 +2,13 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
-import gameEngine.behaviour.ScoreBehaviour;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
@@ -18,12 +18,14 @@ import java.util.function.Predicate;
  * @author Tiago Tome
  * @version March 27, 2025
  */
-public class GameEngine implements IGameEngine {
+public class GameEngine implements IGameEngine, KeyListener {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
     Score score = new Score();
     Lives lives = new Lives();
+    public KeyEvent event = null;
+    public int frames;
 
     /**
      * Construtor of GameEngine
@@ -180,6 +182,7 @@ public class GameEngine implements IGameEngine {
     public void destroyAll() {
         loadedObjects.clear();
     }
+
     /**
      * Manipula a transform
      * Generates a new frame:
@@ -193,7 +196,14 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void run() {
-
+        ICollider co;
+        while (frames >= 0) {
+            for (IGameObject go : enableObjects) {
+                go.behaviour().onUpdate(0.1, event);
+                if ((co = go.collider()) != null) co.onUpdated();
+            }
+            frames--;
+        }
     }
 
     /**
@@ -258,5 +268,24 @@ public class GameEngine implements IGameEngine {
                 .filter(obj -> obj.name().equals("Player"))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    public void setFrames(int frames) {
+        this.frames = frames;
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        event = e;
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
