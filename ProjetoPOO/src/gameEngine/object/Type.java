@@ -18,25 +18,4 @@ public enum Type {
         this.name = name;
     }
 
-    /**
-     * Retorna o nome legível do tipo.
-     * @return String com o nome do tipo (ex: "Tomato").
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Converte uma string (nome legível) em um tipo enum.
-     * @param name Nome legível do tipo.
-     * @return Valor enum correspondente ou null se não encontrado.
-     */
-    public static Type fromName(String name) {
-        for (Type type : Type.values()) {
-            if (type.name.equalsIgnoreCase(name)) {
-                return type;
-            }
-        }
-        return null;
-    }
 }
