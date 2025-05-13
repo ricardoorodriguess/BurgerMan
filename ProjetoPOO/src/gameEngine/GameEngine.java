@@ -22,10 +22,10 @@ public class GameEngine implements IGameEngine, KeyListener {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
-    Score score = new Score();
-    Lives lives = new Lives();
-    public KeyEvent event = null;
-    public int frames;
+    Score score = new Score(); //Depois do cliete podemos retirar
+    Lives lives = new Lives(); //isto tbm é o mesmo que em cima
+    public KeyEvent event = null; //retirar depois, só para testes
+    public int frames; //pode ser uma constante definida
 
     /**
      * Construtor of GameEngine
@@ -47,6 +47,7 @@ public class GameEngine implements IGameEngine, KeyListener {
         enableObjects.add(gameObject);
     }
 
+    @Deprecated(forRemoval = true)
     /**
      * Method do remove gameObjects from arrayList
      * @param gameObject
@@ -186,13 +187,13 @@ public class GameEngine implements IGameEngine, KeyListener {
     /**
      * Manipula a transform
      * Generates a new frame:
-     * Get user input from Ul
+     * Get user input from UI
      * update all the enabled GameObjects
      * check collisions and send info to GameObjects
-     * update Ul
-     * @pos: Ul.input() &&
+     * update UI
+     * @pos: UI.input() &&
      * calls Behaviour.onUpdate() for all enabled objects && Behaviour.checkCollisions() &&
-     * Ul.draw()
+     * UI.draw()
      */
     @Override
     public void run() {
@@ -202,7 +203,7 @@ public class GameEngine implements IGameEngine, KeyListener {
                 go.behaviour().onUpdate(0.1, event);
                 if ((co = go.collider()) != null) co.onUpdated();
             }
-            frames--;
+            frames--; //remover pois serve só para testes
         }
     }
 
