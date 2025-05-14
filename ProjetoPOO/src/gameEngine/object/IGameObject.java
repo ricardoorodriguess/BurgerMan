@@ -1,6 +1,7 @@
 package gameEngine.object;
 
 import gameEngine.ICollider;
+import gameEngine.IShape;
 import gameEngine.ITransform;
 import gameEngine.behaviour.IBehaviour;
 import org.jetbrains.annotations.Nullable;
@@ -38,4 +39,10 @@ public interface IGameObject {
      * @return the Collider of the game.GameObject.
      */
     @Nullable ICollider collider();
+
+    /**
+     * Returns the Shape of the game.gameObject
+     * @return the Shape of the game.gameObject
+     */
+    IShape shape();
 }

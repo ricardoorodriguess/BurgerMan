@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="some comments">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/IShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/Shape.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="IShape and Shape create, //TODO:">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2025_11_24_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2025_11_24__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/IGameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/IGameObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +154,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.tests in ProjetoPOO">
-    <configuration name="BehaviourTests and 19 more (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BehaviourTests and 19 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <option name="TEST_OBJECT" value="pattern" />
       <patterns>
@@ -277,7 +282,7 @@
       <workItem from="1746997940458" duration="2236000" />
       <workItem from="1747142222416" duration="201000" />
       <workItem from="1747142436585" duration="284000" />
-      <workItem from="1747150952342" duration="5509000" />
+      <workItem from="1747150952342" duration="9895000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -551,7 +556,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747151960692</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="IShape and Shape create, //TODO:">
+      <option name="closed" value="true" />
+      <created>1747228556373</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1747228556373</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implementation of circle toString method, doc for equals at Point" />
     <MESSAGE value="Added toString to abstract class and polygon too" />
     <MESSAGE value="Implementation of client class" />
     <MESSAGE value="delete DEEPSEEK commet" />
@@ -594,6 +606,7 @@
     <MESSAGE value="EnemyBehavior" />
     <MESSAGE value="EnemyBehaviorTests&#10;CollectibleBehaviour" />
     <MESSAGE value="some comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="some comments" />
+    <MESSAGE value="IShape and Shape create, //TODO:" />
+    <option name="LAST_COMMIT_MESSAGE" value="IShape and Shape create, //TODO:" />
   </component>
 </project>

@@ -2,6 +2,7 @@ package gameEngine.object;
 
 import collisions.Point;
 import gameEngine.ICollider;
+import gameEngine.IShape;
 import gameEngine.ITransform;
 import gameEngine.behaviour.IBehaviour;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,7 @@ public class GameObject implements IGameObject
     private final ITransform transform;
     private final @Nullable ICollider collider;
     protected final IBehaviour behaviour;
+    private final IShape shape;
 
     /**
      * Constructor to class GameObject, create an instance of GameObject (see description of class).
@@ -28,12 +30,13 @@ public class GameObject implements IGameObject
      * @param transform
      * @param collider
      */
-    public GameObject(String name, ITransform transform, @Nullable ICollider collider, @Nullable IBehaviour behaviour)
+    public GameObject(String name, ITransform transform, @Nullable ICollider collider, @Nullable IBehaviour behaviour, IShape shape)
     {
         this.name = name;
         this.transform = transform;
         this.collider = collider;
         this.behaviour = behaviour;
+        this.shape = shape;
         if (this.behaviour != null)
             this.behaviour.gameObject(this); //se nao for null associa este objeto ao behaviour
     }
@@ -63,6 +66,11 @@ public class GameObject implements IGameObject
     @Override
     public IBehaviour behaviour() {
         return behaviour;
+    }
+
+    @Override
+    public IShape shape() {
+        return shape;
     }
 
     /**
