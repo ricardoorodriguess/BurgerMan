@@ -1,5 +1,11 @@
 package gameEngine;
 
+import collisions.Point;
+import gameEngine.object.Collectible;
+import gameEngine.object.Type;
+
+import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
 
 public class Client {

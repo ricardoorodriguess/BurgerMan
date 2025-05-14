@@ -2,7 +2,7 @@ package gameEngine.object;
 
 import collisions.Point;
 import gameEngine.ICollider;
-import gameEngine.IShape;
+import gameEngine.shape.IShape;
 import gameEngine.ITransform;
 import gameEngine.behaviour.IBehaviour;
 import org.jetbrains.annotations.Nullable;

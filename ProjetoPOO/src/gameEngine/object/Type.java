@@ -1,7 +1,7 @@
 package gameEngine.object;
 
 public enum Type {
-    //Tipos genericos pré-definidos
+    //Tipos generics pré-definidos
     POINT("Point"),
     TOMATO("Tomato"),
     ONION("Onion"),

@@ -1,11 +1,8 @@
 package gameEngine.object;
 
 import collisions.Point;
-import collisions.Polygon;
 import gameEngine.Transform;
 import gameEngine.behaviour.LivesBehaviour;
-import gameEngine.behaviour.PlayerBehaviour;
-import org.jetbrains.annotations.NotNull;
 
 public class Lives extends GameObject {
     /**

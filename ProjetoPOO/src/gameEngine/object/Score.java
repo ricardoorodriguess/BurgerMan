@@ -2,7 +2,6 @@ package gameEngine.object;
 
 import collisions.Point;
 import gameEngine.Transform;
-import gameEngine.behaviour.LivesBehaviour;
 import gameEngine.behaviour.ScoreBehaviour;
 
 public class Score extends GameObject {

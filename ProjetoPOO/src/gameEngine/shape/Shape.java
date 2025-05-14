@@ -1,7 +1,5 @@
 package gameEngine.shape;
-import gameEngine.IShape;
 import gameEngine.ITransform;
-import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 
 import java.awt.*;
@@ -21,6 +19,7 @@ abstract class Shape implements IShape {
      * Retorna o GameObject associado a este shape.
      * @return GameObject vinculado.
      */
+    @Override
     public IGameObject gameObject() {
         return igameObject;
     }
