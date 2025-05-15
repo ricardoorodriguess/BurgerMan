@@ -14,7 +14,7 @@ public class Solid extends GameObject {
      */
     public Solid(Point topleft, double horizontal, double vertical) {
         super("Solid", Transform.simpleTransform(topleft), Polygon.simpleRectangle(topleft, horizontal, vertical),
-                new SolidBehaviour(null));
+                new SolidBehaviour(null), null);
         behaviour.gameObject(this);
     }
 }

@@ -3,13 +3,13 @@ package gameEngine.shape;
 import java.awt.*;
 import java.io.InputStream;
 
-public class textShape extends Shape {
+public class TextShape extends Shape {
     private String text;
     private final Color color;
     private final int fontSize;
     private Font font;
 
-    public textShape(String initialText, Color color, int fontSize) {
+    public TextShape(String initialText, Color color, int fontSize) {
         super(null); // O GameObject será associado depois
         this.text = initialText;
         this.color = color;
