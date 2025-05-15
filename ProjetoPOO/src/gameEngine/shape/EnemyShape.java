@@ -24,10 +24,10 @@ public class EnemyShape extends Shape {
                 images.put("LEFT", loadImage("/images/greenTrashLeft.png"));
                 images.put("RIGHT", loadImage("/images/greenTrashRight.png"));
             } else if (type == EnemyType.GRAY_TRASH) {
-                images.put("UP", loadImage("/images/grayTrashUp.png"));
-                images.put("DOWN", loadImage("/images/grayTrashDown.png"));
-                images.put("LEFT", loadImage("/images/grayTrashLeft.png"));
-                images.put("RIGHT", loadImage("/images/grayTrashRight.png"));
+                images.put("UP", loadImage("/images/greyTrashUp.png"));
+                images.put("DOWN", loadImage("/images/greyTrashDown.png"));
+                images.put("LEFT", loadImage("/images/greyTrashLeft.png"));
+                images.put("RIGHT", loadImage("/images/greyTrashRight.png"));
             }
         } catch (Exception e) {
             throw new RuntimeException("Failed to load enemy images", e);
