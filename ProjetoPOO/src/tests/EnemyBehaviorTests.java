@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EnemyBehaviorTests {
-    Enemy e1 = new Enemy(new Point(1, 1));
+    Enemy e1 = new Enemy(new Point(1, 1),EnemyType.GRAY_TRASH);
     EnemyBehavior eb = new EnemyBehavior(e1);
 
     @Test
@@ -20,6 +20,7 @@ class EnemyBehaviorTests {
         assertInstanceOf(EnemyBehavior.class, eb);
         assertNotNull(eb);
         assertEquals(e1, eb.gameObject());
+        assertEquals(EnemyType.GRAY_TRASH, e1.getEnemytype());
     }
 
     @Test

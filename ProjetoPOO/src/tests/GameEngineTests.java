@@ -23,7 +23,7 @@ class GameEngineTests {
     @Test
     void add() {
         engine.add(player);
-        engine.add(new Enemy(new Point(5, 5)));
+        engine.add(new Enemy(new Point(5, 5),EnemyType.GREEN_TRASH));
         engine.add(new Collectible(Type.POINT, new Point(1, 1)));
         assertEquals(5, engine.getLoadedObjects().size());
     }
@@ -42,7 +42,7 @@ class GameEngineTests {
     void getLoadedObjects() {
         engine.add(player);
         for (int i = 0; i < 4; i++)
-            engine.add(new Enemy(new Point(random.nextDouble(), random.nextDouble())));
+            engine.add(new Enemy(new Point(random.nextDouble(), random.nextDouble()), EnemyType.GRAY_TRASH));
         ArrayList<GameObject> list = new ArrayList<>();
         for (GameObject g : engine.getLoadedObjects())
             if (g instanceof Enemy)
@@ -63,7 +63,7 @@ class GameEngineTests {
 
     @Test
     void addDisabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null, null);
         engine.addDisabled(obj);
         assertTrue(engine.getDisabled().contains(obj));
         assertEquals(1, engine.getDisabled().size());
@@ -72,7 +72,7 @@ class GameEngineTests {
 
     @Test
     void enable() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
+        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null, null);
         engine.addDisabled(obj);
         engine.enable(obj);
         assertTrue(engine.isEnabled(obj));
@@ -121,8 +121,8 @@ class GameEngineTests {
 
     @Test
     void getDisabled() {
-        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null);
-        IGameObject obj2 = new GameObject("Obj2", Transform.simpleTransform(new Point(1,1)), null, null);
+        IGameObject obj = new GameObject("Obj", Transform.simpleTransform(new Point(0,0)), null, null, null);
+        IGameObject obj2 = new GameObject("Obj2", Transform.simpleTransform(new Point(1,1)), null, null, null);
 
         engine.addDisabled(obj);
         engine.addDisabled(obj2);
@@ -152,7 +152,7 @@ class GameEngineTests {
 
     @Test
     void run() {
-        Enemy e1 = new Enemy(new Point(1, 1));
+        Enemy e1 = new Enemy(new Point(1, 1), EnemyType.GREEN_TRASH);
         EnemyBehavior eb = new EnemyBehavior(e1);
         eb.gameObject(e1);
         Client.ENGINE.add(new Solid(new Point(0, 0), 0.5, 2));

@@ -43,7 +43,7 @@ class CollectibleBehaviourTests {
     void onCollision() {
         List<IGameObject> gameObjects = new ArrayList<>(List.of());
         Player player = new Player(new Point(1,1));
-        Enemy enemy = new Enemy(new Point(2,2));
+        Enemy enemy = new Enemy(new Point(2,2),EnemyType.GREEN_TRASH);
         gameObjects.add(player);
         gameObjects.add(enemy);
         cb.onCollision(gameObjects);

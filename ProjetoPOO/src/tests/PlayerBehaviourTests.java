@@ -90,7 +90,7 @@ class PlayerBehaviourTests {
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(Pickle)));
         assertTrue(Client.ENGINE.isDestroyed(Pickle));
 
-        GameObject Enemy = new Enemy(new Point(6, 6));
+        GameObject Enemy = new Enemy(new Point(6, 6), EnemyType.GREEN_TRASH);
         assertDoesNotThrow(() -> pb.onCollision(java.util.List.of(Enemy)));
         if (pb.isInvincible()) {
             assertTrue(Client.ENGINE.isDestroyed(Enemy));
