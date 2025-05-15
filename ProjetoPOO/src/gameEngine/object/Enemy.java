@@ -4,6 +4,7 @@ import collisions.Point;
 import collisions.Polygon;
 import gameEngine.Transform;
 import gameEngine.behaviour.EnemyBehavior;
+import gameEngine.shape.EnemyShape;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -14,12 +15,23 @@ import org.jetbrains.annotations.NotNull;
  * @version April 29, 2025
  */
 public class Enemy extends GameObject {
+    private final EnemyType enemyType;
+
     /**
      * Constrói um inimigo na posição especificada.
      * @param position Posição inicial do inimigo.
      */
-    public Enemy(@NotNull Point position) {
-        super("Enemy", Transform.simpleTransform(position), Polygon.simpleSquare(position), new EnemyBehavior(null));
+    public Enemy(@NotNull Point position, @NotNull EnemyType type) {
+        super("Enemy", Transform.simpleTransform(position), Polygon.simpleSquare(position), new EnemyBehavior(null), new EnemyShape(type));
+        this.enemyType = type;
         behaviour.gameObject(this);
+    }
+
+    /**
+     * Retorna o tipo deste enemy.
+     * @return Tipo enum do enemy.
+     */
+    public EnemyType getEnemytype() {
+        return enemyType;
     }
 }

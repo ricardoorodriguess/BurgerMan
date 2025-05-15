@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Collectible, CollectibleShape, player, PlayerShape, NAO SEI SE ESTA FIXE">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/object/EnemyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="EnemyShape and EnemyType added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TP2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -592,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747305336244</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="EnemyShape and EnemyType added">
+      <option name="closed" value="true" />
+      <created>1747321286222</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1747321286222</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed polygon-polygon collision" />
     <MESSAGE value="Added doc to GameEngine" />
     <MESSAGE value="Isolate centroid calcule in a method" />
     <MESSAGE value="doc to centroidCalculate method" />
@@ -635,7 +640,8 @@
     <MESSAGE value="SHAPES....." />
     <MESSAGE value="PlayerShape" />
     <MESSAGE value="Collectible, CollectibleShape, player, PlayerShape, NAO SEI SE ESTA FIXE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collectible, CollectibleShape, player, PlayerShape, NAO SEI SE ESTA FIXE" />
+    <MESSAGE value="EnemyShape and EnemyType added" />
+    <option name="LAST_COMMIT_MESSAGE" value="EnemyShape and EnemyType added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
