@@ -1,6 +1,0 @@
-Concluir o burger DONE
-Concluir o garbage DONE
-Fazer o caixote (garbage mas diff, cor) DONE
-Fazer o mapa 
-Fazer os power-ups
-Fazer as mortes (5 frames -> 1o vermelho, 2o normal, 3o olhos semi fechados, 4o olhos fechados, 5o desaparece)
