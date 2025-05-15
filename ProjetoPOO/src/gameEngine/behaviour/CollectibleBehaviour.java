@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class CollectibleBehaviour extends Behaviour {
     private boolean collected = false;
-    private boolean initialized = false;
+    //private boolean initialized = false;
     private Type collectibleType;
 
     /**
@@ -41,10 +41,10 @@ public class CollectibleBehaviour extends Behaviour {
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
-        if (!initialized) {
+        /*if (!initialized) {
             onInit();
             initialized = true;
-        }
+        }*/
         if (collected) {
             // Destrói o objeto quando coletado
             onDestroy();
@@ -59,11 +59,21 @@ public class CollectibleBehaviour extends Behaviour {
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
         for (IGameObject obj : gameObjects) {
-            if (obj instanceof Player || obj instanceof Enemy && collectibleType == Type.PICKLE) {
+            if (isCollision(obj)) {
                 collected = true;
                 break;
             }
         }
+    }
+    /**
+     * Metodo complementar com o  {@link #onCollision(List)}.
+     * @param obj Objeto que colidiu com este coletável.
+     * @return true se o objeto colidiu com este coletável, false caso contrário.
+     */
+    private boolean isCollision(IGameObject obj) {
+        if (obj instanceof Player)  return true;
+        else if (obj instanceof Enemy && collectibleType == Type.PICKLE) return true;
+        else return false;
     }
     
     /**
@@ -72,7 +82,7 @@ public class CollectibleBehaviour extends Behaviour {
     @Override
     public void onInit() {
         collected = false;
-        initialized = false;
+        //initialized = false;
     }
 
     /**
@@ -97,5 +107,5 @@ public class CollectibleBehaviour extends Behaviour {
 
     //para os testes
     public boolean isCollected() { return collected; }
-    public boolean isInitialized() { return initialized; }
+    //public boolean isInitialized() { return initialized; }
 }
