@@ -47,7 +47,6 @@ public class GameEngine implements IGameEngine, KeyListener {
         enableObjects.add(gameObject);
     }
 
-    @Deprecated(forRemoval = true)
     /**
      * Method do remove gameObjects from arrayList
      * @param gameObject

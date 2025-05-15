@@ -72,8 +72,7 @@ public class CollectibleBehaviour extends Behaviour {
      */
     private boolean isCollision(IGameObject obj) {
         if (obj instanceof Player)  return true;
-        else if (obj instanceof Enemy && collectibleType == Type.PICKLE) return true;
-        else return false;
+        else return obj instanceof Enemy && collectibleType == Type.PICKLE;
     }
     
     /**

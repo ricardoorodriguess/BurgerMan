@@ -79,9 +79,14 @@ class CollectibleBehaviourTests {
     //review this test
     @Test
     void onDestroy() {
+        System.out.println(c1);
         ENGINE.add(c1);
+        System.out.println(ENGINE.getLoadedObjects());
         cb.onDestroy();
         assertFalse(cb.isCollected());
-        assertEquals(0, ENGINE.getLoadedObjects().size());
+        System.out.println(ENGINE.getLoadedObjects());
+        System.out.println(ENGINE.getEnabled());
+        System.out.println(ENGINE.getDisabled());
+        assertTrue(ENGINE.getLoadedObjects().isEmpty());
     }
 }
