@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="SHAPES.....">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="PlayerShape">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagens/Burger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +282,7 @@
       <workItem from="1747142436585" duration="284000" />
       <workItem from="1747150952342" duration="15915000" />
       <workItem from="1747265127389" duration="151000" />
-      <workItem from="1747265294783" duration="611000" />
+      <workItem from="1747265294783" duration="4548000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -573,7 +580,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747264777247</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="PlayerShape">
+      <option name="closed" value="true" />
+      <created>1747266096856</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1747266096856</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete DEEPSEEK commet" />
     <MESSAGE value="add a space in toString at circle" />
     <MESSAGE value="fixed polygon-polygon collision" />
     <MESSAGE value="Added doc to GameEngine" />
@@ -616,7 +630,8 @@
     <MESSAGE value="IShape and Shape create, //TODO:" />
     <MESSAGE value="IShape and Shape with some things to see if its ok.&#10;GameObject now has a shape." />
     <MESSAGE value="SHAPES....." />
-    <option name="LAST_COMMIT_MESSAGE" value="SHAPES....." />
+    <MESSAGE value="PlayerShape" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerShape" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

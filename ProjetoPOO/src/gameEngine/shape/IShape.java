@@ -13,6 +13,12 @@ public interface IShape {
     IGameObject gameObject();
 
     /**
+     * Define o GameObject para umm shape.
+     * @param gameObject Novo GameObject a ficar com o shape em questão.
+     */
+    void gameObject(IGameObject gameObject);
+
+    /**
      * Desenha o shape do objeto no ecrã.
      * @param g
      * @param transform

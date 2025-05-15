@@ -22,7 +22,7 @@ public class GameObject implements IGameObject
     private final ITransform transform;
     private final @Nullable ICollider collider;
     protected final IBehaviour behaviour;
-    private final IShape shape;
+    protected final IShape shape;
 
     /**
      * Constructor to class GameObject, create an instance of GameObject (see description of class).

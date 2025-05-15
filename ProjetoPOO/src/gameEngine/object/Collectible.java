@@ -4,6 +4,7 @@ import collisions.Circle;
 import collisions.Point;
 import gameEngine.Transform;
 import gameEngine.behaviour.CollectibleBehaviour;
+import gameEngine.shape.CollectibleShape;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -22,7 +23,7 @@ public class Collectible extends GameObject {
      * @param @Notnull position Posição inicial do coletável no ambiente.
      */
     public Collectible(@NotNull Type type, @NotNull Point position) {
-        super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null));
+        super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null), new CollectibleShape(type));
         this.type = type;
         behaviour.gameObject(this);
     }

@@ -4,6 +4,7 @@ import collisions.Point;
 import collisions.Polygon;
 import gameEngine.Transform;
 import gameEngine.behaviour.PlayerBehaviour;
+import gameEngine.shape.PlayerShape;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -19,7 +20,8 @@ public class Player extends GameObject {
      * @param position Posição inicial do jogador.
      */
     public Player(@NotNull Point position) {
-        super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position), new PlayerBehaviour(null));
+        super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position), new PlayerBehaviour(null), new PlayerShape(null));
         behaviour.gameObject(this);
+        shape.gameObject(this);
     }
 }

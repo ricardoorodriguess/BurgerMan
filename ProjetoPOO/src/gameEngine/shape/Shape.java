@@ -25,6 +25,11 @@ abstract class Shape implements IShape {
     }
 
     @Override
+    public void gameObject(IGameObject gameObject) {
+        this.igameObject = gameObject;
+    }
+
+    @Override
     public final void draw(Graphics2D g, ITransform transform) {
         var originalTx = g.getTransform();
         var originalHints = g.getRenderingHints();
