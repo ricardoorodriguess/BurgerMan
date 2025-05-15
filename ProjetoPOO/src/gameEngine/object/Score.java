@@ -3,7 +3,7 @@ package gameEngine.object;
 import collisions.Point;
 import gameEngine.Transform;
 import gameEngine.behaviour.ScoreBehaviour;
-import gameEngine.shape.textShape;
+import gameEngine.shape.TextShape;
 
 import java.awt.*;
 
@@ -13,7 +13,7 @@ public class Score extends GameObject {
      */
     public Score() {
         super("Score", Transform.simpleTransform(new Point(0, 1)), null, new ScoreBehaviour(null),
-                new textShape("Score: 0", Color.WHITE, 24)); //por enquanto deixar assim
+                new TextShape("Score: 0", Color.WHITE, 24)); //por enquanto deixar assim
         behaviour.gameObject(this);
         shape.gameObject(this);
     }
