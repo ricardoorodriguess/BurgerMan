@@ -7,7 +7,9 @@
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/ICollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/ICollider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/IGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,6 +241,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -263,6 +273,7 @@
       <workItem from="1747265127389" duration="151000" />
       <workItem from="1747265294783" duration="5484000" />
       <workItem from="1747318824874" duration="847000" />
+      <workItem from="1747504184541" duration="1291000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
