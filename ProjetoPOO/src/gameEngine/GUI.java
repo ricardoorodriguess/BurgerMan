@@ -3,23 +3,23 @@ package gameEngine;
 import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import utils.Queue;
 
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GUI implements IGUI {
-    private final Queue<InputEvent> queue;
+    private final CopyOnWriteArrayList<InputEvent> queue;
 
     public GUI() {
-        queue = new Queue<>();
+        queue = new CopyOnWriteArrayList<>();
     }
 
     @Override
     public @Nullable InputEvent dequeue() {
-        return queue.dequeue();
+        return queue.removeFirst();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class GUI implements IGUI {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        queue.enqueue(e);
+        queue.addLast(e);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class GUI implements IGUI {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        queue.enqueue(e);
+        queue.addLast(e);
     }
 
     @Override
