@@ -218,6 +218,11 @@ public class GameEngine implements IGameEngine, KeyListener {
         }
     }
 
+    @Override
+    public IGUI gui() {
+        return null;
+    }
+
     /**
      * Retorna um GameObject aleatório que satisfaz um predicado.
      * @param predicate Condição para filtrar objetos.

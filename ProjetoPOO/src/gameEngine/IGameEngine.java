@@ -95,4 +95,6 @@ public interface IGameEngine {
      * collided with each IGameObject
      */
     void checkCollisions();
+
+    IGUI gui();
 }
