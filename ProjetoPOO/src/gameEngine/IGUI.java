@@ -17,7 +17,7 @@ import java.util.List;
  * @author Tiago Tome
  * @version May 27, 2025
  */
-public interface IGUI extends KeyListener, MouseListener {
+public interface IGUI extends KeyListener {
     @Nullable InputEvent dequeue();
 
     /**

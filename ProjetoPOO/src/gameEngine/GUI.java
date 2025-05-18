@@ -77,46 +77,4 @@ public class GUI implements IGUI {
      */
     @Override
     public void keyReleased(KeyEvent e) {}
-
-    /**
-     * Handles the mouseClicked event.
-     * Adds the MouseEvent to the input queue.
-     * @param e MouseEvent containing information about the mouse click.
-     */
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        queue.addLast(e);
-    }
-
-    /**
-     * Handles the mousePressed event.
-     * Currently, this method does not perform any action.
-     * @param e MouseEvent containing information about the mouse press.
-     */
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    /**
-     * Handles the mouseReleased event.
-     * Currently, this method does not perform any action.
-     * @param e MouseEvent containing information about the mouse release.
-     */
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    /**
-     * Handles the mouseEntered event.
-     * Currently, this method does not perform any action.
-     * @param e MouseEvent containing information about the mouse entering the component.
-     */
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    /**
-     * Handles the mouseExited event.
-     * Currently, this method does not perform any action.
-     * @param e MouseEvent containing information about the mouse exiting the component.
-     */
-    @Override
-    public void mouseExited(MouseEvent e) {}
 }
