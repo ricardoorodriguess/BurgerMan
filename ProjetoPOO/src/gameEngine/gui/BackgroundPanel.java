@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public class backgroundPanel extends JPanel {
+public class BackgroundPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

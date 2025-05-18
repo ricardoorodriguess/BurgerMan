@@ -1,7 +1,6 @@
 package gameEngine.gui;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.Objects;
 
 public class View {
@@ -14,7 +13,7 @@ public class View {
         frame.setLocationRelativeTo(null); // Center the window on the screen
         frame.setResizable(false);
 
-        frame.setContentPane(new backgroundPanel());
+        frame.setContentPane(new BackgroundPanel());
         ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/burgerUp.png")));
         frame.setIconImage(icon.getImage());
 
