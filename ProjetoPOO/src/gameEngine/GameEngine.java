@@ -2,6 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
+import gameEngine.gui.GUI;
 import gameEngine.gui.IGUI;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
@@ -27,11 +28,13 @@ public class GameEngine implements IGameEngine, KeyListener {
     Lives lives = new Lives(); //isto tbm é o mesmo que em cima
     public KeyEvent event = null; //retirar depois, só para testes
     public int frames; //pode ser uma constante definida
+    private final GUI gui;
 
     /**
      * Construtor of GameEngine
      */
-    public GameEngine() {
+    public GameEngine(GUI gui) {
+        this.gui = gui;
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
@@ -221,7 +224,7 @@ public class GameEngine implements IGameEngine, KeyListener {
 
     @Override
     public IGUI gui() {
-        return null;
+        return gui;
     }
 
     /**

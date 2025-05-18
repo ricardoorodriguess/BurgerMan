@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="textShape.java to Score.java and Lives.java but, I guess it's wrong, not sure...">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/IGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/IGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Queue.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
-    &quot;accountId&quot;: &quot;b67baec8-0629-4921-a9cd-92ef2464cdca&quot;
+    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -54,6 +54,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GUI$Queue.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JUnit.BehaviourTests and 19 more (1).executor&quot;: &quot;Run&quot;,
     &quot;JUnit.BehaviourTests and 19 more.executor&quot;: &quot;Run&quot;,
@@ -153,24 +154,34 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tests in ProjetoPOO">
-    <configuration name="CollectibleBehaviourTests.onDestroy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameEngine.Client" />
       <module name="ProjetoPOO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="gameEngine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CollectibleBehaviourTests" />
-      <option name="METHOD_NAME" value="onDestroy" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EnemyBehaviorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GUI$Queue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameEngine.GUI$Queue" />
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
         <pattern>
@@ -179,7 +190,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.EnemyBehaviorTests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BehaviourTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,22 +212,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameEngineTests.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameEngineTests" />
-      <option name="METHOD_NAME" value="run" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tests in ProjetoPOO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -233,21 +228,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="JUnit.BehaviourTests" />
+        <item itemvalue="Application.GUI$Queue" />
         <item itemvalue="JUnit.tests in ProjetoPOO" />
         <item itemvalue="JUnit.GameEngineTests.getLoadedObjects" />
-        <item itemvalue="JUnit.CollectibleBehaviourTests.onDestroy" />
-        <item itemvalue="JUnit.GameEngineTests.run" />
-        <item itemvalue="JUnit.EnemyBehaviorTests" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -602,7 +589,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747329995105</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="EnemyShape">
+      <option name="closed" value="true" />
+      <created>1747340637019</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1747340637019</updated>
+    </task>
+    <task id="LOCAL-00043" summary="GUI">
+      <option name="closed" value="true" />
+      <created>1747485531855</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1747485531855</updated>
+    </task>
+    <task id="LOCAL-00044" summary="GUI">
+      <option name="closed" value="true" />
+      <created>1747503174663</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1747503174663</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,8 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Isolate centroid calcule in a method" />
-    <MESSAGE value="doc to centroidCalculate method" />
     <MESSAGE value="added @Nullable to colliders" />
     <MESSAGE value="IBehaviour, Behaviour, GameObject..." />
     <MESSAGE value="Abstract Behaviour" />
@@ -645,7 +654,9 @@
     <MESSAGE value="Collectible, CollectibleShape, player, PlayerShape, NAO SEI SE ESTA FIXE" />
     <MESSAGE value="EnemyShape and EnemyType added" />
     <MESSAGE value="textShape.java to Score.java and Lives.java but, I guess it's wrong, not sure..." />
-    <option name="LAST_COMMIT_MESSAGE" value="textShape.java to Score.java and Lives.java but, I guess it's wrong, not sure..." />
+    <MESSAGE value="EnemyShape" />
+    <MESSAGE value="GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
