@@ -1,12 +1,11 @@
-package gameEngine;
+package gameEngine.gui;
 
 import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import javax.swing.*;
+
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 

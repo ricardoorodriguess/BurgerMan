@@ -1,4 +1,4 @@
-package gameEngine;
+package gameEngine.gui;
 
 import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
@@ -6,11 +6,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
 import java.util.List;
 
 /**
- The {@code gameEngine.IGUI} interface defines the contract for graphical user interfaces
+ The {@code gameEngine.gui.IGUI} interface defines the contract for graphical user interfaces
  * within the game engine
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas

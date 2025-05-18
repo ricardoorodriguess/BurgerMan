@@ -2,6 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
+import gameEngine.gui.IGUI;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 

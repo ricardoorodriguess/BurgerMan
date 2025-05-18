@@ -1,5 +1,6 @@
 package gameEngine;
 
+import gameEngine.gui.IGUI;
 import gameEngine.object.IGameObject;
 
 import java.util.List;
