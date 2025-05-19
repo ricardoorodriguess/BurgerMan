@@ -3,7 +3,7 @@ package gameEngine.gui;
 import javax.swing.*;
 import java.util.Objects;
 
-public class View {
+public class View extends JFrame {
     private JFrame frame;
 
     public View() {

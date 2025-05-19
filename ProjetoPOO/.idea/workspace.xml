@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="BackgroundPanel">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/SolidBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/SolidBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/BackgroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/map.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/map.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -617,15 +613,7 @@
       <option name="project" value="LOCAL" />
       <updated>1747503174663</updated>
     </task>
-    <task id="LOCAL-00045" summary="BackgroundPanel">
-      <option name="closed" value="true" />
-      <created>1747585916318</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1747585916318</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,6 +631,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added @Nullable to colliders" />
     <MESSAGE value="IBehaviour, Behaviour, GameObject..." />
     <MESSAGE value="Abstract Behaviour" />
     <MESSAGE value="Other tests" />
@@ -667,8 +656,7 @@
     <MESSAGE value="textShape.java to Score.java and Lives.java but, I guess it's wrong, not sure..." />
     <MESSAGE value="EnemyShape" />
     <MESSAGE value="GUI" />
-    <MESSAGE value="BackgroundPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="BackgroundPanel" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
