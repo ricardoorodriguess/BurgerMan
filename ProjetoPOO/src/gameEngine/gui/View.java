@@ -7,7 +7,7 @@ public class View {
     private JFrame frame;
 
     public View() {
-        frame = new JFrame("Hamburger-Man");
+        frame = new JFrame("Buger-Man");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(672, 744);
         frame.setLocationRelativeTo(null); // Center the window on the screen
