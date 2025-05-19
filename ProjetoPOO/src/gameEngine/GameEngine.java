@@ -9,6 +9,7 @@ import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,18 +29,21 @@ public class GameEngine implements IGameEngine {
     Score score = new Score(); //Depois do cliete podemos retirar
     Lives lives = new Lives(); //isto tbm é o mesmo que em cima
     public KeyEvent event = null; //retirar depois, só para testes
-    private final GUI gui;
+    private GUI gui;
 
     /**
      * Construtor of GameEngine
      */
-    public GameEngine(GUI gui) {
-        this.gui = gui;
+    public GameEngine() {
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
         this.add(score);
         this.add(lives);
+    }
+
+    public void setGUI(GUI gui) {
+        this.gui = gui;
     }
 
     /**
@@ -201,8 +205,8 @@ public class GameEngine implements IGameEngine {
     @Override
     public void run() {
         ICollider co;
-        gui.queue.addLast(new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_A, 'A'));
-        event = (KeyEvent) gui.dequeue();
+        InputEvent ie = gui.dequeue();
+        event = ie == null ? null : (KeyEvent) ie;
         for (IGameObject go : enableObjects) {
             go.behaviour().onUpdate(0.1, event);
             if ((co = go.collider()) != null)

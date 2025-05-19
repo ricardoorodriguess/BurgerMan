@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Client">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="PlayerBehaviour -&gt; PlayerShape">
+      <change afterPath="$PROJECT_DIR$/src/gameEngine/gui/KL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/IGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/IGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/CollectibleBehaviourTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CollectibleBehaviourTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/GameEngineTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameEngineTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,94 +58,95 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GUI$Queue.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.BehaviourTests and 19 more (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BehaviourTests and 19 more.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BehaviourTests and 2 more.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BehaviourTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircleTest.centroid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircleTest.collides.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircleTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircleTest.scale.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircleTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColisorTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CollectibleBehaviourTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CollectibleBehaviourTests.onDestroy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CollectibleTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColliderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnemyBehaviorTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnemyBehaviorTests.onCollision.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnemyBehaviorTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnemyTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EnemyTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.getLoadedObjects.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.getScore.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.isEnabled.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.resetLives.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameEngineTests.run.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GameObjectTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LineSegmentTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LineTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesBehaviourTests.decreaseLives.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesBehaviourTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesBehaviourTests.getLives.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesBehaviourTests.onInit.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesBehaviourTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LivesTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerBehaviourTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerBehaviourTests.onCollision.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerBehaviourTests.onDisabled.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerBehaviourTests.onUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerBehaviourTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlayerTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.toString_FormatsCorrectly.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreBehaviourTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreBehaviourTests.getScore.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreBehaviourTests.incrementScore.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreBehaviourTests.onInit.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreBehaviourTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreTests.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ScoreboardTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.layer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.move.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.position.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.rotate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.scale.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.testScale.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransformTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.tests in ProjetoPOO.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Client.executor": "Run",
+    "Application.GUI$Queue.executor": "Run",
+    "Application.KL.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.BehaviourTests and 19 more (1).executor": "Run",
+    "JUnit.BehaviourTests and 19 more.executor": "Run",
+    "JUnit.BehaviourTests and 2 more.executor": "Run",
+    "JUnit.BehaviourTests.executor": "Run",
+    "JUnit.CircleTest.centroid.executor": "Run",
+    "JUnit.CircleTest.collides.executor": "Run",
+    "JUnit.CircleTest.executor": "Run",
+    "JUnit.CircleTest.scale.executor": "Run",
+    "JUnit.CircleTest.testToString.executor": "Run",
+    "JUnit.ColisorTest.executor": "Run",
+    "JUnit.CollectibleBehaviourTests.executor": "Run",
+    "JUnit.CollectibleBehaviourTests.onDestroy.executor": "Run",
+    "JUnit.CollectibleTests.executor": "Run",
+    "JUnit.ColliderTest.executor": "Run",
+    "JUnit.EnemyBehaviorTests.executor": "Run",
+    "JUnit.EnemyBehaviorTests.onCollision.executor": "Run",
+    "JUnit.EnemyBehaviorTests.testConstructor.executor": "Run",
+    "JUnit.EnemyTests.executor": "Run",
+    "JUnit.EnemyTests.testConstructor.executor": "Run",
+    "JUnit.GameEngineTests.executor": "Run",
+    "JUnit.GameEngineTests.getLoadedObjects.executor": "Run",
+    "JUnit.GameEngineTests.getScore.executor": "Run",
+    "JUnit.GameEngineTests.isEnabled.executor": "Run",
+    "JUnit.GameEngineTests.resetLives.executor": "Run",
+    "JUnit.GameEngineTests.run.executor": "Run",
+    "JUnit.GameObjectTest.executor": "Run",
+    "JUnit.LineSegmentTest.executor": "Run",
+    "JUnit.LineTest.executor": "Run",
+    "JUnit.LivesBehaviourTests.decreaseLives.executor": "Run",
+    "JUnit.LivesBehaviourTests.executor": "Run",
+    "JUnit.LivesBehaviourTests.getLives.executor": "Run",
+    "JUnit.LivesBehaviourTests.onInit.executor": "Run",
+    "JUnit.LivesBehaviourTests.testConstructor.executor": "Run",
+    "JUnit.LivesTests.testConstructor.executor": "Run",
+    "JUnit.PlayerBehaviourTests.executor": "Run",
+    "JUnit.PlayerBehaviourTests.onCollision.executor": "Run",
+    "JUnit.PlayerBehaviourTests.onDisabled.executor": "Run",
+    "JUnit.PlayerBehaviourTests.onUpdate.executor": "Run",
+    "JUnit.PlayerBehaviourTests.testConstructor.executor": "Run",
+    "JUnit.PlayerTests.executor": "Run",
+    "JUnit.PlayerTests.testConstructor.executor": "Run",
+    "JUnit.PointTest.executor": "Run",
+    "JUnit.PolygonTest.collides_DetectsCollisionsCorrectly.executor": "Run",
+    "JUnit.PolygonTest.executor": "Run",
+    "JUnit.PolygonTest.getPoints_ReturnsCorrectPoints.executor": "Run",
+    "JUnit.PolygonTest.toString_FormatsCorrectly.executor": "Run",
+    "JUnit.ScoreBehaviourTests.executor": "Run",
+    "JUnit.ScoreBehaviourTests.getScore.executor": "Run",
+    "JUnit.ScoreBehaviourTests.incrementScore.executor": "Run",
+    "JUnit.ScoreBehaviourTests.onInit.executor": "Run",
+    "JUnit.ScoreBehaviourTests.testConstructor.executor": "Run",
+    "JUnit.ScoreTests.testConstructor.executor": "Run",
+    "JUnit.ScoreboardTests.executor": "Run",
+    "JUnit.TransformTest.executor": "Run",
+    "JUnit.TransformTest.layer.executor": "Run",
+    "JUnit.TransformTest.move.executor": "Run",
+    "JUnit.TransformTest.position.executor": "Run",
+    "JUnit.TransformTest.rotate.executor": "Run",
+    "JUnit.TransformTest.scale.executor": "Run",
+    "JUnit.TransformTest.testScale.executor": "Run",
+    "JUnit.TransformTest.testToString.executor": "Run",
+    "JUnit.tests in ProjetoPOO.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -183,6 +189,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameEngine.gui.KL" />
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BehaviourTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -194,22 +213,6 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BehaviourTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameEngineTests.getLoadedObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameEngineTests" />
-      <option name="METHOD_NAME" value="getLoadedObjects" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,10 +234,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.KL" />
         <item itemvalue="JUnit.BehaviourTests" />
         <item itemvalue="Application.GUI$Queue" />
         <item itemvalue="JUnit.tests in ProjetoPOO" />
-        <item itemvalue="JUnit.GameEngineTests.getLoadedObjects" />
       </list>
     </recent_temporary>
   </component>
@@ -631,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747651244261</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="PlayerBehaviour -&gt; PlayerShape">
+      <option name="closed" value="true" />
+      <created>1747664407805</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1747664407805</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,8 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abstract Behaviour" />
-    <MESSAGE value="Other tests" />
     <MESSAGE value="Fixed tests" />
     <MESSAGE value="Fixed tests GameEngine and implementation of gameEngine methods." />
     <MESSAGE value="Fix some things in PlayerBehaviour" />
@@ -674,7 +683,9 @@
     <MESSAGE value="GUI" />
     <MESSAGE value="View now extends JFrame" />
     <MESSAGE value="Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client" />
+    <MESSAGE value="PlayerBehaviour -&gt; PlayerSh" />
+    <MESSAGE value="PlayerBehaviour -&gt; PlayerShape" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerBehaviour -&gt; PlayerShape" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

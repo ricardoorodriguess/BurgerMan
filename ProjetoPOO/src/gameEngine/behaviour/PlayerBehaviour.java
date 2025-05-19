@@ -25,7 +25,7 @@ public class PlayerBehaviour extends Behaviour {
     private double playerSpeedTime;
     private boolean invincible;
     private double invincibilityTime;
-    private Point speed;
+    public Point speed;
     ScoreBehaviour score;
     LivesBehaviour lives;
 

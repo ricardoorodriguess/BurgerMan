@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CollectibleBehaviourTests {
-    public static final GameEngine ENGINE = new GameEngine(null);
+    public static final GameEngine ENGINE = new GameEngine();
     Collectible c1 = new Collectible(Type.TOMATO, new Point(1, 1));
     CollectibleBehaviour cb1 = new CollectibleBehaviour(c1);
 

@@ -16,7 +16,7 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameEngineTests {
-    GameEngine engine = new GameEngine(null);
+    GameEngine engine = new GameEngine();
     Player player = new Player(new Point(1, 1));
     Random random = new Random();
 

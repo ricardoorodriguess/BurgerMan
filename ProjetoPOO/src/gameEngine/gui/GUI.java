@@ -1,13 +1,16 @@
 package gameEngine.gui;
 
+import gameEngine.Client;
+import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -17,7 +20,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author Tiago Tome
  * @version May 17, 2025
  */
-public class GUI implements IGUI {
+public class GUI extends JFrame implements IGUI {
     public final CopyOnWriteArrayList<InputEvent> queue;
 
     /**
@@ -26,54 +29,57 @@ public class GUI implements IGUI {
      * to ensure thread safety in concurrent environments.
      */
     public GUI() {
+        super("Hamburger-Man");
         queue = new CopyOnWriteArrayList<>();
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(672, 744);
+        setLocationRelativeTo(null); // Center the window on the screen
+        setResizable(false);
+        setContentPane(new BackgroundPanel());
+        setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/burgerUp.png"))).getImage());
+        setVisible(true);
+
+        addKeyListener();
     }
 
-     /**
-      * Removes the next event from the input queue, if it exists.
-      * @return next InputEvent in queue or null if the queue is empty.
-      */
     @Override
     public @Nullable InputEvent dequeue() {
         try {
-            return queue.removeFirst();
+            InputEvent ie = queue.removeFirst();
+            System.out.println(ie);
+            return ie;
         } catch (Exception _) {
             return null;
         }
     }
 
-    /**
-     * Displays the game objects in the GUI.
-     * @param list List of game objects to be displayed.
-     */
     @Override
     public void display(@NotNull List<IGameObject> list, Graphics graphics) {
         for (IGameObject go : list)
             go.shape().draw((Graphics2D) graphics);
     }
 
-    /**
-     * Handles the keyTyped event. Currently, this method does not perform any action.
-     * @param e KeyEvent containing information about the key typed.
-     */
-    @Override
-    public void keyTyped(KeyEvent e) {}
+    private void addKeyListener() {
+        addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
 
-    /**
-     * Handles the keyPressed event.
-     * Adds the KeyEvent to the input queue.
-     * @param e KeyEvent containing information about the key pressed.
-     */
-    @Override
-    public void keyPressed(KeyEvent e) {
-        queue.addLast(e);
+            @Override
+            public void keyPressed(KeyEvent e) {
+                System.out.println(e);
+                System.out.println(((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).speed);
+                queue.addLast(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {}
+        });
     }
 
-    /**
-     * Handles the keyReleased event.
-     * Currently, this method does not perform any action.
-     * @param e KeyEvent containing information about the key released.
-     */
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void paint(Graphics g) {
+        super.paint(g);
+        display(Client.ENGINE.getEnabled(), g);
+    }
 }
