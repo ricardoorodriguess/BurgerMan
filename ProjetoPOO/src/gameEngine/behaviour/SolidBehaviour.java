@@ -17,13 +17,24 @@ import java.util.List;
  * @version May 11, 2025
  */
 public class SolidBehaviour extends Behaviour {
+    private final boolean enemyWall;
+
     /**
      * Construtor que associa um GameObject a este Behaviour.
      *
      * @param solid GameObject que será controlado por este comportamento.
      */
     public SolidBehaviour(Solid solid) {
+        this(solid, false);
+    }
+
+    public SolidBehaviour(Solid solid, boolean enemyWall) {
         super(solid);
+        this.enemyWall = enemyWall;
+    }
+
+    public boolean enemyWall() {
+        return enemyWall;
     }
 
     /**
@@ -57,7 +68,6 @@ public class SolidBehaviour extends Behaviour {
      * A resposta é um vetor de deslocamento que indica a direção oposta ao eixo principal da colisão.
      * @param gameObject
      * @return um Point que representa o vetor de resposta à colisão, ou null se o gameObject em questão não tiver colisor.
-     * @see chatgpt onde vimos este algoritmo.
      */
     private Point calculateCollisionResponse(GameObject gameObject) {
         ICollider c1 = igameObject.collider(), c2 = gameObject.collider();

@@ -9,11 +9,13 @@ public class View {
     public View() {
         frame = new JFrame("Hamburger-Man");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(672, 744);
         frame.setLocationRelativeTo(null); // Center the window on the screen
         frame.setResizable(false);
 
-        frame.setContentPane(new BackgroundPanel());
+        BackgroundPanel panel = new BackgroundPanel();
+        frame.setContentPane(panel);
+        frame.setSize(panel.BACKGROUND.getWidth(null), panel.BACKGROUND.getHeight(null) + 50);
+
         ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/burgerUp.png")));
         frame.setIconImage(icon.getImage());
 

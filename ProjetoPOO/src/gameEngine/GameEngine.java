@@ -2,6 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
+import gameEngine.behaviour.SolidBehaviour;
 import gameEngine.gui.GUI;
 import gameEngine.gui.IGUI;
 import gameEngine.object.*;
@@ -256,10 +257,16 @@ public class GameEngine implements IGameEngine, KeyListener {
      * @param point a coordenada
      * @return {@code true} se e só se há colisão com paredes
      */
-    @SuppressWarnings("DataFlowIssue")
     public boolean checkSolidCollisionAt(Point point) {
+        return checkSolidCollisionAt(point, false);
+    }
+
+    @SuppressWarnings("DataFlowIssue")
+    public boolean checkSolidCollisionAt(Point point, boolean enemyWall) {
         for (GameObject o : loadedObjects)
-            if (o instanceof Solid s && ((Colisor) s.collider()).contains(point))
+            if (o instanceof Solid s
+                    && ((Colisor) s.collider()).contains(point)
+                    && (!enemyWall || ((SolidBehaviour) s.behaviour()).enemyWall()))
                 return true;
         return false;
     }
