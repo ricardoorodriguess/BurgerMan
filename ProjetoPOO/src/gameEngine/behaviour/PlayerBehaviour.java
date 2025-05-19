@@ -6,6 +6,7 @@ import gameEngine.object.Enemy;
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
+import gameEngine.shape.PlayerShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
@@ -71,6 +72,18 @@ public class PlayerBehaviour extends Behaviour {
 
         if (Client.ENGINE.checkSolidCollisionAt(igameObject.collider().centroid().add(speed)))
             speed = prevSpeed;
+
+        switch ((int) speed.getX()) {
+            case -1:
+                ((PlayerShape) igameObject.shape()).setDirection("LEFT");
+                break;
+            case 0:
+                ((PlayerShape) igameObject.shape()).setDirection(speed.getY() < 0 ? "UP" : "DOWN");
+                break;
+            case 1:
+                ((PlayerShape) igameObject.shape()).setDirection("RIGHT");
+                break;
+        }
 
         ((GameObject) igameObject).move(speed,0);
     }

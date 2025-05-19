@@ -8,8 +8,8 @@ import gameEngine.gui.IGUI;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -21,7 +21,7 @@ import java.util.function.Predicate;
  * @author Tiago Tome
  * @version March 27, 2025
  */
-public class GameEngine implements IGameEngine, KeyListener {
+public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
@@ -201,9 +201,12 @@ public class GameEngine implements IGameEngine, KeyListener {
     @Override
     public void run() {
         ICollider co;
+        gui.queue.addLast(new KeyEvent(new Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_A, 'A'));
+        event = (KeyEvent) gui.dequeue();
         for (IGameObject go : enableObjects) {
             go.behaviour().onUpdate(0.1, event);
-            if ((co = go.collider()) != null) co.onUpdated();
+            if ((co = go.collider()) != null)
+                co.onUpdated();
         }
     }
 
@@ -298,32 +301,5 @@ public class GameEngine implements IGameEngine, KeyListener {
                 .filter(obj -> obj.name().equals("Player"))
                 .findFirst()
                 .orElseThrow();
-    }
-
-    /**
-     * {@inheritDoc}
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyPressed(KeyEvent e) {
-        event = e;
-    }
-
-    /**
-     * {@inheritDoc}
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyReleased(KeyEvent e) {
-
     }
 }

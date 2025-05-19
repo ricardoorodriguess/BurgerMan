@@ -27,9 +27,8 @@ public class PlayerShape extends Shape {
     }
 
     public void setDirection(String direction) {
-        if (images.containsKey(direction)) {
+        if (images.containsKey(direction))
             currentDirection = direction;
-        }
     }
 
     @Override

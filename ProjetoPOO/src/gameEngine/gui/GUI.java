@@ -18,7 +18,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @version May 17, 2025
  */
 public class GUI implements IGUI {
-    private final CopyOnWriteArrayList<InputEvent> queue;
+    public final CopyOnWriteArrayList<InputEvent> queue;
 
     /**
      * Constructor of the GUI class.
@@ -35,7 +35,11 @@ public class GUI implements IGUI {
       */
     @Override
     public @Nullable InputEvent dequeue() {
-        return queue.removeFirst();
+        try {
+            return queue.removeFirst();
+        } catch (Exception _) {
+            return null;
+        }
     }
 
     /**
@@ -53,9 +57,7 @@ public class GUI implements IGUI {
      * @param e KeyEvent containing information about the key typed.
      */
     @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
+    public void keyTyped(KeyEvent e) {}
 
     /**
      * Handles the keyPressed event.

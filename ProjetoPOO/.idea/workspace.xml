@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="View now extends JFrame">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="Client">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/IGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/IGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/GameEngineTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/GameEngineTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -627,7 +623,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747647695981</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Client">
+      <option name="closed" value="true" />
+      <created>1747651244261</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1747651244261</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="IBehaviour, Behaviour, GameObject..." />
     <MESSAGE value="Abstract Behaviour" />
     <MESSAGE value="Other tests" />
     <MESSAGE value="Fixed tests" />
@@ -670,7 +673,8 @@
     <MESSAGE value="EnemyShape" />
     <MESSAGE value="GUI" />
     <MESSAGE value="View now extends JFrame" />
-    <option name="LAST_COMMIT_MESSAGE" value="View now extends JFrame" />
+    <MESSAGE value="Client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Client" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
