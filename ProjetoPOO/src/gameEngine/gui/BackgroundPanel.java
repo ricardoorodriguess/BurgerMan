@@ -6,8 +6,7 @@ import java.util.Objects;
 
 public class BackgroundPanel extends JPanel {
     final Image BACKGROUND =
-            new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/map.png")))
-                    .getImage();
+            new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/map.png"))).getImage();
 
     @Override
     protected void paintComponent(Graphics g) {

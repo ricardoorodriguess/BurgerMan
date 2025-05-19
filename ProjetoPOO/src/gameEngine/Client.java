@@ -14,7 +14,5 @@ public class Client {
 
     public static void main(String[] args) {
         View view = new View();
-        Player player = new Player(new Point(0, 0));
-        PlayerShape playerShape = (PlayerShape) player.shape();
     }
 }

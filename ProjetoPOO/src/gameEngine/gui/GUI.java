@@ -43,13 +43,7 @@ public class GUI implements IGUI {
      */
     @Override
     public void display(@NotNull List<IGameObject> list) {
-        // Exemplo
-        //JFrame frame = new JFrame("Burger Man");
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setSize(800, 600);
-        //frame.setResizable(false);
-        //frame.setVisible(true);
-        //TODO logica do jogo
+
     }
 
     /**
@@ -57,7 +51,9 @@ public class GUI implements IGUI {
      * @param e KeyEvent containing information about the key typed.
      */
     @Override
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+
+    }
 
     /**
      * Handles the keyPressed event.
