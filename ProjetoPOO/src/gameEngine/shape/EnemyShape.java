@@ -1,5 +1,6 @@
 package gameEngine.shape;
 
+import gameEngine.object.Enemy;
 import gameEngine.object.EnemyType;
 
 import java.awt.*;
@@ -13,9 +14,10 @@ public class EnemyShape extends Shape {
     private final EnemyType enemyType;
     private String currentDirection = "DOWN"; // Direção padrão
 
-    public EnemyShape(EnemyType type) {
+    public EnemyShape(EnemyType type, Enemy object) {
         super(null); // O GameObject será associado depois
         this.enemyType = type;
+        gameObject(object);
 
         try {
             if (type == EnemyType.GREEN_TRASH) {

@@ -23,9 +23,10 @@ public class Collectible extends GameObject {
      * @param @Notnull position Posição inicial do coletável no ambiente.
      */
     public Collectible(@NotNull Type type, @NotNull Point position) {
-        super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null), new CollectibleShape(type));
+        super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null), null);
         this.type = type;
         behaviour.gameObject(this);
+        shape = new CollectibleShape(type, this);
     }
 
     /**

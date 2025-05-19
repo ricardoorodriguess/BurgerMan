@@ -1,5 +1,6 @@
 package gameEngine.shape;
 
+import gameEngine.object.Collectible;
 import gameEngine.object.Type;
 
 import javax.imageio.ImageIO;
@@ -14,9 +15,10 @@ public class CollectibleShape extends Shape {
     private final Map<Type, BufferedImage> images = new HashMap<>();
     private final Type collectibleType;
 
-    public CollectibleShape(Type type) {
+    public CollectibleShape(Type type, Collectible object) {
         super(null); // O GameObject será associado depois, assim posso criar um colletible e no shape passo-lhe o type
         this.collectibleType = type;
+        gameObject(object);
 
         try {
             images.put(Type.TOMATO, ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/images/tomato.png"))));

@@ -47,7 +47,7 @@ public class GUI extends JFrame implements IGUI {
     public @Nullable InputEvent dequeue() {
         try {
             InputEvent ie = queue.removeFirst();
-            System.out.println(ie);
+            //System.out.println(ie);
             return ie;
         } catch (Exception _) {
             return null;
@@ -67,8 +67,8 @@ public class GUI extends JFrame implements IGUI {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                System.out.println(e);
-                System.out.println(((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).speed);
+                //System.out.println(e);
+                //System.out.println(((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).speed);
                 queue.addLast(e);
             }
 
