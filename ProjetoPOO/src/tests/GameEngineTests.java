@@ -158,7 +158,6 @@ class GameEngineTests {
         Client.ENGINE.add(new Solid(new Point(0, 0), 0.5, 2));
         Client.ENGINE.add(new Solid(new Point(0, 0), 100, 0.5));
         Client.ENGINE.add(new Solid(new Point(0, 1.5), 100, 0.5));
-        Client.ENGINE.setFrames(10);
         Client.ENGINE.add(e1);
         eb.onInit();
         Client.ENGINE.run();

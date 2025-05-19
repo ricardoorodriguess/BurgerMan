@@ -4,6 +4,7 @@ import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyListener;
 import java.util.List;
@@ -23,5 +24,5 @@ public interface IGUI extends KeyListener {
      * Displays the given list of game objects on the GUI.
      * @param list the list of IGameObject instances to be displayed; must not be null
      */
-    void display(@NotNull List<IGameObject> list);
+    void display(@NotNull List<IGameObject> list, Graphics graphics);
 }

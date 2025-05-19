@@ -23,5 +23,5 @@ public interface IShape {
      * @param g
      * @param transform
      */
-    void draw(Graphics2D g, ITransform transform);
+    void draw(Graphics2D g);
 }

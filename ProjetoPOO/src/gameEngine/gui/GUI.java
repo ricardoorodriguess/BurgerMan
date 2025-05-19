@@ -4,6 +4,7 @@ import gameEngine.object.IGameObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -42,8 +43,9 @@ public class GUI implements IGUI {
      * @param list List of game objects to be displayed.
      */
     @Override
-    public void display(@NotNull List<IGameObject> list) {
-
+    public void display(@NotNull List<IGameObject> list, Graphics graphics) {
+        for (IGameObject go : list)
+            go.shape().draw((Graphics2D) graphics);
     }
 
     /**

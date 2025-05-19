@@ -28,7 +28,6 @@ public class GameEngine implements IGameEngine, KeyListener {
     Score score = new Score(); //Depois do cliete podemos retirar
     Lives lives = new Lives(); //isto tbm é o mesmo que em cima
     public KeyEvent event = null; //retirar depois, só para testes
-    public int frames; //pode ser uma constante definida
     private final GUI gui;
 
     /**
@@ -202,12 +201,9 @@ public class GameEngine implements IGameEngine, KeyListener {
     @Override
     public void run() {
         ICollider co;
-        while (frames >= 0) {
-            for (IGameObject go : enableObjects) {
-                go.behaviour().onUpdate(0.1, event);
-                if ((co = go.collider()) != null) co.onUpdated();
-            }
-            frames--; //remover pois serve só para testes
+        for (IGameObject go : enableObjects) {
+            go.behaviour().onUpdate(0.1, event);
+            if ((co = go.collider()) != null) co.onUpdated();
         }
     }
 
@@ -302,15 +298,6 @@ public class GameEngine implements IGameEngine, KeyListener {
                 .filter(obj -> obj.name().equals("Player"))
                 .findFirst()
                 .orElseThrow();
-    }
-
-    /**
-     * Modifica a quantidade de frames a serem executados pelo
-     * método {@link #run}.
-     * @param frames a quantidade de frames.
-     */
-    public void setFrames(int frames) {
-        this.frames = frames;
     }
 
     /**

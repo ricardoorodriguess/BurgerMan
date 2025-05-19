@@ -1,8 +1,12 @@
 package gameEngine.shape;
+import gameEngine.Client;
 import gameEngine.ITransform;
 import gameEngine.object.IGameObject;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.util.Objects;
 
 abstract class Shape implements IShape {
     IGameObject igameObject;
@@ -30,10 +34,11 @@ abstract class Shape implements IShape {
     }
 
     @Override
-    public final void draw(Graphics2D g, ITransform transform) {
-        var originalTx = g.getTransform();
-        var originalHints = g.getRenderingHints();
+    public final void draw(Graphics2D g) {
+        AffineTransform originalTx = g.getTransform();
+        RenderingHints originalHints = g.getRenderingHints();
 
+        ITransform transform = igameObject.transform();
         g.translate(transform.position().getX(), transform.position().getY());
         g.rotate(transform.angle());
         g.scale(transform.scale(), transform.scale());
