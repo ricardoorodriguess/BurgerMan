@@ -45,11 +45,11 @@ public class EnemyBehavior extends Behaviour {
         if (speed.getX() != 0 || speed.getY() != 0) {
             Point left = new Point(-speed.getY(), speed.getX()),
                     right = new Point(speed.getY(), -speed.getX());
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(speed)))
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(speed), true))
                 speeds.add(speed);
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(left)))
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(left), true))
                 speeds.add(left);
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(right)))
+            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(right), true))
                 speeds.add(right);
         } else listCardinalDirections(centroid, speeds);
         if (speeds.isEmpty()) speed.scaleOrigin(-1);
