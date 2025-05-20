@@ -3,6 +3,7 @@ package gameEngine.object;
 import collisions.Circle;
 import collisions.Point;
 import gameEngine.Transform;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Random;
@@ -10,11 +11,13 @@ import java.util.Random;
 public class Intersection extends GameObject {
     private final List<Point> directions;
     private final Point returnDir;
+    private @Nullable Point metPlayer;
 
     public Intersection(Point base, List<Point> directions, Point returnDir) {
         super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
         this.directions = directions;
         this.returnDir = returnDir;
+        metPlayer = null;
     }
 
     public List<Point> list() {
@@ -30,5 +33,13 @@ public class Intersection extends GameObject {
 
     public Point getReturnDir() {
         return returnDir;
+    }
+
+    public void setLastPlayerDir(Point point) {
+        metPlayer = point;
+    }
+
+    public @Nullable Point getLastPlayerDir() {
+        return metPlayer;
     }
 }

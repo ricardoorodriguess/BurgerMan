@@ -128,8 +128,9 @@ public class PlayerBehaviour extends Behaviour {
                     speed = new Point(0, 0);
                 }
                 case "Inter" -> {
-                    if (!((Intersection) gameObject).list().contains(speed))
-                        speed = new Point(0, 0);
+                    Intersection i = (Intersection) gameObject;
+                    if (!i.list().contains(speed)) speed = new Point(0, 0);
+                    else i.setLastPlayerDir(speed);
                 }
                 default -> {}
             }

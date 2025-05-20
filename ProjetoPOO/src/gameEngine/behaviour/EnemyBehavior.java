@@ -59,6 +59,10 @@ public class EnemyBehavior extends Behaviour {
                         case 3:
                             speed = i.getReturnDir();
                             break;
+                        case 1:
+                            Point last = i.getLastPlayerDir();
+                            speed = last == null ? i.randomDir(Client.RANDOM, speed) : last;
+                            break;
                         case 0:
                             speed = i.randomDir(Client.RANDOM, speed);
                             break;
