@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="KL removed">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="correction of enemy and coleectible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +235,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -265,6 +267,7 @@
       <workItem from="1747265127389" duration="151000" />
       <workItem from="1747265294783" duration="5484000" />
       <workItem from="1747318824874" duration="847000" />
+      <workItem from="1747743966165" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -642,7 +645,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747668502674</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="correction of enemy and coleectible">
+      <option name="closed" value="true" />
+      <created>1747670565400</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1747670565400</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Other tests" />
     <MESSAGE value="Fixed tests" />
     <MESSAGE value="Fixed tests GameEngine and implementation of gameEngine methods." />
     <MESSAGE value="Fix some things in PlayerBehaviour" />
@@ -685,7 +695,8 @@
     <MESSAGE value="View now extends JFrame" />
     <MESSAGE value="Client" />
     <MESSAGE value="KL removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="KL removed" />
+    <MESSAGE value="correction of enemy and coleectible" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction of enemy and coleectible" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
