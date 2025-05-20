@@ -22,8 +22,6 @@ public class Client {
         ENGINE.add(new Collectible(Type.PICKLE, new Point(230, 400)));
 
         ENGINE.setGUI(new GUI());
-        while (true) {
-            ENGINE.run();
-        }
+        ENGINE.run();
     }
 }

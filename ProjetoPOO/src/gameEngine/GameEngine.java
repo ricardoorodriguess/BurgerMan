@@ -29,11 +29,10 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
+    private static final int FRAME_RATE = 60;
+    private static final long FRAME_TIME = 1000000000 / FRAME_RATE;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
-    private static final int FRAME_RATE = 60;
-    private static final int FRAME_DELAY = 1000 / FRAME_RATE;
-    private Timer gameLoopTimer;
     /**
      * Construtor of GameEngine
      */
@@ -41,34 +40,10 @@ public class GameEngine implements IGameEngine {
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
-        setupGameLoop();
     }
 
     public void setGUI(GUI gui) {
         this.gui = gui;
-    }
-
-    private void setupGameLoop() {
-        gameLoopTimer = new Timer();
-        gameLoopTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                // Garante que a run() é chamada na Event Dispatch Thread (EDT)
-                EventQueue.invokeLater(GameEngine.this::run);
-            }
-        }, 0, FRAME_DELAY); // 60 FPS → delay de ~16.67 ms (usamos 1000/60 = 16)
-    }
-
-
-    public void start() {
-        // O Timer já é iniciado automaticamente no scheduleAtFixedRate()
-        // Podes deixar este método vazio ou usá-lo para reinicializar o loop
-    }
-
-    public void stop() {
-        if (gameLoopTimer != null) {
-            gameLoopTimer.cancel();
-        }
     }
 
     /**
@@ -229,16 +204,30 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void run() {
-        ICollider co;
-        InputEvent ie = gui.dequeue();
-        event = ie == null ? null : (KeyEvent) ie;
-        for (IGameObject go : enableObjects) {
-            go.behaviour().onUpdate(1.0 / FRAME_RATE, event);
-            if ((co = go.collider()) != null)
-                co.onUpdated();
+        while (true) {
+            long startTime = System.currentTimeMillis();
+
+            ICollider co;
+            InputEvent ie = gui.dequeue();
+            event = ie == null ? null : (KeyEvent) ie;
+            for (IGameObject go : enableObjects) {
+                go.behaviour().onUpdate(startTime, event);
+                if ((co = go.collider()) != null)
+                    co.onUpdated();
+            }
+            gui.repaint();
+            gui.display(enableObjects, gui.getGraphics());
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            long sleepTime = FRAME_TIME - elapsedTime;
+
+            if (sleepTime > 0) {
+                try {
+                    Thread.sleep(sleepTime / 1000000, 0);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        gui.repaint();
-        gui.display(enableObjects, gui.getGraphics());
     }
 
     /**
