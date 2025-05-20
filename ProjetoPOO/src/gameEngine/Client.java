@@ -11,6 +11,8 @@ public class Client {
     public static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
+        ENGINE.add(new Score());
+        ENGINE.add(new Lives());
         ENGINE.add(new Player(new Point(100, 100)));
         ENGINE.add(new Enemy(new Point(200, 200), EnemyType.GRAY_TRASH));
         ENGINE.add(new Collectible(Type.CHEESE, new Point(200, 300)));

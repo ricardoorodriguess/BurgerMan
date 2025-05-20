@@ -26,8 +26,6 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
-    Score score = new Score(); //Depois do cliete podemos retirar
-    Lives lives = new Lives(); //isto tbm é o mesmo que em cima
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
     private long lastTime = System.nanoTime();
@@ -39,8 +37,6 @@ public class GameEngine implements IGameEngine {
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
-        this.add(score);
-        this.add(lives);
     }
 
     public void setGUI(GUI gui) {
