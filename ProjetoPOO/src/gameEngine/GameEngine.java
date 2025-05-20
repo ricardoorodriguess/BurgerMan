@@ -29,8 +29,8 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<GameObject> loadedObjects;
     private final ArrayList<IGameObject> enableObjects;
     private final ArrayList<IGameObject> disableObjects;
-    private static final int FRAME_RATE = 60;
-    private static final long FRAME_TIME = 1000000000 / FRAME_RATE;
+    private static final int FRAME_RATE = 30;
+    private static final long FRAME_TIME = 1000 / FRAME_RATE;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
     /**
@@ -222,7 +222,7 @@ public class GameEngine implements IGameEngine {
 
             if (sleepTime > 0) {
                 try {
-                    Thread.sleep(sleepTime / 1000000, 0);
+                    Thread.sleep(sleepTime, 0);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
