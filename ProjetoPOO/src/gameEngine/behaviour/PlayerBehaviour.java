@@ -71,13 +71,13 @@ public class PlayerBehaviour extends Behaviour {
             speed = prevSpeed;
 
         switch ((int) speed.getX()) {
-            case -1:
+            case -3:
                 ((PlayerShape) igameObject.shape()).setDirection("LEFT");
                 break;
             case 0:
                 ((PlayerShape) igameObject.shape()).setDirection(speed.getY() < 0 ? "UP" : "DOWN");
                 break;
-            case 1:
+            case 3:
                 ((PlayerShape) igameObject.shape()).setDirection("RIGHT");
                 break;
         }

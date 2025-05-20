@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferStrategy;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -81,7 +82,18 @@ public class GUI extends JFrame implements IGUI {
 
     @Override
     public void paint(Graphics g) {
-        super.paint(g);
-        display(Client.ENGINE.getEnabled(), g);
+        if (this.getBufferStrategy() == null) {
+            this.createBufferStrategy(2); // buffer duplo
+        }
+
+        BufferStrategy bs = this.getBufferStrategy();
+        Graphics2D g2 = (Graphics2D) bs.getDrawGraphics();
+        super.paint(g2);
+
+        // Renderizar os objetos ativos
+        display(Client.ENGINE.getEnabled(), g2);
+
+        g2.dispose();
+        bs.show();
     }
 }
