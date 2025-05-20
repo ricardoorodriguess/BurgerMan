@@ -59,17 +59,24 @@ public class EnemyBehavior extends Behaviour {
                         case 3:
                             speed = i.getReturnDir();
                             break;
+                        case 2:
+                            speed = rand(i).scaleOrigin(0.8);
+                            break;
                         case 1:
                             Point last = i.getLastPlayerDir();
-                            speed = last == null ? i.randomDir(Client.RANDOM, speed) : last;
+                            speed = last == null ? rand(i) : last;
                             break;
                         case 0:
-                            speed = i.randomDir(Client.RANDOM, speed);
+                            speed = rand(i);
                             break;
                     }
                     break;
             }
         }
+    }
+
+    private Point rand(Intersection i) {
+        return i.randomDir(Client.RANDOM, speed);
     }
 
     public void setState(int state) {
