@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="FPS class">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,14 +272,6 @@
       <workItem from="1747318824874" duration="847000" />
       <workItem from="1747743966165" duration="1222000" />
       <workItem from="1747745292004" duration="1983000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added toString to abstract class and polygon too">
-      <option name="closed" value="true" />
-      <created>1743089251312</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1743089251312</updated>
     </task>
     <task id="LOCAL-00003" summary="Implementation of client class">
       <option name="closed" value="true" />
@@ -667,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747746395786</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="push">
+      <option name="closed" value="true" />
+      <created>1747758125090</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1747758125090</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix some things in PlayerBehaviour" />
     <MESSAGE value="Score, ScoreBehaviour, Lives, LivesBehaviour added, update GameEngine" />
     <MESSAGE value="all GameEngineTests passed" />
     <MESSAGE value="alteration in GameEngine method" />
@@ -710,7 +707,8 @@
     <MESSAGE value="correction of enemy and coleectible" />
     <MESSAGE value="change point dimension" />
     <MESSAGE value="FPS class" />
-    <option name="LAST_COMMIT_MESSAGE" value="FPS class" />
+    <MESSAGE value="push" />
+    <option name="LAST_COMMIT_MESSAGE" value="push" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

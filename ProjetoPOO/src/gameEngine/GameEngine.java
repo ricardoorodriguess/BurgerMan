@@ -13,6 +13,9 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.awt.EventQueue;
 import java.util.function.Predicate;
 
 /**
@@ -28,6 +31,9 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<IGameObject> disableObjects;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
+    private static final int FRAME_RATE = 60;
+    private static final int FRAME_DELAY = 1000 / FRAME_RATE;
+    private Timer gameLoopTimer;
     /**
      * Construtor of GameEngine
      */
@@ -35,10 +41,34 @@ public class GameEngine implements IGameEngine {
         this.loadedObjects = new ArrayList<>();
         this.enableObjects = new ArrayList<>();
         this.disableObjects = new ArrayList<>();
+        setupGameLoop();
     }
 
     public void setGUI(GUI gui) {
         this.gui = gui;
+    }
+
+    private void setupGameLoop() {
+        gameLoopTimer = new Timer();
+        gameLoopTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                // Garante que a run() é chamada na Event Dispatch Thread (EDT)
+                EventQueue.invokeLater(GameEngine.this::run);
+            }
+        }, 0, FRAME_DELAY); // 60 FPS → delay de ~16.67 ms (usamos 1000/60 = 16)
+    }
+
+
+    public void start() {
+        // O Timer já é iniciado automaticamente no scheduleAtFixedRate()
+        // Podes deixar este método vazio ou usá-lo para reinicializar o loop
+    }
+
+    public void stop() {
+        if (gameLoopTimer != null) {
+            gameLoopTimer.cancel();
+        }
     }
 
     /**
@@ -203,7 +233,7 @@ public class GameEngine implements IGameEngine {
         InputEvent ie = gui.dequeue();
         event = ie == null ? null : (KeyEvent) ie;
         for (IGameObject go : enableObjects) {
-            go.behaviour().onUpdate(0.1, event);
+            go.behaviour().onUpdate(1.0 / FRAME_RATE, event);
             if ((co = go.collider()) != null)
                 co.onUpdated();
         }
