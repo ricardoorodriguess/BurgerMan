@@ -212,6 +212,8 @@ public class GameEngine implements IGameEngine {
             if ((co = go.collider()) != null)
                 co.onUpdated();
         }
+        gui.repaint();
+        gui.display(enableObjects, gui.getGraphics());
     }
 
     /**
