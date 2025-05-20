@@ -28,8 +28,6 @@ public class GameEngine implements IGameEngine {
     private final ArrayList<IGameObject> disableObjects;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
-    private long lastTime = System.nanoTime();
-
     /**
      * Construtor of GameEngine
      */
@@ -201,15 +199,11 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void run() {
-        long now = System.nanoTime();
-        double delta = (now - lastTime) / 1_000_000_000.0;
-        lastTime = now;
-
         ICollider co;
         InputEvent ie = gui.dequeue();
         event = ie == null ? null : (KeyEvent) ie;
         for (IGameObject go : enableObjects) {
-            go.behaviour().onUpdate(delta, event);
+            go.behaviour().onUpdate(0.1, event);
             if ((co = go.collider()) != null)
                 co.onUpdated();
         }

@@ -60,10 +60,10 @@ public class PlayerBehaviour extends Behaviour {
         Point prevSpeed = speed;
         if ("Player".equals(this.igameObject.name()) && ie instanceof KeyEvent k) {
             switch (k.getKeyCode()) {
-                case KeyEvent.VK_W -> speed = new Point(0, -100 * dT);
-                case KeyEvent.VK_S -> speed = new Point(0, 100 * dT);
-                case KeyEvent.VK_D -> speed = new Point(100 * dT, 0);
-                case KeyEvent.VK_A -> speed = new Point(-100 * dT, 0);
+                case KeyEvent.VK_W -> speed = new Point(0, -1);
+                case KeyEvent.VK_S -> speed = new Point(0, 1);
+                case KeyEvent.VK_D -> speed = new Point(1, 0);
+                case KeyEvent.VK_A -> speed = new Point(-1, 0);
             }
         }
 
