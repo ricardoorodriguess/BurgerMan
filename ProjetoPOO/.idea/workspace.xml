@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="KL removed">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="View now extends JFrame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +27,7 @@
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -39,12 +35,12 @@
     &quot;assignee&quot;: &quot;TiagoTome1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
-    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ricardoorodriguess/Lab05-Projeto.git",
+    "accountId": "c95e431f-3aa5-4caf-84c0-02817475ab32"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -241,6 +237,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -265,6 +269,7 @@
       <workItem from="1747265127389" duration="151000" />
       <workItem from="1747265294783" duration="5484000" />
       <workItem from="1747318824874" duration="847000" />
+      <workItem from="1747735203199" duration="557000" />
     </task>
     <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
       <option name="closed" value="true" />
@@ -634,15 +639,7 @@
       <option name="project" value="LOCAL" />
       <updated>1747651244261</updated>
     </task>
-    <task id="LOCAL-00047" summary="KL removed">
-      <option name="closed" value="true" />
-      <created>1747668502674</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1747668502674</updated>
-    </task>
-    <option name="localTasksCounter" value="48" />
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,6 +657,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Abstract Behaviour" />
     <MESSAGE value="Other tests" />
     <MESSAGE value="Fixed tests" />
     <MESSAGE value="Fixed tests GameEngine and implementation of gameEngine methods." />
@@ -684,8 +682,7 @@
     <MESSAGE value="GUI" />
     <MESSAGE value="View now extends JFrame" />
     <MESSAGE value="Client" />
-    <MESSAGE value="KL removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="KL removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Client" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

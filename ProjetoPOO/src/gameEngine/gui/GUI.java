@@ -56,6 +56,7 @@ public class GUI extends JFrame implements IGUI {
 
     @Override
     public void display(@NotNull List<IGameObject> list, Graphics graphics) {
+        //setContentPane(new BackgroundPanel());
         for (IGameObject go : list)
             go.shape().draw((Graphics2D) graphics);
     }
@@ -70,6 +71,7 @@ public class GUI extends JFrame implements IGUI {
                 //System.out.println(e);
                 //System.out.println(((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).speed);
                 queue.addLast(e);
+                //repaint();
             }
 
             @Override
