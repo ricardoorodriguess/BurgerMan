@@ -6,9 +6,9 @@ import gameEngine.ICollider;
 import gameEngine.object.Enemy;
 import gameEngine.object.GameObject;
 import gameEngine.object.IGameObject;
+import gameEngine.object.Intersection;
 
 import java.awt.event.InputEvent;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class EnemyBehavior extends Behaviour {
     public Point speed;
-    private static final double SPEED = 0.8;
+    private int state;
 
     /**
      * Construtor que associa um GameObject a este comportamento.
@@ -29,6 +29,7 @@ public class EnemyBehavior extends Behaviour {
     public EnemyBehavior(Enemy enemy) {
         super(enemy);
         speed = new Point(0, 0);
+        state = 0;
     }
 
     /**
@@ -38,22 +39,6 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
-        ICollider c = igameObject.collider();
-        if (c == null) return;
-        Point centroid = c.centroid();
-        List<Point> speeds = new ArrayList<>();
-        if (speed.getX() != 0 || speed.getY() != 0) {
-            Point left = new Point(-speed.getY(), speed.getX()),
-                    right = new Point(speed.getY(), -speed.getX());
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(speed), true))
-                speeds.add(speed);
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(left), true))
-                speeds.add(left);
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(right), true))
-                speeds.add(right);
-        } else listCardinalDirections(centroid, speeds);
-        if (speeds.isEmpty()) speed.scaleOrigin(-1);
-        else speed = speeds.get(Client.RANDOM.nextInt(speeds.size()));
         ((GameObject) igameObject).move(speed, 0);
     }
 
@@ -63,11 +48,28 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
-        for (IGameObject gameObject : gameObjects)
-            if (gameObject.name().equals("Pickle")) {
-                ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
-                break;
+        for (IGameObject gameObject : gameObjects) {
+            switch (gameObject.name()) {
+                case "Pickle":
+                    ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
+                    break;
+                case "Inter":
+                    Intersection i = (Intersection) gameObject;
+                    switch (state) {
+                        case 3:
+                            speed = i.getReturnDir();
+                            break;
+                        case 0:
+                            speed = i.randomDir(Client.RANDOM, speed);
+                            break;
+                    }
+                    break;
             }
+        }
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 
     /**
@@ -77,18 +79,7 @@ public class EnemyBehavior extends Behaviour {
     public void onInit() {
         ICollider c = igameObject.collider();
         if (c == null) return;
-        Point centroid = c.centroid();
-        List<Point> speeds = new ArrayList<>();
-        listCardinalDirections(centroid, speeds);
-        if (!speeds.isEmpty())
-            speed = speeds.get(Client.RANDOM.nextInt(speeds.size()));
-    }
-
-    private static void listCardinalDirections(Point centroid, List<Point> list) {
-        Point[] possible = new Point[]{new Point(1, 0), new Point(0, 1), new Point(-1, 0), new Point(0, -1)};
-        for (Point p : possible)
-            if (!Client.ENGINE.checkSolidCollisionAt(centroid.add(p)))
-                list.add(p);
+        speed = new Point(0, 1);
     }
 
     /**

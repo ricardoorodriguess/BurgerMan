@@ -2,10 +2,7 @@ package gameEngine.behaviour;
 
 import collisions.Point;
 import gameEngine.Client;
-import gameEngine.object.Enemy;
-import gameEngine.object.GameObject;
-import gameEngine.object.IGameObject;
-import gameEngine.object.Player;
+import gameEngine.object.*;
 import gameEngine.shape.PlayerShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -95,8 +92,7 @@ public class PlayerBehaviour extends Behaviour {
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
         for (IGameObject gameObject : gameObjects) {
-            switch (gameObject.name())
-            {
+            switch (gameObject.name()) {
                 case "Point" -> {
                     this.score.incrementScore(10);
                     Client.ENGINE.destroy(gameObject);
@@ -109,7 +105,7 @@ public class PlayerBehaviour extends Behaviour {
                     return;
                 }
                 case "Onion" -> {
-                    Client.ENGINE.destroy(Client.ENGINE.randomObject(o -> o instanceof Enemy));
+                    Client.ENGINE.disable(Client.ENGINE.randomObject(o -> o instanceof Enemy));
                     Client.ENGINE.destroy(gameObject);
                     return;
                 }
@@ -130,6 +126,10 @@ public class PlayerBehaviour extends Behaviour {
                 case "Solid" -> {
                     ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
                     speed = new Point(0, 0);
+                }
+                case "Inter" -> {
+                    if (!((Intersection) gameObject).list().contains(speed))
+                        speed = new Point(0, 0);
                 }
                 default -> {}
             }
