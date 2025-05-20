@@ -30,6 +30,7 @@ public class GameEngine implements IGameEngine {
     Lives lives = new Lives(); //isto tbm é o mesmo que em cima
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
+    private long lastTime = System.nanoTime();
 
     /**
      * Construtor of GameEngine
@@ -204,11 +205,15 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void run() {
+        long now = System.nanoTime();
+        double delta = (now - lastTime) / 1_000_000_000.0;
+        lastTime = now;
+
         ICollider co;
         InputEvent ie = gui.dequeue();
         event = ie == null ? null : (KeyEvent) ie;
         for (IGameObject go : enableObjects) {
-            go.behaviour().onUpdate(0.1, event);
+            go.behaviour().onUpdate(delta, event);
             if ((co = go.collider()) != null)
                 co.onUpdated();
         }

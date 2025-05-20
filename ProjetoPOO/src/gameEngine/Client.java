@@ -1,7 +1,6 @@
 package gameEngine;
 
 import collisions.Point;
-import gameEngine.gui.Fps;
 import gameEngine.gui.GUI;
 import gameEngine.object.*;
 
@@ -21,11 +20,8 @@ public class Client {
         ENGINE.add(new Collectible(Type.PICKLE, new Point(230, 400)));
 
         ENGINE.setGUI(new GUI());
-        Fps.calcBeginTime();
         while (true) {
             ENGINE.run();
-            System.out.println("FPS: " + Fps.getDeltaTime());
-            Fps.calcDeltaTime();
         }
     }
 }

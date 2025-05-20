@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="change point dimension">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/gui/Fps.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="FPS class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/Fps.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,15 +274,7 @@
       <workItem from="1747265294783" duration="5484000" />
       <workItem from="1747318824874" duration="847000" />
       <workItem from="1747743966165" duration="1222000" />
-      <workItem from="1747745292004" duration="1059000" />
-    </task>
-    <task id="LOCAL-00001" summary="implementation of circle toString method, doc for equals at Point">
-      <option name="closed" value="true" />
-      <created>1743088867485</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1743088867485</updated>
+      <workItem from="1747745292004" duration="1983000" />
     </task>
     <task id="LOCAL-00002" summary="Added toString to abstract class and polygon too">
       <option name="closed" value="true" />
@@ -666,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747744021008</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="FPS class">
+      <option name="closed" value="true" />
+      <created>1747746395786</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1747746395786</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed tests GameEngine and implementation of gameEngine methods." />
     <MESSAGE value="Fix some things in PlayerBehaviour" />
     <MESSAGE value="Score, ScoreBehaviour, Lives, LivesBehaviour added, update GameEngine" />
     <MESSAGE value="all GameEngineTests passed" />
@@ -709,7 +710,8 @@
     <MESSAGE value="KL removed" />
     <MESSAGE value="correction of enemy and coleectible" />
     <MESSAGE value="change point dimension" />
-    <option name="LAST_COMMIT_MESSAGE" value="change point dimension" />
+    <MESSAGE value="FPS class" />
+    <option name="LAST_COMMIT_MESSAGE" value="FPS class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
