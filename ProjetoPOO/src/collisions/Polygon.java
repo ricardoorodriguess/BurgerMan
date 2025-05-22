@@ -115,14 +115,6 @@ public class Polygon extends Colisor {
     }
 
     /**
-     * Metodo par dar update
-     */
-    @Override
-    public void onUpdated() {
-
-    }
-
-    /**
      * Simple method to check if collide with another collider
      * @param other ICollider
      * @return boolean depending on the situation

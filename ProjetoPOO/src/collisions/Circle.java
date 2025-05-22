@@ -73,14 +73,6 @@ public class Circle extends Colisor
     }
 
     /**
-     * Metodo par dar update
-     */
-    @Override
-    public void onUpdated() {
-
-    }
-
-    /**
      * Method to move the circle
      * @param point
      */

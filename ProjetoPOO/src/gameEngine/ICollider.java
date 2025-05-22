@@ -38,10 +38,6 @@ public interface ICollider
      */
     void scale(double scale);
 
-    /**
-     * Metodo par dar update
-     */
-    void onUpdated();
 
     /**
      * Verifica se colide com um ICOllider

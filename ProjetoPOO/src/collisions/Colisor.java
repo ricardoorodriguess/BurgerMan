@@ -29,11 +29,6 @@ public abstract class Colisor implements ICollider
     public abstract boolean contains(Point point);
 
     /**
-     * Metodo par dar update
-     */
-    public abstract void onUpdated();
-
-    /**
      * Method to move the given object
      * @param point
      */

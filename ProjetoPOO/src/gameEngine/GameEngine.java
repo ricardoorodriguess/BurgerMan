@@ -212,8 +212,9 @@ public class GameEngine implements IGameEngine {
             event = ie == null ? null : (KeyEvent) ie;
             for (IGameObject go : enableObjects) {
                 go.behaviour().onUpdate(startTime, event);
-                if ((co = go.collider()) != null)
-                    co.onUpdated();
+                if ((co = go.collider()) != null) {
+                    //this.checkCollisions();
+                }
             }
             gui.repaint();
             gui.display(enableObjects, gui.getGraphics());
