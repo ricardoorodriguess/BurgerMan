@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="paint gui (NOT DONE YET)">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="inter att">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,14 +272,6 @@
       <workItem from="1747743966165" duration="1222000" />
       <workItem from="1747745292004" duration="1983000" />
       <workItem from="1747903976976" duration="862000" />
-    </task>
-    <task id="LOCAL-00007" summary="add a space in toString at circle">
-      <option name="closed" value="true" />
-      <created>1743172156479</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1743172156479</updated>
     </task>
     <task id="LOCAL-00008" summary="fixed polygon-polygon collision">
       <option name="closed" value="true" />
@@ -666,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747762304465</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="inter att">
+      <option name="closed" value="true" />
+      <created>1747920435045</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1747920435045</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tests to ScoreBehaviour.java and LivesBehaviour.java" />
     <MESSAGE value="Tests to ScoreBehaviour.java and LivesBehaviour.java moved do tests package" />
     <MESSAGE value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
     <MESSAGE value="EnemyBehavior" />
@@ -709,7 +707,8 @@
     <MESSAGE value="frame rate de 60 frames" />
     <MESSAGE value="frame rate de 30 frames" />
     <MESSAGE value="paint gui (NOT DONE YET)" />
-    <option name="LAST_COMMIT_MESSAGE" value="paint gui (NOT DONE YET)" />
+    <MESSAGE value="inter att" />
+    <option name="LAST_COMMIT_MESSAGE" value="inter att" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
