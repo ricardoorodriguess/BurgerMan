@@ -7,9 +7,6 @@
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="paint gui (NOT DONE YET)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
