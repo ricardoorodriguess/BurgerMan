@@ -39,6 +39,28 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
+        Intersection i = Client.ENGINE.getInterAt(igameObject.collider().centroid());
+        if (i != null)
+            switch (state) {
+                case 0:
+                    // SCATTER STATE
+                    speed = rand(i);
+                    break;
+                case 1:
+                    // CHASE STATE
+                    Point last = i.getLastPlayerDir();
+                    speed = last == null ? rand(i) : last;
+                    break;
+                case 2:
+                    // SCARED STATE
+                    speed = rand(i).scaleOrigin(0.8);
+                    break;
+                case 3:
+                    // RETURNING STATE
+                    speed = i.getReturnDir();
+                    break;
+            }
+
         ((GameObject) igameObject).move(speed, 0);
     }
 

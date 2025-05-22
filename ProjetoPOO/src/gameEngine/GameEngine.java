@@ -9,11 +9,9 @@ import gameEngine.gui.IGUI;
 import gameEngine.object.*;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.*;
-import java.awt.EventQueue;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -206,16 +204,14 @@ public class GameEngine implements IGameEngine {
         while (true) {
             long startTime = System.currentTimeMillis();
             IBehaviour be;
-            ICollider co;
             InputEvent ie = gui.dequeue();
             event = ie == null ? null : (KeyEvent) ie;
-            for (IGameObject go : enableObjects) {
+            ArrayList<IGameObject> list = new ArrayList<>(enableObjects);
+            for (IGameObject go : list) {
                 if ((be = go.behaviour()) != null)
                     be.onUpdate(startTime, event);
-                if ((co = go.collider()) != null) {
-                    //this.checkCollisions();
-                }
             }
+            this.checkCollisions();
             gui.repaint();
             gui.display(enableObjects, gui.getGraphics());
             long elapsedTime = System.currentTimeMillis() - startTime;
@@ -228,6 +224,7 @@ public class GameEngine implements IGameEngine {
                     e.printStackTrace();
                 }
             }
+            //System.out.println(getPlayerObject().collider().centroid());
         }
     }
 
@@ -238,8 +235,11 @@ public class GameEngine implements IGameEngine {
      */
     @Override
     public void checkCollisions() {
-        for (IGameObject iGameObject : enableObjects) {
-            iGameObject.behaviour().onCollision(enableObjects);
+        IBehaviour be;
+        List<IGameObject> copy = new ArrayList<>(enableObjects);
+        for (IGameObject iGameObject : copy) {
+            if ((be = iGameObject.behaviour()) != null)
+                be.onCollision(copy);
         }
     }
 
@@ -291,12 +291,13 @@ public class GameEngine implements IGameEngine {
         return false;
     }
 
-    public boolean checkInterCollisionAt(Point point) {
+    public Intersection getInterAt(Point point) {
         for (GameObject o : loadedObjects)
             if (o instanceof Intersection i
-                    && ((Colisor) Objects.requireNonNull(i.collider())).contains(point))
-                return true;
-        return false;
+                    && ((Colisor) Objects.requireNonNull(i.collider())).contains(point)) {
+                return i;
+            }
+        return null;
     }
 
     /**

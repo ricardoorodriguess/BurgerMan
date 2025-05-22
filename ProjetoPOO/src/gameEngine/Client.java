@@ -14,15 +14,15 @@ public class Client {
     public static void main(String[] args) {
         ENGINE.add(new Score());
         ENGINE.add(new Lives());
-        ENGINE.add(new Player(new Point(30, 30)));
-        ENGINE.add(new Enemy(new Point(200, 200), EnemyType.GRAY_TRASH));
+        ENGINE.add(new Player(new Point(85, 105)));
+        ENGINE.add(new Enemy(new Point(430+55, 170+75), EnemyType.GRAY_TRASH));
         ENGINE.add(new Collectible(Type.CHEESE, new Point(200, 300)));
         ENGINE.add(new Collectible(Type.POINT, new Point(400, 400)));
         ENGINE.add(new Collectible(Type.TOMATO, new Point(500, 500)));
         ENGINE.add(new Collectible(Type.ONION, new Point(600, 600)));
         ENGINE.add(new Collectible(Type.PICKLE, new Point(230, 400)));
 
-        Point up = new Point(0, -1), down = new Point(0, 1), left = new Point(-1, 0), right = new Point(1, 0);
+        Point up = new Point(0, -2), down = new Point(0, 2), left = new Point(-2, 0), right = new Point(2, 0);
         Point[] dirs = new Point[]{up, down, left, right};
         int[][] inters = new int[][]{
                 new int[]{30, 30, 0, 2, 0, 1},
@@ -93,7 +93,7 @@ public class Client {
                 //
         };
         for (int[] a : inters) {
-            Point p = new Point(a[0], a[1]);
+            Point p = new Point(a[0] + 55, a[1] + 75);
             ArrayList<Point> list = new ArrayList<>();
             for (int i = 2; i < 6; i++)
                 if (a[i] == 2)
@@ -103,7 +103,6 @@ public class Client {
                     list.add(dirs[i - 2]);
             ENGINE.add(new Intersection(p, list));
         }
-
 
         ENGINE.setGUI(new GUI());
         ENGINE.run();

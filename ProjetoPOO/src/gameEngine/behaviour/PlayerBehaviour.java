@@ -2,6 +2,7 @@ package gameEngine.behaviour;
 
 import collisions.Point;
 import gameEngine.Client;
+import gameEngine.ICollider;
 import gameEngine.object.*;
 import gameEngine.shape.PlayerShape;
 import org.jetbrains.annotations.Nullable;
@@ -57,30 +58,36 @@ public class PlayerBehaviour extends Behaviour {
             }
         }
 
-        Point prevSpeed = speed;
-        if ("Player".equals(this.igameObject.name())
-                && Client.ENGINE.checkInterCollisionAt(igameObject.collider().centroid())
-                && ie instanceof KeyEvent k) {
-            switch (k.getKeyCode()) {
-                case KeyEvent.VK_W -> speed = new Point(0, -2);
-                case KeyEvent.VK_S -> speed = new Point(0, 2);
-                case KeyEvent.VK_D -> speed = new Point(2, 0);
-                case KeyEvent.VK_A -> speed = new Point(-2, 0);
-            }
+        Point nsp = speed;
+        if (ie instanceof KeyEvent k) switch (k.getKeyCode()) {
+            case KeyEvent.VK_W -> nsp = new Point(0, -2);
+            case KeyEvent.VK_S -> nsp = new Point(0, 2);
+            case KeyEvent.VK_D -> nsp = new Point(2, 0);
+            case KeyEvent.VK_A -> nsp = new Point(-2, 0);
         }
 
-        if (Client.ENGINE.checkSolidCollisionAt(igameObject.collider().centroid().add(speed)))
-            speed = prevSpeed;
+        Intersection col = Client.ENGINE.getInterAt(igameObject.collider().centroid());
 
+        if ("Player".equals(this.igameObject.name())
+                && (col != null || nsp.equals(speed.scaleOrigin(-1)))) {
+            speed = nsp;
+        }
+        if ((speed.getX() + speed.getY()) != 0 && col != null && !col.list().contains(speed))
+            speed = new Point(0, 0);
+
+        PlayerShape shape = (PlayerShape) igameObject.shape();
         switch ((int) speed.getX()) {
-            case -3:
-                ((PlayerShape) igameObject.shape()).setDirection("LEFT");
+            case -2:
+                shape.setDirection("LEFT");
                 break;
             case 0:
-                ((PlayerShape) igameObject.shape()).setDirection(speed.getY() < 0 ? "UP" : "DOWN");
+                if (speed.getY() < 0)
+                    shape.setDirection("UP");
+                else if (speed.getY() > 0)
+                    shape.setDirection("DOWN");
                 break;
-            case 3:
-                ((PlayerShape) igameObject.shape()).setDirection("RIGHT");
+            case 2:
+                shape.setDirection("RIGHT");
                 break;
         }
 
@@ -93,49 +100,52 @@ public class PlayerBehaviour extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
+        ICollider c1 = gameObject().collider(), c2;
+        if (c1 == null) return;
         for (IGameObject gameObject : gameObjects) {
-            switch (gameObject.name()) {
-                case "Point" -> {
-                    this.score.incrementScore(10);
-                    Client.ENGINE.destroy(gameObject);
-                    return;
-                }
-                case "Tomato" -> {
-                    invincible = true;
-                    invincibilityTime = 60;
-                    Client.ENGINE.destroy(gameObject);
-                    return;
-                }
-                case "Onion" -> {
-                    Client.ENGINE.disable(Client.ENGINE.randomObject(o -> o instanceof Enemy));
-                    Client.ENGINE.destroy(gameObject);
-                    return;
-                }
-                case "Cheese" -> {
-                    playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                    playerSpeedTime = 60;
-                    Client.ENGINE.destroy(gameObject);
-                    return;
-                }
-                case "Pickle" -> {
-                    Client.ENGINE.destroy(gameObject);
-                    return;
-                }
-                case "Enemy" -> {
-                    if (invincible) gameObject.behaviour().onDisabled();
-                    else onDisabled();
-                }
-                case "Solid" -> {
-                    ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
-                    speed = new Point(0, 0);
-                }
-                case "Inter" -> {
-                    Intersection i = (Intersection) gameObject;
-                    if (!i.list().contains(speed)) speed = new Point(0, 0);
-                    else i.setLastPlayerDir(speed);
-                }
-                default -> {}
-            }
+            if ((c2 = gameObject.collider()) != null && c1.isColliding(c2))
+               switch (gameObject.name()) {
+                   case "Point" -> {
+                       this.score.incrementScore(10);
+                       Client.ENGINE.destroy(gameObject);
+                       return;
+                   }
+                   case "Tomato" -> {
+                       invincible = true;
+                       invincibilityTime = 60;
+                       Client.ENGINE.destroy(gameObject);
+                       return;
+                   }
+                   case "Onion" -> {
+                       Client.ENGINE.disable(Client.ENGINE.randomObject(o -> o instanceof Enemy));
+                       Client.ENGINE.destroy(gameObject);
+                       return;
+                   }
+                   case "Cheese" -> {
+                       playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
+                       playerSpeedTime = 60;
+                       Client.ENGINE.destroy(gameObject);
+                       return;
+                   }
+                   case "Pickle" -> {
+                       Client.ENGINE.destroy(gameObject);
+                       return;
+                   }
+                   case "Enemy" -> {
+                       if (invincible) gameObject.behaviour().onDisabled();
+                       else onDisabled();
+                   }
+                   case "Solid" -> {
+                       ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
+                       speed = new Point(0, 0);
+                   }
+                   case "Inter" -> {
+                       Intersection i = (Intersection) gameObject;
+                       if (!i.list().contains(speed)) speed = new Point(0, 0);
+                       else i.setLastPlayerDir(speed);
+                   }
+                   default -> {}
+               }
         }
     }
 
