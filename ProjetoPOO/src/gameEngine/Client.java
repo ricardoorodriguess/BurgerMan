@@ -90,7 +90,6 @@ public class Client {
                 new int[]{250, 590, 2, 0, 1, 1},
                 new int[]{310, 590, 2, 0, 1, 1},
                 new int[]{530, 590, 2, 0, 1, 0}
-                //
         };
         for (int[] a : inters) {
             Point p = new Point(a[0] + 55, a[1] + 75);
