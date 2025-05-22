@@ -3,6 +3,7 @@ package gameEngine;
 import collisions.Point;
 import gameEngine.gui.GUI;
 import gameEngine.object.*;
+import gameEngine.sound.AudioPlayer;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,14 +11,15 @@ import java.util.Random;
 public class Client {
     public static final GameEngine ENGINE = new GameEngine();
     public static final Random RANDOM = new Random();
+    public static final AudioPlayer AUDIO = new AudioPlayer();
 
     public static void main(String[] args) {
         ENGINE.add(new Score());
         ENGINE.add(new Lives());
         ENGINE.add(new Player(new Point(85, 105)));
-        ENGINE.add(new Enemy(new Point(430+55, 170+75), EnemyType.GRAY_TRASH));
+        ENGINE.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
         ENGINE.add(new Collectible(Type.CHEESE, new Point(200, 300)));
-        ENGINE.add(new Collectible(Type.POINT, new Point(400, 400)));
+        ENGINE.add(new Collectible(Type.POINT, new Point(305, 185)));
         ENGINE.add(new Collectible(Type.TOMATO, new Point(500, 500)));
         ENGINE.add(new Collectible(Type.ONION, new Point(600, 600)));
         ENGINE.add(new Collectible(Type.PICKLE, new Point(230, 400)));

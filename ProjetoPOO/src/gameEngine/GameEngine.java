@@ -7,6 +7,7 @@ import gameEngine.behaviour.SolidBehaviour;
 import gameEngine.gui.GUI;
 import gameEngine.gui.IGUI;
 import gameEngine.object.*;
+import gameEngine.sound.AudioPlayer;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
