@@ -58,12 +58,14 @@ public class PlayerBehaviour extends Behaviour {
         }
 
         Point prevSpeed = speed;
-        if ("Player".equals(this.igameObject.name()) && ie instanceof KeyEvent k) {
+        if ("Player".equals(this.igameObject.name())
+                && Client.ENGINE.checkInterCollisionAt(igameObject.collider().centroid())
+                && ie instanceof KeyEvent k) {
             switch (k.getKeyCode()) {
-                case KeyEvent.VK_W -> speed = new Point(0, -3);
-                case KeyEvent.VK_S -> speed = new Point(0, 3);
-                case KeyEvent.VK_D -> speed = new Point(3, 0);
-                case KeyEvent.VK_A -> speed = new Point(-3, 0);
+                case KeyEvent.VK_W -> speed = new Point(0, -2);
+                case KeyEvent.VK_S -> speed = new Point(0, 2);
+                case KeyEvent.VK_D -> speed = new Point(2, 0);
+                case KeyEvent.VK_A -> speed = new Point(-2, 0);
             }
         }
 

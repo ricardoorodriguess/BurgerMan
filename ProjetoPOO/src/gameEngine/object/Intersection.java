@@ -13,10 +13,11 @@ public class Intersection extends GameObject {
     private final Point returnDir;
     private @Nullable Point metPlayer;
 
-    public Intersection(Point base, List<Point> directions, Point returnDir) {
+    public Intersection(Point base, List<Point> directions) {
         super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
+        if (directions.isEmpty()) throw new IllegalArgumentException();
         this.directions = directions;
-        this.returnDir = returnDir;
+        returnDir = directions.getFirst();
         metPlayer = null;
     }
 

@@ -64,7 +64,7 @@ public class GameObject implements IGameObject
     public @Nullable ICollider collider() { return collider; }
 
     @Override
-    public IBehaviour behaviour() {
+    public @Nullable IBehaviour behaviour() {
         return behaviour;
     }
 

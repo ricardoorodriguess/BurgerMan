@@ -2,6 +2,7 @@ package gameEngine;
 
 import collisions.Colisor;
 import collisions.Point;
+import gameEngine.behaviour.IBehaviour;
 import gameEngine.behaviour.SolidBehaviour;
 import gameEngine.gui.GUI;
 import gameEngine.gui.IGUI;
@@ -11,11 +12,9 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.awt.EventQueue;
+import java.util.List;
 import java.util.function.Predicate;
 
 /**
@@ -206,12 +205,13 @@ public class GameEngine implements IGameEngine {
     public void run() {
         while (true) {
             long startTime = System.currentTimeMillis();
-
+            IBehaviour be;
             ICollider co;
             InputEvent ie = gui.dequeue();
             event = ie == null ? null : (KeyEvent) ie;
             for (IGameObject go : enableObjects) {
-                go.behaviour().onUpdate(startTime, event);
+                if ((be = go.behaviour()) != null)
+                    be.onUpdate(startTime, event);
                 if ((co = go.collider()) != null) {
                     //this.checkCollisions();
                 }
@@ -287,6 +287,14 @@ public class GameEngine implements IGameEngine {
             if (o instanceof Solid s
                     && ((Colisor) s.collider()).contains(point)
                     && (!enemyWall || ((SolidBehaviour) s.behaviour()).enemyWall()))
+                return true;
+        return false;
+    }
+
+    public boolean checkInterCollisionAt(Point point) {
+        for (GameObject o : loadedObjects)
+            if (o instanceof Intersection i
+                    && ((Colisor) Objects.requireNonNull(i.collider())).contains(point))
                 return true;
         return false;
     }

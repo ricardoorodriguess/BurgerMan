@@ -3,6 +3,7 @@ package gameEngine.gui;
 import gameEngine.Client;
 import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.object.IGameObject;
+import gameEngine.shape.IShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,8 +59,10 @@ public class GUI extends JFrame implements IGUI {
     @Override
     public void display(@NotNull List<IGameObject> list, Graphics graphics) {
         //setContentPane(new BackgroundPanel());
+        IShape sh;
         for (IGameObject go : list)
-            go.shape().draw((Graphics2D) graphics);
+            if ((sh = go.shape()) != null)
+                sh.draw((Graphics2D) graphics);
     }
 
     private void addKeyListener() {
