@@ -3,6 +3,7 @@ package gameEngine;
 import collisions.Point;
 import gameEngine.gui.GUI;
 import gameEngine.object.*;
+import gameEngine.shape.CollectibleShape;
 import gameEngine.sound.AudioPlayer;
 
 import java.util.ArrayList;

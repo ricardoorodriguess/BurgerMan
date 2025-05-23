@@ -214,7 +214,7 @@ public class GameEngine implements IGameEngine {
             }
             this.checkCollisions();
             gui.repaint();
-            gui.display(enableObjects, gui.getGraphics());
+            //gui.display(enableObjects, gui.getGraphics());
             long elapsedTime = System.currentTimeMillis() - startTime;
             long sleepTime = FRAME_TIME - elapsedTime;
 
@@ -225,7 +225,6 @@ public class GameEngine implements IGameEngine {
                     e.printStackTrace();
                 }
             }
-            //System.out.println(getPlayerObject().collider().centroid());
         }
     }
 

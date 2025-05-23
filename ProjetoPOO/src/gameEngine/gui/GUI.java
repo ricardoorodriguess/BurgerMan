@@ -87,11 +87,14 @@ public class GUI extends JFrame implements IGUI {
     public void paint(Graphics g) {
         if (this.getBufferStrategy() == null) {
             this.createBufferStrategy(2); // buffer duplo
+            return;
         }
 
         BufferStrategy bs = this.getBufferStrategy();
         Graphics2D g2 = (Graphics2D) bs.getDrawGraphics();
         super.paint(g2);
+
+        //g2.clearRect(0, 0, this.getWidth(), this.getHeight());
 
         // Renderizar os objetos ativos
         display(Client.ENGINE.getEnabled(), g2);
