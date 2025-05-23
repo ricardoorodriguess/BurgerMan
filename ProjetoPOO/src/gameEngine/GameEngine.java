@@ -225,6 +225,7 @@ public class GameEngine implements IGameEngine {
                     e.printStackTrace();
                 }
             }
+            //System.out.println(loadedObjects.stream().filter(go -> go instanceof Collectible).toList());
         }
     }
 

@@ -1,16 +1,10 @@
 package gameEngine.gui;
 
-import gameEngine.Client;
-import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.object.IGameObject;
-import gameEngine.shape.IShape;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferStrategy;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;

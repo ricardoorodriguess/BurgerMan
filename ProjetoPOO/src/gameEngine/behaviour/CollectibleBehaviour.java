@@ -1,5 +1,6 @@
 package gameEngine.behaviour;
 
+import gameEngine.ICollider;
 import gameEngine.object.*;
 import gameEngine.Client;
 import org.jetbrains.annotations.NotNull;
@@ -47,6 +48,7 @@ public class CollectibleBehaviour extends Behaviour {
         }*/
         if (collected) {
             // Destrói o objeto quando coletado
+            System.out.println("DESTROY COLLECT");
             onDestroy();
             collected = false;
         }
@@ -58,8 +60,9 @@ public class CollectibleBehaviour extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
+        ICollider c1 = igameObject.collider(), c2;
         for (IGameObject obj : gameObjects) {
-            if (isCollision(obj)) {
+            if (isCollision(obj) && ((c2 = obj.collider())) != null && c2.isColliding(c1)) {
                 collected = true;
                 break;
             }
@@ -71,7 +74,7 @@ public class CollectibleBehaviour extends Behaviour {
      * @return true se o objeto colidiu com este coletável, false caso contrário.
      */
     private boolean isCollision(IGameObject obj) {
-        if (obj instanceof Player)  return true;
+        if (obj instanceof Player) return true;
         else return obj instanceof Enemy && collectibleType == Type.PICKLE;
     }
     
