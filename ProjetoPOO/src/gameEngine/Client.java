@@ -15,6 +15,7 @@ public class Client {
     public static final AudioPlayer AUDIO = new AudioPlayer();
 
     public static void main(String[] args) {
+        ENGINE.add(new BackGround());
         ENGINE.add(new Score());
         ENGINE.add(new Lives());
         ENGINE.add(new Player(new Point(85, 105)));
@@ -107,7 +108,7 @@ public class Client {
             ENGINE.add(new Intersection(p, list));
         }
 
-        ENGINE.setGUI(new GUI());
+        ENGINE.setGUI(new GUI(ENGINE.getEnabled()));
         ENGINE.run();
     }
 }

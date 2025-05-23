@@ -213,7 +213,7 @@ public class GameEngine implements IGameEngine {
                     be.onUpdate(startTime, event);
             }
             this.checkCollisions();
-            gui.repaint();
+            gui.refresh();
             //gui.display(enableObjects, gui.getGraphics());
             long elapsedTime = System.currentTimeMillis() - startTime;
             long sleepTime = FRAME_TIME - elapsedTime;

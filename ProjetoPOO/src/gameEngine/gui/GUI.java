@@ -24,13 +24,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class GUI extends JFrame implements IGUI {
     public final CopyOnWriteArrayList<InputEvent> queue;
+    private final GamePanel gamePanel;
 
     /**
      * Constructor of the GUI class.
      * Initializes the input event queue using CopyOnWriteArrayList
      * to ensure thread safety in concurrent environments.
      */
-    public GUI() {
+    public GUI(List<IGameObject> gameObjects) {
         super("Hamburger-Man");
         queue = new CopyOnWriteArrayList<>();
 
@@ -38,11 +39,18 @@ public class GUI extends JFrame implements IGUI {
         setSize(672, 744);
         setLocationRelativeTo(null); // Center the window on the screen
         setResizable(false);
-        setContentPane(new BackgroundPanel());
+
+        gamePanel = new GamePanel(gameObjects);
+        setContentPane(gamePanel);
+        //setBackground(Color.BLACK);
         setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/images/burgerUp.png"))).getImage());
         setVisible(true);
 
         addKeyListener();
+    }
+
+    public void refresh() {
+        gamePanel.repaint();
     }
 
     @Override
@@ -56,6 +64,7 @@ public class GUI extends JFrame implements IGUI {
         }
     }
 
+    /*
     @Override
     public void display(@NotNull List<IGameObject> list, Graphics graphics) {
         //setContentPane(new BackgroundPanel());
@@ -64,6 +73,7 @@ public class GUI extends JFrame implements IGUI {
             if ((sh = go.shape()) != null)
                 sh.draw((Graphics2D) graphics);
     }
+    */
 
     private void addKeyListener() {
         addKeyListener(new KeyListener() {
@@ -83,6 +93,7 @@ public class GUI extends JFrame implements IGUI {
         });
     }
 
+    /*
     @Override
     public void paint(Graphics g) {
         if (this.getBufferStrategy() == null) {
@@ -102,4 +113,5 @@ public class GUI extends JFrame implements IGUI {
         g2.dispose();
         bs.show();
     }
+     */
 }

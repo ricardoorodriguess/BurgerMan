@@ -24,5 +24,5 @@ public interface IGUI {
      * Displays the given list of game objects on the GUI.
      * @param list the list of IGameObject instances to be displayed; must not be null
      */
-    void display(@NotNull List<IGameObject> list, Graphics graphics);
+    //void display(@NotNull List<IGameObject> list, Graphics graphics);
 }

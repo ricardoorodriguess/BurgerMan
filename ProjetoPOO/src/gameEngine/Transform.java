@@ -112,4 +112,8 @@ public class Transform implements ITransform
     public static Transform simpleTransform(Point position) {
         return new Transform(position, 0, 0, 1);
     }
+
+    public static Transform backgroundTransform() {
+        return new Transform(new Point(336, 384), -1, 0, 1);
+    }
 }
