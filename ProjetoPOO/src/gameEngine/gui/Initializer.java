@@ -95,6 +95,7 @@ public class Initializer {
             new int[]{585, 665, 2, 0, 1, 0}
     };
 
+
     /**
      * Initializes the game objects for the Burger game.
      * This method adds the background, score, lives, player, enemies, and collectibles to the game engine.
@@ -107,8 +108,15 @@ public class Initializer {
         engine.add(new Lives());
         engine.add(new Player(new Point(85, 105)));
         engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
-        engine.add(new Collectible(Type.CHEESE, new Point(190, 290)));
-        engine.add(new Collectible(Type.POINT, new Point(305, 185)));
+
+        //engine.add(new Collectible(Type.POINT, new Point(285, 190)));
+        //engine.add(new Collectible(Type.POINT, new Point(305, 185))); -> posição original do intersection
+        //engine.add(new Collectible(Type.POINT, new Point(305, 190)));
+        for (int[] inter: inters) {
+            engine.add(new Collectible(Type.POINT, new Point(inter[0], inter[1])));
+        }
+
+        engine.add(new Collectible(Type.CHEESE, new Point(200, 300)));
         engine.add(new Collectible(Type.TOMATO, new Point(500, 500)));
         engine.add(new Collectible(Type.ONION, new Point(600, 600)));
         engine.add(new Collectible(Type.PICKLE, new Point(230, 400)));
