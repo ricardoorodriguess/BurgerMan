@@ -56,7 +56,7 @@ public class CollectibleShape extends Shape {
             g.drawImage(img, -img.getWidth() / 2, -img.getHeight() / 2, null);
         } else if (collectibleType == Type.POINT) {
             g.setColor(Color.YELLOW);
-            g.fillOval(-10, -10, 10, 10);
+            g.fillOval(-3, -3, 5, 5);
         }
     }
 }
