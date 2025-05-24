@@ -34,6 +34,12 @@ public class AudioPlayer {
         soundurl[4] = getClass().getResource("/sounds/test.wav");
     }
 
+    /**
+     * This method sets the sound file to be played.
+     * It takes an integer as a parameter to select the sound file from the array.
+     *
+     * @param i The index of the sound file in the array.
+     */
     public void setFile(int i){
         try {
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundurl[i]);
@@ -43,14 +49,27 @@ public class AudioPlayer {
             e.printStackTrace();
         }
     }
+
+    /**
+     * This method plays the sound file.
+     * It sets the file to be played and starts the clip.
+     */
     public void play() {
         clip.start();
     }
 
+    /**
+     * This method plays the sound file in a loop.
+     * It sets the file to be played and starts the clip in a loop.
+     */
     public void loop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
+    /**
+     * This method stops the sound file from playing.
+     * It stops the clip.
+     */
     public void stop() {
         clip.stop();
     }
