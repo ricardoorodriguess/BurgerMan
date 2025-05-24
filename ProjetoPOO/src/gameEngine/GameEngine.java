@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * This class represents a various gameObjects in an arrayList
+ * This class represents various gameObjects in an arrayList
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome

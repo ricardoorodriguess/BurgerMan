@@ -113,6 +113,11 @@ public class Transform implements ITransform
         return new Transform(position, 0, 0, 1);
     }
 
+    /**
+     * Returns a transform for the background of the game.
+     * The background is positioned at (336, 384) with no rotation and a scale of -1.
+     * @return A Transform object representing the background.
+     */
     public static Transform backgroundTransform() {
         return new Transform(new Point(336, 384), -1, 0, 1);
     }

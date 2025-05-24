@@ -18,9 +18,10 @@ public class Collectible extends GameObject {
     private final Type type;
 
     /**
-     * Constrói um objeto coletável no jogo.
-     * @param @Notnull type Tipo do coletável (ex: TOMATO, CHEESE).
-     * @param @Notnull position Posição inicial do coletável no ambiente.
+     * Creates a new Collectible object with the specified type and position.
+     *
+     * @param type Type of the collectible (e.g., TOMATO, CHEESE).
+     * @param position Initial position of the collectible in the environment.
      */
     public Collectible(@NotNull Type type, @NotNull Point position) {
         super(type.name, Transform.simpleTransform(position), new Circle(position, 0.5), new CollectibleBehaviour(null), null);
@@ -30,8 +31,9 @@ public class Collectible extends GameObject {
     }
 
     /**
-     * Retorna o tipo deste coletável.
-     * @return Tipo enum do coletável.
+     * Returns the type of the collectible.
+     *
+     * @return the type of the collectible
      */
     public Type getType() {
         return type;

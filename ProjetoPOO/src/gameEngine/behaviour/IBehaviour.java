@@ -6,59 +6,67 @@ import java.awt.event.InputEvent;
 import java.util.List;
 
 /**
- * The {@code gamaEngine.Behaviour} interface stores information about
- * an object's behaviour.
+ * The {@link  gameEngine.behaviour.Behaviour} interface defines the behavior of objects in the game.
+ * It provides methods for managing interactions with GameObjects, updating their state,
+ * and applying physics or game logic.
+ * 
+ * This interface allows behaviors to be associated with specific GameObjects, supporting
+ * updates, collision events, and lifecycle methods (init, enable, disable, destroy).
+ * 
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
  * @version May 11, 2025
  */
 public interface IBehaviour {
-    //para acesso ao gameObject que está associado
 
     /**
-     * Retorna o GameObject associado a este comportamento.
+     * Returns the GameObject associated with this behavior.
+     *
+     * @return The GameObject linked to the behavior.
      */
     IGameObject gameObject();
 
     /**
-     * Define o GameObject controlado por este comportamento.
-     * @param gameObject Novo GameObject a ser controlado.
+     * Sets the GameObject controlled by this behavior.
+     *
+     * @param gameObject New GameObject to be controlled.
      */
     void gameObject(IGameObject gameObject);
 
-    //chamado pelo game engine em cada frame
-
     /**
-     * Atualiza o estado do GameObject a cada frame.
-     * @param dT Tempo desde o último frame em segundos.
-     * @param ie Eventos de entrada do usuário.
+     * Updates the state of the GameObject every frame.
+     * This method is called by the game engine during each frame update.
+     *
+     * @param dT Time since the last frame in seconds.
+     * @param ie User input events for the current frame.
      */
     void onUpdate(double dT, InputEvent ie);
 
     /**
-     * Trata colisões com outros GameObjects.
-     * @param gameObjects Lista de objetos colididos.
+     * Handles collisions with other GameObjects.
+     * 
+     * @param gameObjects List of objects that have collided with this GameObject.
      */
     void onCollision(List<IGameObject> gameObjects);
 
     /**
-     * Inicializa o comportamento (chamado uma vez no início).
+     * Initializes the behavior (called once at the beginning).
      */
     void onInit();
 
     /**
-     * Executado quando o GameObject é habilitado.
+     * Executes when the GameObject is enabled.
      */
     void onEnabled();
 
     /**
-     * Executado quando o GameObject é desabilitado.
+     * Executes when the GameObject is disabled.
      */
     void onDisabled();
 
     /**
-     * Executado quando o GameObject é destruído.
+     * Executes when the GameObject is destroyed.
      */
     void onDestroy();
 }

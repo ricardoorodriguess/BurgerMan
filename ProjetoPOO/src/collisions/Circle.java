@@ -5,7 +5,7 @@ import gameEngine.ICollider;
 import java.util.Locale;
 
 /**
- * Implementation of a collisions.Circle object.
+ * Implementation of a {@link  collisions.Circle} object
  * <p>The circle can move, scale and rotate, despite not changing
  * with this last operation.
  * @author Ricardo Rodrigues

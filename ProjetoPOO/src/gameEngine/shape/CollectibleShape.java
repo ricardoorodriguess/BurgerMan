@@ -10,11 +10,25 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-
+/**
+ * This class represents the shape of a collectible object in the game.
+ * It extends the Shape class and renders the collectible image based on its type.
+ *
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 24, 2025
+ */
 public class CollectibleShape extends Shape {
     private final Map<Type, BufferedImage> images = new HashMap<>();
     private final Type collectibleType;
 
+    /**
+     * Constructor that initializes the CollectibleShape with a specific type and associated Collectible object.
+     *
+     * @param type The type of collectible (e.g., TOMATO, CHEESE, etc.)
+     * @param object The Collectible object associated with this shape
+     */
     public CollectibleShape(Type type, Collectible object) {
         super(null); // O GameObject será associado depois, assim posso criar um colletible e no shape passo-lhe o type
         this.collectibleType = type;
@@ -30,6 +44,11 @@ public class CollectibleShape extends Shape {
         }
     }
 
+    /**
+     * This method returns the type of collectible associated with this shape.
+     *
+     * @param  g Graphics2D object used for rendering
+     */
     @Override
     public void render(Graphics2D g) {
         BufferedImage img = images.get(collectibleType);

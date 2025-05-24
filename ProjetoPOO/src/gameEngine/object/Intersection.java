@@ -8,11 +8,29 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Represents an intersection in the game where multiple paths converge.
+ * <p>
+ * This class extends GameObject and provides functionality to manage
+ * directions and player interactions at the intersection.
+ *
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 24, 2025
+ */
 public class Intersection extends GameObject {
     private final List<Point> directions;
     private final Point returnDir;
     private @Nullable Point metPlayer;
 
+    /**
+     * Constructs an Intersection object with a base point and a list of directions.
+     *
+     * @param base       the base point of the intersection
+     * @param directions a list of directions available at this intersection
+     * @throws IllegalArgumentException if the directions list is empty
+     */
     public Intersection(Point base, List<Point> directions) {
         super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
         if (directions.isEmpty()) throw new IllegalArgumentException();
@@ -21,10 +39,23 @@ public class Intersection extends GameObject {
         metPlayer = null;
     }
 
+
+    /**
+     * Returns the list of directions available at this intersection.
+     *
+     * @return a list of Point objects representing the directions
+     */
     public List<Point> list() {
         return directions;
     }
 
+    /**
+     * Returns a random direction from the available directions, excluding the specified direction.
+     *
+     * @param random the Random instance to use for selecting a direction
+     * @param except the direction to exclude from selection
+     * @return a random Point representing a direction
+     */
     public Point randomDir(Random random, Point except) {
         List<Point> filter = directions.stream()
                 .filter(p -> !p.equals(except.scaleOrigin(-1)))
@@ -32,14 +63,29 @@ public class Intersection extends GameObject {
         return filter.get(random.nextInt(filter.size()));
     }
 
+    /**
+     * Returns the return direction of the intersection.
+     *
+     * @return a Point representing the return direction
+     */
     public Point getReturnDir() {
         return returnDir;
     }
 
+    /**
+     * Sets the last direction the player came from.
+     *
+     * @param point the Point representing the last direction
+     */
     public void setLastPlayerDir(Point point) {
         metPlayer = point;
     }
 
+    /**
+     * Returns the last direction the player came from.
+     *
+     * @return a Point representing the last direction, or null if not set
+     */
     public @Nullable Point getLastPlayerDir() {
         return metPlayer;
     }

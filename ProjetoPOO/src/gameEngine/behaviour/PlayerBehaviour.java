@@ -13,11 +13,17 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 /**
- * Responsive class to deal with Player behaviour.
+ * Responsive class to deal with Player behavior.
+ * This class manages the player's movements, states (e.g., invincibility),
+ * collision handling, and interactions with the game environment.
+ * <p>
+ * The class updates the player's state on every frame, handles user inputs, 
+ * and processes collisions with other objects such as enemies, items, and obstacles.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
- * @version May 11, 2025
+ * 
+ * @version  May 11, 2025
  */
 public class PlayerBehaviour extends Behaviour {
     private double playerSpeed;
@@ -30,13 +36,13 @@ public class PlayerBehaviour extends Behaviour {
     AudioPlayer audioPlayer;
 
     /**
-     * Construtor que associa um GameObject a este comportamento.
-     * @param player GameObject que será controlado por este comportamento.
+     * Constructor that associates a GameObject with this behavior.
+     * 
+     * @param player The GameObject controlled by this behavior.
      */
     public PlayerBehaviour(Player player) {
         super(player);
         speed = new Point(0, 0);
-        this.invincible = false;
         this.audioPlayer = new AudioPlayer();
         playSound();
     }
@@ -49,14 +55,14 @@ public class PlayerBehaviour extends Behaviour {
     }
 
     /**
-     * Chamado a cada frame para atualizar o estado do GameObject.
-     * @param dT Tempo em segundos desde o último frame (delta time).
-     * @param ie Eventos de entrada do utilizador (ex: teclado).
+     * Called on every frame to update the GameObject's state.
+     * 
+     * @param dT The time in seconds since the last frame (delta time).
+     * @param ie User input events (e.g., keyboard).
      */
     @SuppressWarnings("DataFlowIssue")
     @Override
     public void onUpdate(double dT, @Nullable InputEvent ie) {
-        System.out.println("PlayerBehaviour atualizado!");
         if (this.invincible) {
             this.invincibilityTime -= dT;
             if (this.invincibilityTime <= 0) {
@@ -96,12 +102,13 @@ public class PlayerBehaviour extends Behaviour {
                 break;
         }
 
-        ((GameObject) igameObject).move(speed,0);
+        ((GameObject) igameObject).move(speed, 0);
     }
 
     /**
-     * Chamado quando ocorre uma colisão com outros GameObjects.
-     * @param gameObjects Lista de GameObjects colididos.
+     * Called when a collision occurs with other GameObjects.
+     * 
+     * @param gameObjects A list of collided GameObjects.
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
@@ -158,27 +165,35 @@ public class PlayerBehaviour extends Behaviour {
         }
     }
 
+    /**
+     * Initializes the PlayerBehaviour with default values.
+     * This method is called once when the GameObject is created.
+     */
     @Override
     public void onInit() {
-        System.out.println("PlayerBehaviour inicializado!");
-        // Inicializa propriedades padrões
+        // Initializes default properties
         invincible = false;
         invincibilityTime = 0;
         playerSpeed = 1;
         playerSpeedTime = 0;
     }
 
+    /**
+     * Called when the GameObject is enabled.
+     * This method is invoked by the game engine to prepare the GameObject for interaction.
+     */
     @Override
     public void onEnabled() {
-        System.out.println("PlayerBehaviour ativado!");
         onInit();
         Client.ENGINE.enable(gameObject());
-
     }
 
+    /**
+     * Called when the GameObject is disabled.
+     * This method is invoked by the game engine to stop interactions with the GameObject.
+     */
     @Override
     public void onDisabled() {
-        System.out.println("PlayerBehaviour desativado!");
         if (lives != null) {
             playDead();
             this.lives.decreaseLives();
@@ -186,56 +201,100 @@ public class PlayerBehaviour extends Behaviour {
         Client.ENGINE.disable(gameObject());
     }
 
+    /**
+     * Destroys the PlayerBehaviour and cleans up resources.
+     * This method is called when the GameObject is no longer needed.
+     */
     @Override
     public void onDestroy() {
-        System.out.println("PlayerBehaviour destruído!");
         playSound();
         Client.ENGINE.destroy(igameObject);
     }
 
+    /**
+     * Checks if the player is currently invincible.
+     *
+     * @return true if the player is invincible, false otherwise.
+     */
     public boolean isInvincible() {
         return invincible;
     }
 
+    /**
+     * Gets the remaining invincibility time for the player.
+     *
+     * @return The time in seconds that the player remains invincible.
+     */
     public double getInvincibilityTime() {
         return invincibilityTime;
     }
 
+    /**
+     * Gets the current speed of the player.
+     *
+     * @return The player's speed as a double value.
+     */
     public double getPlayerSpeed() {
         return playerSpeed;
     }
 
+    /**
+     * Gets the remaining time for the player's speed effect.
+     *
+     * @return The time in seconds that the player's speed effect lasts.
+     */
     public double getPlayerSpeedTime() {
         return playerSpeedTime;
     }
 
+    /**
+     * Slows down the player for a limited time.
+     * This method sets the player's speed to 0.8 and the duration to 60 seconds.
+     */
     public void slowDown() {
         playerSpeed = 0.8;
         playerSpeedTime = 60;
     }
 
     /**
-     * for tests
+     * Plays the background sound for the player.
+     * This method sets the audio file and starts playing it in a loop.
      */
-    public void setInvincible(double time) {
-        invincible = true;
-        invincibilityTime = time;
-    }
-
     private void playSound() {
         audioPlayer.setFile(1);
         audioPlayer.play();
         audioPlayer.loop();
     }
 
+    /**
+     * Plays the death sound for the player.
+     * This method stops any currently playing audio, resets the audio file, and plays the death sound.
+     */
     private void playDead() {
         audioPlayer.stop();
         audioPlayer.setFile(0);
         audioPlayer.play();
     }
 
+    /**
+     * Plays a sound effect based on the provided index.
+     * This method sets the audio file based on the index and plays it.
+     *
+     * @param i The index of the sound effect to play.
+     */
     private void playSE(int i) {
         audioPlayer.setFile(i);
         audioPlayer.play();
+    }
+
+    /**
+     * For testing purposes.
+     * <p>
+     * Sets the player to be invincible for a specified duration.
+     * @param time The duration in seconds for which the player will be invincible.
+     */
+    public void setInvincible(double time) {
+        invincible = true;
+        invincibilityTime = time;
     }
 }

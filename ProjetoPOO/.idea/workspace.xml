@@ -4,10 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="inter att">
-      <change afterPath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" afterDir="false" />
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="doc AudioPlayer + class Initializer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collisions/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/collisions/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/Transform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/CollectibleBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/IBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/IBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/ScoreBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/SolidBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/SolidBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/BackGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Collectible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/EnemyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/EnemyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Intersection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Intersection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Lives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Lives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Solid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Solid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/BackGroundShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/BackGroundShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/EnemyShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/IShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/PlayerShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/TextShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/TextShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/sound/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/sound/AudioPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -283,14 +312,6 @@
       <workItem from="1747745292004" duration="1983000" />
       <workItem from="1747903976976" duration="862000" />
       <workItem from="1748082719484" duration="297000" />
-    </task>
-    <task id="LOCAL-00008" summary="fixed polygon-polygon collision">
-      <option name="closed" value="true" />
-      <created>1743176959771</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1743176959771</updated>
     </task>
     <task id="LOCAL-00009" summary="fixed polygon-polygon collision">
       <option name="closed" value="true" />
@@ -676,7 +697,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747920435045</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="doc AudioPlayer + class Initializer">
+      <option name="closed" value="true" />
+      <created>1748084666946</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1748084666947</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +723,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tests to ScoreBehaviour.java and LivesBehaviour.java moved do tests package" />
     <MESSAGE value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
     <MESSAGE value="EnemyBehavior" />
     <MESSAGE value="EnemyBehaviorTests&#10;CollectibleBehaviour" />
@@ -719,7 +747,8 @@
     <MESSAGE value="frame rate de 30 frames" />
     <MESSAGE value="paint gui (NOT DONE YET)" />
     <MESSAGE value="inter att" />
-    <option name="LAST_COMMIT_MESSAGE" value="inter att" />
+    <MESSAGE value="doc AudioPlayer + class Initializer" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc AudioPlayer + class Initializer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

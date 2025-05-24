@@ -8,7 +8,7 @@ import gameEngine.shape.EnemyShape;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Responsive class to represent a Enemy GameObject.
+ * Responsive class to represent an Enemy GameObject.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -18,8 +18,8 @@ public class Enemy extends GameObject {
     private final EnemyType enemyType;
 
     /**
-     * Constrói um inimigo na posição especificada.
-     * @param position Posição inicial do inimigo.
+     * Creates a new Enemy object with the specified position and type.
+     * @param position Initial position of the enemy in the environment.
      */
     public Enemy(@NotNull Point position, @NotNull EnemyType type) {
         super("Enemy", Transform.simpleTransform(position), Polygon.simpleSquare(position), new EnemyBehavior(null), null);
@@ -29,8 +29,8 @@ public class Enemy extends GameObject {
     }
 
     /**
-     * Retorna o tipo deste enemy.
-     * @return Tipo enum do enemy.
+     * Returns the type of the enemy.
+     * @return the type of the enemy
      */
     public EnemyType getEnemytype() {
         return enemyType;

@@ -16,8 +16,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Player extends GameObject {
     /**
-     * Constrói o jogador na posição especificada.
-     * @param position Posição inicial do jogador.
+     * Creates a new Player object with the specified initial position.
+     * @param position Initial position of the player in the environment.
      */
     public Player(@NotNull Point position) {
         super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position), new PlayerBehaviour(null), new PlayerShape(null));

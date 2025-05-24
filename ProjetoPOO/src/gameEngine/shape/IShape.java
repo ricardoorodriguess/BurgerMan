@@ -1,27 +1,36 @@
 package gameEngine.shape;
 
-import gameEngine.ITransform;
 import gameEngine.object.IGameObject;
-
 import java.awt.*;
 
+/**
+ * Interface that defines the behavior of a shape in the game.
+ * A shape is a graphical representation of a GameObject.
+ * 
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 24, 2025
+ */
 public interface IShape {
     /**
-     * Retorna o GameObject associado a este shape.
-     * @return GameObject vinculado.
+     * Returns the GameObject associated with this shape.
+     * 
+     * @return The linked GameObject.
      */
     IGameObject gameObject();
 
     /**
-     * Define o GameObject para umm shape.
-     * @param gameObject Novo GameObject a ficar com o shape em questão.
+     * Sets a GameObject for a shape.
+     * 
+     * @param gameObject The new GameObject for the shape in question.
      */
     void gameObject(IGameObject gameObject);
 
     /**
-     * Desenha o shape do objeto no ecrã.
-     * @param g
-     * @param transform
+     * Draws the shape of the object on the screen.
+     *
+     * @param g Graphic device for rendering.
      */
     void draw(Graphics2D g);
 }

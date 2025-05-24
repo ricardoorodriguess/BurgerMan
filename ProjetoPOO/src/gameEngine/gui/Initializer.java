@@ -107,7 +107,7 @@ public class Initializer {
         engine.add(new Lives());
         engine.add(new Player(new Point(85, 105)));
         engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
-        engine.add(new Collectible(Type.CHEESE, new Point(200, 300)));
+        engine.add(new Collectible(Type.CHEESE, new Point(190, 290)));
         engine.add(new Collectible(Type.POINT, new Point(305, 185)));
         engine.add(new Collectible(Type.TOMATO, new Point(500, 500)));
         engine.add(new Collectible(Type.ONION, new Point(600, 600)));

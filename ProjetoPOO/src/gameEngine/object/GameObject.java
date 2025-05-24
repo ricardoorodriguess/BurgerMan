@@ -9,7 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents GameObjects in 2D.
- * <p>It implements the IGameObject and encapsulates the object´s name,
+ * <p>
+ * It implements the IGameObject and encapsulates the object's name,
  * its transform (layer,position, angle, scale) and its collider.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
@@ -49,16 +50,16 @@ public class GameObject implements IGameObject
     public String name() { return name; }
 
     /**
-     * Response method to obtain the transform associate with this GameObject
-     * The transform contains all the transformation info, including: position, layer, rotation angle, and scale factor.
-     * @return an instance of ITransform that represents this GameObject´s transform.
+     * Response method to get the transform associates with this GameObject
+     * The transform contains all the transformation info, including position, layer, rotation angle, and scale factor.
+     * @return an instance of ITransform that represents this GameObject's transform.
      */
     @Override
     public ITransform transform() { return transform; }
 
     /**
      * Obtain the collider associate with this GameObject.
-     * @return an instance of ICollider that represents this GameObject´s collider.
+     * @return an instance of ICollider that represents this GameObject's collider.
      */
     @Override
     public @Nullable ICollider collider() { return collider; }
@@ -106,7 +107,7 @@ public class GameObject implements IGameObject
 
     /**
      * Move the gameObject to a specific point
-     * @param point to calculate the diference between the atual position to this point
+     * @param point to calculate the difference between the actual position to this point
      * @param layer to move
      */
     public void moveTo(Point point, int layer) {

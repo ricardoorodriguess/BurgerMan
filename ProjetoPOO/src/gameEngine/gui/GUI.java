@@ -49,10 +49,20 @@ public class GUI extends JFrame implements IGUI {
         addKeyListener();
     }
 
+    /**
+     * Refreshes the game panel by repainting it.
+     * <p>
+     * This method can be called to update the display of the game objects.
+     */
     public void refresh() {
         gamePanel.repaint();
     }
 
+    /**
+     * Displays the game objects in the GUI.
+     * <p>
+     * This method is called to render the game objects on the panel.
+     */
     @Override
     public @Nullable InputEvent dequeue() {
         try {
@@ -64,6 +74,14 @@ public class GUI extends JFrame implements IGUI {
         }
     }
 
+    /**
+     * Displays the game objects in the GUI.
+     * <p>
+     * This method is called to render the game objects on the panel.
+     *
+     * @param list List of game objects to be displayed.
+     * @param graphics Graphics object used for drawing.
+     */
     /*
     @Override
     public void display(@NotNull List<IGameObject> list, Graphics graphics) {
@@ -77,6 +95,7 @@ public class GUI extends JFrame implements IGUI {
 
     private void addKeyListener() {
         addKeyListener(new KeyListener() {
+
             @Override
             public void keyTyped(KeyEvent e) {}
 

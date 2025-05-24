@@ -20,7 +20,7 @@ import java.net.URL;
 public class AudioPlayer {
 
     private Clip clip;
-    private URL soundurl[] = new URL[10];
+    private final URL[] soundurl = new URL[10];
 
     /**
      * Constructor of the AudioPlayer class.
@@ -31,7 +31,6 @@ public class AudioPlayer {
         soundurl[1] = getClass().getResource("/sounds/pacmanEat.wav");
         soundurl[2] = getClass().getResource("/sounds/pacmanEatFruit.wav");
         soundurl[3] = getClass().getResource("/sounds/pacmanEatGhost.wav");
-        soundurl[4] = getClass().getResource("/sounds/test.wav");
     }
 
     /**
@@ -45,8 +44,7 @@ public class AudioPlayer {
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundurl[i]);
             clip = AudioSystem.getClip();
             clip.open(ais);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception _) {
         }
     }
 
@@ -59,7 +57,7 @@ public class AudioPlayer {
     }
 
     /**
-     * This method plays the sound file in a loop.
+     * This method plays the sound file in an infinite loop.
      * It sets the file to be played and starts the clip in a loop.
      */
     public void loop() {

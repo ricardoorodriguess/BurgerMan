@@ -10,64 +10,90 @@ import java.awt.event.InputEvent;
 import java.util.List;
 
 /**
- * Responsive class to deal with Solid behaviour (the walls).
+ * A responsive class to handle the behavior of Solid objects (the walls).
+ * <p>
+ * This class ensures the walls interact correctly with other objects and handle
+ * collisions, providing physical responses to prevent overlapping.
+ * 
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
+ * 
  * @version May 11, 2025
  */
 public class SolidBehaviour extends Behaviour {
     private final boolean enemyWall;
 
     /**
-     * Construtor que associa um GameObject a este Behaviour.
-     *
-     * @param solid GameObject que será controlado por este comportamento.
+     * Constructor that associates a GameObject with this behavior.
+     * By default, the behavior is not for enemy-specific walls.
+     * 
+     * @param solid The GameObject controlled by this behavior.
      */
     public SolidBehaviour(Solid solid) {
         this(solid, false);
     }
 
+    /**
+     * Constructor that associates a GameObject with this behavior, specifying
+     * if the wall is specifically for enemies.
+     * 
+     * @param solid The GameObject controlled by this behavior.
+     * @param enemyWall Indicates if the wall behavior is for enemies.
+     */
     public SolidBehaviour(Solid solid, boolean enemyWall) {
         super(solid);
         this.enemyWall = enemyWall;
     }
 
+    /**
+     * Checks if this wall is specific to enemies.
+     * 
+     * @return True if it is an enemy-specific wall, otherwise false.
+     */
     public boolean enemyWall() {
         return enemyWall;
     }
 
     /**
-     * Atualiza o estado do GameObject a cada frame.
-     *
-     * @param dT Tempo desde o último frame em segundos.
-     * @param ie Eventos de entrada do usuário.
+     * Updates the state of the GameObject every frame.
+     * 
+     * @param dT Time since the last frame in seconds.
+     * @param ie User input events.
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
-
+        // No additional per-frame implementation provided.
     }
 
     /**
-     * Trata colisões com outros GameObjects.
-     * @param gameObjects Lista de objetos colididos.
+     * Handles collisions with other GameObjects.
+     * This method calculates collision responses and moves colliding objects
+     * as appropriate to resolve overlaps.
+     * 
+     * @param gameObjects A list of objects that collided with this wall.
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
         for (IGameObject gameObject : gameObjects) {
             if (gameObject.transform() != null && gameObject.collider() != null) {
-                Point collisionResponse = calculateCollisionResponse((GameObject)gameObject);
-                ((GameObject)gameObject).move(collisionResponse, gameObject.transform().layer());
+                Point collisionResponse = calculateCollisionResponse((GameObject) gameObject);
+                ((GameObject) gameObject).move(collisionResponse, gameObject.transform().layer());
             }
         }
     }
 
     /**
-     * Este método é auxiliar ao onCollision.
-     * Calcula a resposta à colisão entre este GameObject e o Solid (as paredes).
-     * A resposta é um vetor de deslocamento que indica a direção oposta ao eixo principal da colisão.
-     * @param gameObject
-     * @return um Point que representa o vetor de resposta à colisão, ou null se o gameObject em questão não tiver colisor.
+     * Auxiliary method for the {@code onCollision } logic.
+     * <p>
+     * Calculates the collision response between this Solid object and another GameObject.
+     * <p>
+     * The response is a displacement vector indicating movement in the opposite direction
+     * of the primary axis of collision (either X or Y).
+     * 
+     * @param gameObject The GameObject colliding with this Solid.
+     * @return A Point object representing the collision response vector, or null
+     *         if the GameObject has no collider.
      */
     private Point calculateCollisionResponse(GameObject gameObject) {
         ICollider c1 = igameObject.collider(), c2 = gameObject.collider();
@@ -79,41 +105,41 @@ public class SolidBehaviour extends Behaviour {
         double dy = gameObjectCentroid.getY() - solidCentroid.getY();
 
         if (Math.abs(dx) > Math.abs(dy)) {
-            return new Point(-dx, 0);
+            return new Point(-dx, 0); // Colliding along the X-axis
         } else {
-            return new Point(0, -dy);
+            return new Point(0, -dy); // Colliding along the Y-axis
         }
     }
 
     /**
-     * Inicializa o comportamento (chamado uma vez no início).
+     * Initializes the behavior (called once at the beginning).
      */
     @Override
     public void onInit() {
-
+        // No specific initialization logic provided.
     }
 
     /**
-     * Executado quando o GameObject é habilitado.
+     * Executed when the GameObject is enabled.
      */
     @Override
     public void onEnabled() {
-
+        // No specific enable logic provided.
     }
 
     /**
-     * Executado quando o GameObject é desabilitado.
+     * Executed when the GameObject is disabled.
      */
     @Override
     public void onDisabled() {
-
+        // No specific disable logic provided.
     }
 
     /**
-     * Executado quando o GameObject é destruído.
+     * Executed when the GameObject is destroyed.
      */
     @Override
     public void onDestroy() {
-
+        // No specific destruction logic provided.
     }
 }

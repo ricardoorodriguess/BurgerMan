@@ -10,7 +10,12 @@ import java.awt.event.InputEvent;
 import java.util.List;
 
 /**
- * Responsive class to deal with Collectible behaviour.
+ * Responsive class to deal with the behavior of collectible items in the game.
+ * Handles interactions such as collisions or state changes for collectibles.
+ * 
+ * A collectible is a type of object that players or other objects can interact with 
+ * during gameplay.
+ * 
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -18,12 +23,12 @@ import java.util.List;
  */
 public class CollectibleBehaviour extends Behaviour {
     private boolean collected = false;
-    //private boolean initialized = false;
     private Type collectibleType;
 
     /**
-     * Construtor que associa este comportamento a um coletável.
-     * @param collectible Coletável controlado por este comportamento.
+     * Constructor that associates a GameObject with this behavior.
+     * 
+     * @param collectible The GameObject that will be controlled by this behavior.
      */
     public CollectibleBehaviour(@Nullable Collectible collectible) {
         super(collectible);
@@ -36,18 +41,15 @@ public class CollectibleBehaviour extends Behaviour {
     }
 
     /**
-     * Atualiza o estado do coletável a cada frame.
-     * @param dT Tempo desde o último frame (em segundos).
-     * @param ie Evento de entrada do usuário.
+     * Updates the collectible's state every frame.
+     *
+     * @param dT The time elapsed since the last frame (in seconds).
+     * @param ie The user's input event.
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
-        /*if (!initialized) {
-            onInit();
-            initialized = true;
-        }*/
         if (collected) {
-            // Destrói o objeto quando coletado
+            // Destroys the object when collected
             System.out.println("DESTROY COLLECT");
             onDestroy();
             collected = false;
@@ -55,8 +57,9 @@ public class CollectibleBehaviour extends Behaviour {
     }
 
     /**
-     * Lida com colisões entre este coletável e outros objetos.
-     * @param gameObjects Lista de objetos que colidiram com este coletável.
+     * Handles collisions between this collectible and other objects.
+     *
+     * @param gameObjects List of objects that collided with this collectible.
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
@@ -68,46 +71,46 @@ public class CollectibleBehaviour extends Behaviour {
             }
         }
     }
+
     /**
-     * Metodo complementar com o  {@link #onCollision(List)}.
-     * @param obj Objeto que colidiu com este coletável.
-     * @return true se o objeto colidiu com este coletável, false caso contrário.
+     * Helper method for {@link #onCollision(List)}.
+     * 
+     * @param obj The object that collided with this collectible.
+     * @return true if the object collided with this collectible, false otherwise.
      */
     private boolean isCollision(IGameObject obj) {
         if (obj instanceof Player) return true;
         else return obj instanceof Enemy && collectibleType == Type.PICKLE;
     }
-    
+
     /**
-     * Executado quando o comportamento é inicializado.
+     * Executes when the behavior is initialized.
      */
     @Override
     public void onInit() {
         collected = false;
-        //initialized = false;
     }
 
     /**
-     * Executado quando o objeto é ativado.
+     * Executes when the object is enabled.
      */
     @Override
     public void onEnabled() {}
 
     /**
-     * Executado quando o objeto é desativado.
+     * Executes when the object is disabled.
      */
     @Override
     public void onDisabled() {}
 
     /**
-     * Executado quando o objeto é destruído.
+     * Executes when the object is destroyed.
      */
     @Override
     public void onDestroy() {
         Client.ENGINE.destroy(igameObject);
     }
 
-    //para os testes
+    // For tests
     public boolean isCollected() { return collected; }
-    //public boolean isInitialized() { return initialized; }
 }

@@ -1,38 +1,66 @@
 package gameEngine.shape;
-import gameEngine.Client;
+
 import gameEngine.ITransform;
 import gameEngine.object.IGameObject;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
-import java.util.Objects;
 
+/**
+ * Abstract class that defines the behavior of a shape in the game.
+ * A shape is a graphical representation of a GameObject.
+ *
+ * This class provides the layout and mechanisms for transforming and rendering
+ * objects in a 2D space.
+ * 
+ * Classes extending Shape must implement the render method.
+ *
+ * @author Ricardo Rodrigues
+ * @author Rodrigo Linhas
+ * @author Tiago Tome
+ * @version May 24, 2025
+ */
 abstract class Shape implements IShape {
     IGameObject igameObject;
 
     /**
-     * Construtor que associa um GameObject a este shape.
-     * @param igameObject GameObject que tem este shape.
+     * Constructor that associates a GameObject with this shape.
+     *
+     * @param igameObject GameObject that owns this shape.
      */
     public Shape(IGameObject igameObject) {
         this.igameObject = igameObject;
     }
 
     /**
-     * Retorna o GameObject associado a este shape.
-     * @return GameObject vinculado.
+     * Returns the GameObject associated with this shape.
+     *
+     * @return The linked GameObject.
      */
     @Override
     public IGameObject gameObject() {
         return igameObject;
     }
 
+    /**
+     * Sets or replaces the GameObject associated with this shape.
+     *
+     * @param gameObject New GameObject to be linked with the shape.
+     */
     @Override
     public void gameObject(IGameObject gameObject) {
         this.igameObject = gameObject;
     }
 
+    /**
+     * Renders the shape of the object on the screen.
+     * 
+     * This method automatically applies transformations such as position,
+     * rotation, and scaling prior to invoking the render method for drawing.
+     * 
+     * @param g Graphic device for rendering.
+     */
     @Override
     public final void draw(Graphics2D g) {
         AffineTransform originalTx = g.getTransform();
@@ -49,7 +77,13 @@ abstract class Shape implements IShape {
         g.setRenderingHints(originalHints);
     }
 
-    //metodo que todos as classes que extenderem esta vao ter que fazer, é aqui que se vai fazer a escolha
-    //se é para desenhar ou para carregar sprites, é aqui que se da a render que queremos (NAO SEI SE PODERIA ESTAR NA ISHAPE).
+    /**
+     * Abstract method that defines how each shape should be rendered.
+     * 
+     * Classes that extend Shape must implement this method to customize
+     * the rendering process (e.g., drawing or loading sprites).
+     *
+     * @param g Graphics2D object responsible for rendering.
+     */
     public abstract void render(Graphics2D g);
 }
