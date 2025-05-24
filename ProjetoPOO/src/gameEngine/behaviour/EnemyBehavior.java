@@ -25,6 +25,7 @@ import java.util.List;
 public class EnemyBehavior extends Behaviour {
     public Point speed;
     private int state;
+    private int buffer;
 
     /**
      * Constructor that associates a GameObject with this behavior.
@@ -35,6 +36,7 @@ public class EnemyBehavior extends Behaviour {
         super(enemy);
         speed = new Point(0, 0);
         state = 0;
+        buffer = 400;
     }
 
     /**
@@ -61,15 +63,23 @@ public class EnemyBehavior extends Behaviour {
                 case 0:
                     // SCATTER STATE
                     speed = rand(i);
+                    if (--buffer <= 0) {
+                        buffer = Client.RANDOM.nextInt(200) + 400;
+                        state = 1;
+                    }
                     break;
                 case 1:
                     // CHASE STATE
                     Point last = i.getLastPlayerDir();
                     speed = last == null ? rand(i) : last;
+                    if (--buffer <= 0) {
+                        buffer = Client.RANDOM.nextInt(200) + 400;
+                        state = 0;
+                    }
                     break;
                 case 2:
                     // SCARED STATE
-                    speed = rand(i).scaleOrigin(0.8);
+                    speed = rand(i).scaleOrigin(0.5);
                     break;
                 case 3:
                     // RETURNING STATE
@@ -78,7 +88,6 @@ public class EnemyBehavior extends Behaviour {
             }
 
         ((GameObject) igameObject).move(speed, 0);
-        System.out.println(igameObject.collider().centroid() + " " + speed + " " + i);
     }
 
     /**
@@ -93,6 +102,7 @@ public class EnemyBehavior extends Behaviour {
      * @param gameObjects List of objects that collided with this enemy.
      */
     @Override
+    @SuppressWarnings("DataFlowIssue")
     public void onCollision(List<IGameObject> gameObjects) {
         ICollider c1 = igameObject.collider(), c2;
         for (IGameObject gameObject : gameObjects) {
