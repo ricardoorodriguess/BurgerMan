@@ -5,6 +5,7 @@ import gameEngine.Client;
 import gameEngine.ICollider;
 import gameEngine.object.*;
 import gameEngine.shape.PlayerShape;
+import gameEngine.sound.AudioPlayer;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
@@ -26,6 +27,7 @@ public class PlayerBehaviour extends Behaviour {
     public Point speed;
     ScoreBehaviour score;
     LivesBehaviour lives;
+    AudioPlayer audioPlayer;
 
     /**
      * Construtor que associa um GameObject a este comportamento.
@@ -34,6 +36,9 @@ public class PlayerBehaviour extends Behaviour {
     public PlayerBehaviour(Player player) {
         super(player);
         speed = new Point(0, 0);
+        this.invincible = false;
+        this.audioPlayer = new AudioPlayer();
+        playSound();
     }
 
     @Override
@@ -51,13 +56,13 @@ public class PlayerBehaviour extends Behaviour {
     @SuppressWarnings("DataFlowIssue")
     @Override
     public void onUpdate(double dT, @Nullable InputEvent ie) {
+        System.out.println("PlayerBehaviour atualizado!");
         if (this.invincible) {
             this.invincibilityTime -= dT;
             if (this.invincibilityTime <= 0) {
                 invincible = false;
             }
         }
-
         Point nsp = speed;
         if (ie instanceof KeyEvent k) switch (k.getKeyCode()) {
             case KeyEvent.VK_W -> nsp = new Point(0, -2);
@@ -111,23 +116,27 @@ public class PlayerBehaviour extends Behaviour {
                        return;
                    }
                    case "Tomato" -> {
+                       playSE(2);
                        invincible = true;
                        invincibilityTime = 60;
                        Client.ENGINE.destroy(gameObject);
                        return;
                    }
                    case "Onion" -> {
+                       playSE(2);
                        Client.ENGINE.disable(Client.ENGINE.randomObject(o -> o instanceof Enemy));
                        Client.ENGINE.destroy(gameObject);
                        return;
                    }
                    case "Cheese" -> {
+                       playSE(2);
                        playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
                        playerSpeedTime = 60;
                        Client.ENGINE.destroy(gameObject);
                        return;
                    }
                    case "Pickle" -> {
+                       playSE(2);
                        Client.ENGINE.destroy(gameObject);
                        return;
                    }
@@ -149,41 +158,37 @@ public class PlayerBehaviour extends Behaviour {
         }
     }
 
-    /**
-     * Chamado quando o GameObject é inicializado (antes do primeiro frame).
-     */
     @Override
     public void onInit() {
+        System.out.println("PlayerBehaviour inicializado!");
+        // Inicializa propriedades padrões
         invincible = false;
         invincibilityTime = 0;
         playerSpeed = 1;
         playerSpeedTime = 0;
     }
 
-    /**
-     * Chamado quando o GameObject é habilitado (ex: adicionado ao jogo).
-     */
     @Override
     public void onEnabled() {
+        System.out.println("PlayerBehaviour ativado!");
         onInit();
         Client.ENGINE.enable(gameObject());
+
     }
 
-    /**
-     * Chamado quando o GameObject é desabilitado (ex: removido temporariamente).
-     */
     @Override
     public void onDisabled() {
+        System.out.println("PlayerBehaviour desativado!");
         if (lives != null)
+            playDead();
             this.lives.decreaseLives();
         Client.ENGINE.disable(gameObject());
     }
 
-    /**
-     * Chamado quando o GameObject é destruído (remoção permanente).
-     */
     @Override
     public void onDestroy() {
+        System.out.println("PlayerBehaviour destruído!");
+        playSound();
         Client.ENGINE.destroy(igameObject);
     }
 
@@ -214,5 +219,22 @@ public class PlayerBehaviour extends Behaviour {
     public void setInvincible(double time) {
         invincible = true;
         invincibilityTime = time;
+    }
+
+    private void playSound() {
+        audioPlayer.setFile(1);
+        audioPlayer.play();
+        audioPlayer.loop();
+    }
+
+    private void playDead() {
+        audioPlayer.stop();
+        audioPlayer.setFile(0);
+        audioPlayer.play();
+    }
+
+    private void playSE(int i) {
+        audioPlayer.setFile(i);
+        audioPlayer.play();
     }
 }

@@ -1,10 +1,16 @@
 package gameEngine.gui;
 
+import gameEngine.Client;
+import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.object.IGameObject;
+import gameEngine.shape.IShape;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferStrategy;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -26,7 +32,7 @@ public class GUI extends JFrame implements IGUI {
      * to ensure thread safety in concurrent environments.
      */
     public GUI(List<IGameObject> gameObjects) {
-        super("Hamburger-Man");
+        super("Burger-Man");
         queue = new CopyOnWriteArrayList<>();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

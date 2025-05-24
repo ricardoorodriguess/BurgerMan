@@ -31,6 +31,7 @@ public class GameEngine implements IGameEngine {
     private static final long FRAME_TIME = 1000 / FRAME_RATE;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
+
     /**
      * Construtor of GameEngine
      */
@@ -40,6 +41,10 @@ public class GameEngine implements IGameEngine {
         this.disableObjects = new ArrayList<>();
     }
 
+    /**
+     * Sets the GUI for the game engine.
+     * @param gui the GUI to be set
+     */
     public void setGUI(GUI gui) {
         this.gui = gui;
     }
@@ -244,6 +249,10 @@ public class GameEngine implements IGameEngine {
         }
     }
 
+    /**
+     * Retorna o objeto GUI associado ao GameEngine.
+     * @return o objeto GUI.
+     */
     @Override
     public IGUI gui() {
         return gui;
