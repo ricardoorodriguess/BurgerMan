@@ -78,6 +78,7 @@ public class EnemyBehavior extends Behaviour {
             }
 
         ((GameObject) igameObject).move(speed, 0);
+        System.out.println(igameObject.collider().centroid() + " " + speed + " " + i);
     }
 
     /**
@@ -93,12 +94,15 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onCollision(List<IGameObject> gameObjects) {
+        ICollider c1 = igameObject.collider(), c2;
         for (IGameObject gameObject : gameObjects) {
             switch (gameObject.name()) {
                 case "Pickle":
+                    if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1)) continue;
                     ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
                     break;
                 case "Inter":
+                    if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1)) continue;
                     Intersection i = (Intersection) gameObject;
                     switch (state) {
                         case 3:
