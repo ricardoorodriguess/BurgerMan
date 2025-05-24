@@ -179,9 +179,10 @@ public class PlayerBehaviour extends Behaviour {
     @Override
     public void onDisabled() {
         System.out.println("PlayerBehaviour desativado!");
-        if (lives != null)
+        if (lives != null) {
             playDead();
             this.lives.decreaseLives();
+        }
         Client.ENGINE.disable(gameObject());
     }
 
