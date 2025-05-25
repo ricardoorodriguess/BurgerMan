@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represent a polygon witch contains 3 or more points
+ * This class represents a polygon which contains 3 or more points
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -52,7 +52,7 @@ public class Polygon extends Colisor {
     }
 
     /**
-     * This method calculate de centroid of a polygon
+     * This method calculates de centroid of a polygon
      * @return collisions.Point that is the centroid
      */
     private Point centroidCalculate()
@@ -126,11 +126,24 @@ public class Polygon extends Colisor {
         return other != null && other.isColliding(this);
     }
 
+    /**
+     * Checks if this polygon collides with a circle
+     *
+     * @param circle the circle to check collision with
+     * @return true if the polygon collides with the circle, false otherwise
+     */
     @Override
     public boolean isColliding(Circle circle) {
         return circle.isColliding(this);
     }
 
+    /**
+     * Checks if this polygon collides with another polygon by checking if any points
+     * are contained within the other polygon or if any line segments intersect
+     *
+     * @param polygon the other polygon to check collision with
+     * @return true if the polygons collide, false otherwise
+     */
     @Override
     public boolean isColliding(Polygon polygon) {
         for (Point p : this.points) {

@@ -6,7 +6,7 @@ import java.util.Objects;
 import static java.lang.Math.*;
 
 /**
- * This class represents a simple collisions.Point in 2D.
+ * This class represents a simple Point in 2D.
  * @author Ricardo Rodrigues
  * @author Rodrigo Linhas
  * @author Tiago Tome
@@ -23,21 +23,35 @@ public class Point
     }
 
     /**
-     * Returns the abscissa of the collisions.Point.
-     * @return x -> abscissa of a collisions.Point
+     * Returns the abscissa of the Point.
+     * @return x -> abscissa of a Point
      */
     public double getX() { return this.x; }
 
     /**
-     * Returns the ordinate of the collisions.Point.
-     * @return y -> ordinate of a collisions.Point
+     * Returns the ordinate of the Point.
+     * @return y -> ordinate of a Point
      */
     public double getY() { return this.y; }
 
+    /**
+     * Creates a new Point that is the sum of this point and another point.
+     * The result is equivalent to vector addition of two points.
+     *
+     * @param other the Point to add to this point
+     * @return a new Point whose coordinates are the sum of this point and the other point
+     */
     public Point add(Point other) {
         return new Point(x + other.x, y + other.y);
     }
 
+    /**
+     * Scales the point coordinates by multiplying both x and y by a given factor.
+     * The scaling is performed relative to the origin (0,0).
+     *
+     * @param factor the scaling factor to apply
+     * @return a new Point with scaled coordinates
+     */
     public Point scaleOrigin(double factor) {
         return new Point(x * factor, y * factor);
     }
@@ -72,8 +86,8 @@ public class Point
     }
 
     /**
-     * Response method to see if one collisions.Point its equal to this.
-     * @param obj
+     * Response method to see if one Point is equal to this.
+     * @param obj the object to compare with this Point.
      * @return a boolean, if its equal return true, otherwise return false.
      */
     @Override
@@ -84,7 +98,7 @@ public class Point
 
     /**
      * This method is necessary to pass in mooshak.
-     * @return hashcode of a collisions.Point based on its coordinates(x,y).
+     * @return hashcode of a Point based on its coordinates(x,y).
      */
     @Override
     public int hashCode() {
