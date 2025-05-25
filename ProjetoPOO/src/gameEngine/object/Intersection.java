@@ -39,8 +39,8 @@ public class Intersection extends GameObject {
         normalized = new ArrayList<>(directions);
         for (Point point : directions) {
             this.directions.add(point.scaleOrigin(0.5));
-            this.directions.add(point.scaleOrigin(0.8));
-            this.directions.add(point.scaleOrigin(1.2));
+            //this.directions.add(point.scaleOrigin(0.8));
+            //this.directions.add(point.scaleOrigin(1.2));
             this.directions.add(point.scaleOrigin(2));
         }
         returnDir = directions.getFirst();

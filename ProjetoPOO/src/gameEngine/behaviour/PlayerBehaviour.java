@@ -86,6 +86,7 @@ public class PlayerBehaviour extends Behaviour {
                 && (col != null || nsp.equals(speed.scaleOrigin(-1)))) {
             speed = nsp;
         }
+
         if ((speed.getX() + speed.getY()) != 0 && col != null && !col.getNormalized().contains(speed))
             speed = new Point(0, 0);
 
