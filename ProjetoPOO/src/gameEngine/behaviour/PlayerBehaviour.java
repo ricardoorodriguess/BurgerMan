@@ -124,15 +124,15 @@ public class PlayerBehaviour extends Behaviour {
         if (c1 == null) return;
         for (IGameObject gameObject : gameObjects) {
             if ((c2 = gameObject.collider()) != null && c1.isColliding(c2)) {
-                System.out.println("Colisao com: " + gameObject.name());
+                //System.out.println("Colisao com: " + gameObject.name());
                 switch (gameObject.name()) {
-                    case "Point" -> {
+                    case "Point", "Cheese", "Onion", "Tomato", "Pickle" -> {
                         this.score.incrementScore(10);
-                        Client.ENGINE.destroy(gameObject);
                         Collectible point = (Collectible) gameObject;
+                        System.out.println(point.getType());
                         switch (point.getType()) {
                             case TOMATO:
-                                System.out.println("Colidiu com Tomato. Invencibilidade ativada!");
+                                System.out.println("Colidiu com Tomato. Invincibilidade ativada!");
                                 playSE(2);
                                 invincible = true;
                                 invincibilityTime = 60;
@@ -154,6 +154,9 @@ public class PlayerBehaviour extends Behaviour {
                             case PICKLE:
                                 System.out.println("Colidiu com Pickle. Removido!");
                                 playSE(2);
+                                Client.ENGINE.destroy(gameObject);
+                                break;
+                            default:
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                         }
