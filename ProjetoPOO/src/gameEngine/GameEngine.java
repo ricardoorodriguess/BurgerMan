@@ -239,7 +239,10 @@ public class GameEngine implements IGameEngine {
                         e.printStackTrace();
                     }
                 }
-                ((PlayerBehaviour) Objects.requireNonNull(getPlayerObject().behaviour())).decrementRespawnBuffer();
+
+                Player p;
+                if ((p = getPlayerObject()) != null)
+                    ((PlayerBehaviour) Objects.requireNonNull(p.behaviour())).decrementRespawnBuffer();
                 //System.out.println(loadedObjects.stream().filter(go -> go instanceof Collectible).toList());
             }
         }
@@ -356,10 +359,14 @@ public class GameEngine implements IGameEngine {
      * Encontra o primeiro {@link GameObject} do tipo {@link Player}.
      * @return o primeiro {@link GameObject} do tipo {@link Player}.
      */
-    public Player getPlayerObject() {
-        return (Player) loadedObjects.stream()
-                .filter(obj -> obj.name().equals("Player"))
-                .findFirst()
-                .orElseThrow();
+    public @Nullable Player getPlayerObject() {
+        try {
+            return (Player) loadedObjects.stream()
+                    .filter(obj -> obj.name().equals("Player"))
+                    .findFirst()
+                    .orElseThrow();
+        } catch (Exception _) {
+            return null;
+        }
     }
 }

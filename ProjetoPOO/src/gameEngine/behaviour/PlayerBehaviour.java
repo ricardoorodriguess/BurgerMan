@@ -66,12 +66,13 @@ public class PlayerBehaviour extends Behaviour {
     @Override
     public void onUpdate(double dT, @Nullable InputEvent ie) {
         if (this.invincible) {
-            this.invincibilityTime -= dT;
+            this.invincibilityTime--;
             if (this.invincibilityTime <= 0) {
                 invincible = false;
             }
+            System.out.println(invincibilityTime);
         }
-        Point nsp = speed;
+        Point nsp = speed.scaleOrigin(playerSpeed);
         if (ie instanceof KeyEvent k) switch (k.getKeyCode()) {
             case KeyEvent.VK_W -> nsp = new Point(0, -2);
             case KeyEvent.VK_S -> nsp = new Point(0, 2);
@@ -85,7 +86,7 @@ public class PlayerBehaviour extends Behaviour {
                 && (col != null || nsp.equals(speed.scaleOrigin(-1)))) {
             speed = nsp;
         }
-        if ((speed.getX() + speed.getY()) != 0 && col != null && !col.list().contains(speed))
+        if ((speed.getX() + speed.getY()) != 0 && col != null && !col.getNormalized().contains(speed))
             speed = new Point(0, 0);
 
         PlayerShape shape = (PlayerShape) igameObject.shape();
@@ -106,7 +107,7 @@ public class PlayerBehaviour extends Behaviour {
 
         ((GameObject) igameObject).move(speed, 0);
         if (playerSpeedTime > 0) {
-            playerSpeedTime -= dT;
+            playerSpeedTime--;
             if (playerSpeedTime <= 0) {
                 playerSpeed = 1; // Restaure para a velocidade padrão
             }
@@ -135,7 +136,7 @@ public class PlayerBehaviour extends Behaviour {
                                 System.out.println("Colidiu com Tomato. Invincibilidade ativada!");
                                 playSE(2);
                                 invincible = true;
-                                invincibilityTime = 60;
+                                invincibilityTime = 800;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case ONION:
@@ -147,7 +148,7 @@ public class PlayerBehaviour extends Behaviour {
                             case CHEESE:
                                 System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
                                 playSE(2);
-                                playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
+                                playerSpeed = Client.RANDOM.nextBoolean() ? 0.5 : 2;
                                 playerSpeedTime = 5;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
@@ -167,7 +168,7 @@ public class PlayerBehaviour extends Behaviour {
                     }
                     case "Inter" -> {
                         Intersection i = (Intersection) gameObject;
-                        if (!i.list().contains(speed)) speed = new Point(0, 0);
+                        if (!i.getNormalized().contains(speed)) speed = new Point(0, 0);
                         else i.setLastPlayerDir(speed);
                     }
                     default -> {}
@@ -264,8 +265,8 @@ public class PlayerBehaviour extends Behaviour {
      * This method sets the player's speed to 0.8 and the duration to 60 seconds.
      */
     public void slowDown() {
-        playerSpeed = 0.8;
-        playerSpeedTime = 60;
+        playerSpeed = 0.5;
+        playerSpeedTime = 400;
     }
 
     public void decrementRespawnBuffer() {

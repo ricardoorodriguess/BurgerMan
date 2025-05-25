@@ -5,6 +5,7 @@ import collisions.Point;
 import gameEngine.Transform;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -20,7 +21,7 @@ import java.util.Random;
  * @version May 24, 2025
  */
 public class Intersection extends GameObject {
-    private final List<Point> directions;
+    private final List<Point> directions, normalized;
     private final Point returnDir;
     private @Nullable Point metPlayer;
 
@@ -34,14 +35,28 @@ public class Intersection extends GameObject {
     public Intersection(Point base, List<Point> directions) {
         super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
         if (directions.isEmpty()) throw new IllegalArgumentException();
-        this.directions = directions;
+        this.directions = new ArrayList<>(directions);
+        normalized = new ArrayList<>(directions);
+        for (Point point : directions) {
+            this.directions.add(point.scaleOrigin(0.5));
+            this.directions.add(point.scaleOrigin(0.8));
+            this.directions.add(point.scaleOrigin(1.2));
+            this.directions.add(point.scaleOrigin(2));
+        }
         returnDir = directions.getFirst();
         metPlayer = null;
     }
 
     public Intersection(Point base, List<Point> directions, Point returnDir) {
         super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
-        this.directions = directions;
+        this.directions = new ArrayList<>(directions);
+        normalized = new ArrayList<>(directions);
+        for (Point point : directions) {
+            this.directions.add(point.scaleOrigin(0.5));
+            this.directions.add(point.scaleOrigin(0.8));
+            this.directions.add(point.scaleOrigin(1.2));
+            this.directions.add(point.scaleOrigin(2));
+        }
         this.returnDir = returnDir;
         metPlayer = null;
     }
@@ -56,6 +71,10 @@ public class Intersection extends GameObject {
         return directions;
     }
 
+    public List<Point> getNormalized() {
+        return normalized;
+    }
+
     /**
      * Returns a random direction from the available directions, excluding the specified direction.
      *
@@ -64,7 +83,7 @@ public class Intersection extends GameObject {
      * @return a random Point representing a direction
      */
     public Point randomDir(Random random, Point except) {
-        List<Point> filter = directions.stream()
+        List<Point> filter = normalized.stream()
                 .filter(p -> !p.equals(except.scaleOrigin(-1)))
                 .toList();
         return filter.get(random.nextInt(filter.size()));

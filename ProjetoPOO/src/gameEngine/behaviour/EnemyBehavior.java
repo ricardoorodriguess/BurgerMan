@@ -3,10 +3,8 @@ package gameEngine.behaviour;
 import collisions.Point;
 import gameEngine.Client;
 import gameEngine.ICollider;
-import gameEngine.object.Enemy;
-import gameEngine.object.GameObject;
-import gameEngine.object.IGameObject;
-import gameEngine.object.Intersection;
+import gameEngine.object.*;
+
 import java.awt.event.InputEvent;
 import java.util.List;
 import java.util.Objects;
@@ -115,7 +113,9 @@ public class EnemyBehavior extends Behaviour {
             switch (gameObject.name()) {
                 case "Pickle":
                     if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1)) continue;
-                    ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
+                    Player player;
+                    if ((player = Client.ENGINE.getPlayerObject()) != null)
+                        ((PlayerBehaviour) player.behaviour()).slowDown();
                     break;
                 case "Inter":
                     if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1) || currentInter) continue;
