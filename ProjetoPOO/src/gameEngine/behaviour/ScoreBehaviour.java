@@ -69,7 +69,7 @@ public class ScoreBehaviour extends Behaviour {
      */
     @Override
     public void onEnabled() {
-        // No specific behavior is defined for enabling.
+        onInit();
     }
 
     /**

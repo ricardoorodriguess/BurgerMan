@@ -32,6 +32,7 @@ public class GameEngine implements IGameEngine {
     private static final long FRAME_TIME = 1000 / FRAME_RATE;
     public KeyEvent event = null; //retirar depois, só para testes
     private GUI gui;
+    private boolean isPaused = false;
 
     /**
      * Construtor of GameEngine
@@ -61,7 +62,6 @@ public class GameEngine implements IGameEngine {
         //inicializa o comportamento e o estado "enabled"
         IBehaviour b = gameObject.behaviour();
         if (b != null) {
-            b.onInit();
             b.onEnabled();
         }
     }
@@ -216,31 +216,38 @@ public class GameEngine implements IGameEngine {
     @Override
     public void run() {
         while (true) {
-            long startTime = System.currentTimeMillis();
-            IBehaviour be;
-            InputEvent ie = gui.dequeue();
-            event = ie == null ? null : (KeyEvent) ie;
-            ArrayList<IGameObject> list = new ArrayList<>(enableObjects);
-            for (IGameObject go : list) {
-                if ((be = go.behaviour()) != null)
-                    be.onUpdate(startTime, event);
-            }
-            this.checkCollisions();
-            gui.refresh();
-            //gui.display(enableObjects, gui.getGraphics());
-            long elapsedTime = System.currentTimeMillis() - startTime;
-            long sleepTime = FRAME_TIME - elapsedTime;
-
-            if (sleepTime > 0) {
-                try {
-                    Thread.sleep(sleepTime, 0);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            if (!isPaused) {
+                long startTime = System.currentTimeMillis();
+                IBehaviour be;
+                InputEvent ie = gui.dequeue();
+                event = ie == null ? null : (KeyEvent) ie;
+                ArrayList<IGameObject> list = new ArrayList<>(enableObjects);
+                for (IGameObject go : list) {
+                    if ((be = go.behaviour()) != null)
+                        be.onUpdate(startTime, event);
                 }
+                this.checkCollisions();
+                gui.refresh();
+                //gui.display(enableObjects, gui.getGraphics());
+                long elapsedTime = System.currentTimeMillis() - startTime;
+                long sleepTime = FRAME_TIME - elapsedTime;
+
+                if (sleepTime > 0) {
+                    try {
+                        Thread.sleep(sleepTime, 0);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                ((PlayerBehaviour) Objects.requireNonNull(getPlayerObject().behaviour())).decrementRespawnBuffer();
+                //System.out.println(loadedObjects.stream().filter(go -> go instanceof Collectible).toList());
             }
-            ((PlayerBehaviour) Objects.requireNonNull(getPlayerObject().behaviour())).decrementRespawnBuffer();
-            //System.out.println(loadedObjects.stream().filter(go -> go instanceof Collectible).toList());
         }
+    }
+
+    public void pauseGame() {
+        destroyAll();
+        isPaused = true;
     }
 
     /**

@@ -1,5 +1,7 @@
 package gameEngine.behaviour;
 
+import gameEngine.Client;
+import gameEngine.object.GameOver;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Lives;
 import gameEngine.shape.TextShape;
@@ -78,6 +80,10 @@ public class LivesBehaviour extends Behaviour {
             lives--;
             updateLivesText();
         }
+        if (lives == 0) {
+            Client.ENGINE.add(new GameOver());
+            Client.ENGINE.pauseGame();
+        }
     }
 
     public void updateLivesText() {
@@ -89,7 +95,7 @@ public class LivesBehaviour extends Behaviour {
      */
     @Override
     public void onEnabled() {
-        // No specific actions on enabling.
+        onInit();
     }
 
     /**
