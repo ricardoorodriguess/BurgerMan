@@ -136,7 +136,7 @@ public class PlayerBehaviour extends Behaviour {
                                 System.out.println("Colidiu com Tomato. Invincibilidade ativada!");
                                 playSE(2);
                                 invincible = true;
-                                invincibilityTime = 800;
+                                invincibilityTime = 200;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case ONION:
