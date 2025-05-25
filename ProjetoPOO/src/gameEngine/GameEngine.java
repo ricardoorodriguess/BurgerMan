@@ -57,6 +57,13 @@ public class GameEngine implements IGameEngine {
     public void add(GameObject gameObject) {
         loadedObjects.add(gameObject);
         enableObjects.add(gameObject);
+
+        //inicializa o comportamento e o estado "enabled"
+        IBehaviour b = gameObject.behaviour();
+        if (b != null) {
+            b.onInit();
+            b.onEnabled();
+        }
     }
 
     /**

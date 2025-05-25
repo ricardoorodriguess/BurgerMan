@@ -30,6 +30,6 @@ public class Lives extends GameObject {
                 new TextShape("Lives: 3", Color.WHITE, 24)); //por enquanto deixar assim
         behaviour.gameObject(this);
         shape.gameObject(this);
-        behaviour.onInit();
+        //behaviour.onInit();
     }
 }
