@@ -280,12 +280,51 @@ public class Initializer {
         new int[]{305, 645},
         new int[]{365, 125},
         new int[]{365, 145},
+        new int[]{365, 165},
         new int[]{365, 265},
         new int[]{365, 285},
         new int[]{365, 505},
         new int[]{365, 525},
         new int[]{365, 625},
         new int[]{365, 645},
+        new int[]{425, 205},
+        new int[]{425, 225},
+        new int[]{425, 325},
+        new int[]{425, 345},
+        new int[]{425, 385},
+        new int[]{425, 405},
+        new int[]{425, 445},
+        new int[]{425, 465},
+        new int[]{425, 565},
+        new int[]{425, 585},
+        new int[]{485, 125},
+        new int[]{485, 145},
+        new int[]{485, 165},
+        new int[]{485, 205},
+        new int[]{485, 225},
+        new int[]{485, 265},
+        new int[]{485, 285},
+        new int[]{485, 325},
+        new int[]{485, 345},
+        new int[]{485, 385},
+        new int[]{485, 405},
+        new int[]{485, 445},
+        new int[]{485, 465},
+        new int[]{485, 505},
+        new int[]{485, 525},
+        new int[]{485, 565},
+        new int[]{485, 585},
+        new int[]{545, 565},
+        new int[]{545, 585},
+        new int[]{585, 125},
+        new int[]{585, 145},
+        new int[]{585, 165},
+        new int[]{585, 205},
+        new int[]{585, 225},
+        new int[]{585, 505},
+        new int[]{585, 525},
+        new int[]{585, 625},
+        new int[]{585, 645},
     };
 
 
@@ -299,25 +338,22 @@ public class Initializer {
         engine.add(new BackGround());
         engine.add(new Score());
         engine.add(new Lives());
-        engine.add(new Player(new Point(85, 105)));
-        engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
 
-        //engine.add(new Collectible(Type.POINT, new Point(285, 190)));
-        //engine.add(new Collectible(Type.POINT, new Point(305, 185))); -> posição original do intersection
-        //engine.add(new Collectible(Type.POINT, new Point(305, 190)));
         for (int[] inter: inters)
             engine.add(new Collectible(Type.POINT, new Point(inter[0], inter[1])));
-
         for (int[] point: points)
             engine.add(new Collectible(Type.POINT, new Point(point[0], point[1])));
+        engine.add(new Collectible(Type.CHEESE, new Point(345, 425)));
+        engine.add(new Collectible(Type.CHEESE, new Point(185, 325)));
+        engine.add(new Collectible(Type.TOMATO, new Point(85, 485)));
+        engine.add(new Collectible(Type.TOMATO, new Point(285, 605)));
+        engine.add(new Collectible(Type.ONION, new Point(585, 605)));
+        engine.add(new Collectible(Type.ONION, new Point(185, 105)));
+        engine.add(new Collectible(Type.PICKLE, new Point(585, 245)));
+        engine.add(new Collectible(Type.PICKLE, new Point(305, 105)));
 
-
-
-
-        engine.add(new Collectible(Type.CHEESE, new Point(200, 300)));
-        engine.add(new Collectible(Type.TOMATO, new Point(500, 500)));
-        engine.add(new Collectible(Type.ONION, new Point(600, 600)));
-        engine.add(new Collectible(Type.PICKLE, new Point(230, 400)));
+        engine.add(new Player(new Point(85, 105)));
+        engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
     }
 
     /**
