@@ -105,7 +105,6 @@ public class PlayerBehaviour extends Behaviour {
         }
 
         ((GameObject) igameObject).move(speed, 0);
-        //System.out.println(igameObject.transform().position());
         if (playerSpeedTime > 0) {
             playerSpeedTime -= dT;
             if (playerSpeedTime <= 0) {
@@ -149,7 +148,7 @@ public class PlayerBehaviour extends Behaviour {
                                 System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
                                 playSE(2);
                                 playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                                playerSpeedTime = 60;
+                                playerSpeedTime = 5;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case PICKLE:
@@ -163,11 +162,7 @@ public class PlayerBehaviour extends Behaviour {
                         if (invincible) gameObject.behaviour().onDisabled();
                         else onDisabled();
                     }
-/*                    case "Solid" -> {
-                        ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
-                        speed = new Point(0, 0);
-                    }
-*/                    case "Inter" -> {
+                    case "Inter" -> {
                         Intersection i = (Intersection) gameObject;
                         if (!i.list().contains(speed)) speed = new Point(0, 0);
                         else i.setLastPlayerDir(speed);
