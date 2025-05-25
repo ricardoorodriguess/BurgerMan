@@ -270,6 +270,10 @@ public class PlayerBehaviour extends Behaviour {
         playerSpeedTime = 400;
     }
 
+    /**
+     * Increments the respawn buffer, preventing the player from being enabled immediately.
+     * This method is called when the player is disabled, allowing a delay before respawning.
+     */
     public void decrementRespawnBuffer() {
         if (respawnBuffer <= 0) return;
         if (--respawnBuffer <= 0)
