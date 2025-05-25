@@ -30,6 +30,7 @@ public class PlayerBehaviour extends Behaviour {
     private double playerSpeedTime;
     private boolean invincible;
     private double invincibilityTime;
+    private int respawnBuffer;
     public Point speed;
     ScoreBehaviour score;
     LivesBehaviour lives;
@@ -44,6 +45,7 @@ public class PlayerBehaviour extends Behaviour {
         super(player);
         speed = new Point(0, 0);
         this.audioPlayer = new AudioPlayer();
+        respawnBuffer = 0;
         playSound();
     }
 
@@ -150,9 +152,7 @@ public class PlayerBehaviour extends Behaviour {
                    }
                    case "Enemy" -> {
                        if (invincible) gameObject.behaviour().onDisabled();
-                       else {
-                           onDisabled();
-                       }
+                       else onDisabled();
                    }
                    case "Solid" -> {
                        ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
@@ -201,6 +201,7 @@ public class PlayerBehaviour extends Behaviour {
             playDead();
             this.lives.decreaseLives();
         }
+        respawnBuffer = 100;
         Client.ENGINE.disable(gameObject());
     }
 
@@ -257,6 +258,12 @@ public class PlayerBehaviour extends Behaviour {
     public void slowDown() {
         playerSpeed = 0.8;
         playerSpeedTime = 60;
+    }
+
+    public void decrementRespawnBuffer() {
+        if (respawnBuffer <= 0) return;
+        if (--respawnBuffer <= 0)
+            Client.ENGINE.enable(gameObject());
     }
 
     /**

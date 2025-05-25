@@ -20,7 +20,7 @@ public class Player extends GameObject {
      * @param position Initial position of the player in the environment.
      */
     public Player(@NotNull Point position) {
-        super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position), new PlayerBehaviour(null), new PlayerShape(null));
+        super("Player", Transform.simpleTransform(position), Polygon.simpleSquare(position, 1), new PlayerBehaviour(null), new PlayerShape(null));
         behaviour.gameObject(this);
         shape.gameObject(this);
     }

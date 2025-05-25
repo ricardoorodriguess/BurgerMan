@@ -205,12 +205,12 @@ public class Polygon extends Colisor {
         return sb.toString().trim();
     }
 
-    public static Polygon simpleSquare(Point center) {
+    public static Polygon simpleSquare(Point center, int rad) {
         return new Polygon(new ArrayList<>(List.of(
-                new Point(center.getX() - 1, center.getY() - 1),
-                new Point(center.getX() - 1, center.getY() + 1),
-                new Point(center.getX() + 1, center.getY() + 1),
-                new Point(center.getX() + 1, center.getY() - 1)
+                new Point(center.getX() - rad, center.getY() - rad),
+                new Point(center.getX() - rad, center.getY() + rad),
+                new Point(center.getX() + rad, center.getY() + rad),
+                new Point(center.getX() + rad, center.getY() - rad)
         )));
     }
 

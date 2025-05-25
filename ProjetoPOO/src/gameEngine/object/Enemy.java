@@ -22,7 +22,7 @@ public class Enemy extends GameObject {
      * @param position Initial position of the enemy in the environment.
      */
     public Enemy(@NotNull Point position, @NotNull EnemyType type) {
-        super("Enemy", Transform.simpleTransform(position), Polygon.simpleSquare(position), new EnemyBehavior(null), null);
+        super("Enemy", Transform.simpleTransform(position), Polygon.simpleSquare(position, 1), new EnemyBehavior(null), null);
         this.enemyType = type;
         behaviour.gameObject(this);
         shape = new EnemyShape(type, this);

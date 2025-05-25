@@ -3,6 +3,7 @@ package gameEngine;
 import collisions.Colisor;
 import collisions.Point;
 import gameEngine.behaviour.IBehaviour;
+import gameEngine.behaviour.PlayerBehaviour;
 import gameEngine.behaviour.SolidBehaviour;
 import gameEngine.gui.GUI;
 import gameEngine.gui.IGUI;
@@ -230,6 +231,7 @@ public class GameEngine implements IGameEngine {
                     e.printStackTrace();
                 }
             }
+            ((PlayerBehaviour) Objects.requireNonNull(getPlayerObject().behaviour())).decrementRespawnBuffer();
             //System.out.println(loadedObjects.stream().filter(go -> go instanceof Collectible).toList());
         }
     }

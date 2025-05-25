@@ -77,8 +77,6 @@ public class LivesBehaviour extends Behaviour {
         if (lives > 0) {
             lives--;
             updateLivesText();
-        } else {
-            return;
         }
     }
 
