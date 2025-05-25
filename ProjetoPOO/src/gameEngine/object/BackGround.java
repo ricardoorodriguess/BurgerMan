@@ -12,7 +12,7 @@ import gameEngine.shape.BackGroundShape;
  */
 public class BackGround extends GameObject {
 
-    /* Constructor that initializes the background object with its name, transform,
+    /** Constructor that initializes the background object with its name, transform,
      * collider, and shape.
      */
     public BackGround() {
