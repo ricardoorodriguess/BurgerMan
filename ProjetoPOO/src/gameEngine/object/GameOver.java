@@ -9,11 +9,11 @@ import gameEngine.shape.TextShape;
 import java.awt.*;
 
 /**
- * Responsive class to represent the Score GameObject.
+ * Responsive class to represent the GameOver GameObject.
  * <p>
- * This class is responsible for displaying the current score in the game.
+ * This class is responsible for displaying game over a message when a player loses the game.
  * <p>
- * It extends the GameObject class and uses a TextShape to render the score.
+ * It extends the GameObject class and uses a TextShape to render the message.
  *
  * @author Rodrigo Linhas
  * @author Ricardo Rodrigues
@@ -23,13 +23,9 @@ import java.awt.*;
 public class GameOver extends GameObject {
 
     /**
-     * Constructs a Score GameObject that displays the player's current score.
+     * Constructs a GameOver GameObject that displays a message when a player loses.
      * <p>
-     * The score is positioned at coordinates (125, 65) on the game screen.
-     * <p>
-     * It uses a white TextShape with font size 24 to render the score text.
-     * <p>
-     * The score starts at 0 and is updated through the ScoreBehaviour component.
+     * It uses a white TextShape with font size 44 to render the GAME OVER text.
      */
     public GameOver() {
         super("GameOver", Transform.simpleTransform(new Point(336, 372)), null, null,
