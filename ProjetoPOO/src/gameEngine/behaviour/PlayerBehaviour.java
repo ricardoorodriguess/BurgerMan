@@ -103,7 +103,7 @@ public class PlayerBehaviour extends Behaviour {
         }
 
         ((GameObject) igameObject).move(speed, 0);
-        System.out.println(igameObject.transform().position());
+        //adwSystem.out.println(igameObject.transform().position());
     }
 
     /**

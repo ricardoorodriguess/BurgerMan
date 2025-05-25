@@ -324,6 +324,8 @@ public class Initializer {
         new int[]{585, 525},
         new int[]{585, 625},
         new int[]{585, 645},
+        new int[]{125, 565},
+        new int[]{125, 585},
     };
 
 
