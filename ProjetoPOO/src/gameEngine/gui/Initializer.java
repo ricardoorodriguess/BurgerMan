@@ -5,6 +5,7 @@ import gameEngine.GameEngine;
 import gameEngine.object.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class initializes the game objects and intersections for the Burger game.
@@ -16,7 +17,6 @@ import java.util.ArrayList;
  * @version May 24, 2025
  */
 public class Initializer {
-
     private static final Point up = new Point(0, -2);
     private static final Point down = new Point(0, 2);
     private static final Point left = new Point(-2, 0);
@@ -36,7 +36,7 @@ public class Initializer {
         new int[]{585, 105, 0, 2, 1, 0},
         new int[]{85, 185, 1, 1, 0, 2},
         new int[]{185, 185, 1, 1, 1, 2},
-        new int[]{245, 185, 1, 1, 1, 2},
+        new int[]{245, 185, 0, 1, 1, 2},
         new int[]{305, 185, 1, 0, 2, 1},
         new int[]{365, 185, 1, 0, 1, 2},
         new int[]{425, 185, 0, 2, 1, 1},
@@ -52,7 +52,6 @@ public class Initializer {
         new int[]{585, 245, 1, 0, 2, 0},
         new int[]{245, 305, 0, 1, 0, 2},
         new int[]{305, 305, 1, 0, 1, 2},
-        new int[]{335, 305, 0, 2, 1, 1},
         new int[]{365, 305, 1, 0, 2, 1},
         new int[]{425, 305, 0, 1, 2, 0},
         new int[]{185, 365, 1, 1, 0, 2},
@@ -369,9 +368,12 @@ public class Initializer {
             ArrayList<Point> list = new ArrayList<>();
             for (int i = 2; i < 6; i++) {
                 if (a[i] == 2) list.add(dirs[i - 2]);
+            }
+            for (int i = 2; i < 6; i++) {
                 if (a[i] == 1) list.add(dirs[i - 2]);
             }
             engine.add(new Intersection(p, list));
         }
+        engine.add(new Intersection(new Point(335, 305), List.of(left, right), down));
     }
 }

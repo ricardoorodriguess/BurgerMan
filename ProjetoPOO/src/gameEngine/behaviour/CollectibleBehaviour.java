@@ -50,7 +50,6 @@ public class CollectibleBehaviour extends Behaviour {
     public void onUpdate(double dT, InputEvent ie) {
         if (collected) {
             // Destroys the object when collected
-            System.out.println("DESTROY COLLECT");
             onDestroy();
             collected = false;
         }

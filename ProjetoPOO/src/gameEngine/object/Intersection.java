@@ -39,6 +39,13 @@ public class Intersection extends GameObject {
         metPlayer = null;
     }
 
+    public Intersection(Point base, List<Point> directions, Point returnDir) {
+        super("Inter", Transform.simpleTransform(base), new Circle(base, 0.1), null, null);
+        this.directions = directions;
+        this.returnDir = returnDir;
+        metPlayer = null;
+    }
+
 
     /**
      * Returns the list of directions available at this intersection.

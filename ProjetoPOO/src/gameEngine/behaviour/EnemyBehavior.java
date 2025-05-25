@@ -9,6 +9,7 @@ import gameEngine.object.IGameObject;
 import gameEngine.object.Intersection;
 import java.awt.event.InputEvent;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Responsive class to deal with Enemy behavior.
@@ -26,6 +27,7 @@ public class EnemyBehavior extends Behaviour {
     public Point speed;
     private int state;
     private int buffer;
+    private boolean currentInter;
 
     /**
      * Constructor that associates a GameObject with this behavior.
@@ -37,6 +39,7 @@ public class EnemyBehavior extends Behaviour {
         speed = new Point(0, 0);
         state = 0;
         buffer = 400;
+        currentInter = false;
     }
 
     /**
@@ -57,8 +60,9 @@ public class EnemyBehavior extends Behaviour {
      */
     @Override
     public void onUpdate(double dT, InputEvent ie) {
-        Intersection i = Client.ENGINE.getInterAt(igameObject.collider().centroid());
-        if (i != null)
+        Intersection i = Client.ENGINE.getInterAt(Objects.requireNonNull(igameObject.collider()).centroid());
+        if (i != null && !currentInter) {
+            currentInter = true;
             switch (state) {
                 case 0:
                     // SCATTER STATE
@@ -86,6 +90,8 @@ public class EnemyBehavior extends Behaviour {
                     speed = i.getReturnDir();
                     break;
             }
+        } else if (i == null && currentInter)
+            currentInter = false;
 
         ((GameObject) igameObject).move(speed, 0);
     }
@@ -112,8 +118,9 @@ public class EnemyBehavior extends Behaviour {
                     ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
                     break;
                 case "Inter":
-                    if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1)) continue;
+                    if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1) || currentInter) continue;
                     Intersection i = (Intersection) gameObject;
+                    currentInter = true;
                     switch (state) {
                         case 3:
                             speed = i.getReturnDir();
@@ -162,6 +169,7 @@ public class EnemyBehavior extends Behaviour {
         ICollider c = igameObject.collider();
         if (c == null) return;
         speed = new Point(0, 1);
+        buffer = 400;
     }
 
     /**
