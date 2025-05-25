@@ -150,7 +150,9 @@ public class PlayerBehaviour extends Behaviour {
                    }
                    case "Enemy" -> {
                        if (invincible) gameObject.behaviour().onDisabled();
-                       else onDisabled();
+                       else {
+                           onDisabled();
+                       }
                    }
                    case "Solid" -> {
                        ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);

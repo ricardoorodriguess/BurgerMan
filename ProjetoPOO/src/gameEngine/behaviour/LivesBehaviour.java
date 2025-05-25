@@ -2,6 +2,8 @@ package gameEngine.behaviour;
 
 import gameEngine.object.IGameObject;
 import gameEngine.object.Lives;
+import gameEngine.shape.TextShape;
+
 import java.awt.event.InputEvent;
 import java.util.List;
 
@@ -74,9 +76,14 @@ public class LivesBehaviour extends Behaviour {
     public void decreaseLives() {
         if (lives > 0) {
             lives--;
+            updateLivesText();
         } else {
             return;
         }
+    }
+
+    public void updateLivesText() {
+        ((TextShape) gameObject().shape()).setText("Lives:" + lives);
     }
 
     /**

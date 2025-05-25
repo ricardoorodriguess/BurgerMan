@@ -4,6 +4,7 @@ import collisions.Point;
 import gameEngine.object.IGameObject;
 import gameEngine.object.Player;
 import gameEngine.object.Score;
+import gameEngine.shape.TextShape;
 
 import java.awt.event.InputEvent;
 import java.util.List;
@@ -95,6 +96,11 @@ public class ScoreBehaviour extends Behaviour {
     public void incrementScore(int points) {
         if (points < 0) return; // Prevent negative score increments.
         totalScore += points;
+        updateScoreText();
+    }
+
+    public void updateScoreText(){
+        ((TextShape) gameObject().shape()).setText("Score: " + totalScore);
     }
 
     /**
