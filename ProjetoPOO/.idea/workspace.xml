@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="doc AudioPlayer + class Initializer">
+    <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="map with Points, not finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/shape/CollectibleShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,14 +281,6 @@
       <workItem from="1747745292004" duration="1983000" />
       <workItem from="1747903976976" duration="862000" />
       <workItem from="1748082719484" duration="297000" />
-    </task>
-    <task id="LOCAL-00009" summary="fixed polygon-polygon collision">
-      <option name="closed" value="true" />
-      <created>1743178597458</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1743178597458</updated>
     </task>
     <task id="LOCAL-00010" summary="Added doc to GameEngine">
       <option name="closed" value="true" />
@@ -675,7 +666,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748084666947</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="map with Points, not finished">
+      <option name="closed" value="true" />
+      <created>1748126855426</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1748126855426</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +692,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tests to ScoreBehaviour.java, LivesBehaviour.java and PlayerBehaviour.java modified" />
     <MESSAGE value="EnemyBehavior" />
     <MESSAGE value="EnemyBehaviorTests&#10;CollectibleBehaviour" />
     <MESSAGE value="some comments" />
@@ -718,7 +716,8 @@
     <MESSAGE value="paint gui (NOT DONE YET)" />
     <MESSAGE value="inter att" />
     <MESSAGE value="doc AudioPlayer + class Initializer" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc AudioPlayer + class Initializer" />
+    <MESSAGE value="map with Points, not finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="map with Points, not finished" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
