@@ -282,14 +282,6 @@
       <workItem from="1747903976976" duration="862000" />
       <workItem from="1748082719484" duration="297000" />
     </task>
-    <task id="LOCAL-00010" summary="Added doc to GameEngine">
-      <option name="closed" value="true" />
-      <created>1743793803900</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1743793803900</updated>
-    </task>
     <task id="LOCAL-00011" summary="Isolate centroid calcule in a method">
       <option name="closed" value="true" />
       <created>1743794622517</created>
@@ -674,7 +666,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748126855426</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="map with Points, not finished">
+      <option name="closed" value="true" />
+      <created>1748172874998</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1748172874998</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
