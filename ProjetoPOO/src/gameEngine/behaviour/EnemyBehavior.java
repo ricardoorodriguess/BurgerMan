@@ -60,7 +60,7 @@ public class EnemyBehavior extends Behaviour {
     public void onUpdate(double dT, InputEvent ie) {
         Intersection i = Client.ENGINE.getInterAt(Objects.requireNonNull(igameObject.collider()).centroid());
 
-        System.out.println(i);
+        //System.out.println(i);
 
         if (i != null && !currentInter) {
             currentInter = true;

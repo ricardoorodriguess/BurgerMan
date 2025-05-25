@@ -70,7 +70,7 @@ public class PlayerBehaviour extends Behaviour {
             if (this.invincibilityTime <= 0) {
                 invincible = false;
             }
-            System.out.println(invincibilityTime);
+            //System.out.println(invincibilityTime);
         }
         Point nsp = speed.scaleOrigin(playerSpeed);
         if (ie instanceof KeyEvent k) switch (k.getKeyCode()) {
@@ -131,30 +131,30 @@ public class PlayerBehaviour extends Behaviour {
                     case "Point", "Cheese", "Onion", "Tomato", "Pickle" -> {
                         this.score.incrementScore(10);
                         Collectible point = (Collectible) gameObject;
-                        System.out.println(point.getType());
+                        //System.out.println(point.getType());
                         switch (point.getType()) {
                             case TOMATO:
-                                System.out.println("Colidiu com Tomato. Invincibilidade ativada!");
+                                //System.out.println("Colidiu com Tomato. Invincibilidade ativada!");
                                 playSE(2);
                                 invincible = true;
                                 invincibilityTime = 200;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case ONION:
-                                System.out.println("Colidiu com Onion. Remover inimigo!");
+                                //System.out.println("Colidiu com Onion. Remover inimigo!");
                                 playSE(2);
                                 Client.ENGINE.destroy(Client.ENGINE.randomObject(o -> o instanceof Enemy));
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case CHEESE:
-                                System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
+                                //System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
                                 playSE(2);
                                 playerSpeed = Client.RANDOM.nextBoolean() ? 0.5 : 2;
                                 playerSpeedTime = 5;
                                 Client.ENGINE.destroy(gameObject);
                                 break;
                             case PICKLE:
-                                System.out.println("Colidiu com Pickle. Removido!");
+                                //System.out.println("Colidiu com Pickle. Removido!");
                                 playSE(2);
                                 Client.ENGINE.destroy(gameObject);
                                 break;
