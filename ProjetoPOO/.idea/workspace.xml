@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="doc AudioPlayer + class Initializer">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/EnemyBehavior.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +24,11 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="e403ad564bc9c99c37dbc2c3501c115d09847593" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -157,6 +161,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
+    <configuration name="AudioPlayer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gameEngine.sound.AudioPlayer" />
+      <module name="ProjetoPOO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameEngine.sound.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gameEngine.Client" />
       <module name="ProjetoPOO" />
@@ -198,22 +215,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameEngineTests.getLoadedObjects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjetoPOO" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GameEngineTests" />
-      <option name="METHOD_NAME" value="getLoadedObjects" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tests in ProjetoPOO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjetoPOO" />
       <extension name="coverage">
@@ -229,19 +230,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AudioPlayer" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.GUI$Queue" />
-      <item itemvalue="JUnit.GameEngineTests.getLoadedObjects" />
       <item itemvalue="JUnit.BehaviourTests" />
       <item itemvalue="JUnit.tests in ProjetoPOO" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
+        <item itemvalue="JUnit.tests in ProjetoPOO" />
         <item itemvalue="JUnit.BehaviourTests" />
         <item itemvalue="Application.GUI$Queue" />
-        <item itemvalue="JUnit.tests in ProjetoPOO" />
-        <item itemvalue="JUnit.GameEngineTests.getLoadedObjects" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.AudioPlayer" />
       </list>
     </recent_temporary>
   </component>

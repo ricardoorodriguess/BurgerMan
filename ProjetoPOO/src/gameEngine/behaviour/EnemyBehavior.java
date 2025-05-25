@@ -115,7 +115,7 @@ public class EnemyBehavior extends Behaviour {
             switch (gameObject.name()) {
                 case "Pickle":
                     if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1)) continue;
-                    Client.ENGINE.getPlayerObject().behaviour().onDisabled();
+                    ((PlayerBehaviour) Client.ENGINE.getPlayerObject().behaviour()).slowDown();
                     break;
                 case "Inter":
                     if ((c2 = gameObject.collider()) == null || !c2.isColliding(c1) || currentInter) continue;
