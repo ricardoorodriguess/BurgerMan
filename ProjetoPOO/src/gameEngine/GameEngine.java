@@ -245,6 +245,10 @@ public class GameEngine implements IGameEngine {
         }
     }
 
+    /**
+     * Pauses the game by clearing all enabled objects and setting the paused state.
+     * @pos: calls destroyAll() && isPaused = true
+     */
     public void pauseGame() {
         destroyAll();
         isPaused = true;
