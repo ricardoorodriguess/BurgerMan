@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b1738391-2c07-4536-9877-ac91f9e728bc" name="Changes" comment="doc AudioPlayer + class Initializer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/collisions/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/collisions/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/LivesBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/behaviour/PlayerBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameEngine/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/object/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameEngine/gui/Initializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +34,12 @@
     &quot;assignee&quot;: &quot;TiagoTome1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ricardoorodriguess/Lab05-Projeto.git",
-    "accountId": "c35d2412-1480-4f0f-bf5b-e9629f629775"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ricardoorodriguess/Lab05-Projeto.git&quot;,
+    &quot;accountId&quot;: &quot;c35d2412-1480-4f0f-bf5b-e9629f629775&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-23/lib/src.zip!/java.desktop/javax/swing/Timer.java" root0="SKIP_INSPECTION" />
   </component>

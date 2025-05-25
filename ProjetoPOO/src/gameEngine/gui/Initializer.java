@@ -355,6 +355,10 @@ public class Initializer {
 
         engine.add(new Player(new Point(85, 105)));
         engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
+        engine.add(new Enemy(new Point(485, 245), EnemyType.GRAY_TRASH));
+        engine.add(new Enemy(new Point(485, 245), EnemyType.GREEN_TRASH));
+        engine.add(new Enemy(new Point(485, 245), EnemyType.GREEN_TRASH));
+
     }
 
     /**
