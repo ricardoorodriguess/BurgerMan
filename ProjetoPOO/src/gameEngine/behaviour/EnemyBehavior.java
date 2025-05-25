@@ -59,6 +59,9 @@ public class EnemyBehavior extends Behaviour {
     @Override
     public void onUpdate(double dT, InputEvent ie) {
         Intersection i = Client.ENGINE.getInterAt(Objects.requireNonNull(igameObject.collider()).centroid());
+
+        System.out.println(i);
+
         if (i != null && !currentInter) {
             currentInter = true;
             switch (state) {
@@ -168,7 +171,7 @@ public class EnemyBehavior extends Behaviour {
     public void onInit() {
         ICollider c = igameObject.collider();
         if (c == null) return;
-        speed = new Point(0, 1);
+        speed = new Point(0, -0.5);
         buffer = 400;
     }
 
