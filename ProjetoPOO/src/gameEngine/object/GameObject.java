@@ -64,11 +64,19 @@ public class GameObject implements IGameObject
     @Override
     public @Nullable ICollider collider() { return collider; }
 
+    /**
+     * Obtain the behaviour associate with this GameObject.
+     * @return an instance of IBehaviour that represents this GameObject's behaviour.
+     */
     @Override
     public @Nullable IBehaviour behaviour() {
         return behaviour;
     }
 
+    /**
+     * Obtain the shape associate with this GameObject.
+     * @return an instance of IShape that represents this GameObject's shape.
+     */
     @Override
     public IShape shape() {
         return shape;
