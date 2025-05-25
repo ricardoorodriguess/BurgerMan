@@ -125,56 +125,54 @@ public class PlayerBehaviour extends Behaviour {
         if (c1 == null) return;
         for (IGameObject gameObject : gameObjects) {
             if ((c2 = gameObject.collider()) != null && c1.isColliding(c2)) {
-               System.out.println("Colisao com: " + gameObject.name());
-               switch (gameObject.name()) {
-                   case "Point" -> {
-                       this.score.incrementScore(10);
-                       Client.ENGINE.destroy(gameObject);
-                       return;
-                   }
-                   case "Tomato" -> {
-                       System.out.println("Colidiu com Tomato. Invencibilidade ativada!");
-                       playSE(2);
-                       invincible = true;
-                       invincibilityTime = 60;
-                       Client.ENGINE.destroy(gameObject);
-                       return;
-                   }
-                   case "Onion" -> {
-                       System.out.println("Colidiu com Onion. Remover inimigo!");
-                       playSE(2);
-                       Client.ENGINE.destroy(Client.ENGINE.randomObject(o -> o instanceof Enemy));
-                       Client.ENGINE.destroy(gameObject);
-                       return;
-                   }
-                   case "Cheese" -> {
-                       System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
-                       playSE(2);
-                       playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
-                       playerSpeedTime = 60;
-                       Client.ENGINE.destroy(gameObject);
-                       return;
-                   }
-                   case "Pickle" -> {
-                       System.out.println("Colidiu com Pickle. Removido!");
-                       playSE(2);
-                       Client.ENGINE.destroy(gameObject);
-                       return;
-                   }
-                   case "Enemy" -> {
-                       if (invincible) gameObject.behaviour().onDisabled();
-                       else onDisabled();
-                   }
-/*                   case "Solid" -> {
-                       ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
-                       speed = new Point(0, 0);
-                   }
-*/                   case "Inter" -> {
-                       Intersection i = (Intersection) gameObject;
-                       if (!i.list().contains(speed)) speed = new Point(0, 0);
-                       else i.setLastPlayerDir(speed);
-                   }
-                   default -> {}
+                System.out.println("Colisao com: " + gameObject.name());
+                switch (gameObject.name()) {
+                    case "Point" -> {
+                        this.score.incrementScore(10);
+                        Client.ENGINE.destroy(gameObject);
+                        Collectible point = (Collectible) gameObject;
+                        switch (point.getType()) {
+                            case TOMATO:
+                                System.out.println("Colidiu com Tomato. Invencibilidade ativada!");
+                                playSE(2);
+                                invincible = true;
+                                invincibilityTime = 60;
+                                Client.ENGINE.destroy(gameObject);
+                                break;
+                            case ONION:
+                                System.out.println("Colidiu com Onion. Remover inimigo!");
+                                playSE(2);
+                                Client.ENGINE.destroy(Client.ENGINE.randomObject(o -> o instanceof Enemy));
+                                Client.ENGINE.destroy(gameObject);
+                                break;
+                            case CHEESE:
+                                System.out.println("Colidiu com Cheese. Velocidade aleatoria!");
+                                playSE(2);
+                                playerSpeed = Client.RANDOM.nextBoolean() ? 0.8 : 1.2;
+                                playerSpeedTime = 60;
+                                Client.ENGINE.destroy(gameObject);
+                                break;
+                            case PICKLE:
+                                System.out.println("Colidiu com Pickle. Removido!");
+                                playSE(2);
+                                Client.ENGINE.destroy(gameObject);
+                                break;
+                        }
+                    }
+                    case "Enemy" -> {
+                        if (invincible) gameObject.behaviour().onDisabled();
+                        else onDisabled();
+                    }
+/*                    case "Solid" -> {
+                        ((GameObject) igameObject).move(speed.scaleOrigin(-1), 0);
+                        speed = new Point(0, 0);
+                    }
+*/                    case "Inter" -> {
+                        Intersection i = (Intersection) gameObject;
+                        if (!i.list().contains(speed)) speed = new Point(0, 0);
+                        else i.setLastPlayerDir(speed);
+                    }
+                    default -> {}
                }
             }
         }
