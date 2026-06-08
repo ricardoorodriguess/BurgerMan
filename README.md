@@ -1,5 +1,8 @@
 # BurgerMan
 
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/b3055dfe-0862-4ca4-8539-65fe283fbcd5" />
+
+
 ## Overview
 
 BurgerMan is a custom game engine and arcade game implementation developed in Java inspired by the classic arcade game Pac-Man. It features a robust object management system, collision detection, and a behavior-based entity architecture.
