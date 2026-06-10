@@ -145,10 +145,10 @@ java -cp "bin;lib/*" gameEngine.Client
 * `docs/`: Project documentation and UML diagrams.
 * `assets/`: Game assets and images.
 
-## Authors
+## Devs
 
-* Ricardo Rodrigues
-* Rodrigo Linhas
+* [Paulo Ricardo Rodrigues](https://github.com/ricardoorodriguess)
+* [Rodrigo Linhas](https://github.com/rodrigolinhas)
 * Tiago Tome
 
 **Version:** March 27, 2025
